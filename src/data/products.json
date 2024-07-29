@@ -1,0 +1,843 @@
+[
+  {
+    "id": 9001,
+    "title": "Acer Nitro 5 AN515-57-79TD Gaming Laptop",
+    "price": 739.99,
+    "description": "Acer Nitro 5 AN515-57-79TD Gaming Laptop | Intel Core i7-11800H | NVIDIA GeForce RTX 3050 Ti Laptop GPU | 15.6 FHD 144Hz IPS Display | 8GB DDR4 | 512GB NVMe SSD | Killer Wi-Fi 6 | Backlit Keyboard",
+    "category": "Electronics",
+    "image": [
+      "https://i.ibb.co/jTMbP5r/nextamazon1.jpg",
+      "https://i.ibb.co/2vwS6HR/nextamazon2.jpg",
+      "https://i.ibb.co/SybqWjf/nextamazon3.jpg"
+    ],
+    "brand": "Acer",
+    "rating": 3
+  },
+  {
+    "id": 9002,
+    "title": "Acer Aspire 5 A515-45-R74Z Slim Laptop",
+    "price": 399.99,
+    "description": "Acer Aspire 5 A515-45-R74Z Slim Laptop | 15.6 Full HD IPS | AMD Ryzen 5 5500U Hexa-Core Mobile Processor | AMD Radeon Graphics | 8GB DDR4 | 256GB NVMe SSD | WiFi 6 | Backlit KB | Windows 11 Home",
+    "category": "Electronics",
+    "image": [
+      "https://i.ibb.co/2vwS6HR/nextamazon2.jpg",
+      "https://i.ibb.co/SybqWjf/nextamazon3.jpg",
+      "https://i.ibb.co/0Gvx3Sk/nextImg.jpg"
+    ],
+    "brand": "Acer",
+    "rating": 4
+  },
+  {
+    "id": 9003,
+    "title": "2020 Apple iPad Pro",
+    "price": 747.07,
+    "description": "2020 Apple iPad Pro (12.9-inch, Wi-Fi, 256GB) - Space Gray (Renewed)",
+    "category": "Electronics",
+    "image": [
+      "https://i.ibb.co/SybqWjf/nextamazon3.jpg",
+      "https://i.ibb.co/0Gvx3Sk/nextImg.jpg",
+      "https://i.ibb.co/xD7nDq5/nextamazon5.jpg"
+    ],
+    "brand": "Apple",
+    "rating": 2
+  },
+  {
+    "id": 9004,
+    "title": "Smart Watches for Men",
+    "price": 56.99,
+    "description": "Smart Watches for Men (Answer/Make Call) 100 Sport Modes Fitness Tracker Heart Rate Blood Oxygen Sleep Monitor IP68 Waterproof Fitness Watch Activity Tracker and Smartwatches iPhone Android Compatible",
+    "category": "Smart watch",
+    "image": [
+      "https://i.ibb.co/0Gvx3Sk/nextImg.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "brand": "ENOMIR",
+    "rating": 4
+  },
+  {
+    "id": 9005,
+    "title": "KOORUI 24 Inch Computer Monitor -FHD 1080P Gaming Monitor",
+    "price": 118.9,
+    "description": "KOORUI 24 Inch Computer Monitor -FHD 1080P Gaming Monitor 165Hz VA 1ms Build-in FreeSync™, Compatible G-sync, LED Monitors with Ultra-Thin, HDMI X2 /DP, VESA Compatible, Tilt Adjustable, Eye Care 24E4",
+    "category": "Electronics",
+    "image": [
+      "https://i.ibb.co/xD7nDq5/nextamazon5.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "brand": "KOORUI",
+    "rating": 4
+  },
+  {
+    "id": 9006,
+    "title": "GMKtec Mini PC Window 11 Pro",
+    "price": 338,
+    "description": "GMKtec Mini PC Window 11 Pro, AMD Ryzen 7 3750H Micro Desktop Computers 16GB DDR4 512GB PCIe SSD, 4K UHD Triple Screen Mini Computer for Light Gaming Business Office Video Editing",
+    "category": "Computer",
+    "image": [
+      "https://i.ibb.co/pv6ZG1b/nextamazon6.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "brand": "GMKtec",
+    "rating": 5
+  },
+  {
+    "id": 9007,
+    "title": "larco Gaming PC Desktop Computer Intel i7",
+    "price": 499.99,
+    "description": "Alarco Gaming PC Desktop Computer Intel i7 3.40GHz,16GB Ram,1TB Hard Drive,Windows 10 pro,WiFi Ready,Video Card Nvidia GTX 750 4GB, 6 RGB Fans with Remote",
+    "category": "Computer",
+    "image": [
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "brand": "larco",
+    "rating": 4
+  },
+  {
+    "id": 9008,
+    "title": "SkyTech Shadow 3.0 Gaming Computer PC",
+    "price": 899.99,
+    "description": "SkyTech Shadow 3.0 Gaming Computer PC Desktop - Ryzen 5 3600 6-Core 3.6GHz, GTX 1660 Super 6G, 1TB SSD, 16GB DDR4 3000, AC WiFi, Windows 10 Home 64-bit, Black",
+    "category": "Computer",
+    "image": [
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "brand": "SkyTech",
+    "rating": 3.8
+  },
+  {
+    "id": 9009,
+    "title": "Skullcandy Crusher Evo Wireless Over-Ear Bluetooth Headphones",
+    "price": 147.9,
+    "description": "Skullcandy Crusher Evo Wireless Over-Ear Bluetooth Headphones for iPhone and Android with Mic / 40 Hour Battery Life / Extra Bass Tech / Best for Music, School, Workouts, and Gaming - Black",
+    "category": "Electronics",
+    "image": [
+      "https://i.ibb.co/ZG9t4RL/nextamazon9.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "brand": "Skullcandy ",
+    "rating": 4
+  },
+  {
+    "id": 9010,
+    "title": "Garmin 010-02430-01 Venu 2",
+    "price": 319.98,
+    "description": "Garmin 010-02430-01 Venu 2, GPS Smartwatch with Advanced Health Monitoring and Fitness Features, Slate Bezel with Black Case and Silicone Band",
+    "category": "Smart watch",
+    "image": [
+      "https://i.ibb.co/z7yV4zf/nextamazon10.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "brand": "Garmin",
+    "rating": 3.8
+  },
+  {
+    "id": 9011,
+    "title": "Canon EOS Rebel T100",
+    "description": "Canon EOS Rebel T100 Digital SLR Camera with 18-55mm Lens Kit, 18 Megapixel Sensor, Wi-Fi, DIGIC4+, SanDisk 32GB Memory Card and Live View Shooting",
+    "price": 559.99,
+    "image": [
+      "https://i.ibb.co/1r28gMk/1.webp",
+      "https://i.ibb.co/1r28gMk/1.webp",
+      "https://i.ibb.co/1r28gMk/1.webp"
+    ],
+    "category": "Electronics",
+    "brand": "Canon",
+    "rating": 4
+  },
+  {
+    "id": 9012,
+    "title": "DJI Air",
+    "description": "DJI Mini 2 Fly More Combo - Ultralight Foldable Drone, 3-Axis Gimbal with 4K Camera, 12MP Photos, 31 Min Flight Time",
+    "price": 999,
+    "brand": "DJI",
+    "image": [
+      "https://i.ibb.co/qdfB3s6/2.webp",
+      "https://i.ibb.co/1r28gMk/1.webp",
+      "https://i.ibb.co/1r28gMk/1.webp"
+    ],
+    "category": "Electronics",
+    "rating": 3.8
+  },
+  {
+    "id": 9013,
+    "title": "Apple 10.2-inch iPad",
+    "description": "2021 Apple 10.2-inch iPad Wi-Fi 64GB - Space Gray (9th Generation)",
+    "price": 269,
+    "image": [
+      "https://i.ibb.co/VL1Dnv1/4.webp",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "category": "Electronics",
+    "brand": "Apple",
+    "rating": 4.5
+  },
+  {
+    "id": 9014,
+    "title": "iPhone 14",
+    "description": "AT&T iPhone 14 128GB Midnight",
+    "price": 1200,
+    "image": [
+      "https://i.ibb.co/5F3nWv6/7.webp",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "category": "Electronics",
+    "brand": "Apple",
+    "rating": 4
+  },
+  {
+    "id": 9015,
+    "title": "Apple Watch SE",
+    "description": "Apple Watch SE (2nd Gen) GPS 40mm Midnight Aluminum Case with Midnight Sport Band - S/M",
+    "price": 249,
+    "image": [
+      "https://i.ibb.co/xgZWmdq/8.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "category": "Smart watch",
+    "brand": "Apple",
+    "rating": 4.3
+  },
+  {
+    "id": 9016,
+    "title": "Beats Solo3",
+    "description": "Beats Solo3 Wireless On-Ear Headphones with Apple W1 Headphone Chip, Black, MX432LL/A",
+    "price": 130.09,
+    "image": [
+      "https://i.ibb.co/rQKjVC2/5.webp",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "category": "Electronics",
+    "brand": "Beats by Dr. Dre",
+    "rating": 4
+  },
+  {
+    "id": 9017,
+    "title": "uhomepro TV Stand Cabinet",
+    "description": "uhomepro TV Stand Cabinet for Living Room up to 55 Television, Entertainment Center with RGB LED Lights and Storage Shelves Furniture, Black High Gloss TV Cabinet Console Table, Q15709",
+    "price": 125.99,
+    "image": [
+      "https://i.ibb.co/Ycz8hkV/6.webp",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "category": "Home Decoration",
+    "brand": "uhomepro",
+    "rating": 4.2
+  },
+  {
+    "id": 9018,
+    "title": "Pupuskyer Smart Watch",
+    "description": "Pupuskyer Smart Watch, 1.7inchs Fitness Tracker with Heart Rate Monitor,Blood Oxygen Tracking, Sleep Tracking for Android iPhone Samsung,Water Resistant Smart Watches for Men Women with Watch Talking",
+    "price": 55.9,
+    "image": [
+      "https://i.ibb.co/VC2VWGL/nextamazon11.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "category": "Smart watch",
+    "brand": "Pupuskyer",
+    "rating": 4.2
+  },
+  {
+    "id": 9019,
+    "title": "SAMSUNG Galaxy S23 Ultra Cell Phone",
+    "description": "SAMSUNG Galaxy S23 Ultra Cell Phone, Factory Unlocked Android Smartphone, 512GB Storage, 200MP Camera, Night Mode, Long Battery Life, S Pen, US Version, 2023, Cream",
+    "price": 1500,
+    "image": [
+      "https://i.ibb.co/THwjSTK/nextamazon12.jpg",
+      "https://i.ibb.co/0Gvx3Sk/nextImg.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg"
+    ],
+    "category": "Smart Phones",
+    "brand": "SAMSUNG",
+    "rating": 4
+  },
+  {
+    "id": 9020,
+    "title": "Apple iPhone 12 Mini 5G",
+    "description": "Apple iPhone 12 Mini 5G, US Version, 128GB, Blue - Unlocked (Renewed)",
+    "price": 365,
+    "image": [
+      "https://i.ibb.co/nry7WRZ/nextamazon13.jpg",
+      "https://i.ibb.co/0Gvx3Sk/nextImg.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg"
+    ],
+    "category": "Smart Phones",
+    "brand": "Apple",
+    "rating": 3.8
+  },
+  {
+    "id": 1020154545,
+    "title": "Long sleeve Jacket",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
+    "price": 150,
+    "brand": "next",
+    "image": [
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "category": "Fashion",
+    "rating": 4
+  },
+  {
+    "id": 2025454,
+    "title": "Jacket with wollen hat",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
+    "price": 105,
+    "brand": "Zara",
+    "image": [
+      "https://images.pexels.com/photos/2681751/pexels-photo-2681751.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "category": "Fashion",
+    "rating": 4.2
+  },
+  {
+    "id": 305455,
+    "title": "Skirts with full setup",
+    "price": 695,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
+    "category": "Fashion",
+    "image": [
+      "https://images.pexels.com/photos/1631181/pexels-photo-1631181.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "brand": "Zara",
+    "rating": 3
+  },
+  {
+    "id": 408784,
+    "title": "Yellow Hoody",
+    "price": 180,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
+    "category": "Fashion",
+    "image": [
+      "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/1631181/pexels-photo-1631181.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "brand": "Hodders",
+    "rating": 3.8
+  },
+  {
+    "id": 507478,
+    "title": "Black t-shirt for women",
+    "price": 20,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
+    "category": "Fashion",
+    "image": [
+      "https://images.pexels.com/photos/2010812/pexels-photo-2010812.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/1631181/pexels-photo-1631181.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "brand": "Ladyland",
+    "rating": 4.2
+  },
+  {
+    "id": 6043434,
+    "title": "Gouwn with Red velvet",
+    "price": 350,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
+    "category": "Fashion",
+    "image": [
+      "https://images.pexels.com/photos/2233703/pexels-photo-2233703.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/1631181/pexels-photo-1631181.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "brand": "next",
+    "rating": 3.5
+  },
+  {
+    "id": 7099843,
+    "title": "Pink beauty",
+    "price": 100,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
+    "category": "Fashion",
+    "image": [
+      "https://images.pexels.com/photos/2065195/pexels-photo-2065195.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2233703/pexels-photo-2233703.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/1631181/pexels-photo-1631181.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "brand": "Hoichoi",
+    "rating": 3.8
+  },
+  {
+    "id": 8087873,
+    "title": "Jean's stylish Jacket",
+    "price": 245,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
+    "category": "Fashion",
+    "image": [
+      "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/1631181/pexels-photo-1631181.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "brand": "Local bro",
+    "rating": 4.3
+  },
+  {
+    "id": 10025454,
+    "title": "DJI Air",
+    "description": "DJI Mini 2 Fly More Combo - Ultralight Foldable Drone, 3-Axis Gimbal with 4K Camera, 12MP Photos, 31 Min Flight Time",
+    "price": 999,
+    "brand": "DJI",
+    "image": [
+      "https://i.ibb.co/qdfB3s6/2.webp",
+      "https://i.ibb.co/1r28gMk/1.webp",
+      "https://i.ibb.co/1r28gMk/1.webp"
+    ],
+    "category": "Electronics",
+    "rating": 4.2
+  },
+  {
+    "id": 1305354,
+    "title": "Apple Watch SE",
+    "description": "Apple Watch SE (2nd Gen) GPS 40mm Midnight Aluminum Case with Midnight Sport Band - S/M",
+    "price": 249,
+    "brand": "Apple",
+    "image": [
+      "https://i.ibb.co/xgZWmdq/8.jpg",
+      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
+      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
+    ],
+    "category": "Electronics",
+    "rating": 4.3
+  },
+  {
+    "id": 1406543554,
+    "title": "Beats Solo3",
+    "description": "Beats Solo3 Wireless On-Ear Headphones with Apple W1 Headphone Chip, Black, MX432LL/A",
+    "price": 130.09,
+    "brand": "Beats by Dr. Dre",
+    "image": [
+      "https://i.ibb.co/rQKjVC2/5.webp",
+      "https://i.ibb.co/VL1Dnv1/4.webp",
+      "https://i.ibb.co/1r28gMk/1.webp"
+    ],
+    "category": "Electronics",
+    "rating": 3.8
+  },
+  {
+    "id": 15084554,
+    "title": "T-Shirt Men",
+    "description": "St Patricks Day T-Shirt Men -Image by Shutterstock, Male XX-Large",
+    "price": 18.99,
+    "brand": "Smartprints",
+    "image": [
+      "https://i.ibb.co/BLCDw7v/3.webp",
+      "https://i.ibb.co/VL1Dnv1/4.webp",
+      "https://i.ibb.co/1r28gMk/1.webp"
+    ],
+    "category": "Fashion",
+    "rating": 4.2
+  },
+  {
+    "id": 16089899,
+    "title": "Picnic Table Bench Set",
+    "description": "Costway Picnic Table Bench Set Outdoor Backyard Patio Garden Party Dining All Weather Black",
+    "price": 298,
+    "brand": "Costway",
+    "image": [
+      "https://i.ibb.co/qCXcPhq/8.webp",
+      "https://i.ibb.co/VL1Dnv1/4.webp",
+      "https://i.ibb.co/1r28gMk/1.webp"
+    ],
+    "category": "Home Decoration",
+    "rating": 4
+  },
+  {
+    "id": 170104545,
+    "title": "Grill Heavy Duty",
+    "description": "Expert Grill Heavy Duty 24-Inch Charcoal Grill, Black",
+    "price": 107,
+    "brand": "Expert Grill",
+    "image": [
+      "https://i.ibb.co/TTS9wY4/9.webp",
+      "https://i.ibb.co/TTS9wY4/9.webp",
+      "https://i.ibb.co/TTS9wY4/9.webp"
+    ],
+    "category": "Equipments",
+    "rating": 4.3
+  },
+  {
+    "id": 180115454,
+    "title": "Girls Cropped",
+    "description": "Free Assembly Girls Cropped Mixed Cable Knit Fair Isle Sweater, Sizes 4-18",
+    "price": 15.31,
+    "brand": "Free Assembly",
+    "image": [
+      "https://i.ibb.co/BVzsqvz/10.webp",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "category": "Fashion",
+    "rating": 4
+  },
+  {
+    "id": 19012545,
+    "title": "Night of Olay Firming Night Cream Face Moisturizer, 1.9 oz",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
+    "price": 7.98,
+    "brand": "Olay",
+    "image": [
+      "https://i.ibb.co/zPDcCQY/top4.webp",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "category": "Beauty Product",
+    "rating": 4.2
+  },
+  {
+    "id": 2001434,
+    "title": "Blue jins",
+    "price": 630,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
+    "category": "Fashion",
+    "image": [
+      "https://images.pexels.com/photos/1485031/pexels-photo-1485031.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "brand": "next",
+    "rating": 4.3
+  },
+  {
+    "id": 1,
+    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "price": 109.95,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category": "men's clothing",
+    "image": [
+      "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+    ],
+    "brand": "Fox",
+    "rating": 4
+  },
+  {
+    "id": 2,
+    "title": "Mens Casual Premium Slim Fit T-Shirts ",
+    "price": 22.3,
+    "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+    "category": "men's clothing",
+    "image": [
+      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    ],
+    "brand": "Body Fit",
+    "rating": 4.2
+  },
+  {
+    "id": 3,
+    "title": "Mens Cotton Jacket",
+    "price": 55.99,
+    "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+    "category": "men's clothing",
+    "image": [
+      "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+    ],
+    "brand": "Body Fit",
+    "rating": 4.1
+  },
+  {
+    "id": 4,
+    "title": "Mens Casual Slim Fit",
+    "price": 15.99,
+    "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+    "category": "men's clothing",
+    "image": [
+      "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+    ],
+    "brand": "Body Fit",
+    "rating": 3.8
+  },
+  {
+    "id": 5,
+    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    "price": 695,
+    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+    "category": "jewelery",
+    "image": [
+      "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+    ],
+    "brand": "Naga",
+    "rating": 4.7
+  },
+  {
+    "id": 6,
+    "title": "Solid Gold Petite Micropave ",
+    "price": 168,
+    "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+    "category": "jewelery",
+    "image": [
+      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+      "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
+    ],
+    "brand": "Naga",
+    "rating": 4.2
+  },
+  {
+    "id": 7,
+    "title": "White Gold Plated Princess",
+    "price": 9.99,
+    "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+    "category": "jewelery",
+    "image": [
+      "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+      "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
+    ],
+    "brand": "Naga",
+    "rating": 4.3
+  },
+  {
+    "id": 8,
+    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+    "price": 10.99,
+    "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+    "category": "jewelery",
+    "image": [
+      "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+      "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
+    ],
+    "brand": "Naga",
+    "rating": 3
+  },
+  {
+    "id": 9,
+    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+    "price": 64,
+    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+    "category": "electronics",
+    "image": [
+      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+      "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+      "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
+    ],
+    "brand": "Western Digital",
+    "rating": 4.2
+  },
+  {
+    "id": 10,
+    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    "price": 109,
+    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+    "category": "electronics",
+    "image": [
+      "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+      "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
+    ],
+    "brand": "SanDisk",
+    "rating": 4
+  },
+  {
+    "id": 11,
+    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+    "price": 109,
+    "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+    "category": "electronics",
+    "image": [
+      "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+      "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
+    ],
+    "brand": "Western Digital",
+    "rating": 4.3
+  },
+  {
+    "id": 12,
+    "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+    "price": 114,
+    "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+    "category": "electronics",
+    "image": [
+      "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+      "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+      "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
+    ],
+    "brand": "Western Digital",
+    "rating": 4
+  },
+  {
+    "id": 13,
+    "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+    "price": 599,
+    "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+    "category": "electronics",
+    "image": [
+      "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+      "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+      "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
+    ],
+    "brand": "Acer",
+    "rating": 4.2
+  },
+  {
+    "id": 14,
+    "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+    "price": 999.99,
+    "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+    "category": "electronics",
+    "image": [
+      "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+      "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+      "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+    ],
+    "brand": "SAMSUNG",
+    "rating": 3.5
+  },
+  {
+    "id": 15,
+    "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+    "price": 56.99,
+    "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+    "category": "women's clothing",
+    "image": [
+      "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+      "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+    ],
+    "brand": "BIYLACLESEN",
+    "rating": 2.5
+  },
+  {
+    "id": 16,
+    "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+    "price": 29.95,
+    "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+    "category": "women's clothing",
+    "image": [
+      "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+      "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"
+    ],
+    "brand": "Lock and Love",
+    "rating": 2
+  },
+  {
+    "id": 17,
+    "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+    "price": 39.99,
+    "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+    "category": "women's clothing",
+    "image": [
+      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+      "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+      "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
+    ],
+    "brand": "Lock and Love",
+    "rating": 3
+  },
+  {
+    "id": 18,
+    "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+    "price": 9.85,
+    "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+    "category": "women's clothing",
+    "image": [
+      "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+      "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+    ],
+    "brand": "MBJ",
+    "rating": 4.2
+  },
+  {
+    "id": 19,
+    "title": "Opna Women's Short Sleeve Moisture",
+    "price": 7.95,
+    "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
+    "category": "women's clothing",
+    "image": [
+      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+    ],
+    "brand": "Opna",
+    "rating": 3.8
+  },
+  {
+    "id": 20,
+    "title": "DANVOUY Womens T Shirt Casual Cotton Short",
+    "price": 12.99,
+    "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+    "category": "women's clothing",
+    "image": [
+      "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+    ],
+    "brand": "DANVOUY",
+    "rating": 4.2
+  },
+  {
+    "id": 11111,
+    "title": "Essence Mascara Lash Princess",
+    "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+    "category": "beauty",
+    "price": 9.99,
+    "rating": 4.94,
+    "image": [
+      "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png",
+      "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+    ],
+    "brand": "Essence"
+  },
+  {
+    "id": 2222,
+    "title": "Eyeshadow Palette with Mirror",
+    "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+    "category": "beauty",
+    "price": 19.99,
+    "rating": 3.28,
+    "image": [
+      "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/1.png",
+      "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+    ],
+    "brand": "Essence"
+  },
+  {
+    "id": 3333,
+    "title": "Powder Canister",
+    "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
+    "category": "beauty",
+    "price": 14.99,
+    "rating": 3.82,
+    "image": [
+      "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/1.png",
+      "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+    ],
+    "brand": "Essence"
+  }
+]
