@@ -5,6 +5,7 @@ import products from "@/data/products.json";
 import ProductCard from "../Products/ProductCard";
 import { useProductContext } from "@/context/ProductContext";
 import { useSearchContext } from "@/context/SearchContext";
+import LoadingPage from "@/app/loading";
 
 const HomePage = () => {
   const { products } = useProductContext();
@@ -29,36 +30,26 @@ const HomePage = () => {
 
   return (
     <div className="flex">
-      <div className="border w-1/6">Hello</div>
+      <div className="border w-1/6 min-h-screen">Hello</div>
       <div className="w-5/6 p-4 flex flex-wrap justify-center">
-        {loading
-          ? filteredProducts.map((_, index) => (
+        {loading ? (
+          <LoadingPage />
+        ) : (
+          filteredProducts.map((product) => (
+            <div className="m-5" key={product.id}>
               <ProductCard
-                key={index}
-                id={0}
-                title={""}
-                price={0}
-                description={""}
-                category={""}
-                image={[]}
-                brand={""}
-                rating={0}
+                id={product.id}
+                title={product.title}
+                price={product.price}
+                description={product.description}
+                category={product.category}
+                image={product.image}
+                brand={product.brand}
+                rating={product.rating}
               />
-            ))
-          : filteredProducts.map((product) => (
-              <div className="m-5" key={product.id}>
-                <ProductCard
-                  id={product.id}
-                  title={product.title}
-                  price={product.price}
-                  description={product.description}
-                  category={product.category}
-                  image={product.image}
-                  brand={product.brand}
-                  rating={product.rating}
-                />
-              </div>
-            ))}
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
