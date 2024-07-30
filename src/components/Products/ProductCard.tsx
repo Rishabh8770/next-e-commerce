@@ -41,7 +41,7 @@ const ProductCard = ({
             />
           </div>
           <div className="p-4">
-            <h3 className="text-lg font-semibold mb-2">{title}</h3>
+            <h3 className="text-lg font-semibold mb-2">{title.split(" ").slice(0, 6).join(" ")}</h3>
             <p className="text-gray-700 text-sm mb-2">
               {description.split(" ").slice(0, 6).join(" ")}...
             </p>
