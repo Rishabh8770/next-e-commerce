@@ -1,11 +1,10 @@
+// components/ProductDetails.tsx
 "use client";
 
-
-import { useState } from "react";
 import { ProductTypes } from "@/types/ProductTypes";
 import productData from "@/data/products.json";
 import Carousel from "@/components/common/ImageCarousel";
-
+import AddToCart from "@/components/cart/AddToCart";
 
 interface Product {
   id: number;
@@ -72,7 +71,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
             </div>
           </div>
           <ul className="list-disc pl-5">{bulletPoints}</ul>
-          <h1>hello</h1>
+          <AddToCart productId={product.id} />
         </div>
       </div>
     </div>
