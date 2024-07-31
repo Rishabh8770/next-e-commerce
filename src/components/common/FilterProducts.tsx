@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 
 import React, { useMemo } from "react";
 import { MultiSelectDropdown, Option } from "./MultiSelectDropdown"; // Adjust the import path
@@ -77,3 +77,4 @@ const Filter = ({
 };
 
 export default Filter;
+ */

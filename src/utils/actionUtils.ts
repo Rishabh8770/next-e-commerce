@@ -18,12 +18,29 @@ export const writeData = (data: ProductTypes[]) => {
 };
 
 export const getCategories = (): string[] => {
-    // Read JSON data
     const filePath = getFilePath();
     const jsonData = fs.readFileSync(filePath, 'utf-8');
     const products: ProductTypes[] = JSON.parse(jsonData);
   
-    // Extract unique categories
     const categoriesSet = new Set(products.map(product => product.category));
     return Array.from(categoriesSet);
   };
+
+export const getBrands = (): string[] => {
+    const filePath = getFilePath();
+    const jsonData = fs.readFileSync(filePath, 'utf-8');
+    const products: ProductTypes[] = JSON.parse(jsonData);
+  
+    const brandsSet = new Set(products.map(product => product.brand));
+    return Array.from(brandsSet);
+  };
+
+  export const getRatings = (): number[] => {
+    const filePath = getFilePath();
+    const jsonData = fs.readFileSync(filePath, 'utf-8');
+    const products: ProductTypes[] = JSON.parse(jsonData);
+  
+    const ratingsSet = new Set(products.map(product => product.rating));
+    return Array.from(ratingsSet).sort((a, b) => a - b); // Sort ratings in ascending order
+  };
+  

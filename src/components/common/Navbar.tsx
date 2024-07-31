@@ -1,12 +1,11 @@
-// src/components/Navbar.tsx
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import { useSearchContext } from '@/context/SearchContext';
-import { getCategories } from '@/utils/actionUtils';
-import { useEffect, useState } from 'react';
-import { ShoppingCart } from 'lucide-react';
-import { useCartContext } from '@/context/CartContext';
+import { useRouter } from "next/navigation";
+import { useSearchContext } from "@/context/SearchContext";
+import { getCategories } from "@/utils/actionUtils";
+import { useEffect, useState } from "react";
+import { ShoppingCart } from "lucide-react";
+import { useCartContext } from "@/context/CartContext";
 
 const Navbar = () => {
   const router = useRouter();
@@ -22,22 +21,28 @@ const Navbar = () => {
         console.log(cats);
         setCategories(cats);
       } catch (error) {
-        console.error('Failed to fetch categories:', error);
+        console.error("Failed to fetch categories:", error);
       }
     };
 
     fetchCategories();
   }, []);
 
-  const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleCategoryChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     const selectedCategory = event.target.value;
     if (selectedCategory) {
       router.push(`/productCategory/${selectedCategory}`);
     }
   };
 
+  const handleCartNavigation = () => {
+    router.push(`/user-cart/`);
+  };
+
   return (
-    <div className="sticky top-0 z-50 border-b-1">
+    <div className="sticky top-0 z-50">
       <nav className="bg-gray-800">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
@@ -77,7 +82,7 @@ const Navbar = () => {
                   src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                   alt="Your Company"
                 />
-                <span className="text-white mx-2">E-Commerce</span>
+                <span className="text-white mx-2">Shop-a-holic</span>
               </div>
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
@@ -104,12 +109,6 @@ const Navbar = () => {
                       </select>
                     </div>
                   </div>
-                  <a
-                    href="/request-product"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                  >
-                    Request Product
-                  </a>
                 </div>
               </div>
               <div className="flex justify-center mx-3">
@@ -122,13 +121,29 @@ const Navbar = () => {
                 />
               </div>
             </div>
+
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
-                type="button"
-                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                onClick={handleCartNavigation}
+                className="border size-12 relative border-white rounded-full flex justify-center items-center"
               >
-                <ShoppingCart />
-                <span className="text-white mx-2">{cartCount}</span>
+                <ShoppingCart color="#ffffff" strokeWidth={2} />
+                {cartCount > 0 && (
+                  <div
+                    className="rounded-full border bg-red-600 flex justify-center items-center"
+                    style={{
+                      color: "white",
+                      width: "1.5rem",
+                      height: "1.5rem",
+                      position: "absolute",
+                      right: 0,
+                      bottom: 0,
+                      transform: "translate(25%, 25%)",
+                    }}
+                  >
+                    {cartCount}
+                  </div>
+                )}
               </button>
             </div>
           </div>

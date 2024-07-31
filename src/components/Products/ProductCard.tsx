@@ -5,6 +5,7 @@ import { ProductTypes } from "@/types/ProductTypes";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import LoadingPage from "@/app/loading";
+import { convertUsdToCurrency } from "@/utils/CurrencyFormatter";
 
 interface ProductCardProps extends ProductTypes {
   loading?: boolean;
@@ -47,7 +48,7 @@ const ProductCard = ({
             </p>
             <p className="text-gray-500 text-xs mb-1">Category: {category}</p>
             <p className="text-gray-500 text-xs mb-1">Brand: {brand}</p>
-            <p className="text-gray-900 font-bold text-lg mt-2">${price}</p>
+            <p className="text-gray-900 font-bold text-lg mt-2">{convertUsdToCurrency(price)}</p>
             <div className="flex items-center mt-2">
               {[...Array(Math.floor(rating))].map((_, i) => (
                 <svg

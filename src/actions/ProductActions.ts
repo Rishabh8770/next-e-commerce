@@ -1,3 +1,5 @@
+"use server"
+
 import { ProductTypes } from "@/types/ProductTypes";
 import { readData } from "@/utils/actionUtils";
 
