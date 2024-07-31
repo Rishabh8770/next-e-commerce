@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { addToCart, removeFromCart, updateCartItem, getCartItems } from '@/actions/CartAction';
 import { useCartContext } from '@/context/CartContext';
 import { CartItem } from '@/types/ProductTypes';
@@ -12,6 +13,7 @@ interface AddToCartProps {
 const AddToCart = ({ productId }: AddToCartProps) => {
   const { refreshCart } = useCartContext();
   const [quantity, setQuantity] = useState<number>(0);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchCartItems = async () => {
@@ -49,6 +51,10 @@ const AddToCart = ({ productId }: AddToCartProps) => {
     }
   };
 
+  const handleCart = () => {
+    router.push("/user-cart")
+  }
+
   return (
     <div className="flex items-center space-x-2">
       {quantity === 0 ? (
@@ -73,6 +79,7 @@ const AddToCart = ({ productId }: AddToCartProps) => {
           >
             +
           </button>
+          <button className='p-2 bg-yellow-700 rounded-md text-white mx-4' onClick={handleCart}>Move to Cart</button>
         </div>
       )}
     </div>
