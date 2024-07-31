@@ -1,8 +1,11 @@
 "use client";
 
+
 import { useState } from "react";
 import { ProductTypes } from "@/types/ProductTypes";
 import productData from "@/data/products.json";
+import Carousel from "@/components/common/ImageCarousel";
+
 
 interface Product {
   id: number;
@@ -26,7 +29,6 @@ function ProductDetails({ params }: { params: { id: string } }) {
   if (!product) {
     return <div>Product not found</div>;
   }
-  const [mainImage, setMainImage] = useState(product.image[0]);
 
   const bulletPoints = product.description.split(/[|.,@]\s*/).map((point, index) => (
     <li key={index} className="mb-2">
@@ -34,43 +36,17 @@ function ProductDetails({ params }: { params: { id: string } }) {
     </li>
   ));
 
-
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="container mx-auto px-4 py-8 flex lg:flex-row flex-col justify-center items-center lg:items-start my-10 space-x-5 shadow-xl rounded-md">
-        <div className="w-1/2 flex flex-col justify-center items-center rounded p-2">
-          <div className="mb-4">
-            <img
-              src={mainImage}
-              alt={product.title}
-              
-              className="rounded-md size-80"
-            />
-          </div>
-          <div className="border-t border-gray-300 mb-2 w-2/3 mt-8"></div>
-          <div className="flex space-x-4 mt-10">
-            {product.image.map((img, index) => (
-              <div
-                key={index}
-                className="cursor-pointer"
-                onClick={() => setMainImage(img)}
-              >
-                <img
-                  src={img}
-                  alt={`${product.title} thumbnail ${index + 1}`}
-                  width={100}
-                  height={100}
-                  className="rounded-md"
-                />
-              </div>
-            ))}
-          </div>
+      <div className="container p-8 flex lg:flex-row flex-col justify-center items-center lg:items-start space-x-5 shadow-xl rounded-md">
+        <div className="w-full lg:w-1/2 flex flex-col rounded p-2">
+          <Carousel images={product.image} />
         </div>
         <div className="lg:w-1/2 pl-4">
           <h1 className="lg:text-3xl text-sm font-bold mb-4">{product.title}</h1>
           <h2 className="text-xl mb-4">{`$${product.price}`}</h2>
           <div className="mb-4">
-          <div className="flex items-center mt-2">
+            <div className="flex items-center mt-2">
               {[...Array(Math.floor(product.rating))].map((_, i) => (
                 <svg
                   key={i}
@@ -96,6 +72,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
             </div>
           </div>
           <ul className="list-disc pl-5">{bulletPoints}</ul>
+          <h1>hello</h1>
         </div>
       </div>
     </div>

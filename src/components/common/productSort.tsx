@@ -34,7 +34,7 @@ export const ProductSort = ({ onProductSort }: SortProductProps) => {
       </label>
       <Dropdown>
         <DropdownTrigger>
-          <Button variant="bordered">
+          <Button variant="bordered" className="text-white">
             {sortOption !== "--please select--" ? sortOption : "Open Menu"}
           </Button>
         </DropdownTrigger>

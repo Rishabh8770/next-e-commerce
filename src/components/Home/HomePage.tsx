@@ -100,11 +100,10 @@ const HomePage = () => {
 
   return (
     <div className="flex">
-      <div className="border w-1/6 min-h-screen flex flex-col pt-4">
-        <div>
+      <div className="w-full lg:w-1/6 lg:min-h-screen flex flex-col pt-4 bg-gray-800 fixed lg:sticky lg:top-0 lg:left-0 lg:h-screen lg:overflow-y-auto lg:z-10">
+        <div className="text-white">
           <ProductSort onProductSort={handleProductSort} />
         </div>
-        <div className="border-t border-gray-300 mb-4 w-3/4 self-center"></div>
         <div className="px-4">
           <Filter
             products={products}
@@ -117,7 +116,7 @@ const HomePage = () => {
           />
         </div>
       </div>
-      <div className="w-5/6 p-4 flex flex-wrap justify-center">
+      <div className="w-full lg:w-5/6 lg:pl-1/6 p-4 flex flex-wrap justify-center overflow-y-scroll lg:h-screen">
         {loading ? (
           <LoadingPage />
         ) : (

@@ -4,12 +4,14 @@ import { useRouter } from "next/navigation";
 import { useSearchContext } from "@/context/SearchContext";
 import { getCategories } from "@/utils/actionUtils";
 import { useEffect, useState } from "react";
+import { ShoppingCart } from "lucide-react";
 
 const Navbar = () => {
   const router = useRouter();
   const { searchQuery, setSearchQuery } = useSearchContext();
 
   const [categories, setCategories] = useState<string[]>([]);
+  
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -35,7 +37,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50">
+    <div className="sticky top-0 z-50 border-b-1">
       <nav className="bg-gray-800">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
@@ -122,21 +124,25 @@ const Navbar = () => {
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
-                type="button"
-                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                style={{ width: "3rem", height: "3rem", position: "relative" }}
+                className="border border-white rounded-full flex justify-center items-center"
               >
-                <span className="absolute -inset-1.5"></span>
-                <span className="sr-only">View notifications</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
+                <ShoppingCart color="#ffffff" strokeWidth={2} />
+                <div
+                  className="rounded-full border bg-red-600 flex justify-center items-center"
+                  style={{
+                    color: "white",
+                    width: "1.5rem",
+                    height: "1.5rem",
+                    position: "absolute",
+                    right: 0,
+                    bottom: 0,
+                    transform: "translate(25%, 25%)",
+                  }}
                 >
-                  <path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                </svg>
+                  0
+                </div>
               </button>
-
               <div className="relative ml-3">
                 <div>
                   <button
