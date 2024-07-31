@@ -8,3 +8,5 @@ export type ProductTypes = {
   brand: string;
   rating: number;
 };
+
+export type Cart = Record<string, number>;
