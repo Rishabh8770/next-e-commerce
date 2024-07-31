@@ -1,4 +1,4 @@
-// components/Filter.tsx
+"use client";
 
 import React, { useMemo } from "react";
 import { MultiSelectDropdown, Option } from "./MultiSelectDropdown"; // Adjust the import path
@@ -39,11 +39,11 @@ const Filter = ({
   }));
 
   return (
-    <div className="p-4 flex flex-col items-center border rounded-md m-2">
-      <div className="text-md my-2">Filter By</div>
+    <div className="p-4 flex flex-col items-center m-2">
+      <div className="text-md my-2 text-white">Filter By</div>
       <div className="border-t border-gray-300 mb-4 w-3/4"></div>
-      <div className="flex lg:flex-col items-center my-2 md:my-0 lg:space-y-2">
-        <span className="mt-2">Category</span>
+      <div className="flex flex-col items-center my-2 md:my-0 lg:space-y-2">
+        <span className="mt-2 text-white">Category</span>
         <MultiSelectDropdown
           options={categories}
           placeholder="Select Categories"
@@ -52,8 +52,8 @@ const Filter = ({
           name="categories"
         />
       </div>
-      <div className="flex lg:flex-col items-center my-2 md:my-0 lg:space-y-2">
-        <span className="mt-2">Brands</span>
+      <div className="flex flex-col items-center my-2 md:my-0 lg:space-y-2">
+        <span className="mt-2 text-white">Brands</span>
         <MultiSelectDropdown
           options={brands}
           placeholder="Select Brands"
@@ -62,8 +62,8 @@ const Filter = ({
           name="brands"
         />
       </div>
-      <div className="flex lg:flex-col items-center my-2 md:my-0 lg:space-y-2">
-        <span className="mt-2">Ratings</span>
+      <div className="flex flex-col items-center my-2 md:my-0 lg:space-y-2">
+        <span className="mt-2 text-white">Ratings</span>
         <MultiSelectDropdown
           options={ratingOptions}
           placeholder="Select Ratings"
