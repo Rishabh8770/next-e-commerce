@@ -1,4 +1,3 @@
-// src/components/AddToCart.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -10,7 +9,7 @@ interface AddToCartProps {
   productId: number;
 }
 
-const AddToCart: React.FC<AddToCartProps> = ({ productId }) => {
+const AddToCart = ({ productId }: AddToCartProps) => {
   const { refreshCart } = useCartContext();
   const [quantity, setQuantity] = useState<number>(0);
 
@@ -60,7 +59,7 @@ const AddToCart: React.FC<AddToCartProps> = ({ productId }) => {
           Add to Cart
         </button>
       ) : (
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-4">
           <button
             onClick={handleDecrement}
             className="px-4 py-2 bg-red-500 text-white rounded"

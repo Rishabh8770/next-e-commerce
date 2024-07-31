@@ -24,7 +24,7 @@ const ImageCarousel = ({ images }: CarouselProps) => {
         alt={`Product image ${currentImageIndex + 1}`}
         className="size-96 rounded-md"
       />
-      <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2">
+      <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 hidden md:inline-block">
         <button
           onClick={() =>
             setCurrentImageIndex((prevIndex) =>
@@ -36,7 +36,7 @@ const ImageCarousel = ({ images }: CarouselProps) => {
           &lt;
         </button>
       </div>
-      <div className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2">
+      <div className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2 hidden md:inline-block">
         <button
           onClick={() =>
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)

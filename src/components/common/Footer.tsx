@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <div>
-      <div className="footer-area bg-gray-800 text-white py-10">
+      <div className="footer-area bg-gray-800 text-white py-10 px-4">
         <div className="container mx-auto">
           <div className="flex flex-wrap -mx-3">
             <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
@@ -47,7 +47,7 @@ const Footer = () => {
               </div>
               <div className="mb-2">
                 <a href="#" className="text-white">
-                  <i className="fa fa-envelope"></i> fundaofwebit@gmail.com
+                  <i className="fa fa-envelope"></i> shopaholic@gmail.com
                 </a>
               </div>
             </div>
@@ -57,8 +57,8 @@ const Footer = () => {
       <div className="copyright-area bg-gray-900 py-4">
         <div className="container mx-auto">
           <div className="flex flex-wrap -mx-3 items-center">
-            <div className="w-full md:w-2/3 px-3 mb-4 md:mb-0">
-              <p className="text-white mb-0"> &copy; 2024 - E-commerce. All rights reserved.</p>
+            <div className="w-full md:w-2/3 lg:px-3 px-6 mb-4 md:mb-0">
+              <p className="text-white mb-0"> &copy; 2024 - Shop-a-holic. All rights reserved.</p>
             </div>
             <div className="w-full md:w-1/3 px-3 text-right">
               <div className="social-media">

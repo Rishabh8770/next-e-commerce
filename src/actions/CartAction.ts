@@ -15,7 +15,7 @@ export const saveCartItems = async (cartItems: CartItem[]): Promise<void> => {
   fs.writeFileSync(cartFilePath, JSON.stringify(cartItems, null, 2), 'utf-8');
 };
 
-export const addToCart = async (id: number): Promise<void> => {
+export const addToCart = async (id: number): Promise<CartItem[]> => {
   const cartItems = await getCartItems();
   const itemIndex = cartItems.findIndex((item: CartItem) => item.id === id);
   if (itemIndex === -1) {
@@ -24,15 +24,17 @@ export const addToCart = async (id: number): Promise<void> => {
     cartItems[itemIndex].quantity += 1;
   }
   await saveCartItems(cartItems);
+  return cartItems;
 };
 
-export const removeFromCart = async (id: number): Promise<void> => {
+export const removeFromCart = async (id: number): Promise<CartItem[]> => {
   let cartItems = await getCartItems();
   cartItems = cartItems.filter((item: CartItem) => item.id !== id);
   await saveCartItems(cartItems);
+  return cartItems;
 };
 
-export const updateCartItem = async (id: number, quantity: number): Promise<void> => {
+export const updateCartItem = async (id: number, quantity: number): Promise<CartItem[]> => {
   const cartItems = await getCartItems();
   const itemIndex = cartItems.findIndex((item: CartItem) => item.id === id);
   if (itemIndex !== -1) {
@@ -43,4 +45,11 @@ export const updateCartItem = async (id: number, quantity: number): Promise<void
     }
   }
   await saveCartItems(cartItems);
+  return cartItems;
+};
+
+export const deleteCart = async (): Promise<CartItem[]> => {
+  const cartItems: CartItem[] = [];
+  await saveCartItems(cartItems);
+  return cartItems;
 };
