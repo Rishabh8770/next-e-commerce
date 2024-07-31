@@ -7,6 +7,7 @@ import { SearchProvider } from "@/context/SearchContext";
 import { Suspense } from "react";
 import LoadingPage from "./loading";
 import Footer from "@/components/common/Footer";
+import { CartProvider } from "@/context/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,13 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SearchProvider>
-          <ProductProvider>
-            <Navbar />
-            <Suspense fallback={<LoadingPage />}>{children}</Suspense>
-            <Footer />
-          </ProductProvider>
-        </SearchProvider>
+        <CartProvider>
+          <SearchProvider>
+            <ProductProvider>
+              <Navbar />
+              <Suspense fallback={<LoadingPage />}>{children}</Suspense>
+              <Footer />
+            </ProductProvider>
+          </SearchProvider>
+        </CartProvider>
       </body>
     </html>
   );
