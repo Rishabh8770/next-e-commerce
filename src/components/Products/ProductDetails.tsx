@@ -53,7 +53,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
           className="cursor-pointer border rounded-full size-10 p-1"
         />
       </div>
-      <div className="pt-28 h-auto flex items-center justify-center">
+      <div className="py-18 h-auto flex items-center justify-center">
         <div className="container p-8 m-4 flex lg:flex-row flex-col justify-center items-center lg:items-start space-x-5 shadow-xl rounded-md">
           <div className="w-full lg:w-1/2 flex flex-col rounded p-2">
             <Carousel images={product.image} />
