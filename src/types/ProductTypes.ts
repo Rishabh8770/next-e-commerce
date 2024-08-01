@@ -15,3 +15,11 @@ export interface CartItem {
 }
 
 export type Cart = Record<string, number>;
+
+
+
+export type CategoryWithImage = {
+  name: string;
+  image: string;
+};
+

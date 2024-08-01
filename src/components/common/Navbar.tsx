@@ -2,40 +2,14 @@
 
 import { useRouter } from "next/navigation";
 import { useSearchContext } from "@/context/SearchContext";
-import { getCategories } from "@/utils/actionUtils";
-import { useEffect, useState } from "react";
-import { ShoppingCart } from "lucide-react";
 import { useCartContext } from "@/context/CartContext";
+import { ShoppingCart } from "lucide-react";
+import UserRole from "../user/UserRole";
 
 const Navbar = () => {
   const router = useRouter();
   const { searchQuery, setSearchQuery } = useSearchContext();
   const { cartCount } = useCartContext();
-
-  const [categories, setCategories] = useState<string[]>([]);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const cats = await getCategories();
-        console.log(cats);
-        setCategories(cats);
-      } catch (error) {
-        console.error("Failed to fetch categories:", error);
-      }
-    };
-
-    fetchCategories();
-  }, []);
-
-  const handleCategoryChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const selectedCategory = event.target.value;
-    if (selectedCategory) {
-      router.push(`/productCategory/${selectedCategory}`);
-    }
-  };
 
   const handleCartNavigation = () => {
     router.push(`/user-cart/`);
@@ -93,22 +67,6 @@ const Navbar = () => {
                   >
                     Dashboard
                   </a>
-                  <div className="hidden sm:block sm:ml-6">
-                    <div className="flex space-x-4">
-                      <select
-                        onChange={handleCategoryChange}
-                        className="rounded-md px-3 py-2 text-sm font-medium bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white"
-                      >
-                        <option value="">Select Category</option>
-                        {categories.length > 0 &&
-                          categories.map((category) => (
-                            <option key={category} value={category}>
-                              {category}
-                            </option>
-                          ))}
-                      </select>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div className="flex justify-center mx-3">
@@ -145,6 +103,9 @@ const Navbar = () => {
                   </div>
                 )}
               </button>
+            </div>
+            <div className="mx-8">
+              <UserRole />
             </div>
           </div>
         </div>

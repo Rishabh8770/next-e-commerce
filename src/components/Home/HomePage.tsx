@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React, { useEffect, useState } from "react";
 import ProductCard from "../Products/ProductCard";
@@ -8,6 +8,7 @@ import LoadingPage from "@/app/loading";
 import { ProductSort, SortOptions } from "@/components/common/productSort";
 import Filter from "@/components/common/Filter";
 import { getCategories, getBrands, getRatings } from "@/utils/actionUtils";
+import { CategoryPills } from "../Products/CategoryPills";
 
 const HomePage = () => {
   const { products } = useProductContext();
@@ -42,7 +43,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const cats = await getCategories();
+        const cats = await getCategories(); // Ensure this returns a string array
         setCategories(cats);
       } catch (error) {
         console.error("Failed to fetch categories:", error);
@@ -119,7 +120,7 @@ const HomePage = () => {
 
   return (
     <div className="flex">
-      <div className="w-full lg:w-1/6 border-y-1 items-center lg:min-h-screen flex flex-col pt-4 bg-gray-800 fixed lg:sticky lg:top-0 lg:left-0 lg:h-screen lg:overflow-y-auto lg:z-10">
+      <div className="w-full lg:w-1/6 border-y-1 items-center lg:min-h-screen flex flex-col pt-4 bg-gray-800  lg:sticky lg:top-0 lg:left-0 lg:h-screen lg:overflow-y-auto lg:z-10">
         <div className="text-white">
           <ProductSort onProductSort={handleProductSort} />
         </div>
@@ -133,25 +134,28 @@ const HomePage = () => {
           />
         </div>
       </div>
-      <div className="w-full lg:w-5/6 lg:pl-1/6 p-4 flex flex-wrap justify-center overflow-y-scroll lg:h-screen">
-        {loading ? (
-          <LoadingPage />
-        ) : (
-          filteredAndSortedProducts.map((product) => (
-            <div className="m-5" key={product.id}>
-              <ProductCard
-                id={product.id}
-                title={product.title}
-                price={product.price}
-                image={product.image}
-                description={product.description}
-                category={product.category}
-                brand={product.brand}
-                rating={product.rating}
-              />
-            </div>
-          ))
-        )}
+      <div className="w-full lg:w-5/6 lg:pl-1/6 p-4">
+        <CategoryPills categories={categories} />
+        <div className="flex flex-wrap justify-center overflow-y-scroll lg:h-screen">
+          {loading ? (
+            <LoadingPage />
+          ) : (
+            filteredAndSortedProducts.map((product) => (
+              <div className="m-5" key={product.id}>
+                <ProductCard
+                  id={product.id}
+                  title={product.title}
+                  price={product.price}
+                  image={product.image}
+                  description={product.description}
+                  category={product.category}
+                  brand={product.brand}
+                  rating={product.rating}
+                />
+              </div>
+            ))
+          )}
+        </div>
       </div>
     </div>
   );
