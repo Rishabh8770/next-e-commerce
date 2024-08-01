@@ -9,4 +9,17 @@ export type ProductTypes = {
   rating: number;
 };
 
+export interface CartItem {
+  id: number;
+  quantity: number;
+}
+
 export type Cart = Record<string, number>;
+
+
+
+export type CategoryWithImage = {
+  name: string;
+  image: string;
+};
+

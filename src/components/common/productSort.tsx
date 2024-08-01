@@ -1,53 +1,44 @@
-import React, { useState } from "react";
-import {
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
-  Button
-} from "@nextui-org/react";
+"use client"
 
-export type SortOptions =
-  | "--please select--"
-  | "Price : low to high"
-  | "Price : high to low"
-  | "name"
-  | "Show All";
+import React, { useState } from 'react';
 
-type SortProductProps = {
+export type SortOptions = "Price : low to high" | "Price : high to low" | "name" | "Show All";
+
+type ProductSortProps = {
   onProductSort: (filter: SortOptions) => void;
-};
+}
 
-export const ProductSort = ({ onProductSort }: SortProductProps) => {
-  const [sortOption, setSortOption] =
-    useState<SortOptions>("--please select--");
+export const ProductSort = ({ onProductSort }: ProductSortProps) => {
+  const [selectedSort, setSelectedSort] = useState<SortOptions>("Show All");
 
-  const handleProductSort = (option: SortOptions) => {
-    setSortOption(option);
+  const sortOptions: SortOptions[] = ["Show All", "name", "Price : low to high", "Price : high to low"];
+
+  const handleSortChange = (option: SortOptions) => {
+    setSelectedSort(option);
     onProductSort(option);
   };
 
   return (
-    <div className="my-4 flex flex-col items-center">
-      <label htmlFor="filter" className="mr-2 h6 mb-2">
-        Sort By
-      </label>
-      <Dropdown>
-        <DropdownTrigger>
-          <Button variant="bordered" className="text-white">
-            {sortOption !== "--please select--" ? sortOption : "Open Menu"}
-          </Button>
-        </DropdownTrigger>
-        <DropdownMenu
-          aria-label="Sort Options"
-          onAction={(key) => handleProductSort(key as SortOptions)}
-        >
-          <DropdownItem key="Show All">Show All</DropdownItem>
-          <DropdownItem key="name">Name</DropdownItem>
-          <DropdownItem key="Price : low to high">Price : low to high</DropdownItem>
-          <DropdownItem key="Price : high to low">Price : high to low</DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
+    <div className='flex flex-col items-center space-y-2 mb-4'>
+      <h2 className="text-white mb-1">Sort By</h2>
+      <div className='border-t w-1/2 pb-2'></div>
+      <div className="flex flex-col mt-10">
+        {sortOptions.map((option) => (
+          <div key={option} className="flex items-center text-white">
+            <input
+              type="checkbox"
+              id={option}
+              checked={selectedSort === option}
+              onChange={() => handleSortChange(option)}
+              className="mr-2"
+            />
+            <label htmlFor={option} className="text-white">
+              {option}
+            </label>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
+
