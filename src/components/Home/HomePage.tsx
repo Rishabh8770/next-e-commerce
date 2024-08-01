@@ -5,10 +5,8 @@ import ProductCard from "../Products/ProductCard";
 import { useProductContext } from "@/context/ProductContext";
 import { useSearchContext } from "@/context/SearchContext";
 import LoadingPage from "@/app/loading";
-import { Option } from "../common/MultiSelectDropdown";
-// import Filter from '../common/FilterProducts';
-import { ProductSort, SortOptions } from "../common/productSort";
-import Filter from "../common/Filter";
+import { ProductSort, SortOptions } from "@/components/common/productSort";
+import Filter from "@/components/common/Filter";
 import { getCategories, getBrands, getRatings } from "@/utils/actionUtils";
 
 const HomePage = () => {
@@ -18,26 +16,20 @@ const HomePage = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
-  const [sortOption, setSortOption] =
-    useState<SortOptions>("--please select--");
+  const [sortOption, setSortOption] = useState<SortOptions>("Show All");
   const [categories, setCategories] = useState<string[]>([]);
   const [brands, setBrands] = useState<string[]>([]);
   const [ratings, setRatings] = useState<number[]>([]);
 
   const filterProducts = () => {
-    if (sortOption === "Show All") {
-      return products;
-    }
-
     return products.filter((product) => {
       const categoryMatch =
-        selectedCategories.length === 0 ||
-        selectedCategories.includes(product.category);
+        selectedCategories.length === 0 || selectedCategories.includes(product.category);
       const brandMatch =
         selectedBrands.length === 0 || selectedBrands.includes(product.brand);
       const ratingMatch =
-        selectedRatings.length === 0 ||
-        selectedRatings.some((rating) => product.rating >= rating);
+        selectedRatings.length === 0 || selectedRatings.some((rating) => product.rating >= rating);
+
       return (
         categoryMatch &&
         brandMatch &&
@@ -61,7 +53,7 @@ const HomePage = () => {
         const brandsfetch = await getBrands();
         setBrands(brandsfetch);
       } catch (error) {
-        console.error("Failed to fetch categories:", error);
+        console.error("Failed to fetch brands:", error);
       }
     };
     const fetchRatings = async () => {
@@ -69,7 +61,7 @@ const HomePage = () => {
         const ratingFetch = await getRatings();
         setRatings(ratingFetch);
       } catch (error) {
-        console.error("Failed to fetch categories:", error);
+        console.error("Failed to fetch ratings:", error);
       }
     };
 
@@ -85,9 +77,7 @@ const HomePage = () => {
       case "Price : high to low":
         return [...productsToSort].sort((a, b) => b.price - a.price);
       case "name":
-        return [...productsToSort].sort((a, b) =>
-          a.title.localeCompare(b.title)
-        );
+        return [...productsToSort].sort((a, b) => a.title.localeCompare(b.title));
       case "Show All":
         return productsToSort;
       default:
@@ -97,10 +87,7 @@ const HomePage = () => {
 
   const filteredAndSortedProducts = sortProducts(filterProducts());
 
-  const handleFilterChange = (
-    type: "category" | "brand" | "rating",
-    selectedOptions: string[]
-  ) => {
+  const handleFilterChange = (type: "category" | "brand" | "rating", selectedOptions: string[]) => {
     switch (type) {
       case "category":
         setSelectedCategories(selectedOptions);
@@ -136,7 +123,7 @@ const HomePage = () => {
         <div className="text-white">
           <ProductSort onProductSort={handleProductSort} />
         </div>
-      <div className="border-t border-gray-300 mb-4 w-3/4 mt-5"></div>
+        <div className="border-t border-gray-300 mb-4 w-3/4 mt-5"></div>
         <div className="self-center mt-5">
           <Filter
             categories={categories}
