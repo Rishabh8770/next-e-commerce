@@ -6,7 +6,7 @@ type CategoryProps = {
 
 export const CategoryPills = ({ categories }: CategoryProps) => {
   return (
-    <div className="flex flex-wrap justify-evenly mb-6">
+    <div className="flex flex-wrap justify-center -mx-2 mb-6">
       {categories.map((category, index) => (
         <div className="text-center">
           <div

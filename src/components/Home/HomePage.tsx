@@ -1,14 +1,14 @@
 "use client"
 
 import React, { useEffect, useState } from "react";
-import ProductCard from "../Products/ProductCard";
+import ProductCard from "../products/ProductCard";
 import { useProductContext } from "@/context/ProductContext";
 import { useSearchContext } from "@/context/SearchContext";
 import LoadingPage from "@/app/loading";
 import { ProductSort, SortOptions } from "@/components/common/productSort";
 import Filter from "@/components/common/Filter";
 import { getCategories, getBrands, getRatings } from "@/utils/actionUtils";
-import { CategoryPills } from "../Products/CategoryPills";
+import { CategoryPills } from "../products/CategoryPills";
 
 const HomePage = () => {
   const { products } = useProductContext();
@@ -97,7 +97,7 @@ const HomePage = () => {
         setSelectedBrands(selectedOptions);
         break;
       case "rating":
-        setSelectedRatings(selectedOptions.map((option) => parseFloat(option))); // Convert strings to numbers
+        setSelectedRatings(selectedOptions.map((option) => parseFloat(option)));
         break;
     }
   };
