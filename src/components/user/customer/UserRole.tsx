@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+"use client"
+
+import React, { useState, useEffect } from "react";
 import {
   Dropdown,
   DropdownTrigger,
@@ -11,15 +13,24 @@ import { useRouter } from "next/navigation";
 export type UserOptions = "User" | "Admin";
 
 const UserRole = () => {
-  const [user, setUser] = useState<UserOptions>("User");
   const router = useRouter();
+  const [user, setUser] = useState<UserOptions>("User");
+
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    if (currentPath.startsWith("/admin")) {
+      setUser("Admin");
+    } else {
+      setUser("User");
+    }
+  }, []);
 
   const handleUser = (option: UserOptions) => {
     setUser(option);
     if (option === "User") {
       router.push("/product-listing");
     } else if (option === "Admin") {
-      router.push("/admin");
+      router.push("/admin/dashboard");
     }
   };
 
@@ -34,8 +45,12 @@ const UserRole = () => {
         aria-label="Static Actions"
         onAction={(key) => handleUser(key as UserOptions)}
       >
-        <DropdownItem key="User">User</DropdownItem>
-        <DropdownItem key="Admin">Admin</DropdownItem>
+        <DropdownItem key="User" className="text-black">
+          User
+        </DropdownItem>
+        <DropdownItem key="Admin" className="text-black">
+          Admin
+        </DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );

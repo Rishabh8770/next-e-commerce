@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useSearchContext } from "@/context/SearchContext";
 import { useCartContext } from "@/context/CartContext";
 import { ShoppingCart } from "lucide-react";
-import UserRole from "../user/UserRole";
+import UserRole from "@/components/user/customer/UserRole";
 
 const Navbar = () => {
   const router = useRouter();
@@ -80,10 +80,10 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="absolute rounded-full inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-gray-900">
               <button
                 onClick={handleCartNavigation}
-                className="border size-12 relative border-white rounded-full flex justify-center items-center"
+                className="size-12 relative  rounded-full flex justify-center items-center"
               >
                 <ShoppingCart color="#ffffff" strokeWidth={2} />
                 {cartCount > 0 && (
