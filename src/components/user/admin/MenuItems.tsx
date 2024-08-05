@@ -21,7 +21,7 @@ const menuItems = [
       },
       {
         title: "Add Products",
-        path: "/dashboard",
+        path: "/admin/addProduct",
         icon: <Plus color="#ffffff" strokeWidth={1.25} />,
       },
     ],
@@ -29,27 +29,28 @@ const menuItems = [
 ];
 
 const MenuItems = () => {
-
   const pathName = usePathname();
   const menuItemsClass = "px-8 py-4 flex space-x-2 font-semibold hover:bg-menu-hover-bg rounded-xl mt-4 cursor-pointer";
-  const activeClass = "bg-menu-active-bg"
+  const activeClass = "bg-menu-active-bg";
 
   return (
     <div>
       <ul>
         {menuItems.map((items) => (
           <li key={items.title}>
-            {items.title}
-            {items.list.map((item) => (
-              <li key={item.title}>
-                <Link
-                  href={item.path}
-                  className={`${menuItemsClass} ${pathName === item.path && activeClass}`}
-                >
-                  {item.icon} <span>{item.title}</span>
-                </Link>
-              </li>
-            ))}
+            <span>{items.title}</span>
+            <ul>
+              {items.list.map((item) => (
+                <li key={item.title}>
+                  <Link
+                    href={item.path}
+                    className={`${menuItemsClass} ${pathName === item.path ? activeClass : ""}`}
+                  >
+                    {item.icon} <span>{item.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>

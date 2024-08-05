@@ -811,33 +811,5 @@
       "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
     ],
     "brand": "Essence"
-  },
-  {
-    "id": 2222,
-    "title": "Eyeshadow Palette with Mirror",
-    "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
-    "category": "beauty",
-    "price": 19.99,
-    "rating": 3.28,
-    "image": [
-      "https://cdn.dummyjson.com/products/images/beauty/Eyeshadow%20Palette%20with%20Mirror/1.png",
-      "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
-      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
-    ],
-    "brand": "Essence"
-  },
-  {
-    "id": 3333,
-    "title": "Powder Canister",
-    "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
-    "category": "beauty",
-    "price": 14.99,
-    "rating": 3.82,
-    "image": [
-      "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/1.png",
-      "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
-      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
-    ],
-    "brand": "Essence"
   }
 ]
