@@ -14,6 +14,8 @@ type ProductContextType = {
   addProduct: (newProduct: ProductTypes) => Promise<void>;
   updateProduct: (updatedProduct: ProductTypes) => Promise<void>;
   deleteProduct: (productId: number) => Promise<void>;
+  setProducts: React.Dispatch<React.SetStateAction<ProductTypes[]>>;
+
 };
 
 type ProductContextProviderProps = {
@@ -84,6 +86,7 @@ export function ProductProvider({ children }: ProductContextProviderProps) {
         addProduct,
         updateProduct,
         deleteProduct,
+        setProducts
       }}
     >
       {children}

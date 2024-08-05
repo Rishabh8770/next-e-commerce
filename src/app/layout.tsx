@@ -8,6 +8,8 @@ import { Suspense } from "react";
 import LoadingPage from "./loading";
 import Footer from "@/components/common/Footer";
 import { CartProvider } from "@/context/CartContext";
+import { headers } from "next/headers";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
