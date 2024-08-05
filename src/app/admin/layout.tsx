@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css"; // Adjust the path if needed
+import "./globals.css";
 import SideBar from "@/components/user/admin/Sidebar";
 import { Suspense } from "react";
 import LoadingPage from "../loading";

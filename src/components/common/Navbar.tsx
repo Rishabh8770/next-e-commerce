@@ -5,20 +5,25 @@ import { useSearchContext } from "@/context/SearchContext";
 import { useCartContext } from "@/context/CartContext";
 import { ShoppingCart } from "lucide-react";
 import UserRole from "@/components/user/customer/UserRole";
+import { routePathNames } from "@/utils/pathUtils";
 
 const Navbar = () => {
   const router = useRouter();
   const { searchQuery, setSearchQuery } = useSearchContext();
   const { cartCount } = useCartContext();
   const pathName = usePathname();
-  const searchInputHidden = "hidden";
+  
 
   const handleCartNavigation = () => {
     router.push(`/user-cart/`);
   };
 
   return (
-    <div className="sticky top-0 z-50">
+    <div
+      className={`sticky top-0 z-50 ${
+        routePathNames.includes(pathName) && "hidden"
+      }`}
+    >
       <nav className="bg-gray-800">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
@@ -71,7 +76,11 @@ const Navbar = () => {
                   </a>
                 </div>
               </div>
-              <div className={`flex justify-center mx-3 ${pathName === "/" && searchInputHidden}`}>
+              <div
+                className={`flex justify-center mx-3 ${
+                  pathName === "/" && "hidden"
+                }`}
+              >
                 <input
                   type="text"
                   placeholder="Search products..."
