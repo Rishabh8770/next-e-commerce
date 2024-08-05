@@ -3,13 +3,19 @@
 import React from "react";
 import UserRole from "../customer/UserRole";
 import MenuItems from "./MenuItems";
+import { useRouter } from "next/navigation";
 
 const SideBar = () => {
+  const router = useRouter();
+
+  const handleAdminPage = () => {
+    router.push('/admin')
+  }
   return (
     <>
       <div className=" flex items-center justify-between space-x-4 p-4 mt-4">
-        <div className="flex space-x-4">
-          <div className="">
+        <div className="flex space-x-4 cursor-pointer" onClick={handleAdminPage}>
+          <div>
             <img
               src="/no-image.png"
               alt="name"

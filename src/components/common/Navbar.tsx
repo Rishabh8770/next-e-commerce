@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useSearchContext } from "@/context/SearchContext";
 import { useCartContext } from "@/context/CartContext";
 import { ShoppingCart } from "lucide-react";
@@ -10,6 +10,8 @@ const Navbar = () => {
   const router = useRouter();
   const { searchQuery, setSearchQuery } = useSearchContext();
   const { cartCount } = useCartContext();
+  const pathName = usePathname();
+  const searchInputHidden = "hidden";
 
   const handleCartNavigation = () => {
     router.push(`/user-cart/`);
@@ -69,7 +71,7 @@ const Navbar = () => {
                   </a>
                 </div>
               </div>
-              <div className="flex justify-center mx-3">
+              <div className={`flex justify-center mx-3 ${pathName === "/" && searchInputHidden}`}>
                 <input
                   type="text"
                   placeholder="Search products..."

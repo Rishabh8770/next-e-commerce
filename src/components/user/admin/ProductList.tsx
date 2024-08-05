@@ -16,11 +16,14 @@ type Product = {
   price: number;
 }
 
+
 const ProductList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
   const { products } = useProductContext();
   const router = useRouter();
+  const { deleteProduct } = useProductContext();
+
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -31,7 +34,13 @@ const ProductList = () => {
   const totalPages = Math.ceil(products.length / itemsPerPage);
 
   const handleEdit = (id: number) => {
-    router.push(`products/${id}`)
+    router.push(`/admin/editProduct?id=${id}`)
+  }
+
+  const handleDelete = (id: number) => {
+    // e.preventDefault();
+    deleteProduct(id)
+
   }
 
   if(!currentProducts) {
@@ -70,7 +79,7 @@ const ProductList = () => {
               <td className="py-6 px-4 border-b">
                 <div className="flex space-x-2">
                   <button className="px-2 py-1 bg-slate-400 rounded-md" onClick={() => handleEdit(product.id)}>Edit</button>
-                  <button className="px-2 py-1 bg-red-500 rounded-md">Delete</button>
+                  <button className="px-2 py-1 bg-red-500 rounded-md" onClick={() => handleDelete(product.id)}>Delete</button>
                 </div>
               </td>
             </tr>

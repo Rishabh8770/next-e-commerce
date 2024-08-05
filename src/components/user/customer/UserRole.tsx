@@ -30,7 +30,7 @@ const UserRole = () => {
     if (option === "User") {
       router.push("/product-listing");
     } else if (option === "Admin") {
-      router.push("/admin/dashboard");
+      router.push("/admin");
     }
   };
 
