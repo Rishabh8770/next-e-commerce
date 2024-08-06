@@ -73,7 +73,7 @@ const ProductList = () => {
               </td>
               <td className="py-6 px-4 border-b">{product.category}</td>
               <td className="py-6 px-4 border-b">{product.brand}</td>
-              <td className="py-6 px-4 border-b">
+              <td className="py-6 px-2 border-b">
                 {convertUsdToCurrency(product.price)}
               </td>
               <td className="py-6 px-4 border-b">

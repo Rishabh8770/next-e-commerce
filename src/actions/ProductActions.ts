@@ -98,7 +98,7 @@ export async function formAction(
         category: selectCategory.join(", "),
         brand: selectBrand.join(", "),
         image: images,
-        rating: 0,
+        rating: parseFloat((Math.random() * 5).toFixed(1)),
       };
 
       await addProduct(productData);

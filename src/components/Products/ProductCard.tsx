@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import LoadingPage from "@/app/loading";
 import { convertUsdToCurrency } from "@/utils/CurrencyFormatter";
+import { generateStarRating } from "@/utils/starRatingsUtils";
 
 interface ProductCardProps extends ProductTypes {
   loading?: boolean;
@@ -50,26 +51,7 @@ const ProductCard = ({
             <p className="text-gray-500 text-xs mb-1">Brand: {brand}</p>
             <p className="text-gray-900 font-bold text-lg mt-2">{convertUsdToCurrency(price)}</p>
             <div className="flex items-center mt-2">
-              {[...Array(Math.floor(rating))].map((_, i) => (
-                <svg
-                  key={i}
-                  className="w-4 h-4 text-yellow-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049.684a.5.5 0 0 1 .902 0l2.107 4.796 5.156.386a.5.5 0 0 1 .282.88L13.342 9.75l1.476 4.85a.5.5 0 0 1-.759.553L10 12.34 6.942 15.153a.5.5 0 0 1-.758-.553l1.476-4.85-3.153-2.904a.5.5 0 0 1 .282-.88l5.156-.386L9.049.684z"></path>
-                </svg>
-              ))}
-              {[...Array(5 - Math.floor(rating))].map((_, i) => (
-                <svg
-                  key={i}
-                  className="w-4 h-4 text-gray-300"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049.684a.5.5 0 0 1 .902 0l2.107 4.796 5.156.386a.5.5 0 0 1 .282.88L13.342 9.75l1.476 4.85a.5.5 0 0 1-.759.553L10 12.34 6.942 15.153a.5.5 0 0 1-.758-.553l1.476-4.85-3.153-2.904a.5.5 0 0 1 .282-.88l5.156-.386L9.049.684z"></path>
-                </svg>
-              ))}
+              {generateStarRating(rating)}
             </div>
           </div>
         </div>
