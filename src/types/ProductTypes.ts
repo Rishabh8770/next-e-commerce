@@ -7,6 +7,7 @@ export type ProductTypes = {
   image: string[];
   brand: string;
   rating: number;
+  reviews?: ReviewType[]
 };
 
 export interface CartItem {
@@ -16,7 +17,12 @@ export interface CartItem {
 
 export type Cart = Record<string, number>;
 
-
+export type ReviewType = {
+  userImage: string;
+  username: string;
+  comment: string
+  ratings: number
+}
 
 export type CategoryWithImage = {
   name: string;

@@ -49,7 +49,7 @@ const CartPage = () => {
             <div className="space-y-4">
               <div className="border-b mb-10">
                 <h1 className="text-2xl font-semibold mb-2">
-                  {cartItems.length > 1 ? "Cart Items :" : "Cart item:"}{" "}
+                  {cartItems.length > 1 ? "Cart Items:" : "Cart item:"}{" "}
                   <span>{cartItems.length}</span>
                 </h1>
               </div>
@@ -99,12 +99,12 @@ const CartPage = () => {
                       </button>
                     </div>
                     <div>
-                      <p className="text-lg font-semibold">
+                      <div className="text-lg font-semibold">
                         {convertUsdToCurrency(item.price * quantity)}{" "}
-                        <span className="text-xs text-gray-400 font-normal">
-                          ({item.price}/item)
-                        </span>
-                      </p>
+                        <div className="text-xs text-gray-400 font-normal">
+                          ({convertUsdToCurrency(item.price)}/item)
+                        </div>
+                      </div>
                     </div>
                     <div>
                       <button

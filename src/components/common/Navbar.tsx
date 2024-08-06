@@ -1,22 +1,29 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useSearchContext } from "@/context/SearchContext";
 import { useCartContext } from "@/context/CartContext";
-import { ShoppingCart } from "lucide-react";
-import UserRole from "../user/UserRole";
+import { Search, ShoppingCart } from "lucide-react";
+import UserRole from "@/components/user/customer/UserRole";
+import { routePathNames } from "@/utils/pathUtils";
 
 const Navbar = () => {
   const router = useRouter();
   const { searchQuery, setSearchQuery } = useSearchContext();
   const { cartCount } = useCartContext();
+  const pathName = usePathname();
+  
 
   const handleCartNavigation = () => {
     router.push(`/user-cart/`);
   };
 
   return (
-    <div className="sticky top-0 z-50">
+    <div
+      className={`sticky top-0 z-50 ${
+        routePathNames.includes(pathName) && "hidden"
+      }`}
+    >
       <nav className="bg-gray-800">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
@@ -49,7 +56,7 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
-            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div className="flex justify-center items-center sm:items-stretch sm:justify-start space-x-8 w-5/6">
               <div className="flex flex-shrink-0 items-center">
                 <img
                   className="h-8 w-auto"
@@ -58,32 +65,26 @@ const Navbar = () => {
                 />
                 <span className="text-white mx-2">Shop-a-holic</span>
               </div>
-              <div className="hidden sm:ml-6 sm:block">
-                <div className="flex space-x-4">
-                  <a
-                    href="/product-listing"
-                    className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                    aria-current="page"
-                  >
-                    Dashboard
-                  </a>
-                </div>
-              </div>
-              <div className="flex justify-center mx-3">
+              <div
+                className={`flex justify-center mx-3 items-center relative ${
+                  pathName === "/" && "hidden"
+                }`}
+              >
+                <Search color="#a29a9a" size={20} strokeWidth={1.5} className="absolute left-2"/>
                 <input
                   type="text"
                   placeholder="Search products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="rounded-full p-2"
+                  className="rounded-lg pl-8 py-2 bg-side-sidebar-bg border border-gray-500 text-white"
                 />
               </div>
             </div>
 
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="absolute rounded-full inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-gray-900">
               <button
                 onClick={handleCartNavigation}
-                className="border size-12 relative border-white rounded-full flex justify-center items-center"
+                className="size-12 relative  rounded-full flex justify-center items-center"
               >
                 <ShoppingCart color="#ffffff" strokeWidth={2} />
                 {cartCount > 0 && (
