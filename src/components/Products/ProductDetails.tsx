@@ -64,7 +64,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
-      <div className="mt-8 mb-4">
+      <div className="mt-8 mb-4 text-center">
         <h1 className="text-3xl flex justify-center items-center font-semibold">People who also reviewed this product</h1>
       </div>
       <div className="flex justify-center">

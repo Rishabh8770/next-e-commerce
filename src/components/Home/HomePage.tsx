@@ -9,6 +9,7 @@ import { ProductSort, SortOptions } from "@/components/common/productSort";
 import Filter from "@/components/common/Filter";
 import { getCategories, getBrands, getRatings } from "@/utils/actionUtils";
 import { CategoryPills } from "../products/CategoryPills";
+import SearchProduct from "../common/SearchProduct";
 
 const HomePage = () => {
   const { products } = useProductContext();
@@ -119,8 +120,11 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="flex">
+    <div className="flex lg:flex-row flex-col">
       <div className="w-full lg:w-1/6 border-y-1 items-center lg:min-h-screen flex flex-col pt-4 bg-gray-800  lg:sticky lg:top-0 lg:left-0 lg:h-screen lg:overflow-y-auto lg:z-10">
+      <div className="md:hidden block mb-4">
+        <SearchProduct />
+      </div>
         <div className="text-white">
           <ProductSort onProductSort={handleProductSort} />
         </div>

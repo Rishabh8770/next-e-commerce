@@ -6,6 +6,7 @@ import { useCartContext } from "@/context/CartContext";
 import { Search, ShoppingCart } from "lucide-react";
 import UserRole from "@/components/user/customer/UserRole";
 import { routePathNames } from "@/utils/pathUtils";
+import SearchProduct from "./SearchProduct";
 
 const Navbar = () => {
   const router = useRouter();
@@ -65,26 +66,15 @@ const Navbar = () => {
                 />
                 <span className="text-white mx-2">Shop-a-holic</span>
               </div>
-              <div
-                className={`flex justify-center mx-3 items-center relative ${
-                  pathName === "/" && "hidden"
-                }`}
-              >
-                <Search color="#a29a9a" size={20} strokeWidth={1.5} className="absolute left-2"/>
-                <input
-                  type="text"
-                  placeholder="Search products..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="rounded-lg pl-8 py-2 bg-side-sidebar-bg border border-gray-500 text-white"
-                />
+              <div className="md:block hidden">
+                <SearchProduct />
               </div>
             </div>
 
-            <div className="absolute rounded-full inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-gray-900">
+            <div className="absolute w-12 h-12 self-center rounded-full inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-gray-900">
               <button
                 onClick={handleCartNavigation}
-                className="size-12 relative  rounded-full flex justify-center items-center"
+                className="lg:w-12 lg:h-12 w-16 relative  rounded-full flex justify-center items-center"
               >
                 <ShoppingCart color="#ffffff" strokeWidth={2} />
                 {cartCount > 0 && (
@@ -105,7 +95,7 @@ const Navbar = () => {
                 )}
               </button>
             </div>
-            <div className="mx-8">
+            <div className="mx-8 md:w-10 w-full md:block flex justify-center">
               <UserRole />
             </div>
           </div>
