@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { ProductTypes } from "@/types/ProductTypes";
 import productData from "@/data/products.json";
@@ -8,21 +8,8 @@ import { convertUsdToCurrency } from "@/utils/CurrencyFormatter";
 import { ArrowLeft } from "lucide-react";
 import { useCallback } from "react";
 import { useRouter } from "next/navigation";
-
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  price: number;
-  rating: number;
-  image: string[];
-  brand: string;
-}
-
-interface ProductDetailsProps {
-  product: Product;
-}
+import ProductReview from "./ProductReview";
+import { generateStarRating } from "@/utils/starRatingsUtils";
 
 function ProductDetails({ params }: { params: { id: string } }) {
   const router = useRouter();
@@ -46,7 +33,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
   }, [router]);
 
   return (
-    <>
+    <div className="overflow-y-scroll">
       <div className="p-5">
         <ArrowLeft
           onClick={handleArrowClick}
@@ -67,28 +54,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
             )}`}</h2>
             <div className="mb-4">
               <div className="flex items-center mt-2">
-                {[...Array(Math.floor(product.rating))].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-4 h-4 text-yellow-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049.684a.5.5 0 0 1 .902 0l2.107 4.796 5.156.386a.5.5 0 0 1 .282.88L13.342 9.75l1.476 4.85a.5.5 0 0 1-.759.553L10 12.34 6.942 15.153a.5.5 0 0 1-.758-.553l1.476-4.85-3.153-2.904a.5.5 0 0 1 .282-.88l5.156-.386L9.049.684z"></path>
-                  </svg>
-                ))}
-                {[...Array(5 - Math.floor(product.rating))].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-4 h-4 text-gray-300"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M9.049.684a.5.5 0 0 1 .902 0l2.107 4.796 5.156.386a.5.5 0 0 1 .282.88L13.342 9.75l1.476 4.85a.5.5 0 0 1-.759.553L10 12.34 6.942 15.153a.5.5 0 0 1-.758-.553l1.476-4.85-3.153-2.904a.5.5 0 0 1 .282-.88l5.156-.386L9.049.684z"></path>
-                  </svg>
-                ))}
+                {generateStarRating(product.rating)}
               </div>
             </div>
             <ul className="list-disc pl-5">{bulletPoints}</ul>
@@ -98,7 +64,17 @@ function ProductDetails({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
-    </>
+      <div className="mt-8 mb-4">
+        <h1 className="text-3xl flex justify-center items-center font-semibold">People who also reviewed this product</h1>
+      </div>
+      <div className="flex justify-center">
+        {product.reviews ? (
+          <ProductReview reviews={product.reviews} />
+        ) : (
+          <div>No reviews available.</div>
+        )}
+      </div>
+    </div>
   );
 }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { formAction } from "@/actions/ProductActions"; 
+import { formAction } from "@/actions/ProductActions";
 import { getProducts } from "@/actions/ProductActions";
 import { ProductTypes } from "@/types/ProductTypes";
 import { getBrands, getCategories } from "@/utils/actionUtils";
@@ -73,7 +73,9 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
           ? "Product updated successfully!"
           : "Product added successfully!"
       );
-      clearAddProductForm();
+      if (!isEditMode) {
+        clearAddProductForm();
+      }
     } catch (error) {
       console.error("Error submitting the form", error);
       alert("There was an error submitting the form.");
@@ -211,7 +213,6 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
                 placeholder="Enter image URL 3"
               />
             </div>
-           
           </div>
           <div className="mt-6">
             <button

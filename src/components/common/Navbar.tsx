@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useSearchContext } from "@/context/SearchContext";
 import { useCartContext } from "@/context/CartContext";
-import { ShoppingCart } from "lucide-react";
+import { Search, ShoppingCart } from "lucide-react";
 import UserRole from "@/components/user/customer/UserRole";
 import { routePathNames } from "@/utils/pathUtils";
 
@@ -56,7 +56,7 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
-            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div className="flex justify-center items-center sm:items-stretch sm:justify-start space-x-8 w-5/6">
               <div className="flex flex-shrink-0 items-center">
                 <img
                   className="h-8 w-auto"
@@ -65,28 +65,18 @@ const Navbar = () => {
                 />
                 <span className="text-white mx-2">Shop-a-holic</span>
               </div>
-              <div className="hidden sm:ml-6 sm:block">
-                <div className="flex space-x-4">
-                  <a
-                    href="/product-listing"
-                    className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                    aria-current="page"
-                  >
-                    Dashboard
-                  </a>
-                </div>
-              </div>
               <div
-                className={`flex justify-center mx-3 ${
+                className={`flex justify-center mx-3 items-center relative ${
                   pathName === "/" && "hidden"
                 }`}
               >
+                <Search color="#a29a9a" size={20} strokeWidth={1.5} className="absolute left-2"/>
                 <input
                   type="text"
                   placeholder="Search products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="rounded-full p-2"
+                  className="rounded-lg pl-8 py-2 bg-side-sidebar-bg border border-gray-500 text-white"
                 />
               </div>
             </div>
