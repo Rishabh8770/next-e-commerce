@@ -2,7 +2,7 @@
   {
     "id": 9001,
     "title": "Acer Nitro 5 AN515-57-79TD Gaming Laptop",
-    "price": 739.99,
+    "price": 740.99,
     "description": "Acer Nitro 5 AN515-57-79TD Gaming Laptop | Intel Core i7-11800H | NVIDIA GeForce RTX 3050 Ti Laptop GPU | 15.6 FHD 144Hz IPS Display | 8GB DDR4 | 512GB NVMe SSD | Killer Wi-Fi 6 | Backlit Keyboard",
     "category": "Electronics",
     "image": [
@@ -11,7 +11,27 @@
       "https://i.ibb.co/SybqWjf/nextamazon3.jpg"
     ],
     "brand": "Acer",
-    "rating": 3
+    "rating": 3,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Alice",
+        "ratings": 5,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Bob",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac felis arcu. Sed sollicitudin."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Charlie",
+        "ratings": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et felis ac quam convallis gravida."
+      }
+    ]
   },
   {
     "id": 9002,
@@ -25,7 +45,27 @@
       "https://i.ibb.co/0Gvx3Sk/nextImg.jpg"
     ],
     "brand": "Acer",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "David",
+        "ratings": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Eva",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Frank",
+        "ratings": 5,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla. Suspendisse potenti."
+      }
+    ]
   },
   {
     "id": 9003,
@@ -39,7 +79,27 @@
       "https://i.ibb.co/xD7nDq5/nextamazon5.jpg"
     ],
     "brand": "Apple",
-    "rating": 2
+    "rating": 2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "George",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Helen",
+        "ratings": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac felis arcu. Sed sollicitudin."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Ian",
+        "ratings": 2,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et felis ac quam convallis gravida."
+      }
+    ]
   },
   {
     "id": 9004,
@@ -53,7 +113,27 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "ENOMIR",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Jack",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Kate",
+        "ratings": 5,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Leo",
+        "ratings": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla. Suspendisse potenti."
+      }
+    ]
   },
   {
     "id": 9005,
@@ -67,7 +147,27 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "KOORUI",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Mike",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Nina",
+        "ratings": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac felis arcu. Sed sollicitudin."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Oscar",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et felis ac quam convallis gravida."
+      }
+    ]
   },
   {
     "id": 9006,
@@ -81,7 +181,27 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "GMKtec",
-    "rating": 5
+    "rating": 5,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Paul",
+        "ratings": 5,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Quincy",
+        "ratings": 5,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Rita",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla. Suspendisse potenti."
+      }
+    ]
   },
   {
     "id": 9007,
@@ -95,7 +215,27 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "larco",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Steve",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Tina",
+        "ratings": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac felis arcu. Sed sollicitudin."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Uma",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et felis ac quam convallis gravida."
+      }
+    ]
   },
   {
     "id": 9008,
@@ -109,7 +249,27 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "SkyTech",
-    "rating": 3.8
+    "rating": 3.8,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Vince",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Wendy",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Xander",
+        "ratings": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla. Suspendisse potenti."
+      }
+    ]
   },
   {
     "id": 9009,
@@ -123,7 +283,27 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "Skullcandy ",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Yara",
+        "ratings": 5,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Zach",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac felis arcu. Sed sollicitudin."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Alice",
+        "ratings": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et felis ac quam convallis gravida."
+      }
+    ]
   },
   {
     "id": 9010,
@@ -137,7 +317,27 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "Garmin",
-    "rating": 3.8
+    "rating": 3.8,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Brian",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Cathy",
+        "ratings": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Dylan",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla. Suspendisse potenti."
+      }
+    ]
   },
   {
     "id": 9011,
@@ -151,7 +351,27 @@
     ],
     "category": "Electronics",
     "brand": "Canon",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "JohnDoe",
+        "ratings": 4,
+        "comment": "The Canon EOS Rebel T100 is an excellent entry-level DSLR. The image quality is impressive for its price. However, the autofocus could be faster."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "JaneSmith",
+        "ratings": 5,
+        "comment": "I love this camera! It’s user-friendly and takes amazing photos. The included lens is great for beginners."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "EmilyJohnson",
+        "ratings": 3,
+        "comment": "Good camera but a bit bulky. It works well for casual photography but lacks advanced features."
+      }
+    ]
   },
   {
     "id": 9012,
@@ -165,7 +385,27 @@
       "https://i.ibb.co/1r28gMk/1.webp"
     ],
     "category": "Electronics",
-    "rating": 3.8
+    "rating": 3.8,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "MichaelBrown",
+        "ratings": 4,
+        "comment": "The DJI Air is a fantastic drone with great camera quality and battery life. It’s easy to fly, but the app could use some improvements."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "SaraLee",
+        "ratings": 5,
+        "comment": "Incredible drone! The 4K camera is superb and the flight time is impressive. Worth every penny."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "DavidWilson",
+        "ratings": 3,
+        "comment": "Decent drone but has connectivity issues sometimes. It works well but expect occasional glitches."
+      }
+    ]
   },
   {
     "id": 9013,
@@ -179,7 +419,27 @@
     ],
     "category": "Electronics",
     "brand": "Apple",
-    "rating": 4.5
+    "rating": 4.5,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "AliceBrown",
+        "ratings": 5,
+        "comment": "The iPad is amazing for its price. The display is sharp, and it performs well for most tasks. Highly recommended!"
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "ChrisDavis",
+        "ratings": 4,
+        "comment": "Great tablet with a nice display and good performance. Battery life is decent but could be better."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "PatriciaClark",
+        "ratings": 4,
+        "comment": "I’m happy with the purchase. It’s a reliable iPad and handles apps and games smoothly. The storage could be more though."
+      }
+    ]
   },
   {
     "id": 9014,
@@ -193,7 +453,27 @@
     ],
     "category": "Electronics",
     "brand": "Apple",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "RobertTaylor",
+        "ratings": 4,
+        "comment": "The iPhone 14 is a powerful device with a sleek design. The camera is excellent, though the price is quite steep."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "NancyWilliams",
+        "ratings": 5,
+        "comment": "Absolutely love my new iPhone! The performance is top-notch and the battery life is impressive. Worth the upgrade."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "DanielMiller",
+        "ratings": 3,
+        "comment": "Good phone, but the price is high for the features offered. It performs well, but I expected more for the cost."
+      }
+    ]
   },
   {
     "id": 9015,
@@ -207,7 +487,27 @@
     ],
     "category": "Smart watch",
     "brand": "Apple",
-    "rating": 4.3
+    "rating": 4.3,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "SophiaLopez",
+        "ratings": 4,
+        "comment": "The Apple Watch SE is a fantastic smartwatch with great features for the price. It’s comfortable to wear and easy to use."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "JamesJohnson",
+        "ratings": 5,
+        "comment": "Love this watch! It tracks my workouts accurately and the notifications are very helpful. Battery life is decent."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "LindaRodriguez",
+        "ratings": 4,
+        "comment": "Great smartwatch for daily use. The design is stylish and it integrates well with my iPhone. The price is a bit high though."
+      }
+    ]
   },
   {
     "id": 9016,
@@ -221,7 +521,27 @@
     ],
     "category": "Electronics",
     "brand": "Beats by Dr. Dre",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "MiaGarcia",
+        "ratings": 4,
+        "comment": "The Beats Solo3 headphones are great for music lovers. The sound quality is excellent and they are comfortable to wear."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "EthanMartin",
+        "ratings": 5,
+        "comment": "Amazing headphones! The sound is crisp and clear, and the battery life is outstanding. Very satisfied with this purchase."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "AvaHarris",
+        "ratings": 3,
+        "comment": "Good headphones but a bit pricey. The sound quality is good, but I’ve had better for less money."
+      }
+    ]
   },
   {
     "id": 9017,
@@ -235,7 +555,27 @@
     ],
     "category": "Home Decoration",
     "brand": "uhomepro",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "OliviaWhite",
+        "ratings": 4,
+        "comment": "The TV stand looks great in my living room. The LED lights are a nice touch and it has ample storage. Assembly took some time."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "LiamYoung",
+        "ratings": 5,
+        "comment": "Very happy with this purchase. The TV stand is stylish and functional. The quality is better than expected for the price."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "IsabellaLewis",
+        "ratings": 4,
+        "comment": "Nice stand with a modern look. The lights add a cool effect, and the build quality is solid. Some minor scratches on delivery."
+      }
+    ]
   },
   {
     "id": 9018,
@@ -249,7 +589,27 @@
     ],
     "category": "Smart watch",
     "brand": "Pupuskyer",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "MasonHall",
+        "ratings": 4,
+        "comment": "The Pupuskyer Smart Watch is a good value for the price. It tracks fitness metrics accurately and has a long battery life."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "EllaNelson",
+        "ratings": 4,
+        "comment": "It’s a nice watch with useful features. The heart rate monitor and sleep tracking are accurate, but the app could be better."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "BenjaminAllen",
+        "ratings": 4,
+        "comment": "Good smartwatch for the price. It has all the basic features and works well. The design is a bit bulky, but it’s comfortable."
+      }
+    ]
   },
   {
     "id": 9019,
@@ -263,7 +623,27 @@
     ],
     "category": "Smart Phones",
     "brand": "SAMSUNG",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "CharlotteHarris",
+        "ratings": 5,
+        "comment": "The S23 Ultra is an exceptional phone with incredible camera quality and performance. The S Pen is a great addition and the battery life is impressive."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "LucasWalker",
+        "ratings": 4,
+        "comment": "A top-tier phone with a stunning display and powerful specs. It’s quite expensive but worth it for those who need the best."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "AmeliaMartin",
+        "ratings": 3,
+        "comment": "Good phone but overpriced. The camera is fantastic, but I feel like there are better value options out there."
+      }
+    ]
   },
   {
     "id": 9020,
@@ -277,11 +657,31 @@
     ],
     "category": "Smart Phones",
     "brand": "Apple",
-    "rating": 3.8
+    "rating": 3.8,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "EllaYoung",
+        "ratings": 4,
+        "comment": "The iPhone 12 Mini is compact and performs well. The battery life could be better, but overall it’s a solid phone."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "HenryScott",
+        "ratings": 4,
+        "comment": "Nice phone with good performance and 5G capability. It’s a bit small, but it works well for those who prefer a smaller device."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "SophiaTurner",
+        "ratings": 3,
+        "comment": "The phone is okay but not worth the price. It’s functional, but there are better options with more features."
+      }
+    ]
   },
   {
     "id": 1020154545,
-    "title": "Long sleeve Jacket",
+    "title": "Long Sleeve Jacket",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
     "price": 150,
     "brand": "next",
@@ -291,11 +691,25 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "category": "Fashion",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Sarah Johnson",
+        "comment": "The jacket fits well and feels comfortable. Good quality for the price.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "John Doe",
+        "comment": "It’s a decent jacket, but the material isn’t as premium as I expected.",
+        "ratings": 3
+      }
+    ]
   },
   {
     "id": 2025454,
-    "title": "Jacket with wollen hat",
+    "title": "Jacket with Wollen Hat",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
     "price": 105,
     "brand": "Zara",
@@ -305,11 +719,25 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "category": "Fashion",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Emma Smith",
+        "comment": "Stylish and warm. The hat adds a nice touch. Happy with my purchase!",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "David Brown",
+        "comment": "Good quality, though the fit is a bit snug for my liking.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 305455,
-    "title": "Skirts with full setup",
+    "title": "Skirts with Full Setup",
     "price": 695,
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
     "category": "Fashion",
@@ -319,7 +747,21 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "brand": "Zara",
-    "rating": 3
+    "rating": 3,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Alice Williams",
+        "comment": "Expensive for what it is, but the setup is quite unique.",
+        "ratings": 3.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Robert Taylor",
+        "comment": "Not worth the price. The fabric feels cheap.",
+        "ratings": 2.5
+      }
+    ]
   },
   {
     "id": 408784,
@@ -333,11 +775,25 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "brand": "Hodders",
-    "rating": 3.8
+    "rating": 3.8,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Liam Johnson",
+        "comment": "Good color and fit, but it shrinks a bit after washing.",
+        "ratings": 3.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Sophia Martinez",
+        "comment": "Nice hoody, but the material feels a little rough.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 507478,
-    "title": "Black t-shirt for women",
+    "title": "Black T-Shirt for Women",
     "price": 20,
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
     "category": "Fashion",
@@ -347,11 +803,25 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "brand": "Ladyland",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Mia Davis",
+        "comment": "Great quality for the price. I bought three of these!",
+        "ratings": 5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "James Wilson",
+        "comment": "The fit is perfect and it feels soft on the skin.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 6043434,
-    "title": "Gouwn with Red velvet",
+    "title": "Gouwn with Red Velvet",
     "price": 350,
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
     "category": "Fashion",
@@ -361,65 +831,49 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "brand": "next",
-    "rating": 3.5
+    "rating": 3.5,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Olivia Taylor",
+        "comment": "The gown is stunning, but it's a bit too expensive.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Ethan Clark",
+        "comment": "The velvet feels luxurious, but the fit is not as expected.",
+        "ratings": 3
+      }
+    ]
   },
   {
     "id": 7099843,
-    "title": "Pink beauty",
+    "title": "Pink Beauty",
     "price": 100,
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
     "category": "Fashion",
     "image": [
       "https://images.pexels.com/photos/2065195/pexels-photo-2065195.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/2233703/pexels-photo-2233703.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/1631181/pexels-photo-1631181.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
-    "brand": "Hoichoi",
-    "rating": 3.8
-  },
-  {
-    "id": 8087873,
-    "title": "Jean's stylish Jacket",
-    "price": 245,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
-    "category": "Fashion",
-    "image": [
-      "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/1631181/pexels-photo-1631181.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
-    ],
-    "brand": "Local bro",
-    "rating": 4.3
-  },
-  {
-    "id": 10025454,
-    "title": "DJI Air",
-    "description": "DJI Mini 2 Fly More Combo - Ultralight Foldable Drone, 3-Axis Gimbal with 4K Camera, 12MP Photos, 31 Min Flight Time",
-    "price": 999,
-    "brand": "DJI",
-    "image": [
-      "https://i.ibb.co/qdfB3s6/2.webp",
-      "https://i.ibb.co/1r28gMk/1.webp",
-      "https://i.ibb.co/1r28gMk/1.webp"
-    ],
-    "category": "Electronics",
-    "rating": 4.2
-  },
-  {
-    "id": 1305354,
-    "title": "Apple Watch SE",
-    "description": "Apple Watch SE (2nd Gen) GPS 40mm Midnight Aluminum Case with Midnight Sport Band - S/M",
-    "price": 249,
-    "brand": "Apple",
-    "image": [
-      "https://i.ibb.co/xgZWmdq/8.jpg",
-      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
-      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
-    ],
-    "category": "Electronics",
-    "rating": 4.3
+    "brand": "Ladyland",
+    "rating": 4.5,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Emily Anderson",
+        "comment": "Beautiful dress! Fits perfectly and the color is lovely.",
+        "ratings": 5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Daniel Harris",
+        "comment": "The dress is nice, but the material could be better.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 1406543554,
@@ -433,7 +887,21 @@
       "https://i.ibb.co/1r28gMk/1.webp"
     ],
     "category": "Electronics",
-    "rating": 3.8
+    "rating": 3.8,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Anna White",
+        "comment": "Sound quality is great, but the battery life could be better.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Michael Green",
+        "comment": "Comfortable but a bit pricey. Overall, a good purchase.",
+        "ratings": 3.5
+      }
+    ]
   },
   {
     "id": 15084554,
@@ -447,7 +915,21 @@
       "https://i.ibb.co/1r28gMk/1.webp"
     ],
     "category": "Fashion",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "John Doe",
+        "comment": "Great fit and comfortable. Perfect for casual wear.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Jane Smith",
+        "comment": "The print is nice, but the fabric feels a bit cheap.",
+        "ratings": 3.8
+      }
+    ]
   },
   {
     "id": 16089899,
@@ -461,7 +943,21 @@
       "https://i.ibb.co/1r28gMk/1.webp"
     ],
     "category": "Home Decoration",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Lisa Johnson",
+        "comment": "Sturdy and well-built. Perfect for backyard gatherings.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Tom Brown",
+        "comment": "Good quality but a bit difficult to assemble.",
+        "ratings": 3.5
+      }
+    ]
   },
   {
     "id": 170104545,
@@ -475,7 +971,21 @@
       "https://i.ibb.co/TTS9wY4/9.webp"
     ],
     "category": "Equipments",
-    "rating": 4.3
+    "rating": 4.3,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Karen Davis",
+        "comment": "Excellent grill for the price. Cooks evenly and efficiently.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Steven Miller",
+        "comment": "The grill is good, but it takes a while to clean.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 180115454,
@@ -489,7 +999,21 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "category": "Fashion",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Emily Wilson",
+        "comment": "Adorable sweater, perfect for chilly days.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Mark Lee",
+        "comment": "Nice design but a bit small for the size.",
+        "ratings": 3.5
+      }
+    ]
   },
   {
     "id": 19012545,
@@ -503,7 +1027,21 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "category": "Beauty Product",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Nancy White",
+        "comment": "Effective night cream, makes my skin feel soft.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Alan Thompson",
+        "comment": "Good moisturizer, but the scent is a bit strong.",
+        "ratings": 4.5
+      }
+    ]
   },
   {
     "id": 2001434,
@@ -517,7 +1055,21 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "brand": "next",
-    "rating": 4.3
+    "rating": 4.3,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Paul Martinez",
+        "comment": "High-quality jeans, but the price is a bit steep.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Sandra Clark",
+        "comment": "Great fit and style, though a bit overpriced.",
+        "ratings": 4.5
+      }
+    ]
   },
   {
     "id": 1,
@@ -531,11 +1083,25 @@
       "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     ],
     "brand": "Fox",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "George Scott",
+        "comment": "Very durable and stylish backpack. Perfect for daily use.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Emily Evans",
+        "comment": "The backpack is good, but the strap could be more comfortable.",
+        "ratings": 3.8
+      }
+    ]
   },
   {
     "id": 2,
-    "title": "Mens Casual Premium Slim Fit T-Shirts ",
+    "title": "Mens Casual Premium Slim Fit T-Shirts",
     "price": 22.3,
     "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
     "category": "men's clothing",
@@ -545,7 +1111,21 @@
       "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
     ],
     "brand": "Body Fit",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Jessica Adams",
+        "comment": "The fit is perfect and the fabric is very soft.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Michael Green",
+        "comment": "Nice t-shirt but the color was slightly different from the picture.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 3,
@@ -559,7 +1139,21 @@
       "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
     ],
     "brand": "Body Fit",
-    "rating": 4.1
+    "rating": 4.1,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Sarah Wilson",
+        "comment": "Very warm and comfortable jacket. Perfect for winter.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Chris Johnson",
+        "comment": "Good jacket but the size runs a bit small.",
+        "ratings": 3.8
+      }
+    ]
   },
   {
     "id": 4,
@@ -573,7 +1167,27 @@
       "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
     ],
     "brand": "Body Fit",
-    "rating": 3.8
+    "rating": 3.8,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Anna Davis",
+        "comment": "Nice fit and comfortable. The color is slightly different from the picture but still looks good.",
+        "ratings": 4.2
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "John Smith",
+        "comment": "Good value for money. The size runs a bit small, so consider ordering a size up.",
+        "ratings": 3.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Emily Taylor",
+        "comment": "Fabric quality is okay. The fit is decent, but I was expecting a bit more based on the price.",
+        "ratings": 3.8
+      }
+    ]
   },
   {
     "id": 5,
@@ -587,11 +1201,31 @@
       "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
     ],
     "brand": "Naga",
-    "rating": 4.7
+    "rating": 4.7,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Sophia Lee",
+        "comment": "Absolutely stunning bracelet. The quality and craftsmanship are top-notch.",
+        "ratings": 5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Olivia White",
+        "comment": "A beautiful piece of jewelry. However, it was slightly bigger than I expected.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Mia Johnson",
+        "comment": "The design is lovely, but the bracelet is a bit too heavy for daily wear.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 6,
-    "title": "Solid Gold Petite Micropave ",
+    "title": "Solid Gold Petite Micropave",
     "price": 168,
     "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
     "category": "jewelery",
@@ -601,7 +1235,27 @@
       "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
     ],
     "brand": "Naga",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Emma Davis",
+        "comment": "The gold is very delicate and beautifully designed. Perfect for everyday wear.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Liam Miller",
+        "comment": "Nice quality but smaller than I anticipated. Still, a lovely piece of jewelry.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Noah Wilson",
+        "comment": "Good value for the price, though the design is a bit too minimalist for my taste.",
+        "ratings": 4.2
+      }
+    ]
   },
   {
     "id": 7,
@@ -615,7 +1269,27 @@
       "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
     ],
     "brand": "Naga",
-    "rating": 4.3
+    "rating": 4.3,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Ava Brown",
+        "comment": "Great ring for the price. Looks beautiful and elegant. Perfect for a promise ring.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Ethan Davis",
+        "comment": "Nice ring but the sizing is a bit off. I had to get it resized.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Lucas Martinez",
+        "comment": "Beautiful ring, but the plating seems to wear off a bit quickly.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 8,
@@ -629,11 +1303,31 @@
       "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
     ],
     "brand": "Naga",
-    "rating": 3
+    "rating": 3,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Mason Taylor",
+        "comment": "The quality is good for the price, but the size didn't fit well.",
+        "ratings": 3
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Isabella Moore",
+        "comment": "Decent earrings, but the rose gold color is a bit too bright for my taste.",
+        "ratings": 3.2
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Aiden Harris",
+        "comment": "Nice design, but the earrings are a bit heavier than expected.",
+        "ratings": 3.1
+      }
+    ]
   },
   {
     "id": 9,
-    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
     "price": 64,
     "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
     "category": "electronics",
@@ -643,7 +1337,27 @@
       "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
     ],
     "brand": "Western Digital",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "James Clark",
+        "comment": "Great hard drive for the price. Fast data transfers and good storage capacity.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Charlotte Scott",
+        "comment": "Reliable external hard drive. It does the job well, but it's a bit noisy.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Benjamin Lewis",
+        "comment": "Works well, but the USB cable could be a bit longer.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 10,
@@ -657,7 +1371,27 @@
       "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
     ],
     "brand": "SanDisk",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Evelyn Adams",
+        "comment": "Fantastic SSD. My computer boots up significantly faster now.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Henry King",
+        "comment": "Good performance, but the drive gets quite warm during heavy use.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Grace Mitchell",
+        "comment": "Decent SSD for the price, but the read/write speeds are not as high as some other brands.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 11,
@@ -671,7 +1405,27 @@
       "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
     ],
     "brand": "Western Digital",
-    "rating": 4.3
+    "rating": 4.3,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Michael Young",
+        "comment": "Great SSD for the price. Improved my laptop's performance significantly.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Zoe Harris",
+        "comment": "Reliable performance. However, the transfer speeds could be better.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Ella Walker",
+        "comment": "Decent SSD but doesn't offer the same speeds as more expensive options.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 12,
@@ -685,7 +1439,27 @@
       "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
     ],
     "brand": "Western Digital",
-    "rating": 4
+    "rating": 4,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Lucas Carter",
+        "comment": "Perfect for expanding my PS4 storage. Fast and easy setup.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Mia Wright",
+        "comment": "Great storage solution for gaming, but it's a bit bulky.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Daniel Lewis",
+        "comment": "Good performance, but the design could be sleeker.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 13,
@@ -699,11 +1473,31 @@
       "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
     ],
     "brand": "Acer",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Chloe Robinson",
+        "comment": "Excellent display with vibrant colors. Perfect for work and gaming.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Jack Turner",
+        "comment": "Great monitor for the price. The thin bezel is a nice touch.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Liam Wright",
+        "comment": "Good quality monitor, but it lacks VESA mount compatibility.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 14,
-    "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+    "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED",
     "price": 999.99,
     "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
     "category": "electronics",
@@ -713,7 +1507,27 @@
       "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
     ],
     "brand": "SAMSUNG",
-    "rating": 3.5
+    "rating": 3.5,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Oliver Harris",
+        "comment": "Incredible monitor for immersive gaming. The ultrawide screen is a game-changer.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Ella Martinez",
+        "comment": "Great monitor, but very expensive. The size and refresh rate are impressive.",
+        "ratings": 3.8
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Sophia Lewis",
+        "comment": "Good performance, but the curve could be more pronounced.",
+        "ratings": 3.5
+      }
+    ]
   },
   {
     "id": 15,
@@ -727,7 +1541,27 @@
       "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
     ],
     "brand": "BIYLACLESEN",
-    "rating": 2.5
+    "rating": 2.5,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Emma White",
+        "comment": "The jacket is warm and functional, but the fit is a bit off. Sizing could be better.",
+        "ratings": 2
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Olivia Johnson",
+        "comment": "It's a decent jacket for the price, but the material feels a bit cheap.",
+        "ratings": 3
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Ava Brown",
+        "comment": "Not bad for winter wear, but it's bulkier than I expected.",
+        "ratings": 2.5
+      }
+    ]
   },
   {
     "id": 16,
@@ -741,7 +1575,27 @@
       "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"
     ],
     "brand": "Lock and Love",
-    "rating": 2
+    "rating": 2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Sophia Green",
+        "comment": "The jacket looks nice, but the faux leather feels flimsy and not very durable.",
+        "ratings": 2
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Mia Lewis",
+        "comment": "Style is good, but the fit is off. I had to return it.",
+        "ratings": 2.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Isabella Harris",
+        "comment": "Cheap material and not very comfortable. Would not recommend.",
+        "ratings": 1.5
+      }
+    ]
   },
   {
     "id": 17,
@@ -755,11 +1609,31 @@
       "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
     ],
     "brand": "Lock and Love",
-    "rating": 3
+    "rating": 3,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Avery King",
+        "comment": "Good rain jacket for the price. It's lightweight and functional.",
+        "ratings": 3.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Lily Scott",
+        "comment": "The jacket works well, but the hood is too large and tends to fall off.",
+        "ratings": 3
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Ella Martinez",
+        "comment": "Nice design, but the material could be better. It feels a bit thin.",
+        "ratings": 3
+      }
+    ]
   },
   {
     "id": 18,
-    "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+    "title": "MBJ Women's Solid Short Sleeve Boat Neck V",
     "price": 9.85,
     "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
     "category": "women's clothing",
@@ -769,7 +1643,27 @@
       "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
     ],
     "brand": "MBJ",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Emily Walker",
+        "comment": "Great shirt for casual wear. Comfortable and fits well.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Aubrey Adams",
+        "comment": "Nice fit and fabric, but the neckline is a bit loose.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Chloe Allen",
+        "comment": "Good value for the price. The shirt is soft and stretchy.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 19,
@@ -782,7 +1676,27 @@
       "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
     ],
     "brand": "Opna",
-    "rating": 3.8
+    "rating": 3.8,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Madison Young",
+        "comment": "Comfortable and breathable. Perfect for workouts and casual wear.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Zoe Harris",
+        "comment": "Soft fabric but shrinks a bit after washing. Good value for the price.",
+        "ratings": 3.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Lily Carter",
+        "comment": "Nice fit and color, but the material feels a bit thin.",
+        "ratings": 3.5
+      }
+    ]
   },
   {
     "id": 20,
@@ -796,7 +1710,27 @@
       "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
     ],
     "brand": "DANVOUY",
-    "rating": 4.2
+    "rating": 4.2,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Ariana Martinez",
+        "comment": "Soft and comfortable. Great for casual wear.",
+        "ratings": 4.5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Sofia Wilson",
+        "comment": "Nice fit, but the print started fading after a few washes.",
+        "ratings": 4
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Layla Lewis",
+        "comment": "Good quality t-shirt for the price. Would buy again.",
+        "ratings": 4
+      }
+    ]
   },
   {
     "id": 11111,
@@ -810,6 +1744,74 @@
       "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
       "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
     ],
-    "brand": "Essence"
+    "brand": "Essence",
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "Natalie Carter",
+        "comment": "Amazing mascara! Adds so much volume and length. Highly recommend.",
+        "ratings": 5
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Hannah Adams",
+        "comment": "Great for everyday use. Adds definition and stays on well.",
+        "ratings": 4.8
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Samantha King",
+        "comment": "Love this mascara! It gives my lashes a dramatic look.",
+        "ratings": 5
+      }
+    ]
+  },
+  {
+    "id": 1722859826083,
+    "title": "abcd",
+    "price": 81,
+    "description": "abcd efgh ijkl mnop qrst uvwx",
+    "category": "Beauty Product",
+    "brand": "Zara",
+    "image": [
+      "https://i.ibb.co/xD7nDq5/nextamazon5.jpg",
+      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+      "https://i.ibb.co/SybqWjf/nextamazon3.jpg"
+    ],
+    "rating": 0,
+    "reviews": [
+      {
+        "userImage": "/no-image.png",
+        "username": "David",
+        "ratings": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Eva",
+        "ratings": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Frank",
+        "ratings": 2,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla. Suspendisse potenti."
+      }
+    ]
+  },
+  {
+    "id": 1722944010770,
+    "title": "asdasda",
+    "price": 111,
+    "description": "dscqdqdw dq wd",
+    "category": "Computer",
+    "brand": "GMKtec",
+    "image": [
+      "https://i.ibb.co/SybqWjf/nextamazon3.jpg",
+      "https://i.ibb.co/SybqWjf/nextamazon3.jpg",
+      "https://i.ibb.co/SybqWjf/nextamazon3.jpg"
+    ],
+    "rating": 4.4
   }
 ]

@@ -40,11 +40,11 @@ const CartPage = () => {
   };
 
   return (
-    <div className="w-2/3">
-      <div className="flex space-x-8">
-        <div className="w-5/6 bg-white p-6 rounded-lg shadow-lg">
+    <div className="lg:w-2/3 w-5/6">
+      <div className="flex lg:flex-row flex-col lg:space-x-8 space-x-0 lg:space-y-0 space-y-6 lg:mb-0 mb-5">
+        <div className="lg:w-5/6 w-full bg-white p-6 rounded-lg shadow-lg">
           {cartItems.length === 0 ? (
-            <p className="text-5xl">Your cart is empty</p>
+            <p className="lg:text-5xl md:text-3xl text-2xl">Your cart is empty</p>
           ) : (
             <div className="space-y-4">
               <div className="border-b mb-10">
@@ -61,15 +61,13 @@ const CartPage = () => {
                 return (
                   <div
                     key={id}
-                    className="flex justify-between items-center border-b pb-4"
+                    className="flex lg:flex-row flex-col justify-between items-center border-b pb-4 lg:space-y-0 space-y-5"
                   >
-                    <div className="flex items-center space-x-4 w-7/12">
+                    <div className="flex items-center space-x-4 lg:w-7/12 w-5/6 lg:flex-row flex-col lg:text-start text-center lg:space-y-0 space-y-4">
                       <img
                         src={item.image[0]}
                         alt={item.title}
-                        className="w-16 h-16 object-cover rounded"
-                        width={64}
-                        height={64}
+                        className="lg:w-28 w-64  object-cover rounded"
                       />
                       <div>
                         <h2 className="text-lg font-semibold">
@@ -78,7 +76,7 @@ const CartPage = () => {
                             x {quantity}
                           </span>
                         </h2>
-                        <p className="text-gray-500 w-2/3">
+                        <p className="text-gray-500 lg:w-2/3 w-full">
                           {item.description.split(" ").slice(0, 10).join(" ")}
                         </p>
                       </div>
@@ -98,7 +96,7 @@ const CartPage = () => {
                         +
                       </button>
                     </div>
-                    <div>
+                    <div className="text-center">
                       <div className="text-lg font-semibold">
                         {convertUsdToCurrency(item.price * quantity)}{" "}
                         <div className="text-xs text-gray-400 font-normal">
@@ -137,7 +135,7 @@ const CartPage = () => {
           </div>
         </div>
 
-        <div className="w-1/3 h-60 bg-gray-100 p-6 rounded-lg shadow-lg">
+        <div className="lg:w-1/3 w-full h-60 bg-gray-100 p-6 rounded-lg shadow-lg lg:self-start self-center ">
           <h2 className="text-xl font-bold mb-6">Summary</h2>
           <div className="space-y-4">
             <div className="flex justify-between">
