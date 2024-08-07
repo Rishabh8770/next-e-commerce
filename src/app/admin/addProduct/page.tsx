@@ -3,7 +3,7 @@ import React from "react";
 
 const AddProduct = () => {
   return (
-    <div className="m-20 bg-side-sidebar-bg rounded-xl">
+    <div className="lg:m-20 m-8 bg-side-sidebar-bg rounded-xl">
       <AddOrEditForm productId={null} isEditMode={false}/>
     </div>
   );
