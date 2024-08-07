@@ -2,7 +2,7 @@ import React from 'react'
 
 const AdminPage = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen text-center">
       <h1 className="text-5xl">Welcome, Admin</h1>
     </div>
   );

@@ -37,7 +37,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
       <div className="p-5">
         <ArrowLeft
           onClick={handleArrowClick}
-          className="cursor-pointer border rounded-full size-10 p-1"
+          className="cursor-pointer size-10 p-1"
         />
       </div>
       <div className="py-18 h-auto flex items-center justify-center">
@@ -58,13 +58,13 @@ function ProductDetails({ params }: { params: { id: string } }) {
               </div>
             </div>
             <ul className="list-disc pl-5">{bulletPoints}</ul>
-            <div className="my-10 -bottom-4">
+            <div className="my-10 -bottom-4 flex lg:justify-start justify-center items-center">
               <AddToCart productId={product.id} />
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-8 mb-4">
+      <div className="mt-8 mb-4 text-center">
         <h1 className="text-3xl flex justify-center items-center font-semibold">People who also reviewed this product</h1>
       </div>
       <div className="flex justify-center">

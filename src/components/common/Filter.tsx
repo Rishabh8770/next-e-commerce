@@ -73,7 +73,7 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
 
   return (
     <div className="flex flex-col items-center space-y-2">
-      <h2 className="text-white mb-4">
+      <h2 className="text-white mb-4 md:block hidden">
         Filter by {filterType.charAt(0).toUpperCase() + filterType.slice(1)}
       </h2>
       <div className="mb-4 space-x-2 my-2">

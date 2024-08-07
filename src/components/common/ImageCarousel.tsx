@@ -22,7 +22,7 @@ const ImageCarousel = ({ images }: CarouselProps) => {
       <img
         src={images[currentImageIndex]}
         alt={`Product image ${currentImageIndex + 1}`}
-        className="size-96 rounded-md"
+        className="lg:size-96 size-52 rounded-md"
       />
       <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 hidden md:inline-block">
         <button

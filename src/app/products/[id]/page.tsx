@@ -17,7 +17,7 @@ const ProductDetailsPage = () => {
   }
 
   return (
-    <div>
+    <div className='flex flex-col justify-center'>
       <ProductDetails params={{ id }} />
     </div>
   );
