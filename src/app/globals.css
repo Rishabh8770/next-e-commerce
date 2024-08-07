@@ -13,6 +13,16 @@ html {
   scrollbar-width: none;
 }
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 @keyframes slide-down {
   from {
     transform: translateY(-10px);
@@ -28,13 +38,12 @@ html {
   animation: slide-down 0.3s ease-out;
 }
 
-
 @keyframes slide {
-  from{
+  from {
     transform: translateZ(-100%);
     opacity: 0;
   }
-  to{
+  to {
     transform: translateZ(0);
     opacity: 1;
   }

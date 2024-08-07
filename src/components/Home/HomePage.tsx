@@ -147,7 +147,7 @@ const HomePage = () => {
   };
   return (
     <div className="flex lg:flex-row flex-col">
-      <div className="w-full lg:w-1/6 border-y-1 items-center lg:min-h-screen flex flex-col pt-4 bg-gray-800  lg:sticky lg:top-0 lg:left-0 lg:h-screen lg:overflow-y-auto lg:z-10">
+      <div className="w-full lg:w-1/6 border-y-1 items-center lg:min-h-screen flex flex-col pt-4 bg-gray-800  lg:sticky lg:top-0 lg:left-0 lg:h-screen lg:overflow-y-auto lg:z-10 no-scrollbar">
         <div className="flex flex-col justify-center items-center">
           <div className="md:hidden block mb-4">
             <SearchProduct />
@@ -190,7 +190,7 @@ const HomePage = () => {
             </div>
           </div>
         )}
-        <div className="lg:block hidden">
+        <div className="lg:flex justify-center items-center flex-col hidden">
           <div className="text-white">
             <ProductSort onProductSort={handleProductSort} />
           </div>
@@ -220,7 +220,7 @@ const HomePage = () => {
         <div className="lg:block hidden">
           <CategoryPills categories={categories} />
         </div>
-        <div className="flex flex-wrap justify-center overflow-y-scroll lg:h-screen">
+        <div className="flex flex-wrap justify-center overflow-y-scroll lg:h-screen no-scrollbar">
           {loading ? (
             <LoadingPage />
           ) : (
