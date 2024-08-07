@@ -21,11 +21,11 @@ export default function AdminLayout({
   return (
     <div className={`${inter.className} flex min-h-screen`}>
       <ProductProvider>
-        <div className="flex flex-1 min-h-screen">
-          <div className="w-1/6 bg-side-sidebar-bg lg:sticky lg:top-0 lg:h-screen">
+        <div className="flex flex-1 lg:flex-row flex-col min-h-screen w-full">
+          <div className="lg:w-1/6 w-full bg-side-sidebar-bg lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden">
             <SideBar />
           </div>
-          <main className="flex-grow overflow-y-auto">
+          <main className="flex-grow overflow-y-auto overflow-x-auto lg:overflow-x-hidden">
             <Suspense fallback={<LoadingPage />}>{children}</Suspense>
           </main>
         </div>

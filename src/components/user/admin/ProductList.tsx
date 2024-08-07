@@ -14,8 +14,7 @@ type Product = {
   category: string;
   brand: string;
   price: number;
-}
-
+};
 
 const ProductList = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,7 +22,6 @@ const ProductList = () => {
   const { products } = useProductContext();
   const router = useRouter();
   const { deleteProduct } = useProductContext();
-
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -34,21 +32,19 @@ const ProductList = () => {
   const totalPages = Math.ceil(products.length / itemsPerPage);
 
   const handleEdit = (id: number) => {
-    router.push(`/admin/editProduct?id=${id}`)
-  }
+    router.push(`/admin/editProduct?id=${id}`);
+  };
 
   const handleDelete = (id: number) => {
-    // e.preventDefault();
-    deleteProduct(id)
+    deleteProduct(id);
+  };
 
-  }
-
-  if(!currentProducts) {
-    <LoadingPage />
+  if (!currentProducts) {
+    return <LoadingPage />;
   }
 
   return (
-    <div>
+    <div className="overflow-x-auto">
       <table className="min-w-full text-white">
         <thead>
           <tr className="text-justify">
