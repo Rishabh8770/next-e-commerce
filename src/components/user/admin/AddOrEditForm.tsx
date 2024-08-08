@@ -159,7 +159,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
             </select>
           </div>
           <div className="mb-4">
-            <label className="block text-white font-bold mb-2">Price ($)</label>
+            <label className="block text-white font-bold mb-2">Price (₹)</label>
             <input
               type="number"
               id="price"

@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
 import { ProductTypes } from "@/types/ProductTypes";
 import productData from "@/data/products.json";
 import Carousel from "@/components/common/ImageCarousel";
 import AddToCart from "@/components/cart/AddToCart";
-import { convertUsdToCurrency } from "@/utils/CurrencyFormatter";
 import { ArrowLeft } from "lucide-react";
 import { useCallback } from "react";
 import { useRouter } from "next/navigation";
@@ -49,9 +48,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
             <h1 className="lg:text-3xl text-sm font-bold my-4">
               {product.title}
             </h1>
-            <h2 className="text-xl mb-4">{`${convertUsdToCurrency(
-              product.price
-            )}`}</h2>
+            <h2 className="text-xl mb-4">₹{product.price}</h2>
             <div className="mb-4">
               <div className="flex items-center mt-2">
                 {generateStarRating(product.rating)}
@@ -65,14 +62,18 @@ function ProductDetails({ params }: { params: { id: string } }) {
         </div>
       </div>
       <div className="mt-8 mb-4 text-center">
-        <h1 className="text-3xl flex justify-center items-center font-semibold">People who also reviewed this product</h1>
+        <h1
+          className={`text-3xl flex justify-center items-center ${
+            product.reviews ? "font-semibold" : "font-normal"
+          }`}
+        >
+          {product.reviews && product.reviews?.length > 0
+            ? "People who also reviewed this product"
+            : "No reviews yet."}
+        </h1>
       </div>
       <div className="flex justify-center">
-        {product.reviews ? (
-          <ProductReview reviews={product.reviews} />
-        ) : (
-          <div>No reviews available.</div>
-        )}
+        {product.reviews && <ProductReview reviews={product.reviews} />}
       </div>
     </div>
   );

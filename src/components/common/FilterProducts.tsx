@@ -1,4 +1,4 @@
-/* "use client";
+"use client";
 
 import React, { useMemo } from "react";
 import { MultiSelectDropdown, Option } from "./MultiSelectDropdown"; // Adjust the import path
@@ -12,6 +12,8 @@ type FilterProps = {
   onBrandChange: (selectedOptions: Option[] | null) => void;
   selectedRatings: Option[] | null;
   onRatingChange: (selectedOptions: Option[] | null) => void;
+  handleClearFilters: () => void;
+  isFiltersSelected: boolean;
 };
 
 const Filter = ({
@@ -22,6 +24,8 @@ const Filter = ({
   onBrandChange,
   selectedRatings,
   onRatingChange,
+  handleClearFilters,
+  isFiltersSelected,
 }: FilterProps) => {
   const categories = useMemo(
     () => [...new Set(products.map((product) => product.category))],
@@ -31,7 +35,7 @@ const Filter = ({
     () => [...new Set(products.map((product) => product.brand))],
     [products]
   );
-  const ratings = ["3 & above", "4 & above"];
+  const ratings = ["2 & above", "3 & above", "4 & above"];
 
   const ratingOptions = ratings.map((rating) => ({
     value: rating,
@@ -72,9 +76,17 @@ const Filter = ({
           name="ratings"
         />
       </div>
+
+      {isFiltersSelected && (
+        <button
+          className="bg-red-500 p-2 rounded-md mt-4"
+          onClick={handleClearFilters}
+        >
+          Clear Filters
+        </button>
+      )}
     </div>
   );
 };
 
 export default Filter;
- */

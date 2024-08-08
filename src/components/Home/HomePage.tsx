@@ -6,11 +6,12 @@ import { useProductContext } from "@/context/ProductContext";
 import { useSearchContext } from "@/context/SearchContext";
 import LoadingPage from "@/app/loading";
 import { ProductSort, SortOptions } from "@/components/common/productSort";
-import Filter from "@/components/common/Filter";
+import Filter from "@/components/common/FilterProducts";
 import { getCategories, getBrands, getRatings } from "@/utils/actionUtils";
 import { CategoryPills } from "../products/CategoryPills";
 import SearchProduct from "../common/SearchProduct";
 import { ListFilter, Menu, SlidersHorizontal } from "lucide-react";
+import { Option } from "@/components/common/MultiSelectDropdown";
 
 type ViewState = {
   isMobileViewMenu: boolean;
@@ -23,13 +24,13 @@ const HomePage = () => {
   const { products } = useProductContext();
   const { searchQuery } = useSearchContext();
   const [loading, setLoading] = useState(true);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
-  const [selectedRatings, setSelectedRatings] = useState<number[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<Option[] | null>(
+    null
+  );
+  const [selectedBrands, setSelectedBrands] = useState<Option[] | null>(null);
+  const [selectedRatings, setSelectedRatings] = useState<Option[] | null>(null);
   const [sortOption, setSortOption] = useState<SortOptions>("Show All");
   const [categories, setCategories] = useState<string[]>([]);
-  const [brands, setBrands] = useState<string[]>([]);
-  const [ratings, setRatings] = useState<number[]>([]);
 
   const [view, setView] = useState<ViewState>({
     isMobileViewMenu: false,
@@ -39,14 +40,20 @@ const HomePage = () => {
   const filterProducts = () => {
     return products.filter((product) => {
       const categoryMatch =
+        !selectedCategories ||
         selectedCategories.length === 0 ||
-        selectedCategories.includes(product.category);
+        selectedCategories.some((option) => option.value === product.category);
       const brandMatch =
-        selectedBrands.length === 0 || selectedBrands.includes(product.brand);
+        !selectedBrands ||
+        selectedBrands.length === 0 ||
+        selectedBrands.some((option) => option.value === product.brand);
       const ratingMatch =
+        !selectedRatings ||
         selectedRatings.length === 0 ||
-        selectedRatings.some((rating) => product.rating >= rating);
-
+        selectedRatings.some((option) => {
+          const ratingThreshold = parseFloat(option.value.split(" ")[0]);
+          return product.rating >= ratingThreshold;
+        });
       return (
         categoryMatch &&
         brandMatch &&
@@ -65,7 +72,7 @@ const HomePage = () => {
         console.error("Failed to fetch categories:", error);
       }
     };
-    const fetchBrands = async () => {
+    /* const fetchBrands = async () => {
       try {
         const brandsfetch = await getBrands();
         setBrands(brandsfetch);
@@ -80,11 +87,11 @@ const HomePage = () => {
       } catch (error) {
         console.error("Failed to fetch ratings:", error);
       }
-    };
+    }; */
 
     fetchCategories();
-    fetchBrands();
-    fetchRatings();
+    // fetchBrands();
+    // fetchRatings();
   }, []);
 
   const sortProducts = (productsToSort: typeof products) => {
@@ -108,7 +115,7 @@ const HomePage = () => {
 
   const handleFilterChange = (
     type: "category" | "brand" | "rating",
-    selectedOptions: string[]
+    selectedOptions: Option[] | null
   ) => {
     switch (type) {
       case "category":
@@ -118,7 +125,7 @@ const HomePage = () => {
         setSelectedBrands(selectedOptions);
         break;
       case "rating":
-        setSelectedRatings(selectedOptions.map((option) => parseFloat(option)));
+        setSelectedRatings(selectedOptions);
         break;
     }
   };
@@ -144,6 +151,18 @@ const HomePage = () => {
       ...prevView,
       [viewType]: !prevView[viewType],
     }));
+  };
+
+  const isFiltersSelected =
+    (selectedBrands && selectedBrands.length > 0) ||
+    (selectedCategories && selectedCategories.length > 0) ||
+    (selectedRatings && selectedRatings.length > 0) ||
+    false;
+
+  const handleFilterClear = () => {
+    setSelectedBrands([]);
+    setSelectedCategories([]);
+    setSelectedRatings([]);
   };
   return (
     <div className="flex lg:flex-row flex-col">
@@ -180,12 +199,23 @@ const HomePage = () => {
               <ProductSort onProductSort={handleProductSort} />
             </div>
             <div className="border-t border-gray-300 mb-4 w-3/4 mt-5"></div>
-            <div className="self-center mt-5">
+            <div className="self-center">
               <Filter
-                categories={categories}
-                brands={brands}
-                ratings={ratings}
-                onFilterChange={handleFilterChange}
+                products={products}
+                selectedCategories={selectedCategories}
+                onCategoryChange={(options) =>
+                  handleFilterChange("category", options)
+                }
+                selectedBrands={selectedBrands}
+                onBrandChange={(options) =>
+                  handleFilterChange("brand", options)
+                }
+                selectedRatings={selectedRatings}
+                onRatingChange={(options) =>
+                  handleFilterChange("rating", options)
+                }
+                handleClearFilters={handleFilterClear}
+                isFiltersSelected={isFiltersSelected}
               />
             </div>
           </div>
@@ -195,12 +225,21 @@ const HomePage = () => {
             <ProductSort onProductSort={handleProductSort} />
           </div>
           <div className="border-t border-gray-300 mb-4 w-3/4 mt-5"></div>
-          <div className="self-center mt-5">
+          <div className="self-center">
             <Filter
-              categories={categories}
-              brands={brands}
-              ratings={ratings}
-              onFilterChange={handleFilterChange}
+              products={products}
+              selectedCategories={selectedCategories}
+              onCategoryChange={(options) =>
+                handleFilterChange("category", options)
+              }
+              selectedBrands={selectedBrands}
+              onBrandChange={(options) => handleFilterChange("brand", options)}
+              selectedRatings={selectedRatings}
+              onRatingChange={(options) =>
+                handleFilterChange("rating", options)
+              }
+              handleClearFilters={handleFilterClear}
+              isFiltersSelected={isFiltersSelected}
             />
           </div>
         </div>
