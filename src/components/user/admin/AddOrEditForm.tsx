@@ -21,6 +21,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
   const [images, setImages] = useState<string[]>(["", "", ""]);
   const [categories, setCategories] = useState<string[]>([]);
   const [brands, setBrands] = useState<string[]>([]);
+  const [discount, setDiscount] = useState("")
   const { setProducts } = useProductContext();
 
   useEffect(() => {
@@ -46,6 +47,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
           setCategory(productToEdit.category || "");
           setBrand(productToEdit.brand || "");
           setPrice(productToEdit.price.toString() || "");
+          setDiscount(productToEdit.discount?.toString() || "")
           setImages(productToEdit.image || ["", "", ""]);
         }
       };
@@ -62,6 +64,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
     formData.append("category", category);
     formData.append("brand", brand);
     formData.append("price", price);
+    formData.append("discount", discount);
     images.forEach((image, index) => {
       formData.append(`image${index + 1}`, image);
     });
@@ -88,6 +91,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
     setCategory("");
     setBrand("");
     setPrice("");
+    setDiscount("");
     setImages(["", "", "", ""]);
   };
 
@@ -168,6 +172,18 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
               onChange={(e) => setPrice(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-input-inputBox-bg"
               placeholder="Enter product price in $"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-white font-bold mb-2">Discount (%)</label>
+            <input
+              type="number"
+              id="discount"
+              name="discount"
+              value={discount}
+              onChange={(e) => setDiscount(e.target.value)}
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-input-inputBox-bg"
+              placeholder="Enter product discount"
             />
           </div>
           <div className="mb-6">

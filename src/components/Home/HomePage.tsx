@@ -274,6 +274,7 @@ const HomePage = () => {
                   category={product.category}
                   brand={product.brand}
                   rating={product.rating}
+                  discount={product.discount}
                 />
               </div>
             ))

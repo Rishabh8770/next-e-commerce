@@ -8,10 +8,19 @@ import {
 import { useCartContext } from "@/context/CartContext";
 import { useProductContext } from "@/context/ProductContext";
 import { Trash2 } from "lucide-react";
+import { useCartSummary } from "@/hooks/useCartSummary";
 
 const CartPage = () => {
   const { cartItems, refreshCart } = useCartContext();
   const { products } = useProductContext();
+  const {
+    totalDiscount,
+    totalPrice,
+    tax,
+    totalQuantity,
+    priceAfterTax,
+    priceAfterDiscount,
+  } = useCartSummary();
 
   const handleIncrement = async (productId: number, quantity: number) => {
     await updateCartItem(productId, quantity + 1);
@@ -98,10 +107,27 @@ const CartPage = () => {
                       </button>
                     </div>
                     <div className="text-center">
-                      <div className="text-lg font-semibold">
-                        ₹{item.price * quantity}{" "}
+                      <div>
+                        <span className="font-semibold text-green-500">
+                          {item.discount}% off{" "}
+                        </span>{" "}
+                        <span className="line-through text-gray-400 text-sm">
+                          ₹{(item.price * quantity).toFixed(2)}{" "}
+                        </span>
+                        <div className="text-black text-md">
+                          ₹
+                          {(
+                            item.price * quantity -
+                            (item.price * quantity * (item.discount || 0)) / 100
+                          ).toFixed(2)}
+                        </div>
                         <div className="text-xs text-gray-400 font-normal">
-                          (₹{item.price}/item)
+                          (₹
+                          {(
+                            item.price -
+                            (item.price * (item.discount || 0)) / 100
+                          ).toFixed(2)}
+                          /item)
                         </div>
                       </div>
                     </div>
@@ -136,29 +162,29 @@ const CartPage = () => {
           </div>
         </div>
 
-        <div className="lg:w-1/3 w-full h-60 bg-gray-100 p-6 rounded-lg shadow-lg lg:self-start self-center ">
+        <div className="lg:w-1/3 w-full h-auto bg-gray-100 p-6 rounded-lg shadow-lg lg:self-start self-center ">
           <h2 className="text-xl font-bold mb-6">Summary</h2>
           <div className="space-y-4">
             <div className="flex justify-between">
               <span>
-                ITEMS {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+                Price: ({totalQuantity} {totalQuantity > 1 ? "items" : "item"})
               </span>
-              <span>
-                ₹
-                {cartItems.reduce((sum, item) => {
-                  const product = products.find((p) => p.id === item.id);
-                  return sum + (product ? product.price * item.quantity : 0);
-                }, 0)}
+              <span>₹{totalPrice.toFixed(2)}</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Discount:</span>
+              <span className="text-green-500">
+                - ₹{totalDiscount.toFixed(2)}
               </span>
             </div>
             <div className="flex justify-between">
-              <span>TOTAL PRICE</span>
-              <span>
-                ₹
-                {cartItems.reduce((sum, item) => {
-                  const product = products.find((p) => p.id === item.id);
-                  return sum + (product ? product.price * item.quantity : 0);
-                }, 0)}
+              <span>Tax:</span>
+              <span>₹{tax.toFixed(2)}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="font-semibold">Order Total:</span>
+              <span className="font-semibold text-red-700">
+                ₹{priceAfterTax.toFixed(2)}
               </span>
             </div>
             <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
