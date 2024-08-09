@@ -61,7 +61,7 @@ const ProductCard = ({
             <p className="text-gray-400 text-sm mt-2 line-through">₹{price}</p>
             <p className="text-black font-semibold text-lg mt-1 ">
               ₹{(price - (price * (discount ?? 0)) / 100).toFixed(2)}{" "}
-              <span className="text-sm text-gray-400 font-normal">
+              <span className="text-sm text-green-500">
                 ({discount}% off)
               </span>
             </p>
