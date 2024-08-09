@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Pagination from "@/components/common/Pagination";
 import { useProductContext } from "@/context/ProductContext";
-import { convertUsdToCurrency } from "@/utils/CurrencyFormatter";
 import { useRouter } from "next/navigation";
 import LoadingPage from "@/app/loading";
 
@@ -70,7 +69,7 @@ const ProductList = () => {
               <td className="py-6 px-4 border-b">{product.category}</td>
               <td className="py-6 px-4 border-b">{product.brand}</td>
               <td className="py-6 px-2 border-b">
-                {convertUsdToCurrency(product.price)}
+                ₹{product.price}
               </td>
               <td className="py-6 px-4 border-b">
                 <div className="flex space-x-2">

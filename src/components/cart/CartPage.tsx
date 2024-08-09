@@ -7,7 +7,6 @@ import {
 } from "@/actions/CartAction";
 import { useCartContext } from "@/context/CartContext";
 import { useProductContext } from "@/context/ProductContext";
-import { convertUsdToCurrency } from "@/utils/CurrencyFormatter";
 import { Trash2 } from "lucide-react";
 
 const CartPage = () => {
@@ -44,7 +43,9 @@ const CartPage = () => {
       <div className="flex lg:flex-row flex-col lg:space-x-8 space-x-0 lg:space-y-0 space-y-6 lg:mb-0 mb-5">
         <div className="lg:w-5/6 w-full bg-white p-6 rounded-lg shadow-lg">
           {cartItems.length === 0 ? (
-            <p className="lg:text-5xl md:text-3xl text-2xl">Your cart is empty</p>
+            <p className="lg:text-5xl md:text-3xl text-2xl">
+              Your cart is empty
+            </p>
           ) : (
             <div className="space-y-4">
               <div className="border-b mb-10">
@@ -98,9 +99,9 @@ const CartPage = () => {
                     </div>
                     <div className="text-center">
                       <div className="text-lg font-semibold">
-                        {convertUsdToCurrency(item.price * quantity)}{" "}
+                        ₹{item.price * quantity}{" "}
                         <div className="text-xs text-gray-400 font-normal">
-                          ({convertUsdToCurrency(item.price)}/item)
+                          (₹{item.price}/item)
                         </div>
                       </div>
                     </div>
@@ -143,23 +144,21 @@ const CartPage = () => {
                 ITEMS {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
               </span>
               <span>
-                {convertUsdToCurrency(
-                  cartItems.reduce((sum, item) => {
-                    const product = products.find((p) => p.id === item.id);
-                    return sum + (product ? product.price * item.quantity : 0);
-                  }, 0)
-                )}
+                ₹
+                {cartItems.reduce((sum, item) => {
+                  const product = products.find((p) => p.id === item.id);
+                  return sum + (product ? product.price * item.quantity : 0);
+                }, 0)}
               </span>
             </div>
             <div className="flex justify-between">
               <span>TOTAL PRICE</span>
               <span>
-                {convertUsdToCurrency(
-                  cartItems.reduce((sum, item) => {
-                    const product = products.find((p) => p.id === item.id);
-                    return sum + (product ? product.price * item.quantity : 0);
-                  }, 0)
-                )}
+                ₹
+                {cartItems.reduce((sum, item) => {
+                  const product = products.find((p) => p.id === item.id);
+                  return sum + (product ? product.price * item.quantity : 0);
+                }, 0)}
               </span>
             </div>
             <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
