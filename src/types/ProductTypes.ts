@@ -7,7 +7,8 @@ export type ProductTypes = {
   image: string[];
   brand: string;
   rating: number;
-  reviews?: ReviewType[]
+  reviews?: ReviewType[];
+  discount?: number
 };
 
 export interface CartItem {

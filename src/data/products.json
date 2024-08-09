@@ -11,6 +11,7 @@
       "https://i.ibb.co/SybqWjf/nextamazon3.jpg"
     ],
     "brand": "Acer",
+    "discount": 25,
     "rating": 3,
     "reviews": [
       {
@@ -45,6 +46,7 @@
       "https://i.ibb.co/0Gvx3Sk/nextImg.jpg"
     ],
     "brand": "Acer",
+    "discount": 15,
     "rating": 4,
     "reviews": [
       {
@@ -79,6 +81,7 @@
       "https://i.ibb.co/xD7nDq5/nextamazon5.jpg"
     ],
     "brand": "Apple",
+    "discount": 10,
     "rating": 2,
     "reviews": [
       {
@@ -102,40 +105,6 @@
     ]
   },
   {
-    "id": 9004,
-    "title": "Smart Watches for Men",
-    "price": 4701.68,
-    "description": "Smart Watches for Men (Answer/Make Call) 100 Sport Modes Fitness Tracker Heart Rate Blood Oxygen Sleep Monitor IP68 Waterproof Fitness Watch Activity Tracker and Smartwatches iPhone Android Compatible",
-    "category": "Smart watch",
-    "image": [
-      "https://i.ibb.co/0Gvx3Sk/nextImg.jpg",
-      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
-      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
-    ],
-    "brand": "ENOMIR",
-    "rating": 4,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Jack",
-        "ratings": 4,
-        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero."
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Kate",
-        "ratings": 5,
-        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam."
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Leo",
-        "ratings": 3,
-        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla. Suspendisse potenti."
-      }
-    ]
-  },
-  {
     "id": 9005,
     "title": "KOORUI 24 Inch Computer Monitor -FHD 1080P Gaming Monitor",
     "price": 9809.25,
@@ -147,6 +116,7 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "KOORUI",
+    "discount": 18,
     "rating": 4,
     "reviews": [
       {
@@ -181,6 +151,7 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "GMKtec",
+    "discount": 15,
     "rating": 5,
     "reviews": [
       {
@@ -215,6 +186,7 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "larco",
+    "discount": 10,
     "rating": 4,
     "reviews": [
       {
@@ -249,6 +221,7 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "SkyTech",
+    "discount": 18,
     "rating": 3.8,
     "reviews": [
       {
@@ -283,6 +256,7 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "Skullcandy ",
+    "discount": 15,
     "rating": 4,
     "reviews": [
       {
@@ -317,6 +291,7 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "brand": "Garmin",
+    "discount": 10,
     "rating": 3.8,
     "reviews": [
       {
@@ -350,6 +325,7 @@
       "https://i.ibb.co/1r28gMk/1.webp"
     ],
     "category": "Electronics",
+    "discount": 18,
     "brand": "Canon",
     "rating": 4,
     "reviews": [
@@ -385,6 +361,7 @@
       "https://i.ibb.co/1r28gMk/1.webp"
     ],
     "category": "Electronics",
+    "discount": 15,
     "rating": 3.8,
     "reviews": [
       {
@@ -419,6 +396,7 @@
     ],
     "category": "Electronics",
     "brand": "Apple",
+    "discount": 10,
     "rating": 4.5,
     "reviews": [
       {
@@ -442,40 +420,6 @@
     ]
   },
   {
-    "id": 9014,
-    "title": "iPhone 14",
-    "description": "AT&T iPhone 14 128GB Midnight",
-    "price": 99000,
-    "image": [
-      "https://i.ibb.co/5F3nWv6/7.webp",
-      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
-      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
-    ],
-    "category": "Electronics",
-    "brand": "Apple",
-    "rating": 4,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "RobertTaylor",
-        "ratings": 4,
-        "comment": "The iPhone 14 is a powerful device with a sleek design. The camera is excellent, though the price is quite steep."
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "NancyWilliams",
-        "ratings": 5,
-        "comment": "Absolutely love my new iPhone! The performance is top-notch and the battery life is impressive. Worth the upgrade."
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "DanielMiller",
-        "ratings": 3,
-        "comment": "Good phone, but the price is high for the features offered. It performs well, but I expected more for the cost."
-      }
-    ]
-  },
-  {
     "id": 9015,
     "title": "Apple Watch SE",
     "description": "Apple Watch SE (2nd Gen) GPS 40mm Midnight Aluminum Case with Midnight Sport Band - S/M",
@@ -486,6 +430,7 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "category": "Smart watch",
+    "discount": 18,
     "brand": "Apple",
     "rating": 4.3,
     "reviews": [
@@ -510,40 +455,6 @@
     ]
   },
   {
-    "id": 9016,
-    "title": "Beats Solo3",
-    "description": "Beats Solo3 Wireless On-Ear Headphones with Apple W1 Headphone Chip, Black, MX432LL/A",
-    "price": 10732.43,
-    "image": [
-      "https://i.ibb.co/rQKjVC2/5.webp",
-      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
-      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
-    ],
-    "category": "Electronics",
-    "brand": "Beats by Dr. Dre",
-    "rating": 4,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "MiaGarcia",
-        "ratings": 4,
-        "comment": "The Beats Solo3 headphones are great for music lovers. The sound quality is excellent and they are comfortable to wear."
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "EthanMartin",
-        "ratings": 5,
-        "comment": "Amazing headphones! The sound is crisp and clear, and the battery life is outstanding. Very satisfied with this purchase."
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "AvaHarris",
-        "ratings": 3,
-        "comment": "Good headphones but a bit pricey. The sound quality is good, but I’ve had better for less money."
-      }
-    ]
-  },
-  {
     "id": 9017,
     "title": "uhomepro TV Stand Cabinet",
     "description": "uhomepro TV Stand Cabinet for Living Room up to 55 Television, Entertainment Center with RGB LED Lights and Storage Shelves Furniture, Black High Gloss TV Cabinet Console Table, Q15709",
@@ -554,6 +465,7 @@
       "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
     ],
     "category": "Home Decoration",
+    "discount": 15,
     "brand": "uhomepro",
     "rating": 4.2,
     "reviews": [
@@ -578,40 +490,6 @@
     ]
   },
   {
-    "id": 9018,
-    "title": "Pupuskyer Smart Watch",
-    "description": "Pupuskyer Smart Watch, 1.7inchs Fitness Tracker with Heart Rate Monitor,Blood Oxygen Tracking, Sleep Tracking for Android iPhone Samsung,Water Resistant Smart Watches for Men Women with Watch Talking",
-    "price": 4611.75,
-    "image": [
-      "https://i.ibb.co/VC2VWGL/nextamazon11.jpg",
-      "https://i.ibb.co/9HPcTJv/nextamazon7.jpg",
-      "https://i.ibb.co/DYmhxf8/nextamazon8.jpg"
-    ],
-    "category": "Smart watch",
-    "brand": "Pupuskyer",
-    "rating": 4.2,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "MasonHall",
-        "ratings": 4,
-        "comment": "The Pupuskyer Smart Watch is a good value for the price. It tracks fitness metrics accurately and has a long battery life."
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "EllaNelson",
-        "ratings": 4,
-        "comment": "It’s a nice watch with useful features. The heart rate monitor and sleep tracking are accurate, but the app could be better."
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "BenjaminAllen",
-        "ratings": 4,
-        "comment": "Good smartwatch for the price. It has all the basic features and works well. The design is a bit bulky, but it’s comfortable."
-      }
-    ]
-  },
-  {
     "id": 9019,
     "title": "SAMSUNG Galaxy S23 Ultra Cell Phone",
     "description": "SAMSUNG Galaxy S23 Ultra Cell Phone, Factory Unlocked Android Smartphone, 512GB Storage, 200MP Camera, Night Mode, Long Battery Life, S Pen, US Version, 2023, Cream",
@@ -622,6 +500,7 @@
       "https://i.ibb.co/9HPcTJv/nextamazon7.jpg"
     ],
     "category": "Smart Phones",
+    "discount": 10,
     "brand": "SAMSUNG",
     "rating": 4,
     "reviews": [
@@ -656,6 +535,7 @@
       "https://i.ibb.co/9HPcTJv/nextamazon7.jpg"
     ],
     "category": "Smart Phones",
+    "discount": 18,
     "brand": "Apple",
     "rating": 3.8,
     "reviews": [
@@ -691,6 +571,7 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "category": "Fashion",
+    "discount": 18,
     "rating": 4,
     "reviews": [
       {
@@ -708,34 +589,6 @@
     ]
   },
   {
-    "id": 2025454,
-    "title": "Jacket with Wollen Hat",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
-    "price": 8662.5,
-    "brand": "Zara",
-    "image": [
-      "https://images.pexels.com/photos/2681751/pexels-photo-2681751.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
-    ],
-    "category": "Fashion",
-    "rating": 4.2,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Emma Smith",
-        "comment": "Stylish and warm. The hat adds a nice touch. Happy with my purchase!",
-        "ratings": 4.5
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "David Brown",
-        "comment": "Good quality, though the fit is a bit snug for my liking.",
-        "ratings": 4
-      }
-    ]
-  },
-  {
     "id": 305455,
     "title": "Skirts with Full Setup",
     "price": 57337.5,
@@ -747,6 +600,7 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "brand": "Zara",
+    "discount": 15,
     "rating": 3,
     "reviews": [
       {
@@ -764,34 +618,6 @@
     ]
   },
   {
-    "id": 408784,
-    "title": "Yellow Hoody",
-    "price": 14850,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
-    "category": "Fashion",
-    "image": [
-      "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/1631181/pexels-photo-1631181.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
-    ],
-    "brand": "Hodders",
-    "rating": 3.8,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Liam Johnson",
-        "comment": "Good color and fit, but it shrinks a bit after washing.",
-        "ratings": 3.5
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Sophia Martinez",
-        "comment": "Nice hoody, but the material feels a little rough.",
-        "ratings": 4
-      }
-    ]
-  },
-  {
     "id": 507478,
     "title": "Black T-Shirt for Women",
     "price": 1650,
@@ -803,6 +629,7 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "brand": "Ladyland",
+    "discount": 10,
     "rating": 4.2,
     "reviews": [
       {
@@ -831,6 +658,7 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "brand": "next",
+    "discount": 18,
     "rating": 3.5,
     "reviews": [
       {
@@ -859,6 +687,7 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "brand": "Ladyland",
+    "discount": 20,
     "rating": 4.5,
     "reviews": [
       {
@@ -876,34 +705,6 @@
     ]
   },
   {
-    "id": 1406543554,
-    "title": "Beats Solo3",
-    "description": "Beats Solo3 Wireless On-Ear Headphones with Apple W1 Headphone Chip, Black, MX432LL/A",
-    "price": 10732.43,
-    "brand": "Beats by Dr. Dre",
-    "image": [
-      "https://i.ibb.co/rQKjVC2/5.webp",
-      "https://i.ibb.co/VL1Dnv1/4.webp",
-      "https://i.ibb.co/1r28gMk/1.webp"
-    ],
-    "category": "Electronics",
-    "rating": 3.8,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Anna White",
-        "comment": "Sound quality is great, but the battery life could be better.",
-        "ratings": 4
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Michael Green",
-        "comment": "Comfortable but a bit pricey. Overall, a good purchase.",
-        "ratings": 3.5
-      }
-    ]
-  },
-  {
     "id": 15084554,
     "title": "T-Shirt Men",
     "description": "St Patricks Day T-Shirt Men -Image by Shutterstock, Male XX-Large",
@@ -915,6 +716,7 @@
       "https://i.ibb.co/1r28gMk/1.webp"
     ],
     "category": "Fashion",
+    "discount": 15,
     "rating": 4.2,
     "reviews": [
       {
@@ -943,6 +745,7 @@
       "https://i.ibb.co/1r28gMk/1.webp"
     ],
     "category": "Home Decoration",
+    "discount": 10,
     "rating": 4,
     "reviews": [
       {
@@ -971,6 +774,7 @@
       "https://i.ibb.co/TTS9wY4/9.webp"
     ],
     "category": "Equipments",
+    "discount": 18,
     "rating": 4.3,
     "reviews": [
       {
@@ -988,34 +792,6 @@
     ]
   },
   {
-    "id": 180115454,
-    "title": "Girls Cropped",
-    "description": "Free Assembly Girls Cropped Mixed Cable Knit Fair Isle Sweater, Sizes 4-18",
-    "price": 1263.08,
-    "brand": "Free Assembly",
-    "image": [
-      "https://i.ibb.co/BVzsqvz/10.webp",
-      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
-    ],
-    "category": "Fashion",
-    "rating": 4,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Emily Wilson",
-        "comment": "Adorable sweater, perfect for chilly days.",
-        "ratings": 4.5
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Mark Lee",
-        "comment": "Nice design but a bit small for the size.",
-        "ratings": 3.5
-      }
-    ]
-  },
-  {
     "id": 19012545,
     "title": "Night of Olay Firming Night Cream Face Moisturizer, 1.9 oz",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
@@ -1027,6 +803,7 @@
       "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
     ],
     "category": "Beauty Product",
+    "discount": 12,
     "rating": 4.2,
     "reviews": [
       {
@@ -1044,34 +821,6 @@
     ]
   },
   {
-    "id": 2001434,
-    "title": "Blue jins",
-    "price": 51975,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla non magni facili blanditiis molestias soluta eveniet illum accusantium eius mollitia eligendi, ex iste doloribus magnam.",
-    "category": "Fashion",
-    "image": [
-      "https://images.pexels.com/photos/1485031/pexels-photo-1485031.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "https://images.pexels.com/photos/2584269/pexels-photo-2584269.jpeg?auto=compress&cs=tinysrgb&w=600"
-    ],
-    "brand": "next",
-    "rating": 4.3,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Paul Martinez",
-        "comment": "High-quality jeans, but the price is a bit steep.",
-        "ratings": 4
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Sandra Clark",
-        "comment": "Great fit and style, though a bit overpriced.",
-        "ratings": 4.5
-      }
-    ]
-  },
-  {
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "price": 9070.88,
@@ -1083,6 +832,7 @@
       "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     ],
     "brand": "Fox",
+    "discount": 18,
     "rating": 4,
     "reviews": [
       {
@@ -1111,6 +861,7 @@
       "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
     ],
     "brand": "Body Fit",
+    "discount": 15,
     "rating": 4.2,
     "reviews": [
       {
@@ -1139,6 +890,7 @@
       "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
     ],
     "brand": "Body Fit",
+    "discount": 18,
     "rating": 4.1,
     "reviews": [
       {
@@ -1167,6 +919,7 @@
       "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
     ],
     "brand": "Body Fit",
+    "discount": 12,
     "rating": 3.8,
     "reviews": [
       {
@@ -1201,6 +954,7 @@
       "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
     ],
     "brand": "Naga",
+    "discount": 18,
     "rating": 4.7,
     "reviews": [
       {
@@ -1235,6 +989,7 @@
       "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
     ],
     "brand": "Naga",
+    "discount": 28,
     "rating": 4.2,
     "reviews": [
       {
@@ -1258,74 +1013,6 @@
     ]
   },
   {
-    "id": 7,
-    "title": "White Gold Plated Princess",
-    "price": 824.18,
-    "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-    "category": "jewelery",
-    "image": [
-      "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-      "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
-    ],
-    "brand": "Naga",
-    "rating": 4.3,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Ava Brown",
-        "comment": "Great ring for the price. Looks beautiful and elegant. Perfect for a promise ring.",
-        "ratings": 4.5
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Ethan Davis",
-        "comment": "Nice ring but the sizing is a bit off. I had to get it resized.",
-        "ratings": 4
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Lucas Martinez",
-        "comment": "Beautiful ring, but the plating seems to wear off a bit quickly.",
-        "ratings": 4
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-    "price": 906.68,
-    "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-    "category": "jewelery",
-    "image": [
-      "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-      "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
-    ],
-    "brand": "Naga",
-    "rating": 3,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Mason Taylor",
-        "comment": "The quality is good for the price, but the size didn't fit well.",
-        "ratings": 3
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Isabella Moore",
-        "comment": "Decent earrings, but the rose gold color is a bit too bright for my taste.",
-        "ratings": 3.2
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Aiden Harris",
-        "comment": "Nice design, but the earrings are a bit heavier than expected.",
-        "ratings": 3.1
-      }
-    ]
-  },
-  {
     "id": 9,
     "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
     "price": 5280,
@@ -1337,6 +1024,7 @@
       "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
     ],
     "brand": "Western Digital",
+    "discount": 15,
     "rating": 4.2,
     "reviews": [
       {
@@ -1360,74 +1048,6 @@
     ]
   },
   {
-    "id": 10,
-    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-    "price": 8992.5,
-    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-    "category": "electronics",
-    "image": [
-      "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
-      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
-      "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
-    ],
-    "brand": "SanDisk",
-    "rating": 4,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Evelyn Adams",
-        "comment": "Fantastic SSD. My computer boots up significantly faster now.",
-        "ratings": 4.5
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Henry King",
-        "comment": "Good performance, but the drive gets quite warm during heavy use.",
-        "ratings": 4
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Grace Mitchell",
-        "comment": "Decent SSD for the price, but the read/write speeds are not as high as some other brands.",
-        "ratings": 4
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-    "price": 8992.5,
-    "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
-    "category": "electronics",
-    "image": [
-      "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
-      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
-      "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
-    ],
-    "brand": "Western Digital",
-    "rating": 4.3,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Michael Young",
-        "comment": "Great SSD for the price. Improved my laptop's performance significantly.",
-        "ratings": 4.5
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Zoe Harris",
-        "comment": "Reliable performance. However, the transfer speeds could be better.",
-        "ratings": 4
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Ella Walker",
-        "comment": "Decent SSD but doesn't offer the same speeds as more expensive options.",
-        "ratings": 4
-      }
-    ]
-  },
-  {
     "id": 12,
     "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
     "price": 9405,
@@ -1439,6 +1059,7 @@
       "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
     ],
     "brand": "Western Digital",
+    "discount": 18,
     "rating": 4,
     "reviews": [
       {
@@ -1473,6 +1094,7 @@
       "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
     ],
     "brand": "Acer",
+    "discount": 18,
     "rating": 4.2,
     "reviews": [
       {
@@ -1507,6 +1129,7 @@
       "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
     ],
     "brand": "SAMSUNG",
+    "discount": 10,
     "rating": 3.5,
     "reviews": [
       {
@@ -1541,6 +1164,7 @@
       "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
     ],
     "brand": "BIYLACLESEN",
+    "discount": 15,
     "rating": 2.5,
     "reviews": [
       {
@@ -1575,6 +1199,7 @@
       "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"
     ],
     "brand": "Lock and Love",
+    "discount": 18,
     "rating": 2,
     "reviews": [
       {
@@ -1609,6 +1234,7 @@
       "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
     ],
     "brand": "Lock and Love",
+    "discount": 5,
     "rating": 3,
     "reviews": [
       {
@@ -1632,107 +1258,6 @@
     ]
   },
   {
-    "id": 18,
-    "title": "MBJ Women's Solid Short Sleeve Boat Neck V",
-    "price": 812.63,
-    "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
-    "category": "women's clothing",
-    "image": [
-      "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
-      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
-      "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
-    ],
-    "brand": "MBJ",
-    "rating": 4.2,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Emily Walker",
-        "comment": "Great shirt for casual wear. Comfortable and fits well.",
-        "ratings": 4.5
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Aubrey Adams",
-        "comment": "Nice fit and fabric, but the neckline is a bit loose.",
-        "ratings": 4
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Chloe Allen",
-        "comment": "Good value for the price. The shirt is soft and stretchy.",
-        "ratings": 4
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "title": "Opna Women's Short Sleeve Moisture",
-    "price": 655.88,
-    "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
-    "category": "women's clothing",
-    "image": [
-      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
-      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
-    ],
-    "brand": "Opna",
-    "rating": 3.8,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Madison Young",
-        "comment": "Comfortable and breathable. Perfect for workouts and casual wear.",
-        "ratings": 4
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Zoe Harris",
-        "comment": "Soft fabric but shrinks a bit after washing. Good value for the price.",
-        "ratings": 3.5
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Lily Carter",
-        "comment": "Nice fit and color, but the material feels a bit thin.",
-        "ratings": 3.5
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "title": "DANVOUY Womens T Shirt Casual Cotton Short",
-    "price": 1071.67,
-    "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
-    "category": "women's clothing",
-    "image": [
-      "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
-      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
-      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
-    ],
-    "brand": "DANVOUY",
-    "rating": 4.2,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "Ariana Martinez",
-        "comment": "Soft and comfortable. Great for casual wear.",
-        "ratings": 4.5
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Sofia Wilson",
-        "comment": "Nice fit, but the print started fading after a few washes.",
-        "ratings": 4
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Layla Lewis",
-        "comment": "Good quality t-shirt for the price. Would buy again.",
-        "ratings": 4
-      }
-    ]
-  },
-  {
     "id": 11111,
     "title": "Essence Mascara Lash Princess",
     "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
@@ -1745,6 +1270,7 @@
       "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
     ],
     "brand": "Essence",
+    "discount": 18,
     "reviews": [
       {
         "userImage": "/no-image.png",
@@ -1767,58 +1293,10 @@
     ]
   },
   {
-    "id": 1722859826083,
-    "title": "abcd",
-    "price": 6682.5,
-    "description": "abcd efgh ijkl mnop qrst uvwx",
-    "category": "Beauty Product",
-    "brand": "Zara",
-    "image": [
-      "https://i.ibb.co/xD7nDq5/nextamazon5.jpg",
-      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
-      "https://i.ibb.co/SybqWjf/nextamazon3.jpg"
-    ],
-    "rating": 0,
-    "reviews": [
-      {
-        "userImage": "/no-image.png",
-        "username": "David",
-        "ratings": 3,
-        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero."
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Eva",
-        "ratings": 4,
-        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam."
-      },
-      {
-        "userImage": "/no-image.png",
-        "username": "Frank",
-        "ratings": 2,
-        "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla. Suspendisse potenti."
-      }
-    ]
-  },
-  {
-    "id": 1722944010770,
-    "title": "asdasda",
-    "price": 9157.5,
-    "description": "dscqdqdw dq wd",
-    "category": "Computer",
-    "brand": "GMKtec",
-    "image": [
-      "https://i.ibb.co/SybqWjf/nextamazon3.jpg",
-      "https://i.ibb.co/SybqWjf/nextamazon3.jpg",
-      "https://i.ibb.co/SybqWjf/nextamazon3.jpg"
-    ],
-    "rating": 4.4
-  },
-  {
-    "id": 1723112632663,
-    "title": "kuili",
+    "id": 1723198395803,
+    "title": "Rishabh Malewar",
     "price": 20000,
-    "description": "lioliuiuku",
+    "description": "abcdef ghij klmno",
     "category": "Computer",
     "brand": "Apple",
     "image": [
@@ -1826,6 +1304,7 @@
       "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
       "https://i.ibb.co/SybqWjf/nextamazon3.jpg"
     ],
-    "rating": 3.1
+    "rating": 0.2,
+    "discount": 12
   }
 ]
