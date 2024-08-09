@@ -5,17 +5,14 @@ export const useCartSummary = () => {
   const { cartItems } = useCartContext();
   const { products } = useProductContext();
 
-   const totalQuantity = cartItems.reduce(
-    (sum, item) => sum + item.quantity,
-    0
-  );
-   const totalPrice = cartItems.reduce((sum, item) => {
+  const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const totalPrice = cartItems.reduce((sum, item) => {
     const product = products.find((p) => p.id === item.id);
     return sum + (product ? product.price * item.quantity : 0);
   }, 0);
-   const tax = totalPrice * 0.18;
+  const tax = totalPrice * 0.18;
 
-   const totalDiscount = cartItems.reduce((sum, item) => {
+  const totalDiscount = cartItems.reduce((sum, item) => {
     const product = products.find((prod) => prod.id === item.id);
     if (product && product.discount) {
       const discountAmount =
@@ -24,12 +21,13 @@ export const useCartSummary = () => {
     }
     return sum;
   }, 0);
+  const priceAfterTax = totalPrice - totalDiscount + tax;
 
-  const priceAfterDiscount = totalPrice - totalDiscount;
-
-   const priceAfterTax = totalPrice - totalDiscount + tax;
-
-   return {
-    totalDiscount, totalQuantity, tax, totalPrice, priceAfterTax, priceAfterDiscount
-   }
+  return {
+    totalDiscount,
+    totalQuantity,
+    tax,
+    totalPrice,
+    priceAfterTax,
+  };
 };

@@ -19,7 +19,6 @@ const CartPage = () => {
     tax,
     totalQuantity,
     priceAfterTax,
-    priceAfterDiscount,
   } = useCartSummary();
 
   const handleIncrement = async (productId: number, quantity: number) => {
