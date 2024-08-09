@@ -171,7 +171,8 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-input-inputBox-bg"
-              placeholder="Enter product price in $"
+              placeholder="Enter product price in ₹"
+              min="0"
             />
           </div>
           <div className="mb-4">
@@ -184,6 +185,8 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
               onChange={(e) => setDiscount(e.target.value)}
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-input-inputBox-bg"
               placeholder="Enter product discount"
+              min="0"
+              max="100"
             />
           </div>
           <div className="mb-6">
