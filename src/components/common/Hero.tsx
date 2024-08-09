@@ -1,18 +1,21 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
+import ImageSlider from "./Slider";
+import ProductSlider from "./ProductSliders";
 
-const WelcomeScreen = () => {
-  const router = useRouter();
-
-  const handleButtonClick = () => {
-    router.push("/product-listing");
-  };
-
+const Hero = () => {
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-gray-100">
-      <video
+    <div className="relative flex flex-col justify-center min-h-screen bg-gray-100">
+      <ImageSlider />
+      <div className="font-semibold text-center text-2xl mt-8">
+        <h1>Explore Our Products</h1>
+      </div>
+      <ProductSlider />
+      //*Commented out part can be used for welcome screen which contains an
+      //*animated autoplay video with a button to : product-listing page to
+      //*showcase products
+      {/* <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         loop
@@ -32,9 +35,9 @@ const WelcomeScreen = () => {
             Take me to the Products
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default WelcomeScreen;
+export default Hero;

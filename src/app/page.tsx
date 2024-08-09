@@ -1,9 +1,9 @@
-import WelcomeScreen from "@/components/common/WelcomeScreen";
+import Hero from "@/components/common/Hero";
 
 export default function Home() {
   return (
     <div>
-      <WelcomeScreen />
+      <Hero />
     </div>
   );
 }
