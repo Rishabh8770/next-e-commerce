@@ -34,7 +34,11 @@ const ProductCard = ({
           key={id}
           className="w-64 h-[31rem] bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden hover:shadow-2xl transition-shadow duration-300"
         >
-          <div className="flex justify-end m-2 text-center">
+          <div
+            className={`flex justify-end m-2 text-center ${
+              (discount === 0 || discount === null) && "hidden"
+            }`}
+          >
             <p className="text-black p-1 text-xs mb-1 font-semibold border w-1/3 rounded bg-yellow-300">
               {discount}% off
             </p>
@@ -58,10 +62,20 @@ const ProductCard = ({
             <p className="text-gray-500 text-xs mb-1">Category: {category}</p>
             <p className="text-gray-500 text-xs mb-1">Brand: {brand}</p>
 
-            <p className="text-gray-400 text-sm mt-2 line-through">₹{price}</p>
+            <p
+              className={`text-gray-400 text-sm mt-2 line-through ${
+                (discount === 0 || discount === null) && "hidden"
+              }`}
+            >
+              ₹{price}
+            </p>
             <p className="text-black font-semibold text-lg mt-1 ">
               ₹{(price - (price * (discount ?? 0)) / 100).toFixed(2)}{" "}
-              <span className="text-sm text-green-500">
+              <span
+                className={`text-sm text-green-500 ${
+                  (discount === 0 || discount === null) && "hidden"
+                }`}
+              >
                 ({discount}% off)
               </span>
             </p>
