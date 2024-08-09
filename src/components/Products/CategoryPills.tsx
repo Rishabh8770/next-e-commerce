@@ -18,7 +18,7 @@ export const CategoryPills = ({ categories }: CategoryProps) => {
           onClick={() => router.push(`/category/${encodeURIComponent(category.charAt(0).toLowerCase() + category.slice(1))}`)}
             key={index}
             className="flex items-center justify-center bg-gray-800 text-white rounded shadow-md m-2 p-2 hover:bg-gray-300 hover:text-black hover:cursor-pointer"
-          >{category}</div>
+          >{(category.charAt(0).toUpperCase() + category.slice(1))}</div>
         </div>
       ))}
     </div>
