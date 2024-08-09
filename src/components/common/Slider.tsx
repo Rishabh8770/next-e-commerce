@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { useRouter } from "next/navigation";
 
-const ImageSlider: React.FC = () => {
+const ImageSlider = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -23,10 +23,7 @@ const ImageSlider: React.FC = () => {
   return (
     <div className="w-full min-w-full mx-auto">
       <Slider {...settings}>
-        <div
-          className="relative"
-          onClick={() => router.push("/category/fashion")}
-        >
+        <div className="relative">
           <img
             src="/clothes.jpg"
             alt="Slide 1"
