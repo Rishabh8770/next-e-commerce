@@ -59,6 +59,7 @@ export async function formAction(
     formData.get("image2") as string,
     formData.get("image3") as string,
   ].filter(Boolean);
+  const discount = parseFloat(formData.get("discount") as string)
 
   if (
     (isEditMode && productId) ||
@@ -84,6 +85,7 @@ export async function formAction(
         category: selectCategory.join(", "),
         brand: selectBrand.join(", "),
         image: images,
+        discount,
       };
 
       await updateProduct(productData);
@@ -98,7 +100,8 @@ export async function formAction(
         category: selectCategory.join(", "),
         brand: selectBrand.join(", "),
         image: images,
-        rating: parseFloat((Math.random() * 5).toFixed(1)),
+        rating: parseFloat((Math.random() * 4 + 1).toFixed(1)),
+        discount
       };
 
       await addProduct(productData);
