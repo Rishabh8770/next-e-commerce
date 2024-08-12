@@ -12,7 +12,7 @@ import { generateStarRating } from "@/utils/starRatingsUtils";
 
 function ProductDetails({ params }: { params: { id: string } }) {
   const router = useRouter();
-  let product: ProductTypes | undefined = productData.find(
+  let product = productData.find(
     (product) => product.id.toString() === params.id
   );
   if (!product) {
@@ -48,7 +48,24 @@ function ProductDetails({ params }: { params: { id: string } }) {
             <h1 className="lg:text-3xl text-sm font-bold my-4">
               {product.title}
             </h1>
-            <h2 className="text-xl mb-4">₹{product.price}</h2>
+            <span
+              className={`mb-4 font-semibold ${
+                (product.discount !== 0 || product.discount !== null) ?
+                "line-through text-md text-gray-400" : "text-lg"
+              }`}
+            >
+              ₹{product.price}{" "}
+            </span>
+            <span className={`mx-2 font-semibold ${
+                (product.discount === 0 || product.discount === null) && "hidden"}`}>
+              ₹
+              {(
+                product.price -
+                (product.price * (product.discount ?? 0)) / 100
+              ).toFixed(2)}{" "}
+            </span>
+            <span className={`${
+                (product.discount === 0 || product.discount === null) ? "hidden" : "text-green-500 font-semibold"}`}>({product.discount}% off)</span>
             <div className="mb-4">
               <div className="flex items-center mt-2">
                 {generateStarRating(product.rating)}

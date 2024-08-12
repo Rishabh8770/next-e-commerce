@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-export type SortOptions = "Price : low to high" | "Price : high to low" | "name" | "Show All";
+export type SortOptions = "Price : low to high" | "Price : high to low" | "Name" | "Show All";
 
 type ProductSortProps = {
   onProductSort: (filter: SortOptions) => void;
@@ -11,7 +11,7 @@ type ProductSortProps = {
 export const ProductSort = ({ onProductSort }: ProductSortProps) => {
   const [selectedSort, setSelectedSort] = useState<SortOptions>("Show All");
 
-  const sortOptions: SortOptions[] = ["Show All", "name", "Price : low to high", "Price : high to low"];
+  const sortOptions: SortOptions[] = ["Show All", "Name", "Price : low to high", "Price : high to low"];
 
   const handleSortChange = (option: SortOptions) => {
     setSelectedSort(option);
