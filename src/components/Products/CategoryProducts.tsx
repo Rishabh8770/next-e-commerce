@@ -16,14 +16,12 @@ const CategoryProducts = () => {
     ? decodeURIComponent(categoryString).trim().toLowerCase()
     : "";
 
-  const filterCategoryProducts = products.filter((product) => {
-    return product.category.map((category) =>
-      category
-        .trim()
-        .toLowerCase()
-        .includes(decodedCategory.trim().toLowerCase())
-    );
-  });
+  const filterCategoryProducts = products.filter((product) =>
+    product.category.some((cat) =>
+      cat.trim().toLowerCase().includes(decodedCategory)
+    )
+  );
+  console.log(filterCategoryProducts);
 
   const handleClick = () => {
     router.push("/product-listing");
