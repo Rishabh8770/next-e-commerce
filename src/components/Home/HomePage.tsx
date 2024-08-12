@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../products/ProductCard";
 import { useProductContext } from "@/context/ProductContext";
 import { useSearchContext } from "@/context/SearchContext";
-import LoadingPage from "@/app/loading";
+// import LoadingPage from "@/app/loading";
 import { ProductSort, SortOptions } from "@/components/common/productSort";
 import Filter from "@/components/common/FilterProducts";
 import { getCategories, getBrands, getRatings } from "@/utils/actionUtils";
@@ -12,6 +12,7 @@ import { CategoryPills } from "../products/CategoryPills";
 import SearchProduct from "../common/SearchProduct";
 import { ListFilter, Menu, SlidersHorizontal } from "lucide-react";
 import { Option } from "@/components/common/MultiSelectDropdown";
+import { Skeleton } from "@nextui-org/react";
 
 type ViewState = {
   isMobileViewMenu: boolean;
@@ -42,7 +43,9 @@ const HomePage = () => {
       const categoryMatch =
         !selectedCategories ||
         selectedCategories.length === 0 ||
-        selectedCategories.some((option) => option.value === product.category);
+        selectedCategories.some((option) =>
+          product.category.includes(option.value)
+        );
       const brandMatch =
         !selectedBrands ||
         selectedBrands.length === 0 ||
@@ -100,7 +103,7 @@ const HomePage = () => {
         return [...productsToSort].sort((a, b) => a.price - b.price);
       case "Price : high to low":
         return [...productsToSort].sort((a, b) => b.price - a.price);
-      case "name":
+      case "Name":
         return [...productsToSort].sort((a, b) =>
           a.title.localeCompare(b.title)
         );
@@ -260,25 +263,21 @@ const HomePage = () => {
           <CategoryPills categories={categories} />
         </div>
         <div className="flex flex-wrap justify-center overflow-y-scroll lg:h-screen no-scrollbar">
-          {loading ? (
-            <LoadingPage />
-          ) : (
-            filteredAndSortedProducts.map((product) => (
-              <div className="m-5" key={product.id}>
-                <ProductCard
-                  id={product.id}
-                  title={product.title}
-                  price={product.price}
-                  image={product.image}
-                  description={product.description}
-                  category={product.category}
-                  brand={product.brand}
-                  rating={product.rating}
-                  discount={product.discount}
-                />
-              </div>
-            ))
-          )}
+          {filteredAndSortedProducts.map((product) => (
+            <div className="m-5" key={product.id}>
+              <ProductCard
+                id={product.id}
+                title={product.title}
+                price={product.price}
+                image={product.image}
+                description={product.description}
+                category={product.category}
+                brand={product.brand}
+                rating={product.rating}
+                discount={product.discount}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

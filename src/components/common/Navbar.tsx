@@ -13,7 +13,6 @@ const Navbar = () => {
   const { searchQuery, setSearchQuery } = useSearchContext();
   const { cartCount } = useCartContext();
   const pathName = usePathname();
-  
 
   const handleCartNavigation = () => {
     router.push(`/user-cart/`);
@@ -57,7 +56,10 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
-            <div className="flex justify-center items-center sm:items-stretch sm:justify-start space-x-8 w-5/6">
+            <div
+              className="flex justify-center items-center sm:items-stretch sm:justify-start space-x-8 w-5/6 cursor-pointer"
+              onClick={() => router.push("/")}
+            >
               <div className="flex flex-shrink-0 items-center">
                 <img
                   className="h-8 w-auto"
