@@ -15,6 +15,8 @@ const Hero = () => {
       {/* Commented out part can be used for welcome screen which contains an
       animated autoplay video with a button to : product-listing page to
       showcase products */}
+
+      
       {/* <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay

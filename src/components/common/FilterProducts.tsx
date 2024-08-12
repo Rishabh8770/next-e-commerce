@@ -28,7 +28,7 @@ const Filter = ({
   isFiltersSelected,
 }: FilterProps) => {
   const categories = useMemo(
-    () => [...new Set(products.map((product) => product.category))],
+    () => [...new Set(products.flatMap((product) => product.category))],
     [products]
   );
   const brands = useMemo(

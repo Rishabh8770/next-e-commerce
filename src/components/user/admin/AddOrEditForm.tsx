@@ -15,13 +15,13 @@ type FormProp = {
 const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState<string[]>([]);
   const [brand, setBrand] = useState("");
   const [price, setPrice] = useState("");
   const [images, setImages] = useState<string[]>(["", "", ""]);
   const [categories, setCategories] = useState<string[]>([]);
   const [brands, setBrands] = useState<string[]>([]);
-  const [discount, setDiscount] = useState("")
+  const [discount, setDiscount] = useState("");
   const { setProducts } = useProductContext();
 
   useEffect(() => {
@@ -44,10 +44,10 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
         if (productToEdit) {
           setName(productToEdit.title || "");
           setDescription(productToEdit.description || "");
-          setCategory(productToEdit.category || "");
+          setCategory(productToEdit.category ? productToEdit.category : []);
           setBrand(productToEdit.brand || "");
           setPrice(productToEdit.price.toString() || "");
-          setDiscount(productToEdit.discount?.toString() || "")
+          setDiscount(productToEdit.discount?.toString() || "");
           setImages(productToEdit.image || ["", "", ""]);
         }
       };
@@ -55,13 +55,21 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
     }
   }, [isEditMode, productId]);
 
+  const handleCategoryChange = (selectedCategory: string) => {
+    setCategory((prevCategories) =>
+      prevCategories.includes(selectedCategory)
+        ? prevCategories.filter((cat) => cat !== selectedCategory)
+        : [...prevCategories, selectedCategory]
+    );
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     const formData = new FormData();
     formData.append("name", name);
     formData.append("description", description);
-    formData.append("category", category);
+    category.forEach(cat => formData.append("category", cat)); 
     formData.append("brand", brand);
     formData.append("price", price);
     formData.append("discount", discount);
@@ -88,12 +96,14 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
   const clearAddProductForm = () => {
     setName("");
     setDescription("");
-    setCategory("");
+    setCategory([]);
     setBrand("");
     setPrice("");
     setDiscount("");
     setImages(["", "", "", ""]);
   };
+
+  const uniqueCategories = Array.from(new Set(categories.flat()));
 
   return (
     <div>
@@ -130,20 +140,21 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
           </div>
           <div className="mb-4">
             <label className="block text-white font-bold mb-2">Category</label>
-            <select
-              id="category"
-              name="category"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-input-inputBox-bg"
-            >
-              <option value="">Select category</option>
-              {categories.map((cat) => (
-                <option value={cat} key={cat}>
-                  {cat}
-                </option>
+            <div className="flex flex-wrap gap-2">
+              {uniqueCategories.map((cat) => (
+                <label key={cat} className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    value={cat}
+                    checked={category.includes(cat)}
+                    onChange={() => handleCategoryChange(cat)}
+                    className="form-checkbox"
+                    key={cat}
+                  />
+                  <span>{cat.charAt(0).toUpperCase() + cat.slice(1)}</span>
+                </label>
               ))}
-            </select>
+            </div>
           </div>
           <div className="mb-4">
             <label className="block text-white font-bold mb-2">Brand</label>
@@ -233,14 +244,12 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
               />
             </div>
           </div>
-          <div className="mt-6">
-            <button
-              type="submit"
-              className="w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-            >
-              {isEditMode ? "Update" : "Add Product"}
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+            {isEditMode ? "Update Product" : "Add Product"}
+          </button>
         </form>
       </div>
     </div>

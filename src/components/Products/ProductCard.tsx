@@ -2,10 +2,9 @@
 
 import React from "react";
 import { ProductTypes } from "@/types/ProductTypes";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import LoadingPage from "@/app/loading";
 import { generateStarRating } from "@/utils/starRatingsUtils";
+import { capitalizeFirstLetter } from "@/utils/helpers";
 
 interface ProductCardProps extends ProductTypes {
   loading?: boolean;
@@ -23,10 +22,13 @@ const ProductCard = ({
   loading = false,
   discount,
 }: ProductCardProps) => {
-  const router = useRouter();
-  if (loading) {
-    return <LoadingPage />;
-  }
+  const capitalizedCategoryArray = category.map(capitalizeFirstLetter);
+  const capitalizeTitle = title
+    .split(" ")
+    .map(capitalizeFirstLetter)
+    .slice(0, 6)
+    .join(" ");
+
   return (
     <Link href={`/products/${id}`}>
       <div className="flex flex-wrap justify-center gap-6">
@@ -53,13 +55,13 @@ const ProductCard = ({
             />
           </div>
           <div className="p-4">
-            <h3 className="text-lg font-semibold mb-2">
-              {title.split(" ").slice(0, 6).join(" ")}
-            </h3>
+            <h3 className="text-lg font-semibold mb-2">{capitalizeTitle}</h3>
             <p className="text-gray-700 text-sm mb-2">
               {description.split(" ").slice(0, 6).join(" ")}...
             </p>
-            <p className="text-gray-500 text-xs mb-1">Category: {category}</p>
+            <p className="text-gray-500 text-xs mb-1">
+              Category: {capitalizedCategoryArray.join(", ")}
+            </p>
             <p className="text-gray-500 text-xs mb-1">Brand: {brand}</p>
 
             <p

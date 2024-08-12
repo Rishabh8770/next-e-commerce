@@ -22,7 +22,9 @@ export const getCategories = (): string[] => {
     const jsonData = fs.readFileSync(filePath, 'utf-8');
     const products: ProductTypes[] = JSON.parse(jsonData);
   
-    const categoriesSet = new Set(products.map(product => product.category));
+    const categoriesSet = new Set(
+      products.flatMap(product => product.category)
+    );
     return Array.from(categoriesSet);
   };
 

@@ -59,7 +59,7 @@ export async function formAction(
     formData.get("image2") as string,
     formData.get("image3") as string,
   ].filter(Boolean);
-  const discount = parseFloat(formData.get("discount") as string)
+  const discount = parseFloat(formData.get("discount") as string);
 
   if (
     (isEditMode && productId) ||
@@ -82,7 +82,7 @@ export async function formAction(
         title: newProductName,
         price,
         description,
-        category: selectCategory.join(", "),
+        category: selectCategory,
         brand: selectBrand.join(", "),
         image: images,
         discount,
@@ -97,11 +97,11 @@ export async function formAction(
         title: newProductName,
         price,
         description,
-        category: selectCategory.join(", "),
+        category: selectCategory,
         brand: selectBrand.join(", "),
         image: images,
         rating: parseFloat((Math.random() * 4 + 1).toFixed(1)),
-        discount
+        discount,
       };
 
       await addProduct(productData);
@@ -115,3 +115,4 @@ export async function formAction(
     throw new Error("Invalid product data");
   }
 }
+

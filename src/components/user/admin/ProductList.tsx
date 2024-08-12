@@ -10,7 +10,7 @@ type Product = {
   id: number;
   title: string;
   description: string;
-  category: string;
+  category: string[];
   brand: string;
   price: number;
 };
@@ -66,7 +66,9 @@ const ProductList = () => {
               <td className="py-6 px-4 border-b">
                 {product.description.split(" ").slice(0, 10).join(" ")}...
               </td>
-              <td className="py-6 px-4 border-b">{product.category}</td>
+              <td className="py-6 px-4 border-b">
+                {product.category.join(", ")}
+              </td>
               <td className="py-6 px-4 border-b">{product.brand}</td>
               <td className="py-6 px-2 border-b">
                 ₹{product.price}

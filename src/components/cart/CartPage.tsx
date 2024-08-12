@@ -13,13 +13,8 @@ import { useCartSummary } from "@/hooks/useCartSummary";
 const CartPage = () => {
   const { cartItems, refreshCart } = useCartContext();
   const { products } = useProductContext();
-  const {
-    totalDiscount,
-    totalPrice,
-    tax,
-    totalQuantity,
-    priceAfterTax,
-  } = useCartSummary();
+  const { totalDiscount, totalPrice, tax, totalQuantity, priceAfterTax } =
+    useCartSummary();
 
   const handleIncrement = async (productId: number, quantity: number) => {
     await updateCartItem(productId, quantity + 1);
@@ -92,14 +87,14 @@ const CartPage = () => {
                     </div>
                     <div className="flex items-center space-x-4">
                       <button
-                        className="text-gray-500 hover:text-gray-700 border rounded-full px-2"
+                        className="border border-red-500 text-red-500 rounded-md px-2 hover:bg-red-500 hover:text-white"
                         onClick={() => handleDecrement(id, quantity)}
                       >
                         -
                       </button>
                       <span>{quantity}</span>
                       <button
-                        className="text-gray-500 hover:text-gray-700 border rounded-full px-2"
+                        className="border border-yellow-500 text-yellow-500 rounded-md px-2 hover:bg-yellow-500 hover:text-white"
                         onClick={() => handleIncrement(id, quantity)}
                       >
                         +
@@ -107,13 +102,29 @@ const CartPage = () => {
                     </div>
                     <div className="text-center">
                       <div>
-                        <span className="font-semibold text-green-500">
+                        <span
+                          className={`font-semibold text-green-500 ${
+                            (item.discount === 0 || item.discount === null) &&
+                            "hidden"
+                          }`}
+                        >
                           {item.discount}% off{" "}
                         </span>{" "}
-                        <span className="line-through text-gray-400 text-sm">
+                        <span
+                          className={`${
+                            item.discount === 0 || item.discount === null
+                              ? "text-md text-black"
+                              : "line-through text-gray-400 text-sm"
+                          }`}
+                        >
                           ₹{(item.price * quantity).toFixed(2)}{" "}
                         </span>
-                        <div className="text-black text-md">
+                        <div
+                          className={`text-black text-md ${
+                            (item.discount === 0 || item.discount === null) &&
+                            "hidden"
+                          }`}
+                        >
                           ₹
                           {(
                             item.price * quantity -
@@ -121,12 +132,14 @@ const CartPage = () => {
                           ).toFixed(2)}
                         </div>
                         <div className="text-xs text-gray-400 font-normal">
-                          (₹
-                          {(
-                            item.price -
-                            (item.price * (item.discount || 0)) / 100
-                          ).toFixed(2)}
-                          /item)
+                          (
+                          {item.discount !== 0 || item.discount !== null
+                            ? (
+                                item.price -
+                                (item.price * (item.discount || 0)) / 100
+                              ).toFixed(2)
+                            : item.price.toFixed(2)}{" "}
+                          / item)
                         </div>
                       </div>
                     </div>
@@ -173,7 +186,7 @@ const CartPage = () => {
             <div className="flex justify-between">
               <span>Discount:</span>
               <span className="text-green-500">
-                - ₹{totalDiscount.toFixed(2)}
+                - ₹{totalDiscount !== 0 ? totalDiscount.toFixed(2) : 0}
               </span>
             </div>
             <div className="flex justify-between">
