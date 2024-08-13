@@ -13,6 +13,7 @@ import SearchProduct from "../common/SearchProduct";
 import { ListFilter, Menu, SlidersHorizontal } from "lucide-react";
 import { Option } from "@/components/common/MultiSelectDropdown";
 import { Skeleton } from "@nextui-org/react";
+import Sidebar from "./HomeSideBar";
 
 type ViewState = {
   isMobileViewMenu: boolean;
@@ -169,83 +170,19 @@ const HomePage = () => {
   };
   return (
     <div className="flex lg:flex-row flex-col">
-      <div className="w-full lg:w-1/6 border-y-1 items-center lg:min-h-screen flex flex-col pt-4 bg-gray-800  lg:sticky lg:top-0 lg:left-0 lg:h-screen lg:overflow-y-auto lg:z-10 no-scrollbar">
-        <div className="flex flex-col justify-center items-center">
-          <div className="md:hidden block mb-4">
-            <SearchProduct />
-          </div>
-          <div className="flex space-x-4 lg:hidden">
-            <div className="mb-4">
-              <button
-                onClick={() => toggleView("isMobileViewMenu")}
-                className="text-white bg-gray-900 p-2 rounded flex space-x-2 border border-gray-500"
-              >
-                <SlidersHorizontal color="#f7f2f2" />
-                <h1>Filters</h1>
-              </button>
-            </div>
-            <div className="text-white">
-              <button
-                onClick={() => toggleView("showCategoryPills")}
-                className="bg-gray-900 p-2 rounded flex space-x-2 border border-gray-500"
-              >
-                <ListFilter color="#f7f2f2" />
-                <h1>Categories</h1>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {view.isMobileViewMenu && (
-          <div className="flex flex-col items-center lg:hidden w-full p-4 bg-gray-700 slide-down">
-            <div className="text-white">
-              <ProductSort onProductSort={handleProductSort} />
-            </div>
-            <div className="border-t border-gray-300 mb-4 w-3/4 mt-5"></div>
-            <div className="self-center">
-              <Filter
-                products={products}
-                selectedCategories={selectedCategories}
-                onCategoryChange={(options) =>
-                  handleFilterChange("category", options)
-                }
-                selectedBrands={selectedBrands}
-                onBrandChange={(options) =>
-                  handleFilterChange("brand", options)
-                }
-                selectedRatings={selectedRatings}
-                onRatingChange={(options) =>
-                  handleFilterChange("rating", options)
-                }
-                handleClearFilters={handleFilterClear}
-                isFiltersSelected={isFiltersSelected}
-              />
-            </div>
-          </div>
-        )}
-        <div className="lg:flex justify-center items-center flex-col hidden">
-          <div className="text-white">
-            <ProductSort onProductSort={handleProductSort} />
-          </div>
-          <div className="border-t border-gray-300 mb-4 w-3/4 mt-5"></div>
-          <div className="self-center">
-            <Filter
-              products={products}
-              selectedCategories={selectedCategories}
-              onCategoryChange={(options) =>
-                handleFilterChange("category", options)
-              }
-              selectedBrands={selectedBrands}
-              onBrandChange={(options) => handleFilterChange("brand", options)}
-              selectedRatings={selectedRatings}
-              onRatingChange={(options) =>
-                handleFilterChange("rating", options)
-              }
-              handleClearFilters={handleFilterClear}
-              isFiltersSelected={isFiltersSelected}
-            />
-          </div>
-        </div>
+      <div className="lg:w-1/6">
+        <Sidebar
+          products={products}
+          selectedCategories={selectedCategories}
+          selectedBrands={selectedBrands}
+          selectedRatings={selectedRatings}
+          onFilterChange={handleFilterChange}
+          onProductSort={handleProductSort}
+          onFilterClear={handleFilterClear}
+          isFiltersSelected={isFiltersSelected}
+          toggleView={toggleView}
+          view={view}
+        />
       </div>
 
       <div className="lg:hidden block">
@@ -263,21 +200,25 @@ const HomePage = () => {
           <CategoryPills categories={categories} />
         </div>
         <div className="flex flex-wrap justify-center overflow-y-scroll lg:h-screen no-scrollbar">
-          {filteredAndSortedProducts.map((product) => (
-            <div className="m-5" key={product.id}>
-              <ProductCard
-                id={product.id}
-                title={product.title}
-                price={product.price}
-                image={product.image}
-                description={product.description}
-                category={product.category}
-                brand={product.brand}
-                rating={product.rating}
-                discount={product.discount}
-              />
-            </div>
-          ))}
+          {filteredAndSortedProducts.length > 0 ? (
+            filteredAndSortedProducts.map((product) => (
+              <div className="m-5" key={product.id}>
+                <ProductCard
+                  id={product.id}
+                  title={product.title}
+                  price={product.price}
+                  image={product.image}
+                  description={product.description}
+                  category={product.category}
+                  brand={product.brand}
+                  rating={product.rating}
+                  discount={product.discount}
+                />
+              </div>
+            ))
+          ) : (
+            <div className="flex h-screen justify-center items-center text-2xl">No Products found</div>
+          )}
         </div>
       </div>
     </div>
