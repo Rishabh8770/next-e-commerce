@@ -10,7 +10,7 @@ export const useCartSummary = () => {
     const product = products.find((p) => p.id === item.id);
     return sum + (product ? product.price * item.quantity : 0);
   }, 0);
-  const tax = totalPrice * 0.18;
+  const tax = totalPrice * 0.05;
 
   const totalDiscount = cartItems.reduce((sum, item) => {
     const product = products.find((prod) => prod.id === item.id);

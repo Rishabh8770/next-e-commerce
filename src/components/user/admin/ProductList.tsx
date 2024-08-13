@@ -5,6 +5,8 @@ import Pagination from "@/components/common/Pagination";
 import { useProductContext } from "@/context/ProductContext";
 import { useRouter } from "next/navigation";
 import LoadingPage from "@/app/loading";
+import { notifyDeleteProduct } from "@/utils/NotificationUtils";
+import { debounce } from "lodash";
 
 type Product = {
   id: number;
@@ -34,8 +36,15 @@ const ProductList = () => {
     router.push(`/admin/editProduct?id=${id}`);
   };
 
-  const handleDelete = (id: number) => {
-    deleteProduct(id);
+  const handleDelete = async (e: React.MouseEvent, id: number) => {
+    e.preventDefault();
+    try {
+      debounce(() => {
+        notifyDeleteProduct(() => deleteProduct(id));
+      }, 500)();
+    } catch (error) {
+      console.error(`Error deleting product with id ${id}`, error);
+    }
   };
 
   if (!currentProducts) {
@@ -70,13 +79,21 @@ const ProductList = () => {
                 {product.category.join(", ")}
               </td>
               <td className="py-6 px-4 border-b">{product.brand}</td>
-              <td className="py-6 px-2 border-b">
-                ₹{product.price}
-              </td>
+              <td className="py-6 px-2 border-b">₹{product.price}</td>
               <td className="py-6 px-4 border-b">
                 <div className="flex space-x-2">
-                  <button className="px-2 py-1 bg-slate-400 rounded-md" onClick={() => handleEdit(product.id)}>Edit</button>
-                  <button className="px-2 py-1 bg-red-500 rounded-md" onClick={() => handleDelete(product.id)}>Delete</button>
+                  <button
+                    className="px-2 py-1 bg-slate-400 rounded-md"
+                    onClick={() => handleEdit(product.id)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="px-2 py-1 bg-red-500 rounded-md"
+                    onClick={(e) => handleDelete(e, product.id)}
+                  >
+                    Delete
+                  </button>
                 </div>
               </td>
             </tr>

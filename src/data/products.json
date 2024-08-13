@@ -1428,5 +1428,23 @@
     ],
     "rating": 3.2,
     "discount": 11
+  },
+  {
+    "id": 1723534232507,
+    "title": "Alienware Gaming Monitor",
+    "price": 45000,
+    "description": "165Hz refresh rate | 32 inch wide",
+    "category": [
+      "Computer",
+      "Equipments"
+    ],
+    "brand": "Apple",
+    "image": [
+      "https://i.ibb.co/xD7nDq5/nextamazon5.jpg",
+      "https://i.ibb.co/2vwS6HR/nextamazon2.jpg",
+      "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+    ],
+    "rating": 2.3,
+    "discount": 10
   }
 ]

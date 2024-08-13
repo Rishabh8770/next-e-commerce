@@ -26,13 +26,16 @@ const ProductSlider = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
+          speed: 3000
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
+          speed: 1000,
+          autoplaySpeed: 3000
         },
       },
     ],

@@ -6,6 +6,14 @@ import { getProducts } from "@/actions/ProductActions";
 import { ProductTypes } from "@/types/ProductTypes";
 import { getBrands, getCategories } from "@/utils/actionUtils";
 import { useProductContext } from "@/context/ProductContext";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import {
+  notifyAddProduct,
+  notifyEditProduct,
+  notifyError,
+} from "@/utils/NotificationUtils";
+import { NotificationContainer } from "./UserFeedback";
+import { useRouter } from "next/navigation";
 
 type FormProp = {
   productId: number | null;
@@ -22,7 +30,10 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
   const [categories, setCategories] = useState<string[]>([]);
   const [brands, setBrands] = useState<string[]>([]);
   const [discount, setDiscount] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { setProducts } = useProductContext();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,6 +66,11 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
     }
   }, [isEditMode, productId]);
 
+  const handleDropdownToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   const handleCategoryChange = (selectedCategory: string) => {
     setCategory((prevCategories) =>
       prevCategories.includes(selectedCategory)
@@ -63,13 +79,17 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
     );
   };
 
+  const handleCategoryRemove = (cat: string) => {
+    setCategory(category.filter((c) => c !== cat));
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
+    setLoading(true);
     const formData = new FormData();
     formData.append("name", name);
     formData.append("description", description);
-    category.forEach(cat => formData.append("category", cat)); 
+    category.forEach((cat) => formData.append("category", cat));
     formData.append("brand", brand);
     formData.append("price", price);
     formData.append("discount", discount);
@@ -78,18 +98,22 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
     });
 
     try {
+      // throw new Error("error here") // to test catch error
       await formAction(formData, isEditMode, productId, setProducts);
-      alert(
-        isEditMode
-          ? "Product updated successfully!"
-          : "Product added successfully!"
-      );
       if (!isEditMode) {
+        notifyAddProduct();
         clearAddProductForm();
+      } else {
+        notifyEditProduct();
       }
+      setTimeout(() => {
+        router.push("/admin/dashboard/products");
+      }, 2000);
     } catch (error) {
       console.error("Error submitting the form", error);
-      alert("There was an error submitting the form.");
+      notifyError();
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -140,22 +164,66 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
           </div>
           <div className="mb-4">
             <label className="block text-white font-bold mb-2">Category</label>
-            <div className="flex flex-wrap gap-2">
-              {uniqueCategories.map((cat) => (
-                <label key={cat} className="flex items-center space-x-2">
-                  <input
-                    type="checkbox"
-                    value={cat}
-                    checked={category.includes(cat)}
-                    onChange={() => handleCategoryChange(cat)}
-                    className="form-checkbox"
-                    key={cat}
-                  />
-                  <span>{cat.charAt(0).toUpperCase() + cat.slice(1)}</span>
-                </label>
-              ))}
+
+            <div className="relative">
+              <button
+                className={`w-full border rounded-lg text-start px-4 py-2 flex justify-between items-center ${
+                  isDropdownOpen && "focus:ring-2 focus:ring-blue-500"
+                }`}
+                onClick={handleDropdownToggle}
+              >
+                {category.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {category.map((cat) => (
+                      <div
+                        key={cat}
+                        className="flex items-center bg-menu-active-bg text-white px-2 py-1 rounded-md space-x-2"
+                      >
+                        <span>
+                          {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                        </span>
+                        <button
+                          onClick={() => handleCategoryRemove(cat)}
+                          className="border-l-1"
+                        >
+                          <span className="text-white ml-2">x</span>
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  "Select Category"
+                )}
+                <span className="-mr-3">
+                  {isDropdownOpen ? (
+                    <ChevronUp strokeWidth={2.5} size={20} />
+                  ) : (
+                    <ChevronDown size={20} strokeWidth={2.5} />
+                  )}
+                </span>
+              </button>
+              {isDropdownOpen && (
+                <div className="absolute border mt-2 rounded-md z-10 w-full bg-side-sidebar-bg">
+                  <div className="max-h-60 overflow-y-auto p-2">
+                    {uniqueCategories
+                      .filter((cat) => !category.includes(cat))
+                      .map((cat) => (
+                        <div
+                          key={cat}
+                          onClick={() => handleCategoryChange(cat)}
+                          className="flex items-center space-x-2 p-1 rounded-md cursor-pointer hover:bg-blue-500"
+                        >
+                          <span>
+                            {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                          </span>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
+
           <div className="mb-4">
             <label className="block text-white font-bold mb-2">Brand</label>
             <select
@@ -187,7 +255,9 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-white font-bold mb-2">Discount (%)</label>
+            <label className="block text-white font-bold mb-2">
+              Discount (%)
+            </label>
             <input
               type="number"
               id="discount"
@@ -201,7 +271,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
             />
           </div>
           <div className="mb-6">
-            <label className="block text-sm font-medium">Image URL 1</label>
+            <label className="block text-sm font-medium">Image URL's</label>
             <input
               type="url"
               id="image1"
@@ -216,7 +286,6 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
           </div>
           <div className="mb-4">
             <div className="mb-6">
-              <label className="block text-sm font-medium">Image URL 2</label>
               <input
                 type="url"
                 id="image2"
@@ -230,7 +299,6 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-sm font-medium">Image URL 3</label>
               <input
                 type="url"
                 id="image3"
@@ -246,12 +314,20 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
           </div>
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            disabled={loading}
+            className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 flex justify-center items-center"
           >
-            {isEditMode ? "Update Product" : "Add Product"}
+            {loading ? (
+              <span className="spinner-border animate-spin inline-block w-4 h-4 border-2 rounded-full border-white border-t-transparent"></span>
+            ) : isEditMode ? (
+              "Update Product"
+            ) : (
+              "Add Product"
+            )}
           </button>
         </form>
       </div>
+      <NotificationContainer />
     </div>
   );
 };
