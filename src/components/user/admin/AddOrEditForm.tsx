@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { formAction } from "@/actions/ProductActions";
 import { getProducts } from "@/actions/ProductActions";
 import { ProductTypes } from "@/types/ProductTypes";
@@ -35,6 +35,8 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
   const { setProducts } = useProductContext();
   const router = useRouter();
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const fetchData = async () => {
       const fetchCategories = await getCategories();
@@ -65,6 +67,23 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
       fetchProductData();
     }
   }, [isEditMode, productId]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleDropdownToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -165,7 +184,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
           <div className="mb-4">
             <label className="block text-white font-bold mb-2">Category</label>
 
-            <div className="relative">
+            <div className="relative" ref={dropdownRef}>
               <button
                 className={`w-full border rounded-lg text-start px-4 py-2 flex justify-between items-center ${
                   isDropdownOpen && "focus:ring-2 focus:ring-blue-500"
@@ -223,7 +242,6 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
               )}
             </div>
           </div>
-
           <div className="mb-4">
             <label className="block text-white font-bold mb-2">Brand</label>
             <select
