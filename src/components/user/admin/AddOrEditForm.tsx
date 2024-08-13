@@ -7,8 +7,13 @@ import { ProductTypes } from "@/types/ProductTypes";
 import { getBrands, getCategories } from "@/utils/actionUtils";
 import { useProductContext } from "@/context/ProductContext";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { notifyAddProduct, notifyEditProduct, notifyError } from "@/utils/NotificationUtils";
+import {
+  notifyAddProduct,
+  notifyEditProduct,
+  notifyError,
+} from "@/utils/NotificationUtils";
 import { NotificationContainer } from "./UserFeedback";
+import { useRouter } from "next/navigation";
 
 type FormProp = {
   productId: number | null;
@@ -26,7 +31,9 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
   const [brands, setBrands] = useState<string[]>([]);
   const [discount, setDiscount] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { setProducts } = useProductContext();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -78,7 +85,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
+    setLoading(true);
     const formData = new FormData();
     formData.append("name", name);
     formData.append("description", description);
@@ -96,12 +103,17 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
       if (!isEditMode) {
         notifyAddProduct();
         clearAddProductForm();
-      }else{
+      } else {
         notifyEditProduct();
       }
+      setTimeout(() => {
+        router.push("/admin/dashboard/products");
+      }, 2000);
     } catch (error) {
       console.error("Error submitting the form", error);
       notifyError();
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -170,7 +182,10 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
                         <span>
                           {cat.charAt(0).toUpperCase() + cat.slice(1)}
                         </span>
-                        <button onClick={() => handleCategoryRemove(cat)} className="border-l-1">
+                        <button
+                          onClick={() => handleCategoryRemove(cat)}
+                          className="border-l-1"
+                        >
                           <span className="text-white ml-2">x</span>
                         </button>
                       </div>
@@ -299,9 +314,16 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
           </div>
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            disabled={loading}
+            className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 flex justify-center items-center"
           >
-            {isEditMode ? "Update Product" : "Add Product"}
+            {loading ? (
+              <span className="spinner-border animate-spin inline-block w-4 h-4 border-2 rounded-full border-white border-t-transparent"></span>
+            ) : isEditMode ? (
+              "Update Product"
+            ) : (
+              "Add Product"
+            )}
           </button>
         </form>
       </div>
