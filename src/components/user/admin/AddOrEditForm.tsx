@@ -7,6 +7,8 @@ import { ProductTypes } from "@/types/ProductTypes";
 import { getBrands, getCategories } from "@/utils/actionUtils";
 import { useProductContext } from "@/context/ProductContext";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { notifyAddProduct, notifyEditProduct, notifyError } from "@/utils/NotificationUtils";
+import { NotificationContainer } from "./UserFeedback";
 
 type FormProp = {
   productId: number | null;
@@ -70,6 +72,10 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
     );
   };
 
+  const handleCategoryRemove = (cat: string) => {
+    setCategory(category.filter((c) => c !== cat));
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
@@ -85,18 +91,17 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
     });
 
     try {
+      // throw new Error("error here") // to test catch error
       await formAction(formData, isEditMode, productId, setProducts);
-      alert(
-        isEditMode
-          ? "Product updated successfully!"
-          : "Product added successfully!"
-      );
       if (!isEditMode) {
+        notifyAddProduct();
         clearAddProductForm();
+      }else{
+        notifyEditProduct();
       }
     } catch (error) {
       console.error("Error submitting the form", error);
-      alert("There was an error submitting the form.");
+      notifyError();
     }
   };
 
@@ -147,6 +152,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
           </div>
           <div className="mb-4">
             <label className="block text-white font-bold mb-2">Category</label>
+
             <div className="relative">
               <button
                 className={`w-full border rounded-lg text-start px-4 py-2 flex justify-between items-center ${
@@ -154,7 +160,25 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
                 }`}
                 onClick={handleDropdownToggle}
               >
-                {category.length > 0 ? category.join(" | ") : "Select Category"}
+                {category.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {category.map((cat) => (
+                      <div
+                        key={cat}
+                        className="flex items-center bg-menu-active-bg text-white px-2 py-1 rounded-md space-x-2"
+                      >
+                        <span>
+                          {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                        </span>
+                        <button onClick={() => handleCategoryRemove(cat)} className="border-l-1">
+                          <span className="text-white ml-2">x</span>
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  "Select Category"
+                )}
                 <span className="-mr-3">
                   {isDropdownOpen ? (
                     <ChevronUp strokeWidth={2.5} size={20} />
@@ -166,29 +190,25 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
               {isDropdownOpen && (
                 <div className="absolute border mt-2 rounded-md z-10 w-full bg-side-sidebar-bg">
                   <div className="max-h-60 overflow-y-auto p-2">
-                    {uniqueCategories.map((cat) => (
-                      <label
-                        key={cat}
-                        className="flex items-center space-x-2 hover:bg-blue-500 p-1 rounded-md"
-                      >
-                        <input
-                          type="checkbox"
-                          value={cat}
-                          checked={category.includes(cat)}
-                          onChange={() => handleCategoryChange(cat)}
-                          className="form-checkbox"
+                    {uniqueCategories
+                      .filter((cat) => !category.includes(cat))
+                      .map((cat) => (
+                        <div
                           key={cat}
-                        />
-                        <span>
-                          {cat.charAt(0).toUpperCase() + cat.slice(1)}
-                        </span>
-                      </label>
-                    ))}
+                          onClick={() => handleCategoryChange(cat)}
+                          className="flex items-center space-x-2 p-1 rounded-md cursor-pointer hover:bg-blue-500"
+                        >
+                          <span>
+                            {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                          </span>
+                        </div>
+                      ))}
                   </div>
                 </div>
               )}
             </div>
           </div>
+
           <div className="mb-4">
             <label className="block text-white font-bold mb-2">Brand</label>
             <select
@@ -285,6 +305,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
           </button>
         </form>
       </div>
+      <NotificationContainer />
     </div>
   );
 };

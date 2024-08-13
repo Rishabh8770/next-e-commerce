@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { addToCart, removeFromCart, updateCartItem, getCartItems } from '@/actions/CartAction';
 import { useCartContext } from '@/context/CartContext';
 import { CartItem } from '@/types/ProductTypes';
+import { notifyCartSuccess } from '@/utils/NotificationUtils';
 
 interface AddToCartProps {
   productId: number;
@@ -30,6 +31,7 @@ const AddToCart = ({ productId }: AddToCartProps) => {
   const handleAddToCart = async () => {
     await addToCart(productId);
     setQuantity((prevQuantity) => prevQuantity + 1);
+    notifyCartSuccess();
     refreshCart();
   };
 
