@@ -7,6 +7,7 @@ import { Search, ShoppingCart } from "lucide-react";
 import UserRole from "@/components/user/customer/UserRole";
 import { routePathNames } from "@/utils/pathUtils";
 import SearchProduct from "./SearchProduct";
+import AuthButton from "../user-authentication/AuthButton";
 
 const Navbar = () => {
   const router = useRouter();
@@ -99,6 +100,9 @@ const Navbar = () => {
             </div>
             <div className="mx-8 md:w-10 w-full md:block flex justify-center">
               <UserRole />
+            </div>
+            <div  className="mx-6">
+              <AuthButton />
             </div>
           </div>
         </div>
