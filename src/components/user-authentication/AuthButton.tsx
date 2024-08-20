@@ -33,10 +33,10 @@ const AuthButton = () => {
   };
 
   return (
-    <div className="w-28">
+    <div className="w-24">
       <button
         onClick={handleAuthAction}
-        className="text-white px-4 py-2 border rounded-xl"
+        className="text-white md:px-4 py-2 rounded-xl"
       >
         {isLoggedIn ? "Logout" : "Sign In"}
       </button>

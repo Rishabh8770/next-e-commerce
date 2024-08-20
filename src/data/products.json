@@ -33,6 +33,12 @@
         "username": "Charlie",
         "ratings": 3,
         "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et felis ac quam convallis gravida."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Rishabh",
+        "ratings": 4,
+        "comment": "Awesome Product !!"
       }
     ]
   },
@@ -70,6 +76,12 @@
         "username": "Frank",
         "ratings": 5,
         "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla. Suspendisse potenti."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Sarthak",
+        "ratings": 3,
+        "comment": "Good"
       }
     ]
   },
@@ -107,6 +119,12 @@
         "username": "Ian",
         "ratings": 2,
         "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et felis ac quam convallis gravida."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Sarthak",
+        "ratings": 3,
+        "comment": "Good"
       }
     ]
   },
@@ -144,6 +162,12 @@
         "username": "Oscar",
         "ratings": 4,
         "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et felis ac quam convallis gravida."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Rishabh",
+        "ratings": 3,
+        "comment": "The product could have some additional functions. Though a good buy at such price."
       }
     ]
   },
@@ -181,6 +205,12 @@
         "username": "Rita",
         "ratings": 4,
         "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla. Suspendisse potenti."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Rishabh",
+        "ratings": 3,
+        "comment": "Great product at this price."
       }
     ]
   },
@@ -292,6 +322,12 @@
         "username": "Alice",
         "ratings": 3,
         "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et felis ac quam convallis gravida."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "admin",
+        "ratings": 4,
+        "comment": "Great product at such price"
       }
     ]
   },
@@ -531,9 +567,7 @@
       "Smart Phones"
     ],
     "discount": 10,
-    "brand": [
-      "SAMSUNG"
-    ],
+    "brand": "SAMSUNG",
     "rating": 4,
     "reviews": [
       {
