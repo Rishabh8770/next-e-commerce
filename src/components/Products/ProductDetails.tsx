@@ -1,35 +1,82 @@
 "use client";
 
+import { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import productData from "@/data/products.json";
+import userData from "@/data/users.json";
 import Carousel from "@/components/common/ImageCarousel";
 import AddToCart from "@/components/cart/AddToCart";
 import { ArrowLeft } from "lucide-react";
-import { useCallback } from "react";
-import { useRouter } from "next/navigation";
 import ProductReview from "./ProductReview";
 import { generateStarRating } from "@/utils/starRatingsUtils";
-import { NotificationContainer } from "../user/admin/UserFeedback";
+import ProductReviewForm from "./ProductReviewForm";
+import { SaveProductReview } from "@/actions/ProductActions";
+import { ValidateUser } from "@/actions/LoginAndSignUpAction";
 
 function ProductDetails({ params }: { params: { id: string } }) {
+  const [product, setProduct] = useState<any>(null);
+  const [loggedInUser, setLoggedInUser] = useState<any>(null);
   const router = useRouter();
-  let product = productData.find(
-    (product) => product.id.toString() === params.id
-  );
+
+  useEffect(() => {
+    // Find the product based on params.id
+    const foundProduct = productData.find(
+      (product) => product.id.toString() === params.id
+    );
+    setProduct(foundProduct || null);
+
+    // Validate user on client-side
+    const findUser = async () => {
+      const userId = await ValidateUser();
+      const user = userId
+        ? userData.find((user) => user.id.toString() === userId)
+        : null;
+      setLoggedInUser(user);
+    };
+    findUser();
+  }, [params.id]);
+
+  const handleArrowClick = useCallback(() => {
+    router.push("/product-listing");
+  }, [router]);
+
+  const handleSubmit = async (rating: number, review: string) => {
+    if (!loggedInUser) {
+      console.error("User is not logged in");
+      const currentUrl = encodeURIComponent(window.location.href);
+      router.push(`/login?redirect=${currentUrl}`);
+      return;
+    }
+
+    if (product) {
+      const newReview = {
+        userImage: "/no-image.png",
+        username: loggedInUser.name,
+        ratings: rating,
+        comment: review,
+      };
+
+      const updatedProduct = {
+        ...product,
+        reviews: [...(product.reviews || []), newReview],
+      };
+
+      await SaveProductReview(product.id.toString(), updatedProduct);
+      setProduct(updatedProduct); // Update state with new review
+    }
+  };
+
   if (!product) {
     return <div>Product not found</div>;
   }
 
   const bulletPoints = product.description
     .split(/[|.,@]\s*/)
-    .map((point, index) => (
+    .map((point: string, index: number) => (
       <li key={index} className="mb-2">
         {point}
       </li>
     ));
-
-  const handleArrowClick = useCallback(() => {
-    router.push("/product-listing");
-  }, [router]);
 
   return (
     <div className="overflow-y-scroll">
@@ -55,7 +102,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
                   : "text-lg"
               }`}
             >
-              ₹{product.price}{" "}
+              ₹{product.price}
             </span>
             <span
               className={`mx-2 font-semibold ${
@@ -67,7 +114,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
               {(
                 product.price -
                 (product.price * (product.discount ?? 0)) / 100
-              ).toFixed(2)}{" "}
+              ).toFixed(2)}
             </span>
             <span
               className={`${
@@ -96,15 +143,17 @@ function ProductDetails({ params }: { params: { id: string } }) {
             product.reviews ? "font-semibold" : "font-normal"
           }`}
         >
-          {product.reviews && product.reviews?.length > 0
+          {product.reviews && product.reviews.length > 0
             ? "People who also reviewed this product"
             : "No reviews yet."}
         </h1>
       </div>
       <div className="flex justify-center">
+        <ProductReviewForm handleSubmit={handleSubmit} />
+      </div>
+      <div className="flex justify-center">
         {product.reviews && <ProductReview reviews={product.reviews} />}
       </div>
-      <NotificationContainer />
     </div>
   );
 }

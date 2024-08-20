@@ -1,12 +1,22 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Authentication from "./Authentication";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { LoginUser } from "@/actions/LoginAndSignUpAction";
+import { NotificationContainer } from "../user/admin/UserFeedback";
+import { notifyLoginError, notifyLoginSuccess } from "@/utils/NotificationUtils";
 
 const SignInPage = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    // redirect URL from query parameters
+    const redirect = searchParams.get("redirect");
+    setRedirectUrl(redirect ? decodeURIComponent(redirect) : '/');
+  }, [searchParams]);
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,12 +26,13 @@ const SignInPage = () => {
     const result = await LoginUser(email, password);
 
     if (result.success) {
-      alert("Login successful");
+      notifyLoginSuccess();
       setTimeout(() => {
-        router.push("/product-listing");
+        // Redirect to the saved URL or fallback to the home page
+        router.push(redirectUrl || "/product-listing");
       }, 3000);
     } else {
-      alert(result.message);
+      notifyLoginError();
     }
   };
 
@@ -33,6 +44,7 @@ const SignInPage = () => {
         buttonTitle="Sign In"
         handleSubmit={handleSignIn}
       />
+      <NotificationContainer />
     </div>
   );
 };

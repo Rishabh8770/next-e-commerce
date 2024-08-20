@@ -37,7 +37,7 @@ const UserRole = () => {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button variant="bordered" className="text-white">
+        <Button variant="bordered" className="text-white border-none text-md px-0">
           {user}
         </Button>
       </DropdownTrigger>

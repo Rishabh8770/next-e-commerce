@@ -116,3 +116,12 @@ export async function formAction(
   }
 }
 
+export const SaveProductReview = async (productId: string, updatedProduct: ProductTypes) => {
+  const productData = await readData();
+  const productIndex = productData.findIndex((product) => product.id.toString() === productId)
+  if (productIndex !== -1) {
+    productData[productIndex] = updatedProduct;
+    writeData(productData);
+  }
+}
+

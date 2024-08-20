@@ -24,7 +24,7 @@ const SearchProduct = () => {
         placeholder="Search products..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="rounded-lg pl-8 py-2 bg-side-sidebar-bg border border-gray-500 text-white"
+        className="rounded-lg pl-8 py-2 bg-side-sidebar-bg border border-gray-500 text-white w-full"
       />
     </div>
   );
