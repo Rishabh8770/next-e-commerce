@@ -43,6 +43,6 @@ export const getBrands = (): string[] => {
     const products: ProductTypes[] = JSON.parse(jsonData);
   
     const ratingsSet = new Set(products.map(product => product.rating));
-    return Array.from(ratingsSet).sort((a, b) => a - b); // Sort ratings in ascending order
+    return Array.from(ratingsSet).sort((a, b) => a - b);
   };
   

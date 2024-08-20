@@ -66,10 +66,12 @@ export async function SignupUser(name: string, email: string, password: string) 
 }
 
 export const Logout = async() => {
-    await cookieStore.set({
-        name: "userId",
-        value: "",
-        maxAge: -1,
-        path: "/"
-    })
-}
+  cookies().set({
+      name: "userId",
+      value: "",
+      httpOnly: true,
+      maxAge: -1,
+      path: "/"
+  });
+};
+
