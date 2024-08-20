@@ -3,20 +3,29 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useSearchContext } from "@/context/SearchContext";
 import { useCartContext } from "@/context/CartContext";
-import { Search, ShoppingCart } from "lucide-react";
+import { Menu, ShoppingCart } from "lucide-react";
 import UserRole from "@/components/user/customer/UserRole";
 import { routePathNames } from "@/utils/pathUtils";
 import SearchProduct from "./SearchProduct";
 import AuthButton from "../user-authentication/AuthButton";
+import { useState } from "react";
 
 const Navbar = () => {
   const router = useRouter();
-  const { searchQuery, setSearchQuery } = useSearchContext();
   const { cartCount } = useCartContext();
   const pathName = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleCartNavigation = () => {
     router.push(`/user-cart/`);
+  };
+
+  const handleProducts = () => {
+    router.push("/product-listing");
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -31,37 +40,20 @@ const Navbar = () => {
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <button
                 type="button"
-                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu"
-                aria-expanded="false"
+                aria-expanded={isMenuOpen}
+                onClick={toggleMenu}
               >
-                <span className="absolute -inset-0.5"></span>
-                <span className="sr-only">Open main menu</span>
-
-                <svg
-                  className="block h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-
-                <svg
-                  className="hidden h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <Menu />
               </button>
             </div>
-            <div
-              className="flex justify-center items-center sm:items-stretch sm:justify-start space-x-8 w-5/6 cursor-pointer"
-              onClick={() => router.push("/")}
-            >
-              <div className="flex flex-shrink-0 items-center">
+
+            <div className="flex justify-center items-center sm:items-stretch sm:justify-start space-x-8 w-5/6 cursor-pointer">
+              <div
+                className="flex flex-shrink-0 items-center md:ml-0 ml-14"
+                onClick={() => router.push("/")}
+              >
                 <img
                   className="h-8 w-auto"
                   src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
@@ -69,15 +61,21 @@ const Navbar = () => {
                 />
                 <span className="text-white mx-2">Shop-a-holic</span>
               </div>
-              <div className="md:block hidden">
+              <div
+                className="md:flex hidden justify-center items-center cursor-pointer"
+                onClick={handleProducts}
+              >
+                <h1 className="text-white">Products</h1>
+              </div>
+              <div className="md:block hidden w-full">
                 <SearchProduct />
               </div>
             </div>
 
-            <div className="absolute w-12 h-12 self-center rounded-full inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-gray-900">
+            <div className="flex items-center space-x-4">
               <button
                 onClick={handleCartNavigation}
-                className="lg:w-12 lg:h-12 w-16 relative  rounded-full flex justify-center items-center"
+                className="relative lg:w-12 lg:h-12 w-12 h-12 rounded-full flex justify-center items-center bg-gray-900"
               >
                 <ShoppingCart color="#ffffff" strokeWidth={2} />
                 {cartCount > 0 && (
@@ -97,15 +95,34 @@ const Navbar = () => {
                   </div>
                 )}
               </button>
-            </div>
-            <div className="mx-8 md:w-10 w-full md:block flex justify-center">
-              <UserRole />
-            </div>
-            <div  className="mx-6">
-              <AuthButton />
+              <div className="hidden md:block">
+                <AuthButton />
+              </div>
+              <div className="hidden md:block">
+                <UserRole />
+              </div>
             </div>
           </div>
         </div>
+
+        {isMenuOpen && (
+          <div className="sm:hidden" id="mobile-menu">
+            <div className="space-y-1 px-2 pt-2 pb-3 bg-gray-700">
+              <button
+                onClick={handleProducts}
+                className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              >
+                Products
+              </button>
+              <div className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                <AuthButton />
+              </div>
+              <div className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                <UserRole />
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
     </div>
   );

@@ -20,6 +20,18 @@ export const notifyAddProduct = () => {
   toast.success("Product has been added Successfully", options);
 };
 
+export const notifyLoginSuccess = () => {
+  toast.success("Logged-in Successfully", options)
+}
+
+export const notifyLoginError = () => {
+  toast.error("Invalid Email or Password", options)
+}
+
+export const notifyRegisterationSuccess = () => {
+  toast.success("Registered Successfully", options)
+}
+
 export const notifyErrorAddingProduct = () => {
   toast.error("There is an error on adding the product", options);
 };

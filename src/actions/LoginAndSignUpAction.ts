@@ -23,7 +23,7 @@ export async function LoginUser(email: string, password: string) {
     cookies().set({
         name: "userId",
         value: user.id.toString(),
-        httpOnly: false, // This makes the cookie accessible in JavaScript
+        httpOnly: false,
         maxAge: 3 * 60 * 60,
         path: "/",
     });
@@ -74,4 +74,10 @@ export const Logout = async() => {
       path: "/"
   });
 };
+
+export async function ValidateUser() {
+  const cookieStore = cookies();
+  const userId = cookieStore.get("userId")?.value;
+  return userId;
+}
 

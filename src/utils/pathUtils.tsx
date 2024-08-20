@@ -4,4 +4,5 @@ export const routePathNames = [
     "/admin/dashboard",
     "/admin/addProduct",
     "/admin/editProduct",
+    "/admin/users",
   ];
