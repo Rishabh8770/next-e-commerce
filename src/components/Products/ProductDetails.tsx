@@ -12,10 +12,11 @@ import { generateStarRating } from "@/utils/starRatingsUtils";
 import ProductReviewForm from "./ProductReviewForm";
 import { SaveProductReview } from "@/actions/ProductActions";
 import { ValidateUser } from "@/actions/LoginAndSignUpAction";
+import { ProductTypes, User } from "@/types/ProductTypes";
 
 function ProductDetails({ params }: { params: { id: string } }) {
-  const [product, setProduct] = useState<any>(null);
-  const [loggedInUser, setLoggedInUser] = useState<any>(null);
+  const [product, setProduct] = useState<ProductTypes | null>(null);
+  const [loggedInUser, setLoggedInUser] = useState<User | null >(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -31,7 +32,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
       const user = userId
         ? userData.find((user) => user.id.toString() === userId)
         : null;
-      setLoggedInUser(user);
+      setLoggedInUser(user || null);
     };
     findUser();
   }, [params.id]);

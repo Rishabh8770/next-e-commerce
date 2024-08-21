@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { useSearchContext } from "@/context/SearchContext";
 import { useCartContext } from "@/context/CartContext";
 import { Menu, ShoppingCart } from "lucide-react";
 import UserRole from "@/components/user/customer/UserRole";
@@ -9,11 +8,13 @@ import { routePathNames } from "@/utils/pathUtils";
 import SearchProduct from "./SearchProduct";
 import AuthButton from "../user-authentication/AuthButton";
 import { useState } from "react";
+import { useUserContext } from "@/context/UserContext";
 
 const Navbar = () => {
   const router = useRouter();
   const { cartCount } = useCartContext();
   const pathName = usePathname();
+  const { userId } = useUserContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleCartNavigation = () => {
@@ -98,15 +99,20 @@ const Navbar = () => {
               <div className="hidden md:block">
                 <AuthButton />
               </div>
-              <div className="hidden md:block">
-                <UserRole />
-              </div>
+              {userId && (
+                <div className="md:block hidden">
+                  <UserRole />
+                </div>
+              )}
             </div>
           </div>
         </div>
 
         {isMenuOpen && (
-          <div className="sm:hidden" id="mobile-menu">
+          <div
+            className="sm:hidden absolute top-16 left-0 right-0 z-10 opacity-90"
+            id="mobile-menu"
+          >
             <div className="space-y-1 px-2 pt-2 pb-3 bg-gray-700">
               <button
                 onClick={handleProducts}
@@ -117,9 +123,11 @@ const Navbar = () => {
               <div className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                 <AuthButton />
               </div>
-              <div className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                <UserRole />
-              </div>
+              {userId && (
+                <div className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <UserRole />
+                </div>
+              )}
             </div>
           </div>
         )}

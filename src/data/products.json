@@ -211,6 +211,12 @@
         "username": "Rishabh",
         "ratings": 3,
         "comment": "Great product at this price."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Sarthak",
+        "ratings": 3,
+        "comment": "fwfwe"
       }
     ]
   },
