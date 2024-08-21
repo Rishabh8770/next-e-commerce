@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 import {
@@ -9,44 +9,51 @@ import {
   Button,
 } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-
-export type UserOptions = "User" | "Admin";
+import { useUserContext } from "@/context/UserContext";
+import userData from "@/data/users.json";
+import { usePathname } from "next/navigation";
 
 const UserRole = () => {
   const router = useRouter();
-  const [user, setUser] = useState<UserOptions>("User");
+  const pathName = usePathname();
+  const { userId } = useUserContext();
+  const [userDisplayName, setUserDisplayName] = useState<string>("");
 
   useEffect(() => {
-    const currentPath = window.location.pathname;
-    if (currentPath.startsWith("/admin")) {
-      setUser("Admin");
-    } else {
-      setUser("User");
+    if (userId !== null) {
+      const loggedInUser = userData.find((user) => user.id === userId);
+      if (loggedInUser) {
+        setUserDisplayName(loggedInUser.name);
+      }
     }
-  }, []);
+  }, [userId]);
 
-  const handleUser = (option: UserOptions) => {
-    setUser(option);
-    if (option === "User") {
-      router.push("/product-listing");
-    } else if (option === "Admin") {
+  const handleNavigation = (option: string) => {
+    if (option === "Admin") {
       router.push("/admin");
+    } else if (option === userDisplayName) {
+      router.push("/product-listing");
     }
   };
 
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button variant="bordered" className="text-white border-none text-md px-0">
-          {user}
+        <Button
+          variant="bordered"
+          className="flex justify-start text-white border-none text-md px-0"
+        >
+          {pathName.startsWith("/admin")
+            ? "Admin"
+            : `Hi, ${userDisplayName.charAt(0).toUpperCase() + userDisplayName.slice(1)}`}
         </Button>
       </DropdownTrigger>
       <DropdownMenu
-        aria-label="Static Actions"
-        onAction={(key) => handleUser(key as UserOptions)}
+        aria-label="User Options"
+        onAction={(key) => handleNavigation(key as string)}
       >
-        <DropdownItem key="User" className="text-black">
-          User
+        <DropdownItem key={userDisplayName} className="text-black">
+          {userDisplayName}
         </DropdownItem>
         <DropdownItem key="Admin" className="text-black">
           Admin

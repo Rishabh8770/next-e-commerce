@@ -33,7 +33,7 @@ const AuthButton = () => {
   };
 
   return (
-    <div className="w-24">
+    <div className="w-24 flex justify-center items-center">
       <button
         onClick={handleAuthAction}
         className="text-white md:px-4 py-2 rounded-xl"
