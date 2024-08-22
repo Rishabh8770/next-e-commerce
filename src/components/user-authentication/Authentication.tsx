@@ -61,9 +61,10 @@ const Authentication = ({
           />
         </div>
         {!isNewUser && (
-          <div className="mb-4">
-            <Link href="/registration" className="text-blue-500 hover:underline">
-              New Registration ?
+          <div className="mb-4 flex flex-col">
+            <span className="md:text-lg text-sm">Don't have an account ? {" "}</span>
+            <Link href="/registration" className="text-blue-500 hover:underline md:text-lg text-sm md:w-1/3 w-1/2">
+              Click here to Sign-up
             </Link>
           </div>
         )}

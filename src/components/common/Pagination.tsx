@@ -22,7 +22,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) 
   return (
     <div className="flex justify-center items-center space-x-2 mt-4">
       <button
-        className="px-4 py-2 bg-gray-500 rounded disabled:opacity-50"
+        className="px-4 py-2 bg-gray-500 rounded disabled:opacity-50 text-white"
         onClick={handlePrevPage}
         disabled={currentPage === 1}
       >
@@ -30,7 +30,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) 
       </button>
       <span>{`Page ${currentPage} of ${totalPages}`}</span>
       <button
-        className="px-4 py-2 bg-gray-500 rounded disabled:opacity-50"
+        className="px-4 py-2 bg-gray-500 rounded disabled:opacity-50 text-white"
         onClick={handleNextPage}
         disabled={currentPage === totalPages}
       >
