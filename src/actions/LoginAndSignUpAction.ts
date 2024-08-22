@@ -3,17 +3,21 @@
 import fs from "fs";
 import path from "path";
 import { cookies } from "next/headers";
+import { CartItem } from "@/types/ProductTypes";
 
 const filePath = path.join(process.cwd(), "src/data", "users.json");
+const cartFilePath = path.join(process.cwd(), "src/data/cart.json");
 const cookieStore = cookies();
 
 export async function LoginUser(email: string, password: string) {
   const users = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  const cartItems = JSON.parse(fs.readFileSync(cartFilePath, "utf-8"));
 
-  const user = users.find((user: { email: string; password: string }) => {
-    return user.email === email && user.password === password;
-  });
-  
+  const user = users.find(
+    (user: { email: string; password: string }) =>
+      user.email === email && user.password === password
+  );
+
   if (user) {
     cookies().set({
       name: "userId",
@@ -22,6 +26,22 @@ export async function LoginUser(email: string, password: string) {
       maxAge: 3 * 60 * 60,
       path: "/",
     });
+
+    if (cartItems.length > 0) {
+      const userCart = user.cart || [];
+      cartItems.forEach((item: CartItem) => {
+        const existingItem = userCart.find((i: CartItem) => i.id === item.id);
+        if (existingItem) {
+          existingItem.quantity += item.quantity;
+        } else {
+          userCart.push(item);
+        }
+      });
+      user.cart = userCart;
+
+      fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+      fs.writeFileSync(cartFilePath, JSON.stringify([], null, 2));
+    }
 
     return { success: true, userId: user.id };
   } else {

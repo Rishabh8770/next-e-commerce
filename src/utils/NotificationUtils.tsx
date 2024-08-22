@@ -20,17 +20,21 @@ export const notifyAddProduct = () => {
   toast.success("Product has been added Successfully", options);
 };
 
+export const notifyLoginWarn = () => {
+  toast.warn("Redirecting to login page !, Please sign in first to add a review", options);
+};
+
 export const notifyLoginSuccess = () => {
-  toast.success("Logged-in Successfully", options)
-}
+  toast.success("Logged-in Successfully", options);
+};
 
 export const notifyLoginError = () => {
-  toast.error("Invalid Email or Password", options)
-}
+  toast.error("Invalid Email or Password", options);
+};
 
 export const notifyRegisterationSuccess = () => {
-  toast.success("Registered Successfully", options)
-}
+  toast.success("Registered Successfully", options);
+};
 
 export const notifyErrorAddingProduct = () => {
   toast.error("There is an error on adding the product", options);
@@ -49,16 +53,20 @@ export const notifyMandatoryWarn = () => {
 };
 
 export const notifyCartSuccess = () => {
-  toast.success("Product has been added to the cart, please move to cart for checkout", options)
-}
+  toast.success(
+    "Product has been added to the cart, please move to cart for checkout",
+    options
+  );
+};
 
-export const notifyDeleteProduct = (
-  deleteCallback: () => void
-) => {
+export const notifyDeleteProduct = (deleteCallback: () => void) => {
   const confirmDelete = () => {
     deleteCallback();
     toast.dismiss();
-    toast.success("Product deleted successfully and waiting for further approvals.", options);
+    toast.success(
+      "Product deleted successfully and waiting for further approvals.",
+      options
+    );
   };
 
   const cancelDelete = () => {

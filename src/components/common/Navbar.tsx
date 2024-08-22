@@ -7,15 +7,30 @@ import UserRole from "@/components/user/customer/UserRole";
 import { routePathNames } from "@/utils/pathUtils";
 import SearchProduct from "./SearchProduct";
 import AuthButton from "../user-authentication/AuthButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUserContext } from "@/context/UserContext";
+import { getCartItems } from "@/actions/CartAction";
 
 const Navbar = () => {
   const router = useRouter();
-  const { cartCount } = useCartContext();
+  const { cartCount, refreshCart } = useCartContext();
   const pathName = usePathname();
   const { userId } = useUserContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [localCartCount, setLocalCartCount] = useState(0);
+
+  useEffect(() => {
+    const fetchCartCount = async () => {
+      if (userId) {
+        const cartItems = await getCartItems();
+        setLocalCartCount(cartItems.reduce((count, item) => count + item.quantity, 0));
+      } else {
+        setLocalCartCount(cartCount);
+      }
+    };
+
+    fetchCartCount();
+  }, [userId, cartCount, refreshCart]);
 
   const handleCartNavigation = () => {
     router.push(`/user-cart/`);
@@ -63,7 +78,7 @@ const Navbar = () => {
                 <span className="text-white mx-2">Shop-a-holic</span>
               </div>
               <div
-                className="md:flex hidden justify-center items-center cursor-pointer"
+                className="md:flex hidden justify-center items-center cursor-pointer rounded hover:bg-gray-600 px-2"
                 onClick={handleProducts}
               >
                 <h1 className="text-white">Products</h1>
@@ -76,10 +91,10 @@ const Navbar = () => {
             <div className="flex items-center space-x-4">
               <button
                 onClick={handleCartNavigation}
-                className="relative lg:w-12 lg:h-12 w-12 h-12 rounded-full flex justify-center items-center bg-gray-900"
+                className="relative lg:w-12 lg:h-12 w-12 h-12 rounded-full flex justify-center items-center bg-gray-900 hover:border"
               >
                 <ShoppingCart color="#ffffff" strokeWidth={2} />
-                {cartCount > 0 && (
+                {localCartCount > 0 && (
                   <div
                     className="rounded-full border bg-red-600 flex justify-center items-center"
                     style={{
@@ -92,7 +107,7 @@ const Navbar = () => {
                       transform: "translate(25%, 25%)",
                     }}
                   >
-                    {cartCount}
+                    {localCartCount}
                   </div>
                 )}
               </button>

@@ -41,7 +41,7 @@ const UserRole = () => {
       <DropdownTrigger>
         <Button
           variant="bordered"
-          className="flex justify-start text-white border-none text-md px-0"
+          className="flex justify-start text-white border-none text-md px-2"
         >
           {pathName.startsWith("/admin")
             ? "Admin"
