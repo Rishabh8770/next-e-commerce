@@ -7,7 +7,7 @@ import UserRole from "@/components/user/customer/UserRole";
 import { routePathNames } from "@/utils/pathUtils";
 import SearchProduct from "./SearchProduct";
 import AuthButton from "../user-authentication/AuthButton";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useUserContext } from "@/context/UserContext";
 import { getCartItems } from "@/actions/CartAction";
 
@@ -19,9 +19,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [localCartCount, setLocalCartCount] = useState(0);
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const fetchCartCount = async () => {
-      console.log("userId in navbar::", userId)
+      console.log("userId in navbar::", userId);
       if (userId) {
         const cartItems = await getCartItems();
         setLocalCartCount(
@@ -35,6 +37,21 @@ const Navbar = () => {
     fetchCartCount();
   }, [userId, cartCount, refreshCart]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const handleCartNavigation = () => {
     router.push(`/user-cart/`);
     refreshCart();
@@ -44,7 +61,8 @@ const Navbar = () => {
     router.push("/product-listing");
   };
 
-  const toggleMenu = () => {
+  const toggleMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -57,7 +75,7 @@ const Navbar = () => {
       <nav className="bg-gray-800">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
-            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden" ref={dropdownRef}>
               <button
                 type="button"
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -126,6 +144,29 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+        {isMenuOpen && (
+          <div
+            className="sm:hidden absolute top-16 left-0 right-0 z-10 opacity-90"
+            id="mobile-menu"
+          >
+            <div className="space-y-1 px-2 pt-2 pb-3 bg-gray-700">
+              {userId && (
+                <div className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <UserRole />
+                </div>
+              )}
+              <button
+                onClick={handleProducts}
+                className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              >
+                Products
+              </button>
+              <div className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                <AuthButton />
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
     </div>
   );

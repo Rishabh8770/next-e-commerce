@@ -77,9 +77,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
         setIsDropdownOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
