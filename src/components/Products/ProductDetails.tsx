@@ -12,26 +12,27 @@ import { generateStarRating } from "@/utils/starRatingsUtils";
 import ProductReviewForm from "./ProductReviewForm";
 import { SaveProductReview } from "@/actions/ProductActions";
 import { ValidateUser } from "@/actions/LoginAndSignUpAction";
+import { ProductTypes, User } from "@/types/ProductTypes";
+import { notifyLoginWarn } from "@/utils/NotificationUtils";
+import { NotificationContainer } from "../user/admin/UserFeedback";
 
 function ProductDetails({ params }: { params: { id: string } }) {
-  const [product, setProduct] = useState<any>(null);
-  const [loggedInUser, setLoggedInUser] = useState<any>(null);
+  const [product, setProduct] = useState<ProductTypes | null>(null);
+  const [loggedInUser, setLoggedInUser] = useState<User | null>(null);
   const router = useRouter();
 
   useEffect(() => {
-    // Find the product based on params.id
     const foundProduct = productData.find(
       (product) => product.id.toString() === params.id
     );
     setProduct(foundProduct || null);
 
-    // Validate user on client-side
     const findUser = async () => {
       const userId = await ValidateUser();
       const user = userId
         ? userData.find((user) => user.id.toString() === userId)
         : null;
-      setLoggedInUser(user);
+      setLoggedInUser(user || null);
     };
     findUser();
   }, [params.id]);
@@ -42,9 +43,11 @@ function ProductDetails({ params }: { params: { id: string } }) {
 
   const handleSubmit = async (rating: number, review: string) => {
     if (!loggedInUser) {
-      console.error("User is not logged in");
+      notifyLoginWarn();
       const currentUrl = encodeURIComponent(window.location.href);
-      router.push(`/login?redirect=${currentUrl}`);
+      setTimeout(() => {
+        router.push(`/login?redirect=${currentUrl}`);
+      }, 2000);
       return;
     }
 
@@ -62,7 +65,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
       };
 
       await SaveProductReview(product.id.toString(), updatedProduct);
-      setProduct(updatedProduct); // Update state with new review
+      setProduct(updatedProduct);
     }
   };
 
@@ -154,6 +157,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
       <div className="flex justify-center">
         {product.reviews && <ProductReview reviews={product.reviews} />}
       </div>
+      <NotificationContainer />
     </div>
   );
 }

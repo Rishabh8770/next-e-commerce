@@ -6,9 +6,11 @@ import { useRouter } from "next/navigation";
 import { SignupUser } from "@/actions/LoginAndSignUpAction";
 import { notifyRegisterationSuccess } from "@/utils/NotificationUtils";
 import { NotificationContainer } from "../user/admin/UserFeedback";
+import { useUserContext } from "@/context/UserContext";
 
 const SignUpPage = () => {
   const router = useRouter();
+  const { refreshUser } = useUserContext();
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
@@ -19,7 +21,10 @@ const SignUpPage = () => {
 
     if (result.success) {
       notifyRegisterationSuccess();
-      router.push("/login");
+      refreshUser();
+      setTimeout(() => {
+        router.push("/login");
+      }, 3000);
     } else {
       alert(result.message);
     }

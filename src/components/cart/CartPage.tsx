@@ -9,6 +9,7 @@ import { useCartContext } from "@/context/CartContext";
 import { useProductContext } from "@/context/ProductContext";
 import { Trash2 } from "lucide-react";
 import { useCartSummary } from "@/hooks/useCartSummary";
+import { useEffect } from "react";
 
 const CartPage = () => {
   const { cartItems, refreshCart } = useCartContext();
@@ -16,7 +17,7 @@ const CartPage = () => {
   const { totalDiscount, totalPrice, tax, totalQuantity, priceAfterTax } =
     useCartSummary();
 
-  const handleIncrement = async (productId: number, quantity: number) => {
+  const handleIncrement = async (productId: number, quantity: number) => {    
     await updateCartItem(productId, quantity + 1);
     refreshCart();
   };
@@ -24,11 +25,10 @@ const CartPage = () => {
   const handleDecrement = async (productId: number, quantity: number) => {
     if (quantity > 1) {
       await updateCartItem(productId, quantity - 1);
-      refreshCart();
     } else {
       await removeFromCart(productId);
-      refreshCart();
     }
+    refreshCart();
   };
 
   const handleRemoveFromCart = async (productId: number) => {
@@ -40,6 +40,7 @@ const CartPage = () => {
     await deleteCart();
     refreshCart();
   };
+  
 
   return (
     <div className="lg:w-2/3 w-5/6">
@@ -71,7 +72,7 @@ const CartPage = () => {
                       <img
                         src={item.image[0]}
                         alt={item.title}
-                        className="lg:w-28 w-64  object-cover rounded"
+                        className="lg:w-28 w-64 object-cover rounded"
                       />
                       <div>
                         <h2 className="text-lg font-semibold">
@@ -133,7 +134,7 @@ const CartPage = () => {
                         </div>
                         <div className="text-xs text-gray-400 font-normal">
                           (
-                          {item.discount !== 0 || item.discount !== null
+                          {item.discount !== 0 || item.discount === null
                             ? (
                                 item.price -
                                 (item.price * (item.discount || 0)) / 100

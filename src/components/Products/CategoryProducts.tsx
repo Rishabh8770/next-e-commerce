@@ -21,7 +21,6 @@ const CategoryProducts = () => {
       cat.trim().toLowerCase().includes(decodedCategory)
     )
   );
-  console.log(filterCategoryProducts);
 
   const handleClick = () => {
     router.push("/product-listing");

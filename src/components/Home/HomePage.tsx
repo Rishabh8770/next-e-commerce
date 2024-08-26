@@ -14,6 +14,7 @@ import { ListFilter, Menu, SlidersHorizontal } from "lucide-react";
 import { Option } from "@/components/common/MultiSelectDropdown";
 import { Skeleton } from "@nextui-org/react";
 import Sidebar from "./HomeSideBar";
+import Pagination from "../common/Pagination";
 
 type ViewState = {
   isMobileViewMenu: boolean;
@@ -25,6 +26,8 @@ type ViewType = "isMobileViewMenu" | "showCategoryPills";
 const HomePage = () => {
   const { products } = useProductContext();
   const { searchQuery } = useSearchContext();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 18;
   const [loading, setLoading] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState<Option[] | null>(
     null
@@ -38,6 +41,13 @@ const HomePage = () => {
     isMobileViewMenu: false,
     showCategoryPills: false,
   });
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const totalPages = Math.ceil(products.length / itemsPerPage);
 
   const filterProducts = () => {
     return products.filter((product) => {
@@ -116,6 +126,10 @@ const HomePage = () => {
   };
 
   const filteredAndSortedProducts = sortProducts(filterProducts());
+  const currentProducts = filteredAndSortedProducts.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   const handleFilterChange = (
     type: "category" | "brand" | "rating",
@@ -200,8 +214,8 @@ const HomePage = () => {
           <CategoryPills categories={categories} />
         </div>
         <div className="flex flex-wrap justify-center overflow-y-scroll lg:h-screen no-scrollbar">
-          {filteredAndSortedProducts.length > 0 ? (
-            filteredAndSortedProducts.map((product) => (
+          {currentProducts.length > 0 ? (
+            currentProducts.map((product) => (
               <div className="m-5" key={product.id}>
                 <ProductCard
                   id={product.id}
@@ -217,9 +231,16 @@ const HomePage = () => {
               </div>
             ))
           ) : (
-            <div className="flex h-screen justify-center items-center text-2xl">No Products found</div>
+            <div className="flex h-screen justify-center items-center text-2xl">
+              No Products found
+            </div>
           )}
         </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
       </div>
     </div>
   );

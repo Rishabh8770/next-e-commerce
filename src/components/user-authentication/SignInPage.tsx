@@ -6,14 +6,16 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { LoginUser } from "@/actions/LoginAndSignUpAction";
 import { NotificationContainer } from "../user/admin/UserFeedback";
 import { notifyLoginError, notifyLoginSuccess } from "@/utils/NotificationUtils";
+import { useUserContext } from "@/context/UserContext";  // Import the UserContext
 
 const SignInPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
+  const { refreshUser } = useUserContext();
 
   useEffect(() => {
-    // redirect URL from query parameters
+    // Get redirect URL from query parameters
     const redirect = searchParams.get("redirect");
     setRedirectUrl(redirect ? decodeURIComponent(redirect) : '/');
   }, [searchParams]);
@@ -27,6 +29,7 @@ const SignInPage = () => {
 
     if (result.success) {
       notifyLoginSuccess();
+      refreshUser();
       setTimeout(() => {
         // Redirect to the saved URL or fallback to the home page
         router.push(redirectUrl || "/product-listing");

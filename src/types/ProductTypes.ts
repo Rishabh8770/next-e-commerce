@@ -8,7 +8,7 @@ export type ProductTypes = {
   brand: string;
   rating: number;
   reviews?: ReviewType[];
-  discount?: number
+  discount?: number;
 };
 
 export interface CartItem {
@@ -16,17 +16,24 @@ export interface CartItem {
   quantity: number;
 }
 
-export type Cart = Record<string, number>;
+export type Cart = CartItem[];
 
 export type ReviewType = {
   userImage: string;
   username: string;
-  comment: string
-  ratings: number
-}
+  comment: string;
+  ratings: number;
+};
 
 export type CategoryWithImage = {
   name: string;
   image: string;
 };
 
+export type User = {
+  id: number;
+  name: string;
+  email: string;
+  password: string;
+  cart?: CartItem[];
+};
