@@ -20,11 +20,15 @@ const UserRole = () => {
   const [userDisplayName, setUserDisplayName] = useState<string>("");
 
   useEffect(() => {
-    if (userId !== null) {
+    if (userId) {
       const loggedInUser = userData.find((user) => user.id === userId);
+      console.log("this is loggedin::", loggedInUser);
+      
       if (loggedInUser) {
         setUserDisplayName(loggedInUser.name);
       }
+    } else {
+      setUserDisplayName("");
     }
   }, [userId]);
 
@@ -45,7 +49,10 @@ const UserRole = () => {
         >
           {pathName.startsWith("/admin")
             ? "Admin"
-            : `Hi, ${userDisplayName.charAt(0).toUpperCase() + userDisplayName.slice(1)}`}
+            : `Hi, ${
+                userDisplayName.charAt(0).toUpperCase() +
+                userDisplayName.slice(1)
+              }`}
         </Button>
       </DropdownTrigger>
       <DropdownMenu

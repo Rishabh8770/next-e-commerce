@@ -17,9 +17,9 @@ const CartPage = () => {
   const { totalDiscount, totalPrice, tax, totalQuantity, priceAfterTax } =
     useCartSummary();
 
-  const handleIncrement = async (productId: number, quantity: number) => {
+  const handleIncrement = async (productId: number, quantity: number) => {    
     await updateCartItem(productId, quantity + 1);
-    refreshCart(); // Ensure the cart is refreshed after updating
+    refreshCart();
   };
 
   const handleDecrement = async (productId: number, quantity: number) => {
@@ -28,18 +28,16 @@ const CartPage = () => {
     } else {
       await removeFromCart(productId);
     }
-    refreshCart(); // Ensure the cart is refreshed after updating
+    refreshCart();
   };
 
   const handleRemoveFromCart = async (productId: number) => {
     await removeFromCart(productId);
-    refreshCart(); // Ensure the cart is refreshed after removing
+    refreshCart();
   };
 
   const handleClearCart = async () => {
-    console.log("Clearing cart...");
     await deleteCart();
-    console.log("Cart cleared, refreshing...");
     refreshCart();
   };
   

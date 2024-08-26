@@ -1,6 +1,12 @@
-"use client"
+"use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useMemo,
+} from "react";
 import { ValidateUser } from "@/actions/LoginAndSignUpAction";
 
 interface UserContextProps {
@@ -11,22 +17,38 @@ interface UserContextProps {
 
 const UserContext = createContext<UserContextProps | undefined>(undefined);
 
-export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [userId, setUserId] = useState<number | null>(null);
 
   const fetchUserId = async () => {
-    const foundUserId = await ValidateUser();
-    setUserId(foundUserId ? Number(foundUserId) : null);
+    try {
+      const foundUserId = await ValidateUser();
+      console.log("foundUserId:::", foundUserId)
+      console.log("type of foundUserId:::", typeof foundUserId)
+      setUserId(foundUserId ? Number(foundUserId) : null);
+    } catch (error) {
+      console.error("Failed to validate user:", error);
+      setUserId(null);
+    }
   };
 
   useEffect(() => {
     fetchUserId();
   }, []);
 
+  const contextValue = useMemo(
+    () => ({
+      userId,
+      setUserId,
+      refreshUser: fetchUserId,
+    }),
+    [userId]
+  );
+
   return (
-    <UserContext.Provider value={{ userId, setUserId, refreshUser: fetchUserId }}>
-      {children}
-    </UserContext.Provider>
+    <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>
   );
 };
 
