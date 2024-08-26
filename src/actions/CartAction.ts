@@ -7,14 +7,16 @@ import { cookies } from "next/headers";
 
 const cartFilePath = path.join(process.cwd(), "src/data/cart.json");
 const filePath = path.join(process.cwd(), "src/data/users.json");
-const cookieStore = cookies();
 
 export const getCartItems = async (): Promise<CartItem[]> => {
-  const userId = cookieStore.get("userId")?.value;
+  const userId = cookies().get("userId")?.value;
+  const getAllDetails = cookies().getAll();
+  console.log("this is the details::", getAllDetails);
 
   try {
     if (userId) {
       const users = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+
       const user = users.find(
         (user: { id: number }) => user.id.toString() === userId
       );
@@ -33,7 +35,7 @@ export const getCartItems = async (): Promise<CartItem[]> => {
 };
 
 export const saveCartItems = async (cartItems: CartItem[]): Promise<void> => {
-  const userId = cookieStore.get("userId")?.value;
+  const userId = cookies().get("userId")?.value;
 
   try {
     if (userId) {
@@ -63,7 +65,7 @@ export const saveCartItems = async (cartItems: CartItem[]): Promise<void> => {
 };
 
 export const addToCart = async (id: number): Promise<CartItem[]> => {
-  const userId = cookieStore.get("userId")?.value;
+  const userId = cookies().get("userId")?.value;
 
   try {
     if (userId) {
@@ -105,7 +107,7 @@ export const addToCart = async (id: number): Promise<CartItem[]> => {
 };
 
 export const removeFromCart = async (id: number): Promise<CartItem[]> => {
-  const userId = cookieStore.get("userId")?.value;
+  const userId = cookies().get("userId")?.value;
 
   try {
     if (userId) {
@@ -136,7 +138,7 @@ export const updateCartItem = async (
   id: number,
   quantity: number
 ): Promise<CartItem[]> => {
-  const userId = cookieStore.get("userId")?.value;
+  const userId = cookies().get("userId")?.value;
 
   try {
     let cartItems = await getCartItems();
@@ -159,7 +161,6 @@ export const updateCartItem = async (
             user.cart[itemIndex].quantity = quantity;
           }
         }
-
         fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
       }
     } else {

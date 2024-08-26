@@ -7,7 +7,6 @@ import { CartItem } from "@/types/ProductTypes";
 
 const filePath = path.join(process.cwd(), "src/data", "users.json");
 const cartFilePath = path.join(process.cwd(), "src/data/cart.json");
-const cookieStore = cookies();
 
 export async function LoginUser(email: string, password: string) {
   const users = JSON.parse(fs.readFileSync(filePath, "utf-8"));
@@ -26,6 +25,8 @@ export async function LoginUser(email: string, password: string) {
       maxAge: 3 * 60 * 60,
       path: "/",
     });
+
+    console.log("User logged in, userId cookie set:", user.id);
 
     if (cartItems.length > 0) {
       const userCart = user.cart || [];
@@ -73,13 +74,7 @@ export async function SignupUser(
     users.push(newUser);
     fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 
-    cookieStore.set({
-      name: "userId",
-      value: newUser.id.toString(),
-      httpOnly: true,
-      maxAge: 3 * 60 * 60,
-      path: "/",
-    });
+    console.log("New user signed up, userId cookie set:", newUser.id);
 
     return { success: true, userId: newUser.id };
   }
@@ -93,10 +88,19 @@ export const Logout = async () => {
     maxAge: -1,
     path: "/",
   });
+  console.log("User logged out, userId cookie cleared");
+  
 };
 
 export async function ValidateUser() {
-  const cookieStore = cookies();
-  const userId = cookieStore.get("userId")?.value;
+  const userId = cookies().get("userId")?.value;
+  console.log("this is the id in server::", userId)
+
+  if (!userId) {
+    console.warn("No userId cookie found");
+  } else {
+    console.log("userId cookie found:", userId);
+  }
+
   return userId;
 }

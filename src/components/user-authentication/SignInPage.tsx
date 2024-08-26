@@ -29,10 +29,7 @@ const SignInPage = () => {
 
     if (result.success) {
       notifyLoginSuccess();
-
-      // Refresh the user context to update the user state
       refreshUser();
-
       setTimeout(() => {
         // Redirect to the saved URL or fallback to the home page
         router.push(redirectUrl || "/product-listing");

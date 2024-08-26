@@ -21,9 +21,12 @@ const Navbar = () => {
 
   useEffect(() => {
     const fetchCartCount = async () => {
+      console.log("userId in navbar::", userId)
       if (userId) {
         const cartItems = await getCartItems();
-        setLocalCartCount(cartItems.reduce((count, item) => count + item.quantity, 0));
+        setLocalCartCount(
+          cartItems.reduce((count, item) => count + item.quantity, 0)
+        );
       } else {
         setLocalCartCount(cartCount);
       }
@@ -34,6 +37,7 @@ const Navbar = () => {
 
   const handleCartNavigation = () => {
     router.push(`/user-cart/`);
+    refreshCart();
   };
 
   const handleProducts = () => {
@@ -104,10 +108,10 @@ const Navbar = () => {
                       position: "absolute",
                       right: 0,
                       bottom: 0,
-                      transform: "translate(25%, 25%)",
+                      transform: "translate(25%, -25%)",
                     }}
                   >
-                    {localCartCount}
+                    <span>{localCartCount}</span>
                   </div>
                 )}
               </button>
@@ -122,30 +126,6 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-
-        {isMenuOpen && (
-          <div
-            className="sm:hidden absolute top-16 left-0 right-0 z-10 opacity-90"
-            id="mobile-menu"
-          >
-            <div className="space-y-1 px-2 pt-2 pb-3 bg-gray-700">
-              <button
-                onClick={handleProducts}
-                className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Products
-              </button>
-              <div className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                <AuthButton />
-              </div>
-              {userId && (
-                <div className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  <UserRole />
-                </div>
-              )}
-            </div>
-          </div>
-        )}
       </nav>
     </div>
   );
