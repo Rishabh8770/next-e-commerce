@@ -1503,5 +1503,23 @@
     ],
     "rating": 2,
     "discount": 3
+  },
+  {
+    "id": 1724672400274,
+    "title": "dgrhtyj",
+    "price": 12345,
+    "description": "ffert trhyj  uk7ik",
+    "category": [
+      "Electronics",
+      "Smart watch"
+    ],
+    "brand": "Expert Grill",
+    "image": [
+      "https://i.ibb.co/xD7nDq5/nextamazon5.jpg",
+      "https://i.ibb.co/2vwS6HR/nextamazon2.jpg",
+      "https://i.ibb.co/1r28gMk/1.webp"
+    ],
+    "rating": 3.8,
+    "discount": 11
   }
 ]

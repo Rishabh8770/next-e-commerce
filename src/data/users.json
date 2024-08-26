@@ -66,9 +66,19 @@
     "password": "rahul1234",
     "cart": [
       {
-        "id": 9005,
-        "quantity": 4
+        "id": 9006,
+        "quantity": 1
+      },
+      {
+        "id": 9015,
+        "quantity": 1
       }
     ]
+  },
+  {
+    "id": 8,
+    "name": "Abhishek",
+    "email": "abhishek@mail.com",
+    "password": "abhishek1234"
   }
 ]
