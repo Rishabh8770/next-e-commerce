@@ -1,0 +1,287 @@
+[
+  {
+    "id": 1,
+    "shippingAddresses": [
+      {
+        "firstName": "Rishabh",
+        "lastName": "Malewar",
+        "address": "123 MG Road",
+        "subAddress": "Flat 402, 4th Floor",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "postalCode": "400001",
+        "country": "India",
+        "phone": "9876543210"
+      },
+      {
+        "firstName": "Rishabh",
+        "lastName": "Malewar",
+        "address": "45 Park Street",
+        "subAddress": "House No. 12, Ground Floor",
+        "city": "Delhi",
+        "state": "Delhi",
+        "postalCode": "110001",
+        "country": "India",
+        "phone": "9123456789"
+      },
+      {
+        "firstName": "Rishabh",
+        "lastName": "Malewar",
+        "address": "56 MG Road",
+        "subAddress": "Flat 103, 1st Floor",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "postalCode": "500001",
+        "country": "India",
+        "phone": "9876501234"
+      },
+      {
+        "firstName": "Shivam",
+        "lastName": "Kumar",
+        "address": "abcdg",
+        "subAddress": "hno 51",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "1234567890"
+      },
+      {
+        "firstName": "Shivamasda",
+        "lastName": "Kumarsca",
+        "address": "abcdgsca",
+        "subAddress": "hno 51sca",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "7738927491"
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "Rishabh",
+        "lastName": "Malewar",
+        "address": "56 MG Road",
+        "subAddress": "Flat 103, 1st Floor",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "postalCode": "500001",
+        "country": "India",
+        "phone": "9876501234"
+      },
+      {
+        "firstName": "abcd",
+        "lastName": "abcd",
+        "address": "45 Park Street",
+        "subAddress": "House No. 12, Ground Floor",
+        "city": "Delhi",
+        "state": "Delhi",
+        "postalCode": "110001",
+        "country": "India",
+        "phone": "9123456789"
+      },
+      {
+        "firstName": "dwede",
+        "lastName": "adad",
+        "address": "adasd",
+        "subAddress": "gerge",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "1234535436"
+      },
+      {
+        "firstName": "dwedeefe",
+        "lastName": "adadeve",
+        "address": "adasderfer",
+        "subAddress": "gergegerg",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "7728492713"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "shippingAddresses": [
+      {
+        "firstName": "abcd",
+        "lastName": "abcd",
+        "address": "45 Park Street",
+        "subAddress": "House No. 12, Ground Floor",
+        "city": "Delhi",
+        "state": "Delhi",
+        "postalCode": "110001",
+        "country": "India",
+        "phone": "9123456789"
+      },
+      {
+        "firstName": "abcd",
+        "lastName": "abcd",
+        "address": "78 Nehru Nagar",
+        "subAddress": "Flat 202, 2nd Floor",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "postalCode": "560001",
+        "country": "India",
+        "phone": "9988776655"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "shippingAddresses": [
+      {
+        "firstName": "Sartak",
+        "lastName": "Malewar",
+        "address": "78 Nehru Nagar",
+        "subAddress": "Flat 202, 2nd Floor",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "postalCode": "560001",
+        "country": "India",
+        "phone": "9988776655"
+      },
+      {
+        "firstName": "Sartak",
+        "lastName": "Malewar",
+        "address": "56 MG Road",
+        "subAddress": "Flat 103, 1st Floor",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "postalCode": "500001",
+        "country": "India",
+        "phone": "9876501234"
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "Sarthak",
+        "lastName": "Malewar",
+        "address": "abcdgsca",
+        "subAddress": "hno 51sca",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "7738927491"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "shippingAddresses": [
+      {
+        "firstName": "Chandan",
+        "lastName": "Soni",
+        "address": "56 MG Road",
+        "subAddress": "Flat 103, 1st Floor",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "postalCode": "500001",
+        "country": "India",
+        "phone": "9876501234"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "shippingAddresses": [
+      {
+        "firstName": "Admin",
+        "lastName": "admin",
+        "address": "89 Ring Road",
+        "subAddress": "House No. 8, 3rd Floor",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "postalCode": "380001",
+        "country": "India",
+        "phone": "9876540987"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "shippingAddresses": [
+      {
+        "firstName": "Shivam",
+        "lastName": "Kumar",
+        "address": "21 Station Road",
+        "subAddress": "Flat 502, 5th Floor",
+        "city": "Jaipur",
+        "state": "Rajasthan",
+        "postalCode": "302001",
+        "country": "India",
+        "phone": "9765432109"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "shippingAddresses": [
+      {
+        "firstName": "Rahul",
+        "lastName": "Sharma",
+        "address": "67 Civil Lines",
+        "subAddress": "House No. 3, Ground Floor",
+        "city": "Lucknow",
+        "state": "Uttar Pradesh",
+        "postalCode": "226001",
+        "country": "India",
+        "phone": "9988998877"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "shippingAddresses": [
+      {
+        "firstName": "Abhishek",
+        "lastName": "Gupta",
+        "address": "34 Park Avenue",
+        "subAddress": "Flat 401, 4th Floor",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "postalCode": "700001",
+        "country": "India",
+        "phone": "9876545678"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "shippingAddresses": [
+      {
+        "firstName": "Priya",
+        "lastName": "Mishra",
+        "address": "90 Gandhi Road",
+        "subAddress": "House No. 7, 2nd Floor",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "postalCode": "411001",
+        "country": "India",
+        "phone": "9876567890"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "shippingAddresses": [
+      {
+        "firstName": "Rohan",
+        "lastName": "Gupta",
+        "address": "11 Mall Road",
+        "subAddress": "Flat 603, 6th Floor",
+        "city": "Chandigarh",
+        "state": "Chandigarh",
+        "postalCode": "160001",
+        "country": "India",
+        "phone": "9098765432"
+      }
+    ]
+  }
+]

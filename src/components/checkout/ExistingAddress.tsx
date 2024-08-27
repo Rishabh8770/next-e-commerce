@@ -1,0 +1,102 @@
+"use client";
+
+import React, { useState } from "react";
+import userAddress from "@/data/userAddress.json";
+import { useUserContext } from "@/context/UserContext";
+import { AddressType } from "@/types/AddressType";
+
+const ExistingAddress = ({
+  type,
+  onSelectAddress,
+}: //   isSameAsShipping,
+{
+  type: string;
+  onSelectAddress: (address: AddressType) => void;
+  //   isSameAsShipping: boolean;
+}) => {
+  const [currentAddresses, setCurrentAddresses] = useState(1);
+  const [selectedAddress, setSelectedAddress] = useState<AddressType | null>(
+    null
+  );
+  const addressShow = 2;
+  const { userId } = useUserContext();
+  const findUser = userAddress.find((user) => user.id === userId);
+
+  if (!findUser) {
+    return <p>No addresses found for this user.</p>;
+  }
+
+  const addresses =
+    type === "billing" ? findUser.billingAddresses : findUser.shippingAddresses;
+
+  if (!addresses) {
+    return <p>No addresses found for this user.</p>;
+  }
+  const startIndex = 0;
+  const endIndex = currentAddresses * addressShow;
+  const visibleAddresses = addresses.slice(startIndex, endIndex);
+  const hasMoreAddresses = endIndex < addresses.length;
+  const hasLessAddresses = currentAddresses > 1;
+
+  const handleShowMore = () => {
+    setCurrentAddresses((prev) => prev + 1);
+  };
+
+  const handleShowLess = () => {
+    setCurrentAddresses(1);
+  };
+
+  const handleSelectAddress = (address: AddressType) => {
+    setSelectedAddress(address);
+    onSelectAddress(address);
+  };
+
+  return (
+    <div className="w-5/6 mt-2">
+      {visibleAddresses.map((address, index) => (
+        <div
+          key={index}
+          className="flex space-x-4 border border-dashed border-green-500 bg-green-100 p-2 rounded-xl my-2"
+        >
+          <input
+            type="checkbox"
+            checked={selectedAddress === address}
+            onChange={() => handleSelectAddress(address)}
+          />
+          <div>
+            <p>
+              {address.firstName} {address.lastName}
+            </p>
+            <p>{address.address}</p>
+            <p>{address.subAddress}</p>
+            <p>{address.city}</p>
+            <p>{address.state}</p>
+            <p>{address.postalCode}</p>
+            <p>{address.country}</p>
+            <p>{address.phone}</p>
+          </div>
+        </div>
+      ))}
+      <div className="mt-2">
+        {hasMoreAddresses && (
+          <button
+            onClick={handleShowMore}
+            className="hover:bg-gray-200 mr-4 border rounded-md p-2"
+          >
+            View More
+          </button>
+        )}
+        {hasLessAddresses && (
+          <button
+            onClick={handleShowLess}
+            className="hover:bg-gray-200 border rounded-md p-2"
+          >
+            View Less
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ExistingAddress;

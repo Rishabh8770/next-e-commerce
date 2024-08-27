@@ -5,19 +5,24 @@ import Authentication from "./Authentication";
 import { useRouter, useSearchParams } from "next/navigation";
 import { LoginUser } from "@/actions/LoginAndSignUpAction";
 import { NotificationContainer } from "../user/admin/UserFeedback";
-import { notifyLoginError, notifyLoginSuccess } from "@/utils/NotificationUtils";
-import { useUserContext } from "@/context/UserContext";  // Import the UserContext
+import {
+  notifyLoginError,
+  notifyLoginSuccess,
+} from "@/utils/NotificationUtils";
+import { useUserContext } from "@/context/UserContext"; // Import the UserContext
+import { useCartContext } from "@/context/CartContext";
 
 const SignInPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
   const { refreshUser } = useUserContext();
+  const { refreshCart } = useCartContext();
 
   useEffect(() => {
     // Get redirect URL from query parameters
     const redirect = searchParams.get("redirect");
-    setRedirectUrl(redirect ? decodeURIComponent(redirect) : '/');
+    setRedirectUrl(redirect ? decodeURIComponent(redirect) : "/");
   }, [searchParams]);
 
   const handleSignIn = async (e: React.FormEvent) => {
@@ -30,10 +35,10 @@ const SignInPage = () => {
     if (result.success) {
       notifyLoginSuccess();
       refreshUser();
+      await refreshCart();
       setTimeout(() => {
-        // Redirect to the saved URL or fallback to the home page
         router.push(redirectUrl || "/product-listing");
-      }, 3000);
+      }, 2000);
     } else {
       notifyLoginError();
     }
