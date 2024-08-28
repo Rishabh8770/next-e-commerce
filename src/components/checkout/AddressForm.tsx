@@ -2,14 +2,19 @@
 
 import { addAddress } from "@/actions/AddressAction";
 import { useUserContext } from "@/context/UserContext";
+import { useAddressContext } from "@/context/AddressContext";
 import React, { useState } from "react";
+import LoadingButton from "../common/LoadingButton";
 
 type AddressTypeProp = {
   type: "shipping" | "billing";
 };
 
 const AddressForm = ({ type }: AddressTypeProp) => {
+  const [loading, setLoading] = useState(false);
   const { userId } = useUserContext();
+  const { addNewAddress } = useAddressContext();
+
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -18,14 +23,16 @@ const AddressForm = ({ type }: AddressTypeProp) => {
     subAddress: "",
     city: "",
     state: "",
-    country: "",
+    country: "India",
     postalCode: "",
     phone: "",
   });
+
   const toggleAddressForm = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsFormOpen(!isFormOpen);
   };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
@@ -41,7 +48,7 @@ const AddressForm = ({ type }: AddressTypeProp) => {
       subAddress: "",
       city: "",
       state: "",
-      country: "",
+      country: "India",
       postalCode: "",
       phone: "",
     });
@@ -49,15 +56,21 @@ const AddressForm = ({ type }: AddressTypeProp) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    console.time("Add Address Duration");
     try {
-      await addAddress(userId, formData, type);
-      clearAddressForm();
-      setIsFormOpen(false)
+      await addNewAddress(userId, formData, type);
+      setIsFormOpen(false);
       alert("Address added successfully");
     } catch (error) {
       alert("Failed to add address");
+    } finally {
+      setLoading(false);
     }
+    console.timeEnd("Add Address Duration");
+    clearAddressForm();
   };
+
   return (
     <div className="my-4">
       <div>
@@ -71,11 +84,11 @@ const AddressForm = ({ type }: AddressTypeProp) => {
       </div>
       {isFormOpen && (
         <form
-          className="space-y-4 border rounded-md p-4 w-5/6 mt-2"
+          className="space-y-4 border rounded-md p-4 lg:w-5/6 mt-2 slide-down"
           onSubmit={handleSubmit}
         >
-          <div className="flex space-x-4">
-            <div className="flex flex-col space-y-2 w-1/2">
+          <div className="flex md:flex-row flex-col md:space-x-4">
+            <div className="flex flex-col space-y-2 md:w-1/2">
               <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
@@ -85,7 +98,7 @@ const AddressForm = ({ type }: AddressTypeProp) => {
                 value={formData.firstName}
               />
             </div>
-            <div className="flex flex-col space-y-2 w-1/2">
+            <div className="flex flex-col space-y-2 md:w-1/2 md:mt-0 mt-2">
               <label htmlFor="lastName">Last Name</label>
               <input
                 type="text"
@@ -116,8 +129,8 @@ const AddressForm = ({ type }: AddressTypeProp) => {
               value={formData.subAddress}
             />
           </div>
-          <div className="flex space-x-4">
-            <div className="flex flex-col space-y-2 w-1/2">
+          <div className="flex md:flex-row flex-col md:space-x-4">
+            <div className="flex flex-col space-y-2 md:w-1/2">
               <label htmlFor="city">City</label>
               <input
                 type="text"
@@ -127,7 +140,7 @@ const AddressForm = ({ type }: AddressTypeProp) => {
                 value={formData.city}
               />
             </div>
-            <div className="flex flex-col space-y-2 w-1/2">
+            <div className="flex flex-col space-y-2 md:w-1/2 md:mt-0 mt-2">
               <label htmlFor="country">Country</label>
               <input
                 type="text"
@@ -138,8 +151,8 @@ const AddressForm = ({ type }: AddressTypeProp) => {
               />
             </div>
           </div>
-          <div className="flex space-x-4">
-            <div className="flex flex-col space-y-2 w-1/2">
+          <div className="flex md:flex-row flex-col md:space-x-4">
+            <div className="flex flex-col space-y-2 lg:w-1/2">
               <label htmlFor="state">State / Province</label>
               <input
                 type="text"
@@ -149,7 +162,7 @@ const AddressForm = ({ type }: AddressTypeProp) => {
                 value={formData.state}
               />
             </div>
-            <div className="flex flex-col space-y-2 w-1/2">
+            <div className="flex flex-col space-y-2 md:w-1/2 md:mt-0 mt-2">
               <label htmlFor="postalCode">Postal Code</label>
               <input
                 type="text"
@@ -171,9 +184,7 @@ const AddressForm = ({ type }: AddressTypeProp) => {
             />
           </div>
           <div className="">
-            <button className="border border-blue-500 rounded-md text-blue-500 p-2 hover:bg-blue-500 hover:text-white">
-              Add Address
-            </button>
+            <LoadingButton isLoading={loading}>Add Address</LoadingButton>
           </div>
         </form>
       )}

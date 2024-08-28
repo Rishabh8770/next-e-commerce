@@ -11,8 +11,11 @@ import { Trash2 } from "lucide-react";
 import { useCartSummary } from "@/hooks/useCartSummary";
 import { useUserContext } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import LoadingButton from "../common/LoadingButton";
 
 const CartPage = () => {
+  const [loading, setLoading] = useState(false);
   const { cartItems, refreshCart } = useCartContext();
   const { products } = useProductContext();
   const { totalDiscount, totalPrice, tax, totalQuantity, priceAfterTax } =
@@ -22,16 +25,24 @@ const CartPage = () => {
 
   const handleCheckout = () => {
     if (cartItems.length > 0) {
+      setLoading(true);
+
       if (userId) {
-        router.push(`/checkout/${userId}`);
-      } else if (!userId) {
+        setTimeout(() => {
+          router.push(`/checkout/${userId}`);
+        }, 2000);
+      } else {
         const currentUrl = encodeURIComponent(window.location.href);
         setTimeout(() => {
           router.push(`/login?redirect=${currentUrl}`);
         }, 2000);
-        return;
       }
+
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
     }
+
     refreshCart();
   };
 
@@ -222,14 +233,13 @@ const CartPage = () => {
                   ₹{priceAfterTax.toFixed(2)}
                 </span>
               </div>
-              <button
-                className={`w-full bg-black text-white py-2 rounded-lg transition-transform transform ${
-                  cartItems.length !== 0 && "hover:scale-105"
-                }`}
+              <LoadingButton
                 onClick={handleCheckout}
+                isLoading={loading}
+                disabled={cartItems.length === 0}
               >
                 CHECKOUT
-              </button>
+              </LoadingButton>
             </div>
           </div>
         )}

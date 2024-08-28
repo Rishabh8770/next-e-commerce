@@ -169,6 +169,17 @@
         "country": "India",
         "postalCode": "492001",
         "phone": "7738927491"
+      },
+      {
+        "firstName": "Vaidehi",
+        "lastName": "Girepunje",
+        "address": "Sundar nagar",
+        "subAddress": "ground floor",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492012",
+        "phone": "6723788912"
       }
     ]
   },
@@ -185,6 +196,19 @@
         "postalCode": "500001",
         "country": "India",
         "phone": "9876501234"
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "Chandan",
+        "lastName": "Soni",
+        "address": "Mova",
+        "subAddress": "hno 5",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492013",
+        "phone": "8882934721"
       }
     ]
   },
@@ -218,6 +242,19 @@
         "country": "India",
         "phone": "9765432109"
       }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "Shivam",
+        "lastName": "Kumar",
+        "address": "shankar nagar",
+        "subAddress": "hno 51",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492012",
+        "phone": "8872421818"
+      }
     ]
   },
   {
@@ -233,6 +270,41 @@
         "postalCode": "226001",
         "country": "India",
         "phone": "9988998877"
+      },
+      {
+        "firstName": "Shivam",
+        "lastName": "adad",
+        "address": "adasd",
+        "subAddress": "hno 51sca",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "1234567890"
+      },
+      {
+        "firstName": "Shivam",
+        "lastName": "adad",
+        "address": "adasd",
+        "subAddress": "hno 51sca",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "1234567890"
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "sdcfw",
+        "lastName": "dwqdwqd",
+        "address": "adasd",
+        "subAddress": "fwefw",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "560076",
+        "phone": "6662738192"
       }
     ]
   },
@@ -249,6 +321,52 @@
         "postalCode": "700001",
         "country": "India",
         "phone": "9876545678"
+      },
+      {
+        "firstName": "Abhishek",
+        "lastName": "Gupta",
+        "address": "wrs colony",
+        "subAddress": "44",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492016",
+        "phone": "8877676732"
+      },
+      {
+        "firstName": "dewdwe",
+        "lastName": "asasa",
+        "address": "acacsa",
+        "subAddress": "34",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492011",
+        "phone": "8877996353"
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "wfwef",
+        "lastName": "wfewf",
+        "address": "dwefw",
+        "subAddress": "22",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492012",
+        "phone": "7788996453"
+      },
+      {
+        "firstName": "Shivam",
+        "lastName": "Kumar",
+        "address": "adsasdwe",
+        "subAddress": "223",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "9988776655"
       }
     ]
   },
@@ -266,6 +384,30 @@
         "country": "India",
         "phone": "9876567890"
       }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "Priya",
+        "lastName": "Mishra",
+        "address": "Ramesh Nagar",
+        "subAddress": "z-499/1",
+        "city": "New Delhi",
+        "state": "Delhi",
+        "country": "India",
+        "postalCode": "110018",
+        "phone": "8873113131"
+      },
+      {
+        "firstName": "afqe",
+        "lastName": "dwfwe",
+        "address": "qwqqw",
+        "subAddress": "23",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "7728492713"
+      }
     ]
   },
   {
@@ -281,6 +423,37 @@
         "postalCode": "160001",
         "country": "India",
         "phone": "9098765432"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "shippingAddresses": [
+      {
+        "firstName": "vicky",
+        "lastName": "bhalla",
+        "address": "shankar nagar",
+        "subAddress": "11",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492007",
+        "phone": "8878787663",
+        "id": 11
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "vicky",
+        "lastName": "bhalla",
+        "address": "shankar nagar",
+        "subAddress": "11",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492007",
+        "phone": "7763829112",
+        "id": 11
       }
     ]
   }

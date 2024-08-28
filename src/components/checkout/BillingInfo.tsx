@@ -5,7 +5,9 @@ import { useCartContext } from "@/context/CartContext";
 import { useCartSummary } from "@/hooks/useCartSummary";
 import { AddressType } from "@/types/AddressType";
 import { ShoppingCart } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import LoadingButton from "../common/LoadingButton";
 
 type SelectedAddressProps = {
   selectedShippingAddress: AddressType | null;
@@ -19,14 +21,29 @@ const BillingInfo = ({
   const { totalDiscount, totalPrice, tax, totalQuantity, priceAfterTax } =
     useCartSummary();
   const { refreshCart } = useCartContext();
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
+
   const handlePayment = async () => {
     if (selectedBillingAddress && selectedShippingAddress) {
-      alert("Payment successful");
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setPaymentSuccess(true);
+        setTimeout(() => setPaymentSuccess(false), 4000);
+      }, 2000);
       await deleteCart();
       refreshCart();
+      setTimeout(() => {
+        router.push("/product-listing");
+      }, 3000);
     } else {
       alert("Please select the address");
     }
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
   return (
     <div className="border h-auto rounded-lg bg-gray-100">
@@ -81,7 +98,7 @@ const BillingInfo = ({
         </label>
         <div className="border-dashed border-b-black border-b-1 px-3 my-2"></div>
         {selectedShippingAddress ? (
-          <div>
+          <div className="slide-down">
             <p>
               {selectedShippingAddress.firstName}{" "}
               {selectedShippingAddress.lastName}
@@ -104,7 +121,7 @@ const BillingInfo = ({
         </label>
         <div className="border-dashed border-b-black border-b-1 px-3 my-2"></div>
         {selectedBillingAddress ? (
-          <div>
+          <div className="slide-down">
             <p>
               {selectedBillingAddress.firstName}{" "}
               {selectedBillingAddress.lastName}
@@ -122,13 +139,18 @@ const BillingInfo = ({
         )}
       </div>
       <div className="px-6 my-4">
-        <button
-          className="w-full bg-black text-white py-2 rounded-lg transition-transform transform"
-          onClick={handlePayment}
-        >
+        <LoadingButton onClick={handlePayment} isLoading={loading}>
           PAYMENT
-        </button>
+        </LoadingButton>
       </div>
+      {paymentSuccess && (
+        <div className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 backdrop-blur-lg ">
+          <img src="/check.png" alt="success" className="size-28" />
+          <div className="text-white text-2xl font-bold">
+            Payment Successful
+          </div>
+        </div>
+      )}
     </div>
   );
 };

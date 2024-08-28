@@ -57,6 +57,10 @@
       {
         "id": 9007,
         "quantity": 3
+      },
+      {
+        "id": 9010,
+        "quantity": 1
       }
     ]
   },
@@ -91,5 +95,54 @@
         "quantity": 1
       }
     ]
+  },
+  {
+    "id": 9,
+    "name": "Priya Mishra",
+    "email": "priya@mail.com",
+    "password": "priya1234",
+    "cart": []
+  },
+  {
+    "id": 10,
+    "name": "Rohan",
+    "email": "rohan@mail.com",
+    "password": "Rohan1234"
+  },
+  {
+    "id": 11,
+    "name": "Vicky",
+    "email": "vicky@mail.com",
+    "password": "vicky1234",
+    "cart": [
+      {
+        "id": 9011,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "rishi malewar",
+    "email": "rishi@mail.com",
+    "password": "rishi1234"
+  },
+  {
+    "id": 13,
+    "name": "isha",
+    "email": "isha@mail.com",
+    "password": "isha1234"
+  },
+  {
+    "id": 14,
+    "name": "ayesha",
+    "email": "ayesha@mail.com",
+    "password": "ayesha1234"
+  },
+  {
+    "id": 15,
+    "name": "deepak",
+    "email": "deepak@mail.com",
+    "password": "deepak1234"
   }
 ]

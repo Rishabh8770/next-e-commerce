@@ -22,7 +22,7 @@ const SignInPage = () => {
   useEffect(() => {
     // Get redirect URL from query parameters
     const redirect = searchParams.get("redirect");
-    setRedirectUrl(redirect ? decodeURIComponent(redirect) : "/");
+    setRedirectUrl(redirect ? decodeURIComponent(redirect) : "/product-listing");
   }, [searchParams]);
 
   const handleSignIn = async (e: React.FormEvent) => {

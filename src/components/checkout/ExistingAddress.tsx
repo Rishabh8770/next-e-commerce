@@ -1,41 +1,46 @@
 "use client";
 
-import React, { useState } from "react";
-import userAddress from "@/data/userAddress.json";
+import React, { useState, useEffect } from "react";
 import { useUserContext } from "@/context/UserContext";
+import { useAddressContext } from "@/context/AddressContext";
 import { AddressType } from "@/types/AddressType";
 
 const ExistingAddress = ({
   type,
   onSelectAddress,
-}: //   isSameAsShipping,
-{
+}: {
   type: string;
   onSelectAddress: (address: AddressType) => void;
-  //   isSameAsShipping: boolean;
 }) => {
   const [currentAddresses, setCurrentAddresses] = useState(1);
-  const [selectedAddress, setSelectedAddress] = useState<AddressType | null>(
-    null
-  );
+  const [selectedAddress, setSelectedAddress] = useState<AddressType | null>(null);
   const addressShow = 2;
+
   const { userId } = useUserContext();
-  const findUser = userAddress.find((user) => user.id === userId);
+  const { addresses, fetchAddresses } = useAddressContext();
 
-  if (!findUser) {
+  useEffect(() => {
+    if (userId) {
+      fetchAddresses(userId);
+    }
+  }, [userId]);
+
+  const addressList = type === "billing" ? addresses.billingAddresses : addresses.shippingAddresses;
+
+  /* useEffect(() => {
+    if (addressList.length > 0 && !selectedAddress) {
+      setSelectedAddress(addressList[0]);
+    }
+  }, [addressList, selectedAddress]); */
+
+  if (!addressList || addressList.length === 0) {
     return <p>No addresses found for this user.</p>;
   }
 
-  const addresses =
-    type === "billing" ? findUser.billingAddresses : findUser.shippingAddresses;
-
-  if (!addresses) {
-    return <p>No addresses found for this user.</p>;
-  }
   const startIndex = 0;
   const endIndex = currentAddresses * addressShow;
-  const visibleAddresses = addresses.slice(startIndex, endIndex);
-  const hasMoreAddresses = endIndex < addresses.length;
+  const visibleAddresses = addressList.slice(startIndex, endIndex);
+  const hasMoreAddresses = endIndex < addressList.length;
   const hasLessAddresses = currentAddresses > 1;
 
   const handleShowMore = () => {
@@ -47,12 +52,12 @@ const ExistingAddress = ({
   };
 
   const handleSelectAddress = (address: AddressType) => {
-    setSelectedAddress(address);
+    setSelectedAddress((prev) => (prev === address ? null : address));
     onSelectAddress(address);
   };
 
   return (
-    <div className="w-5/6 mt-2">
+    <div className="lg:w-5/6 mt-2">
       {visibleAddresses.map((address, index) => (
         <div
           key={index}

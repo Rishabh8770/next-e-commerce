@@ -10,6 +10,7 @@ import Footer from "@/components/common/Footer";
 import { CartProvider } from "@/context/CartContext";
 import { headers } from "next/headers";
 import { UserProvider } from "@/context/UserContext";
+import { AddressProvider } from "@/context/AddressContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,19 +27,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} flex flex-col min-h-screen`}>
-        <UserProvider>
-          <CartProvider>
-            <SearchProvider>
-              <ProductProvider>
-                <Navbar />
-                <main className="flex-grow">
-                  <Suspense fallback={<LoadingPage />}>{children}</Suspense>
-                </main>
-                <Footer />
-              </ProductProvider>
-            </SearchProvider>
-          </CartProvider>
-        </UserProvider>
+        <AddressProvider>
+          <UserProvider>
+            <CartProvider>
+              <SearchProvider>
+                <ProductProvider>
+                  <Navbar />
+                  <main className="flex-grow">
+                    <Suspense fallback={<LoadingPage />}>{children}</Suspense>
+                  </main>
+                  <Footer />
+                </ProductProvider>
+              </SearchProvider>
+            </CartProvider>
+          </UserProvider>
+        </AddressProvider>
       </body>
     </html>
   );
