@@ -9,15 +9,44 @@ import { useCartContext } from "@/context/CartContext";
 import { useProductContext } from "@/context/ProductContext";
 import { Trash2 } from "lucide-react";
 import { useCartSummary } from "@/hooks/useCartSummary";
-import { useEffect } from "react";
+import { useUserContext } from "@/context/UserContext";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import LoadingButton from "../common/LoadingButton";
 
 const CartPage = () => {
+  const [loading, setLoading] = useState(false);
   const { cartItems, refreshCart } = useCartContext();
   const { products } = useProductContext();
   const { totalDiscount, totalPrice, tax, totalQuantity, priceAfterTax } =
     useCartSummary();
+  const router = useRouter();
+  const { userId } = useUserContext();
 
-  const handleIncrement = async (productId: number, quantity: number) => {    
+  const handleCheckout = () => {
+    if (cartItems.length > 0) {
+      setLoading(true);
+
+      if (userId) {
+        setTimeout(() => {
+          router.push(`/checkout/${userId}`);
+        }, 2000);
+      } else {
+        const currentUrl = encodeURIComponent(window.location.href);
+        setTimeout(() => {
+          router.push(`/login?redirect=${currentUrl}`);
+        }, 2000);
+      }
+
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
+    }
+
+    refreshCart();
+  };
+
+  const handleIncrement = async (productId: number, quantity: number) => {
     await updateCartItem(productId, quantity + 1);
     refreshCart();
   };
@@ -40,12 +69,15 @@ const CartPage = () => {
     await deleteCart();
     refreshCart();
   };
-  
 
   return (
     <div className="lg:w-2/3 w-5/6">
       <div className="flex lg:flex-row flex-col lg:space-x-8 space-x-0 lg:space-y-0 space-y-6 lg:mb-0 mb-5">
-        <div className="lg:w-5/6 w-full bg-white p-6 rounded-lg shadow-lg">
+        <div
+          className={`lg:w-5/6 w-full bg-white p-6 rounded-lg shadow-lg ${
+            cartItems.length === 0 && "lg:w-full"
+          }`}
+        >
           {cartItems.length === 0 ? (
             <p className="lg:text-5xl md:text-3xl text-2xl">
               Your cart is empty
@@ -174,37 +206,43 @@ const CartPage = () => {
             )}
           </div>
         </div>
-
-        <div className="lg:w-1/3 w-full h-auto bg-gray-100 p-6 rounded-lg shadow-lg lg:self-start self-center ">
-          <h2 className="text-xl font-bold mb-6">Summary</h2>
-          <div className="space-y-4">
-            <div className="flex justify-between">
-              <span>
-                Price: ({totalQuantity} {totalQuantity > 1 ? "items" : "item"})
-              </span>
-              <span>₹{totalPrice.toFixed(2)}</span>
+        {cartItems.length > 0 && (
+          <div className="lg:w-1/3 w-full h-auto bg-gray-100 p-6 rounded-lg shadow-lg lg:self-start self-center ">
+            <h2 className="text-xl font-bold mb-6">Summary</h2>
+            <div className="space-y-4">
+              <div className="flex justify-between">
+                <span>
+                  Price: ({totalQuantity} {totalQuantity > 1 ? "items" : "item"}
+                  )
+                </span>
+                <span>₹{totalPrice.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Discount:</span>
+                <span className="text-green-500">
+                  - ₹{totalDiscount !== 0 ? totalDiscount.toFixed(2) : 0}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span>Tax:</span>
+                <span>₹{tax.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-semibold">Order Total:</span>
+                <span className="font-semibold text-red-700">
+                  ₹{priceAfterTax.toFixed(2)}
+                </span>
+              </div>
+              <LoadingButton
+                onClick={handleCheckout}
+                isLoading={loading}
+                disabled={cartItems.length === 0}
+              >
+                CHECKOUT
+              </LoadingButton>
             </div>
-            <div className="flex justify-between">
-              <span>Discount:</span>
-              <span className="text-green-500">
-                - ₹{totalDiscount !== 0 ? totalDiscount.toFixed(2) : 0}
-              </span>
-            </div>
-            <div className="flex justify-between">
-              <span>Tax:</span>
-              <span>₹{tax.toFixed(2)}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="font-semibold">Order Total:</span>
-              <span className="font-semibold text-red-700">
-                ₹{priceAfterTax.toFixed(2)}
-              </span>
-            </div>
-            <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
-              CHECKOUT
-            </button>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

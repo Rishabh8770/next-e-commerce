@@ -30,8 +30,8 @@ const AuthButton = () => {
     if (isLoggedIn) {
       await Logout();
       setUserId(null);
-      checkLoginStatus();
       refreshCart();
+      checkLoginStatus();
       router.push("/login");
     } else {
       router.push("/login");
