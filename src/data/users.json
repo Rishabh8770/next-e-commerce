@@ -28,12 +28,7 @@
     "name": "Sarthak",
     "email": "sarthak@ooo.com",
     "password": "sarthak1234",
-    "cart": [
-      {
-        "id": 9001,
-        "quantity": 1
-      }
-    ]
+    "cart": []
   },
   {
     "id": 4,
@@ -57,7 +52,17 @@
     "id": 6,
     "name": "shivam",
     "email": "shivam@mail.com",
-    "password": "shivam1234"
+    "password": "shivam1234",
+    "cart": [
+      {
+        "id": 9007,
+        "quantity": 3
+      },
+      {
+        "id": 9010,
+        "quantity": 1
+      }
+    ]
   },
   {
     "id": 7,
@@ -79,6 +84,65 @@
     "id": 8,
     "name": "Abhishek",
     "email": "abhishek@mail.com",
-    "password": "abhishek1234"
+    "password": "abhishek1234",
+    "cart": [
+      {
+        "id": 9005,
+        "quantity": 2
+      },
+      {
+        "id": 9006,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Priya Mishra",
+    "email": "priya@mail.com",
+    "password": "priya1234",
+    "cart": []
+  },
+  {
+    "id": 10,
+    "name": "Rohan",
+    "email": "rohan@mail.com",
+    "password": "Rohan1234"
+  },
+  {
+    "id": 11,
+    "name": "Vicky",
+    "email": "vicky@mail.com",
+    "password": "vicky1234",
+    "cart": [
+      {
+        "id": 9011,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "rishi malewar",
+    "email": "rishi@mail.com",
+    "password": "rishi1234"
+  },
+  {
+    "id": 13,
+    "name": "isha",
+    "email": "isha@mail.com",
+    "password": "isha1234"
+  },
+  {
+    "id": 14,
+    "name": "ayesha",
+    "email": "ayesha@mail.com",
+    "password": "ayesha1234"
+  },
+  {
+    "id": 15,
+    "name": "deepak",
+    "email": "deepak@mail.com",
+    "password": "deepak1234"
   }
 ]

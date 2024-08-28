@@ -8,6 +8,11 @@ import { CartItem } from "@/types/ProductTypes";
 const filePath = path.join(process.cwd(), "src/data", "users.json");
 const cartFilePath = path.join(process.cwd(), "src/data/cart.json");
 
+export async function fetchUserById(userId: number) {
+  const users = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  return users.find((user: { id: number }) => user.id === userId);
+}
+
 export async function LoginUser(email: string, password: string) {
   const users = JSON.parse(fs.readFileSync(filePath, "utf-8"));
   const cartItems = JSON.parse(fs.readFileSync(cartFilePath, "utf-8"));

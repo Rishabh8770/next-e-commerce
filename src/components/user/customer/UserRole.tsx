@@ -10,26 +10,30 @@ import {
 } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useUserContext } from "@/context/UserContext";
-import userData from "@/data/users.json";
-import { usePathname } from "next/navigation";
+import { fetchUserById } from "@/actions/LoginAndSignUpAction";
 
 const UserRole = () => {
   const router = useRouter();
-  const pathName = usePathname();
   const { userId } = useUserContext();
   const [userDisplayName, setUserDisplayName] = useState<string>("");
 
   useEffect(() => {
-    if (userId) {
-      const loggedInUser = userData.find((user) => user.id === userId);
-      console.log("this is loggedin::", loggedInUser);
-      
-      if (loggedInUser) {
-        setUserDisplayName(loggedInUser.name);
+    const fetchUserDisplayName = async () => {
+      if (userId) {
+        try {
+          const user = await fetchUserById(userId);
+          if (user) {
+            setUserDisplayName(user.name.split(" ").slice(0, 1).join(" "));
+          } else {
+            setUserDisplayName("");
+          }
+        } catch (error) {
+          console.error("Error fetching user display name:", error);
+        }
       }
-    } else {
-      setUserDisplayName("");
-    }
+    };
+
+    fetchUserDisplayName();
   }, [userId]);
 
   const handleNavigation = (option: string) => {
@@ -47,12 +51,9 @@ const UserRole = () => {
           variant="bordered"
           className="flex justify-start text-white border-none text-md md:px-2 px-0"
         >
-          {pathName.startsWith("/admin")
-            ? "Admin"
-            : `Hi, ${
-                userDisplayName.charAt(0).toUpperCase() +
-                userDisplayName.slice(1)
-              }`}
+          {`Hi, ${
+            userDisplayName.charAt(0).toUpperCase() + userDisplayName.slice(1)
+          }`}
         </Button>
       </DropdownTrigger>
       <DropdownMenu
