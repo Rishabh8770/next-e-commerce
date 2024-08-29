@@ -9,3 +9,13 @@ export type AddressType = {
   country: string;
   phone: string;
 };
+
+export type CityData = {
+  country: string;
+  states: StateData[];
+}
+
+export type StateData = {
+  state: string;
+  cities: string[];
+}

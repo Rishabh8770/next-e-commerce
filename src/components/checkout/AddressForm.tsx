@@ -3,10 +3,11 @@
 import { addAddress } from "@/actions/AddressAction";
 import { useUserContext } from "@/context/UserContext";
 import { useAddressContext } from "@/context/AddressContext";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LoadingButton from "../common/LoadingButton";
+import locations from "@/data/locations.json"; // Import locations data
 
-type AddressTypeProp = {
+export type AddressTypeProp = {
   type: "shipping" | "billing";
 };
 
@@ -28,12 +29,29 @@ const AddressForm = ({ type }: AddressTypeProp) => {
     phone: "",
   });
 
+  const [states, setStates] = useState<string[]>([]);
+  const [cities, setCities] = useState<string[]>([]);
+
+  useEffect(() => {
+    setStates(locations.states.map(state => state.state));
+  }, []);
+
+  useEffect(() => {
+    const selectedState = formData.state;
+    const stateData = locations.states.find(state => state.state === selectedState);
+    if (stateData) {
+      setCities(stateData.cities);
+    } else {
+      setCities([]);
+    }
+  }, [formData.state]);
+
   const toggleAddressForm = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsFormOpen(!isFormOpen);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -120,7 +138,7 @@ const AddressForm = ({ type }: AddressTypeProp) => {
             />
           </div>
           <div className="flex flex-col space-y-2 ">
-            <label htmlFor="subAddress">Appartment, Flat no., etc</label>
+            <label htmlFor="subAddress">Apartment, Flat no., etc</label>
             <input
               type="text"
               className="border rounded-md p-2"
@@ -130,15 +148,19 @@ const AddressForm = ({ type }: AddressTypeProp) => {
             />
           </div>
           <div className="flex md:flex-row flex-col md:space-x-4">
-            <div className="flex flex-col space-y-2 md:w-1/2">
-              <label htmlFor="city">City</label>
-              <input
-                type="text"
+            <div className="flex flex-col space-y-2 lg:w-1/2">
+              <label htmlFor="state">State / Province</label>
+              <select
+                name="state"
                 className="border rounded-md p-2"
-                name="city"
                 onChange={handleChange}
-                value={formData.city}
-              />
+                value={formData.state}
+              >
+                <option value="">Select State</option>
+                {states.map(state => (
+                  <option key={state} value={state}>{state}</option>
+                ))}
+              </select>
             </div>
             <div className="flex flex-col space-y-2 md:w-1/2 md:mt-0 mt-2">
               <label htmlFor="country">Country</label>
@@ -148,19 +170,24 @@ const AddressForm = ({ type }: AddressTypeProp) => {
                 name="country"
                 onChange={handleChange}
                 value={formData.country}
+                readOnly
               />
             </div>
           </div>
           <div className="flex md:flex-row flex-col md:space-x-4">
             <div className="flex flex-col space-y-2 lg:w-1/2">
-              <label htmlFor="state">State / Province</label>
-              <input
-                type="text"
+              <label htmlFor="city">City</label>
+              <select
+                name="city"
                 className="border rounded-md p-2"
-                name="state"
                 onChange={handleChange}
-                value={formData.state}
-              />
+                value={formData.city}
+              >
+                <option value="">Select City</option>
+                {cities.map(city => (
+                  <option key={city} value={city}>{city}</option>
+                ))}
+              </select>
             </div>
             <div className="flex flex-col space-y-2 md:w-1/2 md:mt-0 mt-2">
               <label htmlFor="postalCode">Postal Code</label>

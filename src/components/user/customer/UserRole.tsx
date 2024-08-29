@@ -11,11 +11,13 @@ import {
 import { useRouter } from "next/navigation";
 import { useUserContext } from "@/context/UserContext";
 import { fetchUserById } from "@/actions/LoginAndSignUpAction";
+import { usePathname } from "next/navigation";
 
 const UserRole = () => {
   const router = useRouter();
   const { userId } = useUserContext();
   const [userDisplayName, setUserDisplayName] = useState<string>("");
+  const pathName = usePathname();
 
   useEffect(() => {
     const fetchUserDisplayName = async () => {
@@ -51,9 +53,12 @@ const UserRole = () => {
           variant="bordered"
           className="flex justify-start text-white border-none text-md md:px-2 px-0"
         >
-          {`Hi, ${
-            userDisplayName.charAt(0).toUpperCase() + userDisplayName.slice(1)
-          }`}
+          {pathName.startsWith("/admin")
+            ? "Admin"
+            : `Hi, ${
+                userDisplayName.charAt(0).toUpperCase() +
+                userDisplayName.slice(1)
+              }`}
         </Button>
       </DropdownTrigger>
       <DropdownMenu

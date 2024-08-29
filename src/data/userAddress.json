@@ -156,6 +156,18 @@
         "postalCode": "500001",
         "country": "India",
         "phone": "9876501234"
+      },
+      {
+        "firstName": "Sarthak",
+        "lastName": "Malewar",
+        "address": "abcdg",
+        "subAddress": "hno 51",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "postalCode": "560076",
+        "phone": "1234535436",
+        "id": 3
       }
     ],
     "billingAddresses": [
@@ -196,6 +208,18 @@
         "postalCode": "500001",
         "country": "India",
         "phone": "9876501234"
+      },
+      {
+        "firstName": "Shivam",
+        "lastName": "Kumar",
+        "address": "shankar nagar",
+        "subAddress": "house no. 2 sector-02",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "7728492713",
+        "id": 4
       }
     ],
     "billingAddresses": [
@@ -454,6 +478,37 @@
         "postalCode": "492007",
         "phone": "7763829112",
         "id": 11
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "shippingAddresses": [
+      {
+        "firstName": "Deepak",
+        "lastName": "Kumar",
+        "address": "Marathalli",
+        "subAddress": "house no. 2 sector-02",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "country": "India",
+        "postalCode": "560076",
+        "phone": "9987654211",
+        "id": 15
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "Deepak",
+        "lastName": "Kumar",
+        "address": "Marathalli",
+        "subAddress": "house no. 2 sector-02",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "country": "India",
+        "postalCode": "560076",
+        "phone": "7736189911",
+        "id": 15
       }
     ]
   }
