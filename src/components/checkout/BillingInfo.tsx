@@ -8,6 +8,8 @@ import { ShoppingCart } from "lucide-react";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import LoadingButton from "../common/LoadingButton";
+import { notifyAddressWarn } from "@/utils/NotificationUtils";
+import { NotificationContainer } from "../user/admin/UserFeedback";
 
 type SelectedAddressProps = {
   selectedShippingAddress: AddressType | null;
@@ -26,25 +28,40 @@ const BillingInfo = ({
   const [paymentSuccess, setPaymentSuccess] = useState(false);
 
   const handlePayment = async () => {
-    if (selectedBillingAddress && selectedShippingAddress) {
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-        setPaymentSuccess(true);
-        setTimeout(() => setPaymentSuccess(false), 4000);
-      }, 2000);
+    if (!selectedBillingAddress && !selectedShippingAddress) {
+      notifyAddressWarn("Both");
+      return;
+    }
+
+    if (!selectedBillingAddress) {
+      notifyAddressWarn("Billing");
+      return;
+    }
+
+    if (!selectedShippingAddress) {
+      notifyAddressWarn("Shipping");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      setPaymentSuccess(true);
+      setTimeout(() => setPaymentSuccess(false), 4000);
+
       await deleteCart();
       refreshCart();
+
       setTimeout(() => {
         router.push("/product-listing");
       }, 3000);
-    } else {
-      alert("Please select the address");
-    }
-    setTimeout(() => {
+    } finally {
       setLoading(false);
-    }, 2000);
+    }
   };
+
   return (
     <div className="border h-auto rounded-lg bg-gray-100">
       <div>
@@ -151,6 +168,7 @@ const BillingInfo = ({
           </div>
         </div>
       )}
+      <NotificationContainer />
     </div>
   );
 };

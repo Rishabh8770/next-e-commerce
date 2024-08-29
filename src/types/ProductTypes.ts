@@ -9,6 +9,7 @@ export type ProductTypes = {
   rating: number;
   reviews?: ReviewType[];
   discount?: number;
+  sellerId?: number | null;
 };
 
 export interface CartItem {

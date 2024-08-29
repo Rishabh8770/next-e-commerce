@@ -47,6 +47,7 @@ export async function formAction(
   formData: FormData,
   isEditMode: boolean,
   productId: number | null,
+  userId: number | null,
   setProducts: React.Dispatch<React.SetStateAction<ProductTypes[]>>
 ) {
   const newProductName = formData.get("name") as string;
@@ -86,6 +87,7 @@ export async function formAction(
         brand: selectBrand.join(", "),
         image: images,
         discount,
+        sellerId: productToEdit.sellerId,
       };
 
       await updateProduct(productData);
@@ -102,6 +104,7 @@ export async function formAction(
         image: images,
         rating: parseFloat((Math.random() * 4 + 1).toFixed(1)),
         discount,
+        sellerId: userId || null,
       };
 
       await addProduct(productData);
@@ -115,6 +118,7 @@ export async function formAction(
     throw new Error("Invalid product data");
   }
 }
+
 
 export const SaveProductReview = async (productId: string, updatedProduct: ProductTypes) => {
   const productData = await readData();

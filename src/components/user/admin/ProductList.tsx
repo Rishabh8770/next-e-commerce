@@ -15,6 +15,7 @@ type Product = {
   category: string[];
   brand: string;
   price: number;
+  sellerId?: number | null;
 };
 
 const ProductList = () => {
@@ -57,6 +58,7 @@ const ProductList = () => {
         <thead>
           <tr className="text-justify">
             <th className="py-2 px-4 border-b">ID</th>
+            <th className="py-2 px-4 border-b">Seller Id</th>
             <th className="py-2 px-4 border-b">Title</th>
             <th className="py-2 px-4 border-b">Description</th>
             <th className="py-2 px-2 border-b">Category</th>
@@ -69,6 +71,7 @@ const ProductList = () => {
           {currentProducts.map((product: Product) => (
             <tr key={product.id}>
               <td className="py-6 px-4 border-b">{product.id}</td>
+              <td className="py-6 px-4 border-b">{product.sellerId}</td>
               <td className="py-6 px-4 border-b">
                 {product.title.split(" ").slice(0, 6).join(" ")}
               </td>
