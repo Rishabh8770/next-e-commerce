@@ -10,6 +10,7 @@ import AuthButton from "../user-authentication/AuthButton";
 import { useEffect, useRef, useState } from "react";
 import { useUserContext } from "@/context/UserContext";
 import { getCartItems } from "@/actions/CartAction";
+import OrderButton from "../myOrders/OrderButton";
 
 const Navbar = () => {
   const router = useRouter();
@@ -139,6 +140,11 @@ const Navbar = () => {
               {userId && (
                 <div className="md:block hidden">
                   <UserRole />
+                </div>
+              )}
+              {userId && (
+                <div className="md:block hidden">
+                  <OrderButton />
                 </div>
               )}
             </div>

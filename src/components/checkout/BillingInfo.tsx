@@ -1,15 +1,17 @@
 "use client";
 
-import { deleteCart } from "@/actions/CartAction";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useCartContext } from "@/context/CartContext";
 import { useCartSummary } from "@/hooks/useCartSummary";
 import { AddressType } from "@/types/AddressType";
-import { ShoppingCart } from "lucide-react";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { createOrder } from "@/actions/OrderCreationAction";
 import LoadingButton from "../common/LoadingButton";
 import { notifyAddressWarn } from "@/utils/NotificationUtils";
 import { NotificationContainer } from "../user/admin/UserFeedback";
+import { useUserContext } from "@/context/UserContext";
+import { deleteCart } from "@/actions/CartAction";
+import { ShoppingCart } from "lucide-react";
 
 type SelectedAddressProps = {
   selectedShippingAddress: AddressType | null;
@@ -22,41 +24,45 @@ const BillingInfo = ({
 }: SelectedAddressProps) => {
   const { totalDiscount, totalPrice, tax, totalQuantity, priceAfterTax } =
     useCartSummary();
-  const { refreshCart } = useCartContext();
+  const { refreshCart, cartItems } = useCartContext();
+  const { userId } = useUserContext();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
 
   const handlePayment = async () => {
-    if (!selectedBillingAddress && !selectedShippingAddress) {
-      notifyAddressWarn("Both");
-      return;
-    }
-
-    if (!selectedBillingAddress) {
-      notifyAddressWarn("Billing");
-      return;
-    }
-
-    if (!selectedShippingAddress) {
-      notifyAddressWarn("Shipping");
+    if (!selectedBillingAddress || !selectedShippingAddress) {
+      notifyAddressWarn(!selectedBillingAddress ? "Billing" : "Shipping");
       return;
     }
 
     setLoading(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await createOrder(
+        userId,
+        selectedShippingAddress,
+        selectedBillingAddress,
+        cartItems,
+        totalPrice,
+        totalDiscount,
+        tax,
+        priceAfterTax
+      );
 
-      setPaymentSuccess(true);
-      setTimeout(() => setPaymentSuccess(false), 4000);
+      if (response.success) {
+        setPaymentSuccess(true);
+        setTimeout(() => setPaymentSuccess(false), 4000);
 
-      await deleteCart();
-      refreshCart();
+        await deleteCart();
+        refreshCart();
 
-      setTimeout(() => {
-        router.push("/product-listing");
-      }, 3000);
+        setTimeout(() => {
+          router.push(`/my-orders/${userId}`);
+        }, 3000);
+      } else {
+        notifyAddressWarn("Both");
+      }
     } finally {
       setLoading(false);
     }
@@ -155,19 +161,15 @@ const BillingInfo = ({
           <p>No billing address selected.</p>
         )}
       </div>
-      <div className="px-6 my-4">
-        <LoadingButton onClick={handlePayment} isLoading={loading}>
-          PAYMENT
+      <div className="px-6 py-3">
+        <LoadingButton
+          onClick={handlePayment}
+          isLoading={loading}
+          disabled={loading}
+        >
+          Place Order
         </LoadingButton>
       </div>
-      {paymentSuccess && (
-        <div className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 backdrop-blur-lg ">
-          <img src="/check.png" alt="success" className="size-28" />
-          <div className="text-white text-2xl font-bold">
-            Payment Successful
-          </div>
-        </div>
-      )}
       <NotificationContainer />
     </div>
   );

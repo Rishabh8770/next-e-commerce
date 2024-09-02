@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React, { useState, useEffect } from "react";
 import { useUserContext } from "@/context/UserContext";
@@ -10,7 +10,7 @@ const ExistingAddress = ({
   onSelectAddress,
 }: {
   type: string;
-  onSelectAddress: (address: AddressType) => void;
+  onSelectAddress: (address: AddressType | null) => void;
 }) => {
   const [currentAddresses, setCurrentAddresses] = useState(1);
   const [selectedAddress, setSelectedAddress] = useState<AddressType | null>(null);
@@ -26,12 +26,6 @@ const ExistingAddress = ({
   }, [userId]);
 
   const addressList = type === "billing" ? addresses.billingAddresses : addresses.shippingAddresses;
-
-  /* useEffect(() => {
-    if (addressList.length > 0 && !selectedAddress) {
-      setSelectedAddress(addressList[0]);
-    }
-  }, [addressList, selectedAddress]); */
 
   if (!addressList || addressList.length === 0) {
     return <p>No addresses found for this user.</p>;
@@ -51,9 +45,14 @@ const ExistingAddress = ({
     setCurrentAddresses(1);
   };
 
-  const handleSelectAddress = (address: AddressType) => {
-    setSelectedAddress((prev) => (prev === address ? null : address));
-    onSelectAddress(address);
+  const handleSelectAddress = (address: AddressType, checked: boolean) => {
+    if (checked) {
+      setSelectedAddress(address);
+      onSelectAddress(address);
+    } else {
+      setSelectedAddress(null);
+      onSelectAddress(null);
+    }
   };
 
   return (
@@ -66,7 +65,7 @@ const ExistingAddress = ({
           <input
             type="checkbox"
             checked={selectedAddress === address}
-            onChange={() => handleSelectAddress(address)}
+            onChange={(e) => handleSelectAddress(address, e.target.checked)}
           />
           <div>
             <p>

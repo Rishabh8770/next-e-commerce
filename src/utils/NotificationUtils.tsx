@@ -62,6 +62,14 @@ export const notifyCartSuccess = () => {
   );
 };
 
+export const notifyAddressSuccess = () => {
+  toast.success("The Address has been added successfully", options);
+};
+
+export const notifyAddressError = () => {
+  toast.error("There is an error adding the Address", options);
+};
+
 export const notifyAddressWarn = (
   missingAddress: "Shipping" | "Billing" | "Both"
 ) => {
