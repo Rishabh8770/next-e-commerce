@@ -12,7 +12,7 @@ type AddressContextType = {
     shippingAddresses: AddressType[];
     billingAddresses: AddressType[];
   };
-  fetchAddresses: (userId: number) => void;
+  fetchAddresses: (userId: number|null) => void;
   addNewAddress: (
     userId: number | null,
     address: AddressType,
@@ -32,7 +32,7 @@ export const AddressProvider = ({
     billingAddresses: AddressType[];
   }>({ shippingAddresses: [], billingAddresses: [] });
 
-  const fetchAddresses = async (userId: number) => {
+  const fetchAddresses = async (userId: number|null) => {
     const userAddresses = await getAddresses(userId);
     setAddresses(userAddresses);
   };

@@ -4,6 +4,7 @@ import fs from "fs";
 import path from "path";
 import { CartItem } from "@/types/ProductTypes";
 import { cookies } from "next/headers";
+import productData from '@/data/products.json'
 
 const cartFilePath = path.join(process.cwd(), "src/data/cart.json");
 const filePath = path.join(process.cwd(), "src/data/users.json");
@@ -81,21 +82,48 @@ export const addToCart = async (id: number): Promise<CartItem[]> => {
           (item: CartItem) => item.id === id
         );
         if (itemIndex === -1) {
-          user.cart.push({ id, quantity: 1 });
+          const item = productData.find((i) => i.id === id);
+          if (item) {
+            user.cart.push({
+              id,
+              quantity: 1,
+              pricePerQuantity: item.price,
+              productTotal: item.price, 
+              discount: item.discount || 0,
+            });
+          }
         } else {
           user.cart[itemIndex].quantity += 1;
+          const item = productData.find((i) => i.id === id);
+          if (item) {
+            user.cart[itemIndex].pricePerQuantity = item.price;
+            user.cart[itemIndex].productTotal = user.cart[itemIndex].quantity * item.price;
+            user.cart[itemIndex].discount = item.discount || 0;
+          }
         }
 
         fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
       }
     } else {
-      const cartItems = await getCartItems();
+      let cartItems = await getCartItems();
       const itemIndex = cartItems.findIndex((item: CartItem) => item.id === id);
-      if (itemIndex === -1) {
-        cartItems.push({ id, quantity: 1 });
-      } else {
+      const item = productData.find((i) => i.id === id);
+
+      if (itemIndex === -1 && item) {
+        cartItems.push({
+          id,
+          quantity: 1,
+          pricePerQuantity: item.price,
+          productTotal: item.price,
+          discount: item.discount || 0,
+        });
+      } else if (item) {
         cartItems[itemIndex].quantity += 1;
+        cartItems[itemIndex].pricePerQuantity = item.price;
+        cartItems[itemIndex].productTotal = cartItems[itemIndex].quantity * item.price;
+        cartItems[itemIndex].discount = item.discount || 0;
       }
+
       await saveCartItems(cartItems);
     }
 
@@ -105,6 +133,7 @@ export const addToCart = async (id: number): Promise<CartItem[]> => {
     return [];
   }
 };
+
 
 export const removeFromCart = async (id: number): Promise<CartItem[]> => {
   const userId = cookies().get("userId")?.value;

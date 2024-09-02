@@ -6,6 +6,7 @@ import { useAddressContext } from "@/context/AddressContext";
 import React, { useState, useEffect } from "react";
 import LoadingButton from "../common/LoadingButton";
 import locations from "@/data/locations.json"; // Import locations data
+import { notifyAddressSuccess } from "@/utils/NotificationUtils";
 
 export type AddressTypeProp = {
   type: "shipping" | "billing";
@@ -75,19 +76,19 @@ const AddressForm = ({ type }: AddressTypeProp) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    console.time("Add Address Duration");
     try {
       await addNewAddress(userId, formData, type);
       setIsFormOpen(false);
-      alert("Address added successfully");
+      notifyAddressSuccess();
+      // Explicitly reset the form state
+      clearAddressForm();
     } catch (error) {
       alert("Failed to add address");
     } finally {
       setLoading(false);
     }
-    console.timeEnd("Add Address Duration");
-    clearAddressForm();
   };
+  
 
   return (
     <div className="my-4">
@@ -210,7 +211,7 @@ const AddressForm = ({ type }: AddressTypeProp) => {
               value={formData.phone}
             />
           </div>
-          <div className="">
+          <div>
             <LoadingButton isLoading={loading}>Add Address</LoadingButton>
           </div>
         </form>

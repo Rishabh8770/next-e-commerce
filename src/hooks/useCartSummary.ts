@@ -12,6 +12,8 @@ export const useCartSummary = () => {
   }, 0);
   const tax = totalPrice * 0.05;
 
+  
+
   const totalDiscount = cartItems.reduce((sum, item) => {
     const product = products.find((prod) => prod.id === item.id);
     if (product && product.discount) {
