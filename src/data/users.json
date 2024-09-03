@@ -20,11 +20,11 @@
     "password": "sarthak1234",
     "cart": [
       {
-        "id": 9005,
+        "id": 9002,
         "quantity": 1,
-        "pricePerQuantity": 9809.25,
-        "productTotal": 9809.25,
-        "discount": 18
+        "pricePerQuantity": 32999.18,
+        "productTotal": 32999.18,
+        "discount": 15
       }
     ]
   },
