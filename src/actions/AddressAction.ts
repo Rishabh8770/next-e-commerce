@@ -33,12 +33,11 @@ export async function getAddresses(userId: number | null) {
   };
 }
 
-export async function addAddress(
+export const addAddress = async (
   userId: number | null,
   address: AddressType,
   type: "shipping" | "billing"
-) {
-  console.time("Add Address Function Duration");
+) => {
   try {
     const data = fs.readFileSync(addressFilePath, "utf-8");
     const usersAddress = JSON.parse(data);
@@ -58,12 +57,12 @@ export async function addAddress(
       if (!userEntry.shippingAddresses) {
         userEntry.shippingAddresses = [];
       }
-      userEntry.shippingAddresses.push({ ...address, id: uuidv4() });
+      userEntry.shippingAddresses.push({ ...address });
     } else if (type === "billing") {
       if (!userEntry.billingAddresses) {
         userEntry.billingAddresses = [];
       }
-      userEntry.billingAddresses.push({ ...address, id: uuidv4() });
+      userEntry.billingAddresses.push({ ...address });
     }
 
     await fs.writeFileSync(
@@ -74,5 +73,5 @@ export async function addAddress(
     console.error("Error adding address:", error);
     throw new Error("Failed to add address");
   }
-  console.timeEnd("Add Address Function Duration");
-}
+};
+

@@ -4,29 +4,49 @@
     "shippingAddresses": [
       {
         "firstName": "Shivam",
-        "lastName": "",
+        "lastName": "Kumar",
         "address": "adasd",
-        "subAddress": "hno 51",
+        "subAddress": "gerge",
         "city": "Mumbai",
         "state": "Maharashtra",
         "country": "India",
-        "postalCode": "492007",
-        "phone": "7736189911",
-        "id": "5b699116-fb15-4776-b100-e10f75ec1151"
+        "postalCode": "492001",
+        "phone": "1234567890"
+      },
+      {
+        "firstName": "Sarthak",
+        "lastName": "adad",
+        "address": "abcdgsca",
+        "subAddress": "hno 51",
+        "city": "Mysuru",
+        "state": "Karnataka",
+        "country": "India",
+        "postalCode": "492013",
+        "phone": "7738927491"
       }
     ],
     "billingAddresses": [
       {
         "firstName": "Shivam",
-        "lastName": "",
+        "lastName": "Kumar",
         "address": "adasd",
-        "subAddress": "hno 51",
+        "subAddress": "gerge",
         "city": "Mumbai",
         "state": "Maharashtra",
         "country": "India",
-        "postalCode": "492007",
-        "phone": "7736189911",
-        "id": "34d5bb70-fd98-41bb-a48c-a36d65133e6e"
+        "postalCode": "492001",
+        "phone": "1234567890"
+      },
+      {
+        "firstName": "Sarthak",
+        "lastName": "adad",
+        "address": "abcdgsca",
+        "subAddress": "hno 51",
+        "city": "Mysuru",
+        "state": "Karnataka",
+        "country": "India",
+        "postalCode": "492013",
+        "phone": "7738927491"
       }
     ]
   }

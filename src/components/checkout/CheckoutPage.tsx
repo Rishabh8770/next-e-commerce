@@ -7,6 +7,7 @@ import BillingInfo from "./BillingInfo";
 import { AddressType } from "@/types/AddressType";
 import { useAddressContext } from "@/context/AddressContext";
 import { useUserContext } from "@/context/UserContext";
+import { v4 as uuidv4 } from "uuid";
 
 const CheckoutPage = () => {
   const [selectedShippingAddress, setSelectedShippingAddress] =
@@ -24,20 +25,56 @@ const CheckoutPage = () => {
   const handleCheckboxChange = () => {
     if (selectedShippingAddress) {
       setCopyShippingToBilling(!copyShippingToBilling);
-      const existingBillingAddress = addresses.billingAddresses.find(
-        (address) => address.id === selectedShippingAddress.id
-      );
-      if (!existingBillingAddress) {
+
+      if (addresses.billingAddresses.length === 0) {
         const newBillingAddress = {
           ...selectedShippingAddress,
           id: selectedShippingAddress.id,
         };
         addNewAddress(userId, newBillingAddress, "billing");
+        setSelectedBillingAddress(newBillingAddress);
       } else {
-        setSelectedBillingAddress(existingBillingAddress);
+        const existingBillingAddress = addresses.billingAddresses.find(
+          (address) =>
+            address.firstName === selectedShippingAddress.firstName &&
+            address.lastName === selectedShippingAddress.lastName &&
+            address.address === selectedShippingAddress.address &&
+            address.subAddress === selectedShippingAddress.subAddress &&
+            address.city === selectedShippingAddress.city &&
+            address.state === selectedShippingAddress.state &&
+            address.country === selectedShippingAddress.country &&
+            address.postalCode === selectedShippingAddress.postalCode &&
+            address.phone === selectedShippingAddress.phone
+        );
+
+        if (!existingBillingAddress) {
+          const newBillingAddress = {
+            ...selectedShippingAddress,
+            id: selectedShippingAddress.id,
+          };
+          addNewAddress(userId, newBillingAddress, "billing");
+          setSelectedBillingAddress(newBillingAddress);
+        } else {
+          setSelectedBillingAddress(existingBillingAddress);
+        }
       }
     }
   };
+
+  useEffect(() => {
+    if (copyShippingToBilling && selectedShippingAddress) {
+      const existingBillingAddress = addresses.billingAddresses.find(
+        (address) => address.id === selectedShippingAddress.id
+      );
+      if (existingBillingAddress) {
+        setSelectedBillingAddress(existingBillingAddress);
+      }
+    }
+  }, [
+    addresses.billingAddresses,
+    copyShippingToBilling,
+    selectedShippingAddress,
+  ]);
 
   return (
     <div className="flex justify-center my-8 w-5/6 space-x-4">

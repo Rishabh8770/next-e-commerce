@@ -173,6 +173,84 @@
         "tax": 3056.5840000000003,
         "totalOrderAmount": 48905.344000000005,
         "orderCreated": "2024-09-02T11:41:15.471Z"
+      },
+      {
+        "orderId": 1725344638015,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "Kumar",
+          "address": "adasd",
+          "subAddress": "hno 51",
+          "city": "Nagpur",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "560076",
+          "phone": "1234567890"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "Kumar",
+          "address": "adasd",
+          "subAddress": "hno 51",
+          "city": "Nagpur",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "560076",
+          "phone": "1234567890"
+        },
+        "items": [
+          {
+            "id": 9005,
+            "quantity": 1,
+            "pricePerQuantity": 9809.25,
+            "productTotal": 9809.25,
+            "discount": 18
+          }
+        ],
+        "totalAmount": 9809.25,
+        "totalDiscount": 1765.665,
+        "tax": 490.46250000000003,
+        "totalOrderAmount": 8534.0475,
+        "orderCreated": "2024-09-03T06:23:58.015Z"
+      },
+      {
+        "orderId": 1725347316590,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "Kumar",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492012",
+          "phone": "1234567890"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "Kumar",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492012",
+          "phone": "1234567890"
+        },
+        "items": [
+          {
+            "id": 9005,
+            "quantity": 1,
+            "pricePerQuantity": 9809.25,
+            "productTotal": 9809.25,
+            "discount": 18
+          }
+        ],
+        "totalAmount": 9809.25,
+        "totalDiscount": 1765.665,
+        "tax": 490.46250000000003,
+        "totalOrderAmount": 8534.0475,
+        "orderCreated": "2024-09-03T07:08:36.590Z"
       }
     ]
   }

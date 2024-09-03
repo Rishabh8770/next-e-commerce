@@ -167,9 +167,17 @@ const BillingInfo = ({
           isLoading={loading}
           disabled={loading}
         >
-          Place Order
+          PAYMENT
         </LoadingButton>
       </div>
+      {paymentSuccess && (
+        <div className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 backdrop-blur-lg ">
+          <img src="/check.png" alt="success" className="size-28" />
+          <div className="text-white text-2xl font-bold">
+            Payment Successful
+          </div>
+        </div>
+      )}
       <NotificationContainer />
     </div>
   );
