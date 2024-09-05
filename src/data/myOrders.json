@@ -1,0 +1,440 @@
+[
+  {
+    "userid": 3,
+    "orders": [
+      {
+        "orderId": 1725262302842,
+        "shippingAddress": {
+          "firstName": "Sartak",
+          "lastName": "Malewar",
+          "address": "56 MG Road",
+          "subAddress": "Flat 103, 1st Floor",
+          "city": "Hyderabad",
+          "state": "Telangana",
+          "postalCode": "500001",
+          "country": "India",
+          "phone": "9876501234"
+        },
+        "billingAddress": {
+          "firstName": "Sarthak",
+          "lastName": "Malewar",
+          "address": "abcdgsca",
+          "subAddress": "hno 51sca",
+          "city": "Raipur",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "492001",
+          "phone": "7738927491"
+        },
+        "items": [
+          {
+            "id": 9005,
+            "quantity": 1,
+            "pricePerQuantity": 9809.25,
+            "productTotal": 9809.25,
+            "discount": 18
+          },
+          {
+            "id": 9006,
+            "quantity": 1,
+            "pricePerQuantity": 27885,
+            "productTotal": 27885,
+            "discount": 15
+          }
+        ],
+        "totalAmount": 37694.25,
+        "totalDiscount": 5948.415,
+        "tax": 1884.7125,
+        "totalOrderAmount": 33630.5475,
+        "orderCreated": "2024-09-02T07:31:42.842Z"
+      },
+      {
+        "orderId": 1725269849266,
+        "shippingAddress": {
+          "firstName": "Sarthak",
+          "lastName": "adad",
+          "address": "adasd",
+          "subAddress": "hno 51",
+          "city": "Durg",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "492012",
+          "phone": "1234567890"
+        },
+        "billingAddress": {
+          "firstName": "Sarthak",
+          "lastName": "adad",
+          "address": "adasd",
+          "subAddress": "hno 51",
+          "city": "Durg",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "492012",
+          "phone": "1234567890"
+        },
+        "items": [
+          {
+            "id": 9003,
+            "quantity": 1,
+            "pricePerQuantity": 61633.28,
+            "productTotal": 61633.28,
+            "discount": 10
+          }
+        ],
+        "totalAmount": 61633.28,
+        "totalDiscount": 6163.328,
+        "tax": 3081.664,
+        "totalOrderAmount": 58551.615999999995,
+        "orderCreated": "2024-09-02T09:37:29.266Z"
+      },
+      {
+        "orderId": 1725271609176,
+        "shippingAddress": {
+          "firstName": "dwede",
+          "lastName": "Malewar",
+          "address": "adasd",
+          "subAddress": "house no. 2 sector-02",
+          "city": "Bilaspur",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "560076",
+          "phone": "7728492713",
+          "id": "8af8450f-9afe-4cd8-98d2-2e66282e1fd8"
+        },
+        "billingAddress": {
+          "firstName": "dwede",
+          "lastName": "Malewar",
+          "address": "adasd",
+          "subAddress": "house no. 2 sector-02",
+          "city": "Bilaspur",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "560076",
+          "phone": "7728492713",
+          "id": "03ce044a-43ed-4b4d-bad3-792632a7e637"
+        },
+        "items": [
+          {
+            "id": 9002,
+            "quantity": 1,
+            "pricePerQuantity": 32999.18,
+            "productTotal": 32999.18,
+            "discount": 15
+          },
+          {
+            "id": 9005,
+            "quantity": 1,
+            "pricePerQuantity": 9809.25,
+            "productTotal": 9809.25,
+            "discount": 18
+          }
+        ],
+        "totalAmount": 42808.43,
+        "totalDiscount": 6715.542,
+        "tax": 2140.4215,
+        "totalOrderAmount": 38233.309499999996,
+        "orderCreated": "2024-09-02T10:06:49.176Z"
+      },
+      {
+        "orderId": 1725277275471,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "adad",
+          "address": "abcdgsca",
+          "subAddress": "hno 51sca",
+          "city": "",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492007",
+          "phone": "7738927491"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "adad",
+          "address": "abcdgsca",
+          "subAddress": "hno 51sca",
+          "city": "",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492007",
+          "phone": "7738927491"
+        },
+        "items": [
+          {
+            "id": 9001,
+            "quantity": 1,
+            "pricePerQuantity": 61131.68,
+            "productTotal": 61131.68,
+            "discount": 25
+          }
+        ],
+        "totalAmount": 61131.68,
+        "totalDiscount": 15282.92,
+        "tax": 3056.5840000000003,
+        "totalOrderAmount": 48905.344000000005,
+        "orderCreated": "2024-09-02T11:41:15.471Z"
+      },
+      {
+        "orderId": 1725344638015,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "Kumar",
+          "address": "adasd",
+          "subAddress": "hno 51",
+          "city": "Nagpur",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "560076",
+          "phone": "1234567890"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "Kumar",
+          "address": "adasd",
+          "subAddress": "hno 51",
+          "city": "Nagpur",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "560076",
+          "phone": "1234567890"
+        },
+        "items": [
+          {
+            "id": 9005,
+            "quantity": 1,
+            "pricePerQuantity": 9809.25,
+            "productTotal": 9809.25,
+            "discount": 18
+          }
+        ],
+        "totalAmount": 9809.25,
+        "totalDiscount": 1765.665,
+        "tax": 490.46250000000003,
+        "totalOrderAmount": 8534.0475,
+        "orderCreated": "2024-09-03T06:23:58.015Z"
+      },
+      {
+        "orderId": 1725347316590,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "Kumar",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492012",
+          "phone": "1234567890"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "Kumar",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492012",
+          "phone": "1234567890"
+        },
+        "items": [
+          {
+            "id": 9005,
+            "quantity": 1,
+            "pricePerQuantity": 9809.25,
+            "productTotal": 9809.25,
+            "discount": 18
+          }
+        ],
+        "totalAmount": 9809.25,
+        "totalDiscount": 1765.665,
+        "tax": 490.46250000000003,
+        "totalOrderAmount": 8534.0475,
+        "orderCreated": "2024-09-03T07:08:36.590Z"
+      }
+    ]
+  },
+  {
+    "userid": 4,
+    "orders": [
+      {
+        "orderId": 1725434856529,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "Kumar",
+          "address": "adasd",
+          "subAddress": "gerge",
+          "city": "Mumbai",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492001",
+          "phone": "1234567890"
+        },
+        "billingAddress": {
+          "firstName": "Sarthak",
+          "lastName": "adad",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Mysuru",
+          "state": "Karnataka",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "7738927491"
+        },
+        "items": [
+          {
+            "id": 9011,
+            "quantity": 1,
+            "pricePerQuantity": 46199.18,
+            "productTotal": 46199.18,
+            "discount": 18
+          }
+        ],
+        "totalAmount": 46199.18,
+        "totalDiscount": 8315.8524,
+        "tax": 2309.9590000000003,
+        "totalOrderAmount": 40193.28660000001,
+        "orderCreated": "2024-09-04T07:27:36.529Z"
+      }
+    ]
+  },
+  {
+    "userid": 1,
+    "orders": [
+      {
+        "orderId": 1725523702240,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "adad",
+          "address": "Marathalli",
+          "subAddress": "1st floor",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "7736189911"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "adad",
+          "address": "Marathalli",
+          "subAddress": "1st floor",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "7736189911"
+        },
+        "items": [
+          {
+            "id": 9002,
+            "quantity": 1,
+            "pricePerQuantity": 32999.18,
+            "productTotal": 32999.18,
+            "discount": 15
+          },
+          {
+            "id": 9005,
+            "quantity": 1,
+            "pricePerQuantity": 9809.25,
+            "productTotal": 9809.25,
+            "discount": 18
+          },
+          {
+            "id": 9007,
+            "quantity": 1,
+            "pricePerQuantity": 41249.18,
+            "productTotal": 41249.18,
+            "discount": 10
+          },
+          {
+            "id": 9008,
+            "quantity": 1,
+            "pricePerQuantity": 74249.18,
+            "productTotal": 74249.18,
+            "discount": 18
+          },
+          {
+            "id": 9011,
+            "quantity": 1,
+            "pricePerQuantity": 46199.18,
+            "productTotal": 46199.18,
+            "discount": 18
+          },
+          {
+            "id": 9013,
+            "quantity": 1,
+            "pricePerQuantity": 22192.5,
+            "productTotal": 22192.5,
+            "discount": 10
+          },
+          {
+            "id": 9019,
+            "quantity": 1,
+            "pricePerQuantity": 123750,
+            "productTotal": 123750,
+            "discount": 10
+          },
+          {
+            "id": 1020154545,
+            "quantity": 1,
+            "pricePerQuantity": 12375,
+            "productTotal": 12375,
+            "discount": 18
+          }
+        ],
+        "totalAmount": 362823.47,
+        "totalDiscount": 49342.9148,
+        "tax": 18141.1735,
+        "totalOrderAmount": 331621.7286999999,
+        "orderCreated": "2024-09-05T08:08:22.240Z"
+      },
+      {
+        "orderId": 1725525551196,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "adad",
+          "address": "Marathalli",
+          "subAddress": "1st floor",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "7736189911"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "adad",
+          "address": "Marathalli",
+          "subAddress": "1st floor",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "7736189911"
+        },
+        "items": [
+          {
+            "id": 9005,
+            "quantity": 1,
+            "pricePerQuantity": 9809.25,
+            "productTotal": 9809.25,
+            "discount": 18
+          },
+          {
+            "id": 9010,
+            "quantity": 1,
+            "pricePerQuantity": 26398.35,
+            "productTotal": 26398.35,
+            "discount": 10
+          }
+        ],
+        "totalAmount": 36207.6,
+        "totalDiscount": 4405.5,
+        "tax": 1810.38,
+        "totalOrderAmount": 33612.479999999996,
+        "orderCreated": "2024-09-05T08:39:11.196Z"
+      }
+    ]
+  }
+]

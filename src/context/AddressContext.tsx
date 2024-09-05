@@ -1,18 +1,15 @@
-"use client"
+"use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { AddressType } from "@/types/AddressType";
-import {
-  getAddresses,
-  addAddress as serverAddAddress,
-} from "@/actions/AddressAction";
+import { getAddresses, addAddress as serverAddAddress } from "@/actions/AddressAction";
 
 type AddressContextType = {
   addresses: {
     shippingAddresses: AddressType[];
     billingAddresses: AddressType[];
   };
-  fetchAddresses: (userId: number) => void;
+  fetchAddresses: (userId: number|null) => void;
   addNewAddress: (
     userId: number | null,
     address: AddressType,
@@ -22,19 +19,19 @@ type AddressContextType = {
 
 const AddressContext = createContext<AddressContextType | undefined>(undefined);
 
-export const AddressProvider = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
-  const [addresses, setAddresses] = useState<{
-    shippingAddresses: AddressType[];
-    billingAddresses: AddressType[];
-  }>({ shippingAddresses: [], billingAddresses: [] });
+export const AddressProvider = ({ children }: { children: React.ReactNode }) => {
+  const [addresses, setAddresses] = useState<{ shippingAddresses: AddressType[]; billingAddresses: AddressType[] }>({
+    shippingAddresses: [],
+    billingAddresses: [],
+  });
 
-  const fetchAddresses = async (userId: number) => {
-    const userAddresses = await getAddresses(userId);
-    setAddresses(userAddresses);
+  const fetchAddresses = async (userId: number | null) => {
+    try {
+      const userAddresses = await getAddresses(userId);
+      setAddresses(userAddresses);
+    } catch (error) {
+      console.error("Failed to fetch addresses:", error);
+    }
   };
 
   const addNewAddress = async (
@@ -57,12 +54,9 @@ export const AddressProvider = ({
       console.error("Failed to add address:", error);
     }
   };
-  
 
   return (
-    <AddressContext.Provider
-      value={{ addresses, fetchAddresses, addNewAddress }}
-    >
+    <AddressContext.Provider value={{ addresses, fetchAddresses, addNewAddress }}>
       {children}
     </AddressContext.Provider>
   );

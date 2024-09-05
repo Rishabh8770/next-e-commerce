@@ -94,12 +94,11 @@ export const Logout = async () => {
     path: "/",
   });
   console.log("User logged out, userId cookie cleared");
-  
 };
 
 export async function ValidateUser() {
   const userId = cookies().get("userId")?.value;
-  console.log("this is the id in server::", userId)
+  console.log("this is the id in server::", userId);
 
   if (!userId) {
     console.warn("No userId cookie found");
@@ -108,4 +107,34 @@ export async function ValidateUser() {
   }
 
   return userId;
+}
+
+export async function UpdateUser(
+  userId: number,
+  name: string,
+  email: string,
+  password: string
+) {
+  const users = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+
+  const existingUserIndex = users.findIndex(
+    (user: { id: number }) => user.id === userId
+  );
+
+  if (existingUserIndex !== -1) {
+    const updatedUser = {
+      ...users[existingUserIndex],
+      name,
+      email,
+      password,
+    };
+
+    users[existingUserIndex] = updatedUser;
+
+    fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+
+    return { success: true, userId: updatedUser.id };
+  } else {
+    return { success: false, message: "User not found" };
+  }
 }

@@ -1,4 +1,5 @@
 export type AddressType = {
+  id?: number;
   firstName: string;
   lastName: string;
   address: string;
@@ -9,3 +10,14 @@ export type AddressType = {
   country: string;
   phone: string;
 };
+
+
+export type CityData = {
+  country: string;
+  states: StateData[];
+}
+
+export type StateData = {
+  state: string;
+  cities: string[];
+}

@@ -1,13 +1,17 @@
 "use client";
 
-import { deleteCart } from "@/actions/CartAction";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useCartContext } from "@/context/CartContext";
 import { useCartSummary } from "@/hooks/useCartSummary";
 import { AddressType } from "@/types/AddressType";
-import { ShoppingCart } from "lucide-react";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { createOrder } from "@/actions/OrderCreationAction";
 import LoadingButton from "../common/LoadingButton";
+import { notifyAddressWarn } from "@/utils/NotificationUtils";
+import { NotificationContainer } from "../user/admin/UserFeedback";
+import { useUserContext } from "@/context/UserContext";
+import { deleteCart } from "@/actions/CartAction";
+import { ShoppingCart } from "lucide-react";
 
 type SelectedAddressProps = {
   selectedShippingAddress: AddressType | null;
@@ -20,31 +24,50 @@ const BillingInfo = ({
 }: SelectedAddressProps) => {
   const { totalDiscount, totalPrice, tax, totalQuantity, priceAfterTax } =
     useCartSummary();
-  const { refreshCart } = useCartContext();
+  const { refreshCart, cartItems } = useCartContext();
+  const { userId } = useUserContext();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
 
   const handlePayment = async () => {
-    if (selectedBillingAddress && selectedShippingAddress) {
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
+    if (!selectedBillingAddress || !selectedShippingAddress) {
+      notifyAddressWarn(!selectedBillingAddress ? "Billing" : "Shipping");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await createOrder(
+        userId,
+        selectedShippingAddress,
+        selectedBillingAddress,
+        cartItems,
+        totalPrice,
+        totalDiscount,
+        tax,
+        priceAfterTax
+      );
+
+      if (response.success) {
         setPaymentSuccess(true);
         setTimeout(() => setPaymentSuccess(false), 4000);
-      }, 2000);
-      await deleteCart();
-      refreshCart();
-      setTimeout(() => {
-        router.push("/product-listing");
-      }, 3000);
-    } else {
-      alert("Please select the address");
-    }
-    setTimeout(() => {
+
+        await deleteCart();
+        refreshCart();
+
+        setTimeout(() => {
+          router.push(`/product-listing`);
+        }, 3000);
+      } else {
+        notifyAddressWarn("Both");
+      }
+    } finally {
       setLoading(false);
-    }, 2000);
+    }
   };
+
   return (
     <div className="border h-auto rounded-lg bg-gray-100">
       <div>
@@ -138,8 +161,12 @@ const BillingInfo = ({
           <p>No billing address selected.</p>
         )}
       </div>
-      <div className="px-6 my-4">
-        <LoadingButton onClick={handlePayment} isLoading={loading}>
+      <div className="px-6 py-3">
+        <LoadingButton
+          onClick={handlePayment}
+          isLoading={loading}
+          disabled={loading}
+        >
           PAYMENT
         </LoadingButton>
       </div>
@@ -151,6 +178,7 @@ const BillingInfo = ({
           </div>
         </div>
       )}
+      <NotificationContainer />
     </div>
   );
 };

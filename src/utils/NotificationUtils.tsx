@@ -21,7 +21,10 @@ export const notifyAddProduct = () => {
 };
 
 export const notifyLoginWarn = () => {
-  toast.warn("Redirecting to login page !, Please sign in first to add a review", options);
+  toast.warn(
+    "Redirecting to login page !, Please sign in first to add a review",
+    options
+  );
 };
 
 export const notifyLoginSuccess = () => {
@@ -57,6 +60,41 @@ export const notifyCartSuccess = () => {
     "Product has been added to the cart, please move to cart for checkout",
     options
   );
+};
+
+export const notifyAddressSuccess = () => {
+  toast.success("The Address has been added successfully", options);
+};
+
+export const notifyAddressError = () => {
+  toast.error("There is an error adding the Address", options);
+};
+
+export const notifyUserUpdatedSuccess = () => {
+  toast.success("User details updated successfully", options)
+}
+export const notifyUserUpdatedError = () => {
+  toast.error("Error updating the user details", options)
+}
+
+export const notifyAddressWarn = (
+  missingAddress: "Shipping" | "Billing" | "Both"
+) => {
+  let message: string;
+
+  switch (missingAddress) {
+    case "Both":
+      message = "Please add both Shipping and Billing addresses";
+      break;
+    case "Shipping":
+      message = "Please add the Shipping address";
+      break;
+    case "Billing":
+      message = "Please add the Billing address";
+      break;
+  }
+
+  toast.warn(message, options);
 };
 
 export const notifyDeleteProduct = (deleteCallback: () => void) => {

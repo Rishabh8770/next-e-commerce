@@ -11,11 +11,13 @@ import {
 import { useRouter } from "next/navigation";
 import { useUserContext } from "@/context/UserContext";
 import { fetchUserById } from "@/actions/LoginAndSignUpAction";
+import { usePathname } from "next/navigation";
 
 const UserRole = () => {
   const router = useRouter();
   const { userId } = useUserContext();
   const [userDisplayName, setUserDisplayName] = useState<string>("");
+  const pathName = usePathname();
 
   useEffect(() => {
     const fetchUserDisplayName = async () => {
@@ -40,7 +42,7 @@ const UserRole = () => {
     if (option === "Admin") {
       router.push("/admin");
     } else if (option === userDisplayName) {
-      router.push("/product-listing");
+      router.push(`/my-profile/${userId}`);
     }
   };
 
@@ -49,11 +51,9 @@ const UserRole = () => {
       <DropdownTrigger>
         <Button
           variant="bordered"
-          className="flex justify-start text-white border-none text-md md:px-2 px-0"
+          className="flex justify-start text-white border rounded-lg text-md px-2"
         >
-          {`Hi, ${
-            userDisplayName.charAt(0).toUpperCase() + userDisplayName.slice(1)
-          }`}
+          {pathName.startsWith("/admin") ? "Admin" : "Switch user"}
         </Button>
       </DropdownTrigger>
       <DropdownMenu

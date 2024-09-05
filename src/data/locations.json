@@ -1,0 +1,17 @@
+{
+  "country": "India",
+  "states": [
+    {
+      "state": "Maharashtra",
+      "cities": ["Mumbai", "Pune", "Nagpur"]
+    },
+    {
+      "state": "Karnataka",
+      "cities": ["Bengaluru", "Mysuru", "Mangalore"]
+    },
+    {
+      "state": "Chhattisgarh",
+      "cities": ["Raipur", "Durg", "Bilaspur"]
+    }
+  ]
+}

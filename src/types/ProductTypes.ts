@@ -9,11 +9,15 @@ export type ProductTypes = {
   rating: number;
   reviews?: ReviewType[];
   discount?: number;
+  sellerId?: number | null;
 };
 
 export interface CartItem {
   id: number;
   quantity: number;
+  pricePerQuantity: number;
+  productTotal: number;
+  discount: number;
 }
 
 export type Cart = CartItem[];
@@ -35,5 +39,5 @@ export type User = {
   name: string;
   email: string;
   password: string;
-  cart?: CartItem[];
+  cart?: { id: number; quantity: number }[];
 };

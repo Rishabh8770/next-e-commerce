@@ -10,6 +10,7 @@ import AuthButton from "../user-authentication/AuthButton";
 import { useEffect, useRef, useState } from "react";
 import { useUserContext } from "@/context/UserContext";
 import { getCartItems } from "@/actions/CartAction";
+import { fetchUserById } from "@/actions/LoginAndSignUpAction";
 
 const Navbar = () => {
   const router = useRouter();
@@ -18,6 +19,8 @@ const Navbar = () => {
   const { userId } = useUserContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [localCartCount, setLocalCartCount] = useState(0);
+  const [userName, setUsername] = useState<string>("");
+  const pathToHideNav = routePathNames();
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -26,6 +29,10 @@ const Navbar = () => {
       console.log("userId in navbar::", userId);
       if (userId) {
         const cartItems = await getCartItems();
+        const userDetails = await fetchUserById(userId);
+        if (userDetails) {
+          setUsername(userDetails.name);
+        }
         setLocalCartCount(
           cartItems.reduce((count, item) => count + item.quantity, 0)
         );
@@ -69,13 +76,16 @@ const Navbar = () => {
   return (
     <div
       className={`sticky top-0 z-50 ${
-        routePathNames.includes(pathName) && "hidden"
+        pathToHideNav.includes(pathName) && "hidden"
       }`}
     >
       <nav className="bg-gray-800">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
-            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden" ref={dropdownRef}>
+            <div
+              className="absolute inset-y-0 left-0 flex items-center sm:hidden"
+              ref={dropdownRef}
+            >
               <button
                 type="button"
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -137,9 +147,13 @@ const Navbar = () => {
                 <AuthButton />
               </div>
               {userId && (
-                <div className="md:block hidden">
-                  <UserRole />
-                </div>
+                <button
+                  className="text-white rounded px-2 w-40 md:flex hidden justify-center items-center"
+                  onClick={() => router.push(`/my-profile/dashboard/${userId}`)}
+                >
+                  Hi, {userName.split(" ").slice(0, 1).join(" ")}
+                  <img src="/no-image.png" alt={userName} className="rounded-full size-10 ml-2"/>
+                </button>
               )}
             </div>
           </div>
@@ -148,12 +162,17 @@ const Navbar = () => {
           <div
             className="sm:hidden absolute top-16 left-0 right-0 z-10 opacity-90"
             id="mobile-menu"
+            ref={dropdownRef}
           >
             <div className="space-y-1 px-2 pt-2 pb-3 bg-gray-700">
-              {userId && (
-                <div className="text-gray-300 hover:bg-gray-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  <UserRole />
-                </div>
+            {userId && (
+                <button
+                  className="text-white rounded hover:bg-gray-600 px-3 py-2 w-40 flex items-center"
+                  onClick={() => router.push(`/my-profile/${userId}`)}
+                >
+                  Hi, {userName}
+                  <img src="/no-image.png" alt={userName} className="rounded-full size-10 ml-2"/>
+                </button>
               )}
               <button
                 onClick={handleProducts}

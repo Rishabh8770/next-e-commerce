@@ -1,16 +1,80 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddressForm from "./AddressForm";
 import ExistingAddress from "./ExistingAddress";
 import BillingInfo from "./BillingInfo";
 import { AddressType } from "@/types/AddressType";
+import { useAddressContext } from "@/context/AddressContext";
+import { useUserContext } from "@/context/UserContext";
+import { v4 as uuidv4 } from "uuid";
 
 const CheckoutPage = () => {
   const [selectedShippingAddress, setSelectedShippingAddress] =
     useState<AddressType | null>(null);
   const [selectedBillingAddress, setSelectedBillingAddress] =
     useState<AddressType | null>(null);
+  const [copyShippingToBilling, setCopyShippingToBilling] = useState(false);
+  const { addresses, fetchAddresses, addNewAddress } = useAddressContext();
+  const { userId } = useUserContext();
+
+  useEffect(() => {
+    fetchAddresses(userId);
+  }, [userId]);
+
+  const handleCheckboxChange = () => {
+    if (selectedShippingAddress) {
+      setCopyShippingToBilling(!copyShippingToBilling);
+
+      if (addresses.billingAddresses.length === 0) {
+        const newBillingAddress = {
+          ...selectedShippingAddress,
+          id: selectedShippingAddress.id,
+        };
+        addNewAddress(userId, newBillingAddress, "billing");
+        setSelectedBillingAddress(newBillingAddress);
+      } else {
+        const existingBillingAddress = addresses.billingAddresses.find(
+          (address) =>
+            address.firstName === selectedShippingAddress.firstName &&
+            address.lastName === selectedShippingAddress.lastName &&
+            address.address === selectedShippingAddress.address &&
+            address.subAddress === selectedShippingAddress.subAddress &&
+            address.city === selectedShippingAddress.city &&
+            address.state === selectedShippingAddress.state &&
+            address.country === selectedShippingAddress.country &&
+            address.postalCode === selectedShippingAddress.postalCode &&
+            address.phone === selectedShippingAddress.phone
+        );
+
+        if (!existingBillingAddress) {
+          const newBillingAddress = {
+            ...selectedShippingAddress,
+            id: selectedShippingAddress.id,
+          };
+          addNewAddress(userId, newBillingAddress, "billing");
+          setSelectedBillingAddress(newBillingAddress);
+        } else {
+          setSelectedBillingAddress(existingBillingAddress);
+        }
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (copyShippingToBilling && selectedShippingAddress) {
+      const existingBillingAddress = addresses.billingAddresses.find(
+        (address) => address.id === selectedShippingAddress.id
+      );
+      if (existingBillingAddress) {
+        setSelectedBillingAddress(existingBillingAddress);
+      }
+    }
+  }, [
+    addresses.billingAddresses,
+    copyShippingToBilling,
+    selectedShippingAddress,
+  ]);
 
   return (
     <div className="flex justify-center my-8 w-5/6 space-x-4">
@@ -31,8 +95,18 @@ const CheckoutPage = () => {
               <ExistingAddress
                 type="shipping"
                 onSelectAddress={setSelectedShippingAddress}
-                // isSameAsShipping={false}
               />
+            </div>
+            <div className="mt-4">
+              <input
+                type="checkbox"
+                id="copyShippingToBilling"
+                checked={copyShippingToBilling}
+                onChange={handleCheckboxChange}
+              />
+              <label htmlFor="copyShippingToBilling" className="ml-2">
+                Copy Shipping Address to Billing Address
+              </label>
             </div>
             <div>
               <h1 className="text-xl border-dashed border-b-1 w-5/6 mb-4 mt-8 font-semibold">
@@ -40,21 +114,11 @@ const CheckoutPage = () => {
               </h1>
               <AddressForm type={"billing"} />
             </div>
-            {/* <label>
-              <input
-                type="checkbox"
-                checked={isSameAsShipping}
-                onChange={handleAddressCheck}
-                className="mr-2"
-              />
-              Same as shipping address
-            </label> */}
             <div>
               <h1 className="text-xl">Select Billing Address</h1>
               <ExistingAddress
                 type="billing"
                 onSelectAddress={setSelectedBillingAddress}
-                // isSameAsShipping={isSameAsShipping}
               />
             </div>
           </div>

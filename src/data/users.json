@@ -1,46 +1,39 @@
 [
   {
     "id": 1,
-    "name": "Rishabh",
+    "name": "Rishabh Malewar",
     "email": "rishabh@mail.com",
     "password": "Rishabh",
-    "cart": [
-      {
-        "id": 9002,
-        "quantity": 4
-      }
-    ]
+    "cart": []
   },
   {
     "id": 2,
     "name": "abcdefg",
     "email": "abcd@abcd.com",
     "password": "abcd1234",
-    "cart": [
-      {
-        "id": 9003,
-        "quantity": 4
-      }
-    ]
+    "cart": []
   },
   {
     "id": 3,
     "name": "Sarthak",
     "email": "sarthak@ooo.com",
     "password": "sarthak1234",
-    "cart": []
+    "cart": [
+      {
+        "id": 9002,
+        "quantity": 1,
+        "pricePerQuantity": 32999.18,
+        "productTotal": 32999.18,
+        "discount": 15
+      }
+    ]
   },
   {
     "id": 4,
-    "name": "Chandan Soni",
+    "name": "Chandan",
     "email": "chandan@soni.com",
-    "password": "chandan1234",
-    "cart": [
-      {
-        "id": 9011,
-        "quantity": 2
-      }
-    ]
+    "password": "chandan12345",
+    "cart": []
   },
   {
     "id": 5,
@@ -53,48 +46,21 @@
     "name": "shivam",
     "email": "shivam@mail.com",
     "password": "shivam1234",
-    "cart": [
-      {
-        "id": 9007,
-        "quantity": 3
-      },
-      {
-        "id": 9010,
-        "quantity": 1
-      }
-    ]
+    "cart": []
   },
   {
     "id": 7,
     "name": "rahul",
     "email": "rahul@mail.com",
     "password": "rahul1234",
-    "cart": [
-      {
-        "id": 9006,
-        "quantity": 1
-      },
-      {
-        "id": 9015,
-        "quantity": 1
-      }
-    ]
+    "cart": []
   },
   {
     "id": 8,
     "name": "Abhishek",
     "email": "abhishek@mail.com",
     "password": "abhishek1234",
-    "cart": [
-      {
-        "id": 9005,
-        "quantity": 2
-      },
-      {
-        "id": 9006,
-        "quantity": 1
-      }
-    ]
+    "cart": []
   },
   {
     "id": 9,
@@ -114,12 +80,7 @@
     "name": "Vicky",
     "email": "vicky@mail.com",
     "password": "vicky1234",
-    "cart": [
-      {
-        "id": 9011,
-        "quantity": 1
-      }
-    ]
+    "cart": []
   },
   {
     "id": 12,
@@ -143,6 +104,7 @@
     "id": 15,
     "name": "deepak",
     "email": "deepak@mail.com",
-    "password": "deepak1234"
+    "password": "deepak1234",
+    "cart": []
   }
 ]

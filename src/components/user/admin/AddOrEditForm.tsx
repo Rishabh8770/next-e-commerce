@@ -6,6 +6,7 @@ import { getProducts } from "@/actions/ProductActions";
 import { ProductTypes } from "@/types/ProductTypes";
 import { getBrands, getCategories } from "@/utils/actionUtils";
 import { useProductContext } from "@/context/ProductContext";
+import { useUserContext } from "@/context/UserContext"; // Import UserContext
 import { ChevronDown, ChevronUp } from "lucide-react";
 import {
   notifyAddProduct,
@@ -33,6 +34,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const { setProducts } = useProductContext();
+  const { userId } = useUserContext();
   const router = useRouter();
 
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -116,7 +118,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
 
     try {
       // throw new Error("error here") // to test catch error
-      await formAction(formData, isEditMode, productId, setProducts);
+      await formAction(formData, isEditMode, productId, userId, setProducts);
       if (!isEditMode) {
         notifyAddProduct();
         clearAddProductForm();
@@ -145,6 +147,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
   };
 
   const uniqueCategories = Array.from(new Set(categories.flat()));
+
 
   return (
     <div>
