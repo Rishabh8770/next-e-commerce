@@ -22,7 +22,7 @@ const ProfileHomePage = () => {
       className="flex flex-col justify-center items-center mb-10"
     >
       <div className="w-full">
-        <div className="p-8 w-full bg-side-sidebar-bg border-l border-white sticky top-0 z-50">
+        <div className="p-8 w-full bg-side-sidebar-bg border-l border-white">
           <h1 className="text-2xl font-semibold text-white">
             Hi {userDetails.name.split(" ").slice(0, 1).join(" ")}, Welcome to
             your Dashboard
