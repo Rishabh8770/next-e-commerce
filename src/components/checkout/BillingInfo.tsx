@@ -58,7 +58,7 @@ const BillingInfo = ({
         refreshCart();
 
         setTimeout(() => {
-          router.push(`/my-orders/${userId}`);
+          router.push(`/product-listing`);
         }, 3000);
       } else {
         notifyAddressWarn("Both");

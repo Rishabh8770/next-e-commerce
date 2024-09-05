@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Rishabh",
+    "name": "Rishabh Malewar",
     "email": "rishabh@mail.com",
     "password": "Rishabh",
     "cart": []
@@ -30,9 +30,9 @@
   },
   {
     "id": 4,
-    "name": "Chandan Soni",
+    "name": "Chandan",
     "email": "chandan@soni.com",
-    "password": "chandan1234",
+    "password": "chandan12345",
     "cart": []
   },
   {

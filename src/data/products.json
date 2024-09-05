@@ -408,6 +408,12 @@
         "username": "EmilyJohnson",
         "ratings": 3,
         "comment": "Good camera but a bit bulky. It works well for casual photography but lacks advanced features."
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Chandan Soni",
+        "ratings": 4,
+        "comment": "Great product. Captures great HD pics. Loved it!!"
       }
     ]
   },

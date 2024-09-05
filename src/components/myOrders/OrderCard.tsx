@@ -7,7 +7,17 @@ import { getOrderDetails } from "@/actions/OrderCreationAction"; // Ensure this 
 import { useProductContext } from "@/context/ProductContext";
 import Link from "next/link";
 
-const OrderCard = () => {
+type OrderCardProps = {
+  maxOrdersToShow?: number | null;
+  isProfilePage: boolean;
+  maxItemsToShow?: number | null
+};
+
+const OrderCard = ({
+  maxOrdersToShow = null,
+  isProfilePage = false,
+  maxItemsToShow=null,
+}: OrderCardProps) => {
   const { userId } = useUserContext();
   const [orderDetails, setOrderDetails] = useState<OrderType | null>(null);
   const { products } = useProductContext();
@@ -26,25 +36,35 @@ const OrderCard = () => {
   }, [userId]);
 
   if (!userId) {
-    return <p>Please log in to view your orders.</p>;
+    return <p className="mt-4 text-xl">Please log in to view your orders.</p>;
   }
 
   if (!orderDetails || orderDetails.orders.length === 0) {
-    return <p>No orders found for this user.</p>;
+    return (
+      <p className="mt-4 text-xl border border-dashed border-gray-700 rounded-lg p-5">
+        No orders found for this user.
+      </p>
+    );
   }
 
+  const ordersToDisplay = maxOrdersToShow
+    ? orderDetails.orders.slice(0, maxOrdersToShow)
+    : orderDetails.orders;
+
+   
+
   return (
-    <div className="border border-gray-300 rounded-lg w-3/5 p-10 m-10 bg-gray-200">
+    <div className="border border-gray-300 rounded-lg w-5/6 p-10 m-10 bg-gray-200">
       <div>
         <h1 className="font-semibold text-3xl">
           My {orderDetails.orders.length > 1 ? "Orders" : "Order"}
         </h1>
         <div className="border-b-1 border-dashed border-black mt-4"></div>
       </div>
-      {orderDetails.orders.map((order) => {
+      {ordersToDisplay.map((order) => {
         const startIndex = 0;
         const endIndex = currentItems * itemsShow;
-        const visibleItems = order.items.slice(startIndex, endIndex);
+        const visibleItems = maxItemsToShow ? order.items.slice(startIndex, maxItemsToShow): order.items.slice(startIndex, endIndex);
         const hasMoreItems = endIndex < order.items.length;
         const hasLessItems = currentItems > 1;
 
@@ -121,7 +141,7 @@ const OrderCard = () => {
                 </tbody>
               </table>
               <div className="mt-2">
-                {hasMoreItems && (
+                {hasMoreItems && !isProfilePage && (
                   <button
                     onClick={() => setCurrentItems((prev) => prev + 1)}
                     className="hover:bg-gray-200 mr-4 border rounded-md p-2"
@@ -129,7 +149,7 @@ const OrderCard = () => {
                     View More
                   </button>
                 )}
-                {hasLessItems && (
+                {hasLessItems && !isProfilePage && (
                   <button
                     onClick={() => setCurrentItems(1)}
                     className="hover:bg-gray-200 border rounded-md p-2"
@@ -140,17 +160,19 @@ const OrderCard = () => {
               </div>
               <div className="flex justify-end">
                 <div className="pt-4 w-1/3">
-                  <div className="flex justify-between pt-2">
-                    <h1 className="font-semibold">Total</h1>
-                    <h1>₹{order.totalAmount.toFixed(2)}</h1>
-                  </div>
-                  <div className="flex justify-between border-t border-gray-300 pt-2">
-                    <h1 className="font-semibold">Discount</h1>
-                    <h1>₹{order.totalDiscount.toFixed(2)}</h1>
-                  </div>
-                  <div className="flex justify-between border-t border-gray-300 pt-2">
-                    <h1 className="font-semibold">Tax (5%)</h1>
-                    <h1>₹{order.tax.toFixed(2)}</h1>
+                  <div className={`${isProfilePage && "hidden"}`}>
+                    <div className="flex justify-between pt-2">
+                      <h1 className="font-semibold">Total</h1>
+                      <h1>₹{order.totalAmount.toFixed(2)}</h1>
+                    </div>
+                    <div className="flex justify-between border-t border-gray-300 pt-2">
+                      <h1 className="font-semibold">Discount</h1>
+                      <h1>₹{order.totalDiscount.toFixed(2)}</h1>
+                    </div>
+                    <div className="flex justify-between border-t border-gray-300 pt-2">
+                      <h1 className="font-semibold">Tax (5%)</h1>
+                      <h1>₹{order.tax.toFixed(2)}</h1>
+                    </div>
                   </div>
                   <div className="flex justify-between border-t border-gray-300 pt-2">
                     <h1 className="font-semibold">
@@ -164,7 +186,9 @@ const OrderCard = () => {
               </div>
               <div className="border-b border-gray-300 mt-2"></div>
             </div>
-            <div className="flex space-x-8">
+            <div
+              className={`flex space-x-8 ${isProfilePage ? "hidden" : "block"}`}
+            >
               <div className="pt-4">
                 <div>
                   <h1 className="text-xl font-semibold">Shipping Info.</h1>
@@ -227,6 +251,13 @@ const OrderCard = () => {
           </div>
         );
       })}
+      <div
+        className={`flex justify-end items-center text-blue-500 hover:underline ${
+          !isProfilePage ? "hidden" : "block"
+        }`}
+      >
+        <Link href="/my-profile/myOrders">View more...</Link>
+      </div>
     </div>
   );
 };
