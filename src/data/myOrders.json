@@ -253,5 +253,188 @@
         "orderCreated": "2024-09-03T07:08:36.590Z"
       }
     ]
+  },
+  {
+    "userid": 4,
+    "orders": [
+      {
+        "orderId": 1725434856529,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "Kumar",
+          "address": "adasd",
+          "subAddress": "gerge",
+          "city": "Mumbai",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492001",
+          "phone": "1234567890"
+        },
+        "billingAddress": {
+          "firstName": "Sarthak",
+          "lastName": "adad",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Mysuru",
+          "state": "Karnataka",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "7738927491"
+        },
+        "items": [
+          {
+            "id": 9011,
+            "quantity": 1,
+            "pricePerQuantity": 46199.18,
+            "productTotal": 46199.18,
+            "discount": 18
+          }
+        ],
+        "totalAmount": 46199.18,
+        "totalDiscount": 8315.8524,
+        "tax": 2309.9590000000003,
+        "totalOrderAmount": 40193.28660000001,
+        "orderCreated": "2024-09-04T07:27:36.529Z"
+      }
+    ]
+  },
+  {
+    "userid": 1,
+    "orders": [
+      {
+        "orderId": 1725523702240,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "adad",
+          "address": "Marathalli",
+          "subAddress": "1st floor",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "7736189911"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "adad",
+          "address": "Marathalli",
+          "subAddress": "1st floor",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "7736189911"
+        },
+        "items": [
+          {
+            "id": 9002,
+            "quantity": 1,
+            "pricePerQuantity": 32999.18,
+            "productTotal": 32999.18,
+            "discount": 15
+          },
+          {
+            "id": 9005,
+            "quantity": 1,
+            "pricePerQuantity": 9809.25,
+            "productTotal": 9809.25,
+            "discount": 18
+          },
+          {
+            "id": 9007,
+            "quantity": 1,
+            "pricePerQuantity": 41249.18,
+            "productTotal": 41249.18,
+            "discount": 10
+          },
+          {
+            "id": 9008,
+            "quantity": 1,
+            "pricePerQuantity": 74249.18,
+            "productTotal": 74249.18,
+            "discount": 18
+          },
+          {
+            "id": 9011,
+            "quantity": 1,
+            "pricePerQuantity": 46199.18,
+            "productTotal": 46199.18,
+            "discount": 18
+          },
+          {
+            "id": 9013,
+            "quantity": 1,
+            "pricePerQuantity": 22192.5,
+            "productTotal": 22192.5,
+            "discount": 10
+          },
+          {
+            "id": 9019,
+            "quantity": 1,
+            "pricePerQuantity": 123750,
+            "productTotal": 123750,
+            "discount": 10
+          },
+          {
+            "id": 1020154545,
+            "quantity": 1,
+            "pricePerQuantity": 12375,
+            "productTotal": 12375,
+            "discount": 18
+          }
+        ],
+        "totalAmount": 362823.47,
+        "totalDiscount": 49342.9148,
+        "tax": 18141.1735,
+        "totalOrderAmount": 331621.7286999999,
+        "orderCreated": "2024-09-05T08:08:22.240Z"
+      },
+      {
+        "orderId": 1725525551196,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "adad",
+          "address": "Marathalli",
+          "subAddress": "1st floor",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "7736189911"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "adad",
+          "address": "Marathalli",
+          "subAddress": "1st floor",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "7736189911"
+        },
+        "items": [
+          {
+            "id": 9005,
+            "quantity": 1,
+            "pricePerQuantity": 9809.25,
+            "productTotal": 9809.25,
+            "discount": 18
+          },
+          {
+            "id": 9010,
+            "quantity": 1,
+            "pricePerQuantity": 26398.35,
+            "productTotal": 26398.35,
+            "discount": 10
+          }
+        ],
+        "totalAmount": 36207.6,
+        "totalDiscount": 4405.5,
+        "tax": 1810.38,
+        "totalOrderAmount": 33612.479999999996,
+        "orderCreated": "2024-09-05T08:39:11.196Z"
+      }
+    ]
   }
 ]

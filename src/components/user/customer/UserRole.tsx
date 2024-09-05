@@ -42,7 +42,7 @@ const UserRole = () => {
     if (option === "Admin") {
       router.push("/admin");
     } else if (option === userDisplayName) {
-      router.push("/product-listing");
+      router.push(`/my-profile/${userId}`);
     }
   };
 
@@ -51,14 +51,9 @@ const UserRole = () => {
       <DropdownTrigger>
         <Button
           variant="bordered"
-          className="flex justify-start text-white border-none text-md md:px-2 px-0"
+          className="flex justify-start text-white border rounded-lg text-md px-2"
         >
-          {pathName.startsWith("/admin")
-            ? "Admin"
-            : `Hi, ${
-                userDisplayName.charAt(0).toUpperCase() +
-                userDisplayName.slice(1)
-              }`}
+          {pathName.startsWith("/admin") ? "Admin" : "Switch user"}
         </Button>
       </DropdownTrigger>
       <DropdownMenu

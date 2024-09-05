@@ -49,5 +49,85 @@
         "phone": "7738927491"
       }
     ]
+  },
+  {
+    "id": 4,
+    "shippingAddresses": [
+      {
+        "firstName": "Shivam",
+        "lastName": "Kumar",
+        "address": "adasd",
+        "subAddress": "gerge",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "1234567890"
+      },
+      {
+        "firstName": "Sarthak",
+        "lastName": "adad",
+        "address": "abcdgsca",
+        "subAddress": "hno 51",
+        "city": "Mysuru",
+        "state": "Karnataka",
+        "country": "India",
+        "postalCode": "492013",
+        "phone": "7738927491"
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "Shivam",
+        "lastName": "Kumar",
+        "address": "adasd",
+        "subAddress": "gerge",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "1234567890"
+      },
+      {
+        "firstName": "Sarthak",
+        "lastName": "adad",
+        "address": "abcdgsca",
+        "subAddress": "hno 51",
+        "city": "Mysuru",
+        "state": "Karnataka",
+        "country": "India",
+        "postalCode": "492013",
+        "phone": "7738927491"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "shippingAddresses": [
+      {
+        "firstName": "Shivam",
+        "lastName": "adad",
+        "address": "Marathalli",
+        "subAddress": "1st floor",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "country": "India",
+        "postalCode": "492013",
+        "phone": "7736189911"
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "Shivam",
+        "lastName": "adad",
+        "address": "Marathalli",
+        "subAddress": "1st floor",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "country": "India",
+        "postalCode": "492013",
+        "phone": "7736189911"
+      }
+    ]
   }
 ]

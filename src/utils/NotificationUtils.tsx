@@ -70,6 +70,13 @@ export const notifyAddressError = () => {
   toast.error("There is an error adding the Address", options);
 };
 
+export const notifyUserUpdatedSuccess = () => {
+  toast.success("User details updated successfully", options)
+}
+export const notifyUserUpdatedError = () => {
+  toast.error("Error updating the user details", options)
+}
+
 export const notifyAddressWarn = (
   missingAddress: "Shipping" | "Billing" | "Both"
 ) => {

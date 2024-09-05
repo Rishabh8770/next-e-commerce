@@ -6,9 +6,10 @@ import { routePathNames } from "@/utils/pathUtils";
 
 const Footer = () => {
   const pathName = usePathname();
+  const pathToHideFooter = routePathNames();
 
   return (
-    <div className={`${routePathNames.includes(pathName) && "hidden"}`}>
+    <div className={`${pathToHideFooter.includes(pathName) && "hidden"}`}>
       <div className="footer-area bg-gray-800 text-white py-10 px-4">
         <div className="container mx-auto">
           <div className="flex flex-wrap -mx-3">

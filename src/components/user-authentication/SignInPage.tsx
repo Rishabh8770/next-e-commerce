@@ -9,7 +9,7 @@ import {
   notifyLoginError,
   notifyLoginSuccess,
 } from "@/utils/NotificationUtils";
-import { useUserContext } from "@/context/UserContext"; // Import the UserContext
+import { useUserContext } from "@/context/UserContext";
 import { useCartContext } from "@/context/CartContext";
 
 const SignInPage = () => {
