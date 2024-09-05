@@ -8,7 +8,7 @@ import React, { useEffect } from "react";
 type UserAddressProp = {
   maxShippingAddressToShow? : number | null;
   maxBillingAddressToShow? : number | null;
-  isProfilePage: boolean
+  isProfilePage?: boolean
 }
 
 const UserAddress = ({maxShippingAddressToShow = null, maxBillingAddressToShow = null, isProfilePage=false}: UserAddressProp) => {

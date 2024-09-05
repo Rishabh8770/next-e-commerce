@@ -1,22 +1,26 @@
-"use client";
+"use client"
 
 import React, { useEffect, useState } from "react";
 import { useUserContext } from "@/context/UserContext";
-import { OrderType } from "@/types/OrderTypes"; // Ensure this path is correct
-import { getOrderDetails } from "@/actions/OrderCreationAction"; // Ensure this path is correct
+import { Order, OrderType } from "@/types/OrderTypes";
+import { getOrderDetails } from "@/actions/OrderCreationAction";
 import { useProductContext } from "@/context/ProductContext";
 import Link from "next/link";
 
 type OrderCardProps = {
   maxOrdersToShow?: number | null;
   isProfilePage: boolean;
-  maxItemsToShow?: number | null
+  maxItemsToShow?: number | null;
+  specificOrder?: Order | null;
+  showAllItems?: boolean;
 };
 
 const OrderCard = ({
   maxOrdersToShow = null,
   isProfilePage = false,
-  maxItemsToShow=null,
+  maxItemsToShow = null,
+  specificOrder = null,
+  showAllItems = false,
 }: OrderCardProps) => {
   const { userId } = useUserContext();
   const [orderDetails, setOrderDetails] = useState<OrderType | null>(null);
@@ -25,7 +29,7 @@ const OrderCard = ({
   const itemsShow = 4;
 
   useEffect(() => {
-    if (userId) {
+    if (userId && !specificOrder) {
       const fetchOrderDetails = async () => {
         const response = await getOrderDetails(userId);
         setOrderDetails(response);
@@ -33,13 +37,17 @@ const OrderCard = ({
 
       fetchOrderDetails();
     }
-  }, [userId]);
+  }, [userId, specificOrder]);
 
-  if (!userId) {
+  const ordersToDisplay = specificOrder
+    ? [specificOrder]
+    : (orderDetails?.orders || []).slice(0, maxOrdersToShow ?? undefined);
+
+  if (!userId && !specificOrder) {
     return <p className="mt-4 text-xl">Please log in to view your orders.</p>;
   }
 
-  if (!orderDetails || orderDetails.orders.length === 0) {
+  if (!ordersToDisplay.length) {
     return (
       <p className="mt-4 text-xl border border-dashed border-gray-700 rounded-lg p-5">
         No orders found for this user.
@@ -47,26 +55,23 @@ const OrderCard = ({
     );
   }
 
-  const ordersToDisplay = maxOrdersToShow
-    ? orderDetails.orders.slice(0, maxOrdersToShow)
-    : orderDetails.orders;
-
-   
-
   return (
     <div className="border border-gray-300 rounded-lg w-5/6 p-10 m-10 bg-gray-200">
-      <div>
+      <div className={`${showAllItems && "hidden"}`}>
         <h1 className="font-semibold text-3xl">
-          My {orderDetails.orders.length > 1 ? "Orders" : "Order"}
+          My{" "}
+          {orderDetails?.orders && orderDetails?.orders.length > 1
+            ? "Orders"
+            : "Order"}
         </h1>
         <div className="border-b-1 border-dashed border-black mt-4"></div>
       </div>
       {ordersToDisplay.map((order) => {
         const startIndex = 0;
-        const endIndex = currentItems * itemsShow;
-        const visibleItems = maxItemsToShow ? order.items.slice(startIndex, maxItemsToShow): order.items.slice(startIndex, endIndex);
-        const hasMoreItems = endIndex < order.items.length;
-        const hasLessItems = currentItems > 1;
+        const endIndex = showAllItems ? order.items.length : currentItems * itemsShow;
+        const visibleItems = maxItemsToShow ? order.items.slice(startIndex, maxItemsToShow) : order.items.slice(startIndex, endIndex);
+        const hasMoreItems = !showAllItems && endIndex < order.items.length;
+        const hasLessItems = !showAllItems && currentItems > 1;
 
         return (
           <div
@@ -76,9 +81,11 @@ const OrderCard = ({
             <div className="space-y-2">
               <div className="flex justify-between items-center">
                 <div className="flex space-x-4 items-center">
-                  <h1 className="text-2xl font-semibold">
-                    Order Id : #{order.orderId}
-                  </h1>
+                  <Link href={`/my-profile/myOrders/${order.orderId}`}>
+                    <h1 className="text-2xl font-semibold">
+                      Order Id : <span className="text-blue-700">#{order.orderId}</span>
+                    </h1>
+                  </Link>
                   <h1>Total Items: {order.items.length}</h1>
                 </div>
                 <h1>
@@ -140,24 +147,26 @@ const OrderCard = ({
                   })}
                 </tbody>
               </table>
-              <div className="mt-2">
-                {hasMoreItems && !isProfilePage && (
-                  <button
-                    onClick={() => setCurrentItems((prev) => prev + 1)}
-                    className="hover:bg-gray-200 mr-4 border rounded-md p-2"
-                  >
-                    View More
-                  </button>
-                )}
-                {hasLessItems && !isProfilePage && (
-                  <button
-                    onClick={() => setCurrentItems(1)}
-                    className="hover:bg-gray-200 border rounded-md p-2"
-                  >
-                    View Less
-                  </button>
-                )}
-              </div>
+              {!showAllItems && (
+                <div className="mt-2">
+                  {hasMoreItems && !isProfilePage && (
+                    <button
+                      onClick={() => setCurrentItems((prev) => prev + 1)}
+                      className="hover:bg-gray-200 mr-4 border rounded-md p-2"
+                    >
+                      View More
+                    </button>
+                  )}
+                  {hasLessItems && !isProfilePage && (
+                    <button
+                      onClick={() => setCurrentItems(1)}
+                      className="hover:bg-gray-200 border rounded-md p-2"
+                    >
+                      View Less
+                    </button>
+                  )}
+                </div>
+              )}
               <div className="flex justify-end">
                 <div className="pt-4 w-1/3">
                   <div className={`${isProfilePage && "hidden"}`}>
