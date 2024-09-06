@@ -75,7 +75,7 @@ const OrderCard = ({
 
         return (
           <div
-            className="border rounded-lg p-4 space-y-4 my-8 bg-white"
+            className="border rounded-lg p-4 space-y-4 my-8 bg-white overflow-x-auto"
             key={order.orderId}
           >
             <div className="space-y-2">
@@ -168,7 +168,7 @@ const OrderCard = ({
                 </div>
               )}
               <div className="flex justify-end">
-                <div className="pt-4 w-1/3">
+                <div className="pt-4 lg:w-1/3 w-full">
                   <div className={`${isProfilePage && "hidden"}`}>
                     <div className="flex justify-between pt-2">
                       <h1 className="font-semibold">Total</h1>
