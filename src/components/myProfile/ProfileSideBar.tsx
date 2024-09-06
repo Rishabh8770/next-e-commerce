@@ -88,7 +88,7 @@ const ProfileSideBar = () => {
           <ProfileMenuItems />
         </div>
 
-        <div className="sm:hidden my-4">
+        <div className="lg:hidden my-4">
           <button
             type="button"
             className="inline-flex items-center justify-center space-x-2 p-2 rounded-md text-white bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -103,7 +103,7 @@ const ProfileSideBar = () => {
       </div>
       {isMenuOpen && (
         <div
-          className="lg:hidden absolute top-48 left-0 right-0 z-10 bg-side-sidebar-bg slide-down"
+          className="lg:hidden absolute md:top-[26rem] top-48 left-0 right-0 z-10 bg-side-sidebar-bg slide-down"
           ref={dropdownRef}
         >
           <ProfileMenuItems />
