@@ -26,7 +26,7 @@ const UserAddress = ({maxShippingAddressToShow = null, maxBillingAddressToShow =
 
   return (
     <div className="md:p-8 p-0 m-10 flex flex-col md:space-x-10 w-5/6 bg-gray-200 border border-gray-300 rounded-lg">
-      <div className="md:ml-[2.375rem] mb-9">
+      <div className="md:ml-[2.375rem] mb-9 md:p-0 p-5">
         <h1 className="text-3xl">My Addresses</h1>
         <div className="border-b-gray-600 border-dashed border-b-1 mt-4"></div>
       </div>
