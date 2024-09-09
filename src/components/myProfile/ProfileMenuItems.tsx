@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Heart,
   MapPin,
   Pencil,
   ScanEye,
@@ -33,6 +34,11 @@ const menuItems = [
         title: "My Orders",
         path: "/my-profile/myOrders",
         icon: <ScrollText color="#ffffff" strokeWidth={1.25} />,
+      },
+      {
+        title: "Wishlist",
+        path: "/my-profile/myWishlist",
+        icon: <Heart color="#ffffff" strokeWidth={1.25}/>,
       },
     ],
   },

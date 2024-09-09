@@ -41,3 +41,7 @@ export type User = {
   password: string;
   cart?: { id: number; quantity: number }[];
 };
+
+export type WishListItems = {
+  productId: number
+}

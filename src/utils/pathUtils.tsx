@@ -36,5 +36,6 @@ export const routePathNames = () => {
     "/my-profile/myReviews",
     "/my-profile/myOrders",
     `/my-profile/myOrders/${orderId}`,
+    "/my-profile/myWishlist"
   ];
 };
