@@ -56,7 +56,7 @@ const OrderCard = ({
   }
 
   return (
-    <div className="border border-gray-300 rounded-lg w-5/6 p-10 m-10 bg-gray-200">
+    <div className="border border-gray-300 rounded-lg md:w-5/6 w-full lg:p-10 p-2 lg:m-10 m-4 bg-gray-200">
       <div className={`${showAllItems && "hidden"}`}>
         <h1 className="font-semibold text-3xl">
           My{" "}
