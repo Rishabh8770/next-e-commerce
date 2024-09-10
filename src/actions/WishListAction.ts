@@ -5,7 +5,6 @@ import fs from "fs";
 import path from "path";
 import { cookies } from "next/headers";
 import productData from "@/data/products.json";
-import WishList from '../components/products/WishList';
 
 const FILE_PATH = path.join(process.cwd(), "src/data", "users.json");
 

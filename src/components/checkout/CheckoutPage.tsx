@@ -7,7 +7,6 @@ import BillingInfo from "./BillingInfo";
 import { AddressType } from "@/types/AddressType";
 import { useAddressContext } from "@/context/AddressContext";
 import { useUserContext } from "@/context/UserContext";
-import { v4 as uuidv4 } from "uuid";
 
 const CheckoutPage = () => {
   const [selectedShippingAddress, setSelectedShippingAddress] =

@@ -4,6 +4,7 @@ import { Order, OrderItem, OrderType } from "@/types/OrderTypes";
 import { AddressType } from "@/types/AddressType";
 import fs from "fs";
 import path from "path";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 const ORDERS_FILE_PATH = path.join(process.cwd(), "src/data/myOrders.json");
 
@@ -57,7 +58,7 @@ export async function createOrder(
     return { success: true, orderId: newOrder.orderId };
   } catch (error) {
     console.error("Error creating order:", error);
-    return { success: false, error: "Failed to create order" };
+    return { success: false, error: ERROR_MESSAGE.createOrderError };
   }
 }
 

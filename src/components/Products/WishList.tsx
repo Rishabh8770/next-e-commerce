@@ -7,6 +7,11 @@ import {
 } from "@/actions/WishListAction";
 import { useUserContext } from "@/context/UserContext";
 import { WishListItems } from "@/types/ProductTypes";
+import {
+  notifyWishlistError,
+  notifyWishlistSuccess,
+  notifyWishlistWarn,
+} from "@/utils/NotificationUtils";
 import { Heart } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
@@ -33,15 +38,21 @@ const WishList = ({ productId, isProductCard }: WishlistProp) => {
 
   const toggleWishList = async (e: React.MouseEvent) => {
     e.preventDefault();
-
-    if (isLiked) {
-      await removeFromWishlist(productId);
-      setIsLiked(false);
-    } else {
-      await addToWishlist(productId);
-      setIsLiked(true);
+    try {
+        // throw new Error("Testing error")  //For Error toast testing purpose
+      if (isLiked) {
+        await removeFromWishlist(productId);
+        notifyWishlistWarn();
+        setIsLiked(false);
+      } else {
+        await addToWishlist(productId);
+        notifyWishlistSuccess();
+        setIsLiked(true);
+      }
+    } catch (error) {
+      notifyWishlistError();
+      console.error("Error adding the product to Wishlist", error);
     }
-    console.log("Wishlist updated:", await getWishlistItems());
     refreshUser();
   };
 

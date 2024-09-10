@@ -6,15 +6,16 @@ import React from "react";
 import OrderCard from "../myOrders/OrderCard";
 import UserAddress from "./UserAddress";
 import RecentlyViewed from "./RecentlyViewed";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 const ProfileHomePage = () => {
   const { userId } = useUserContext();
   if (!userId) {
-    return <h1>User not found</h1>;
+    return <h1>{ERROR_MESSAGE.userNotFound}</h1>;
   }
   const userDetails = users.find((user) => user.id === userId);
   if (!userDetails) {
-    return <h1>User not found</h1>;
+    return <h1>{ERROR_MESSAGE.userNotFound}</h1>;
   }
   return (
     <div

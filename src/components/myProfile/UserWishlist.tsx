@@ -6,6 +6,7 @@ import { useUserContext } from "@/context/UserContext";
 import { WishListItems } from "@/types/ProductTypes";
 import { generateStarRating } from "@/utils/starRatingsUtils";
 import React, { useEffect, useState } from "react";
+import ProfileItemsHeader from "./ProfileItemsHeader";
 
 const UserWishlist = () => {
   const { userId, refreshUser } = useUserContext();
@@ -41,11 +42,7 @@ const UserWishlist = () => {
 
   return (
     <>
-      <div className="border-l-1 bg-side-sidebar-bg">
-        <div className="p-8">
-            <h1 className="text-white text-2xl font-semibold">WishList</h1>
-        </div>
-      </div>
+      <ProfileItemsHeader title="WishList"/>
       <div className="flex flex-col justify-center items-center">
         {wishlist?.map((list) => {
           const productMatch = products.find(

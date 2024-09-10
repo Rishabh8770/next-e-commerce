@@ -3,6 +3,7 @@ import { useProductContext } from "@/context/ProductContext";
 import ProductCard from "../products/ProductCard";
 import Link from "next/link";
 import { MoveLeft, MoveRight } from "lucide-react";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 type RecentProductProps = {
   maxProductToShow?: number | null;
@@ -58,7 +59,7 @@ const RecentlyViewed = ({ maxProductToShow = 10 }: RecentProductProps) => {
           ))
         ) : (
           <div className="flex h-screen justify-center items-center text-2xl">
-            No Products found
+           {ERROR_MESSAGE.productNotFound}
           </div>
         )}
       </div>

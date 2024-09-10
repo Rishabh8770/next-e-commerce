@@ -1,0 +1,15 @@
+export const ERROR_MESSAGE = {
+    emptyCart : "Your cart is empty",
+    addressNotFound: "No addresses found for this user.",
+    loginMessage: "Please log in to view your orders.",
+    noOrders: "No orders found for this user.",
+    noOrderDetails:"No order details available",
+    userNotFound:"User not found",
+    productNotFound: " No Products found",
+    noAddress: "address not available.",
+    noReviews: "No reviews found for this user.",
+    loginError: "Username or Email already exists",
+    createOrderError: "Failed to create order",
+    noShippingAdd: "No shipping address selected.",
+    noBillingAdd: "No billing address selected.",
+}

@@ -16,6 +16,7 @@ import { ProductTypes, User } from "@/types/ProductTypes";
 import { notifyLoginWarn } from "@/utils/NotificationUtils";
 import { NotificationContainer } from "../user/admin/UserFeedback";
 import WishList from "./WishList";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 function ProductDetails({ params }: { params: { id: string } }) {
   const [product, setProduct] = useState<ProductTypes | null>(null);
@@ -71,7 +72,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
   };
 
   if (!product) {
-    return <div>Product not found</div>;
+    return <div>{ERROR_MESSAGE.productNotFound}</div>;
   }
 
   const bulletPoints = product.description

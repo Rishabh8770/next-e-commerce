@@ -4,23 +4,24 @@
     "name": "Rishabh Malewar",
     "email": "rishabh@mail.com",
     "password": "Rishabh",
-    "cart": [
+    "cart": [],
+    "wishList": [
       {
-        "id": 9002,
-        "quantity": 1,
-        "pricePerQuantity": 32999.18,
-        "productTotal": 32999.18,
-        "discount": 15
+        "productId": 9006
       },
       {
-        "id": 9003,
-        "quantity": 1,
-        "pricePerQuantity": 61633.28,
-        "productTotal": 61633.28,
-        "discount": 10
+        "productId": 9005
+      },
+      {
+        "productId": 9007
+      },
+      {
+        "productId": 9013
+      },
+      {
+        "productId": 9001
       }
-    ],
-    "wishList": []
+    ]
   },
   {
     "id": 2,
@@ -42,21 +43,34 @@
     "name": "Chandan",
     "email": "chandan@soni.com",
     "password": "chandan12345",
-    "cart": [
-      {
-        "id": 9002,
-        "quantity": 1,
-        "pricePerQuantity": 32999.18,
-        "productTotal": 32999.18,
-        "discount": 15
-      }
-    ],
+    "cart": [],
     "wishList": [
       {
         "productId": 9001
       },
       {
         "productId": 9003
+      },
+      {
+        "productId": 9006
+      },
+      {
+        "productId": 9007
+      },
+      {
+        "productId": 9013
+      },
+      {
+        "productId": 9012
+      },
+      {
+        "productId": 9005
+      },
+      {
+        "productId": 9011
+      },
+      {
+        "productId": 9002
       }
     ]
   },

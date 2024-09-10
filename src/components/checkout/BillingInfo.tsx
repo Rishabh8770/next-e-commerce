@@ -12,6 +12,7 @@ import { NotificationContainer } from "../user/admin/UserFeedback";
 import { useUserContext } from "@/context/UserContext";
 import { deleteCart } from "@/actions/CartAction";
 import { ShoppingCart } from "lucide-react";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 type SelectedAddressProps = {
   selectedShippingAddress: AddressType | null;
@@ -135,7 +136,7 @@ const BillingInfo = ({
             <p>{selectedShippingAddress.phone}</p>
           </div>
         ) : (
-          <p>No shipping address selected.</p>
+          <p>{ERROR_MESSAGE.noShippingAdd}</p>
         )}
       </div>
       <div className="px-6 py-3">
@@ -158,7 +159,7 @@ const BillingInfo = ({
             <p>{selectedBillingAddress.phone}</p>
           </div>
         ) : (
-          <p>No billing address selected.</p>
+          <p>{ERROR_MESSAGE.noBillingAdd}</p>
         )}
       </div>
       <div className="px-6 py-3">
