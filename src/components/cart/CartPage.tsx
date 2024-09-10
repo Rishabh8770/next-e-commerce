@@ -13,6 +13,7 @@ import { useUserContext } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import LoadingButton from "../common/LoadingButton";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 const CartPage = () => {
   const [loading, setLoading] = useState(false);
@@ -80,7 +81,7 @@ const CartPage = () => {
         >
           {cartItems.length === 0 ? (
             <p className="lg:text-5xl md:text-3xl text-2xl">
-              Your cart is empty
+              {ERROR_MESSAGE.emptyCart}
             </p>
           ) : (
             <div className="space-y-4">

@@ -15,6 +15,8 @@ import { ValidateUser } from "@/actions/LoginAndSignUpAction";
 import { ProductTypes, User } from "@/types/ProductTypes";
 import { notifyLoginWarn } from "@/utils/NotificationUtils";
 import { NotificationContainer } from "../user/admin/UserFeedback";
+import WishList from "./WishList";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 function ProductDetails({ params }: { params: { id: string } }) {
   const [product, setProduct] = useState<ProductTypes | null>(null);
@@ -70,7 +72,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
   };
 
   if (!product) {
-    return <div>Product not found</div>;
+    return <div>{ERROR_MESSAGE.productNotFound}</div>;
   }
 
   const bulletPoints = product.description
@@ -94,7 +96,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
           <div className="w-full lg:w-1/2 flex flex-col rounded p-2">
             <Carousel images={product.image} />
           </div>
-          <div className="lg:w-1/2 pl-6 lg:border-l-1">
+          <div className="lg:w-1/2 md:pl-6 pl-0 lg:border-l-1">
             <h1 className="lg:text-3xl text-sm font-bold my-4">
               {product.title}
             </h1>
@@ -134,8 +136,9 @@ function ProductDetails({ params }: { params: { id: string } }) {
               </div>
             </div>
             <ul className="list-disc pl-5">{bulletPoints}</ul>
-            <div className="my-10 -bottom-4 flex lg:justify-start justify-center items-center">
+            <div className="my-10 -bottom-4 flex md:flex-row flex-col md:space-y-0 space-y-2 lg:justify-start justify-center items-center">
               <AddToCart productId={product.id} />
+              <WishList productId={product.id} isProductCard={false} />
             </div>
           </div>
         </div>

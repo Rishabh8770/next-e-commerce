@@ -4,6 +4,7 @@ import fs from "fs";
 import path from "path";
 import { cookies } from "next/headers";
 import { CartItem } from "@/types/ProductTypes";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 const filePath = path.join(process.cwd(), "src/data", "users.json");
 const cartFilePath = path.join(process.cwd(), "src/data/cart.json");
@@ -68,7 +69,7 @@ export async function SignupUser(
   );
 
   if (existingUser) {
-    return { success: false, message: "Username or Email already exists" };
+    return { success: false, message: ERROR_MESSAGE.loginError };
   } else {
     const newUser = {
       id: users.length + 1,
@@ -135,6 +136,6 @@ export async function UpdateUser(
 
     return { success: true, userId: updatedUser.id };
   } else {
-    return { success: false, message: "User not found" };
+    return { success: false, message: ERROR_MESSAGE.userNotFound };
   }
 }

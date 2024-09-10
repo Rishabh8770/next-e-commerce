@@ -77,6 +77,18 @@ export const notifyUserUpdatedError = () => {
   toast.error("Error updating the user details", options)
 }
 
+export const notifyWishlistSuccess = () => {
+  toast.success("Product added to Wishlist", options)
+}
+
+export const notifyWishlistWarn = () => {
+  toast.warn("Product removed from Wishlist", options)
+}
+
+export const notifyWishlistError = () => {
+  toast.error("There was an error adding product to Wishlist", options)
+}
+
 export const notifyAddressWarn = (
   missingAddress: "Shipping" | "Billing" | "Both"
 ) => {

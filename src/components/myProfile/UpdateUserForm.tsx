@@ -9,6 +9,7 @@ import {
   notifyUserUpdatedSuccess,
 } from "@/utils/NotificationUtils";
 import { useRouter } from "next/navigation";
+import ProfileItemsHeader from "./ProfileItemsHeader";
 
 const UpdateUserForm = () => {
   const { userId, refreshUser } = useUserContext();
@@ -81,72 +82,75 @@ const UpdateUserForm = () => {
   };
 
   return (
-    <div className="w-2/3">
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col border rounded-lg lg:w-5/6 w-full p-3 h-auto shadow-md"
-      >
-        <div className="flex justify-center items-center">
-          <label htmlFor="signup" className="md:text-3xl text-xl">
-            Update User
-          </label>
-        </div>
+    <div className="w-full flex flex-col justify-center items-center">
+      <ProfileItemsHeader title="Edit Profile"/>
+      <div className="w-2/3 flex justify-center items-center h-screen ">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col border rounded-lg lg:w-5/6 w-full p-3 h-auto shadow-md"
+        >
+          <div className="flex justify-center items-center">
+            <label htmlFor="signup" className="md:text-3xl text-xl">
+              Update User
+            </label>
+          </div>
 
-        <div className="flex flex-col mt-6 space-y-2">
-          <label htmlFor="name" className="md:text-xl text-md">
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            required
-            className="border rounded-md p-2"
-            value={formValues.name}
-            onChange={handleChange}
-          />
-        </div>
+          <div className="flex flex-col mt-6 space-y-2">
+            <label htmlFor="name" className="md:text-xl text-md">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              required
+              className="border rounded-md p-2"
+              value={formValues.name}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div className="flex flex-col my-6 space-y-2">
-          <label htmlFor="email" className="md:text-xl text-md">
-            Email-id
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            className="border rounded-md p-2"
-            value={formValues.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex flex-col mb-6 space-y-2">
-          <label htmlFor="password" className="md:text-xl text-md">
-            Password
-          </label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-            className="border rounded-md p-2"
-            value={formValues.password}
-            onChange={handleChange}
-          />
-        </div>
+          <div className="flex flex-col my-6 space-y-2">
+            <label htmlFor="email" className="md:text-xl text-md">
+              Email-id
+            </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              className="border rounded-md p-2"
+              value={formValues.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex flex-col mb-6 space-y-2">
+            <label htmlFor="password" className="md:text-xl text-md">
+              Password
+            </label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+              className="border rounded-md p-2"
+              value={formValues.password}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div className="flex justify-center items-center">
-          <button
-            className="md:text-xl text-md border rounded-md bg-blue-500 text-white py-2 px-4"
-            type="submit"
-            disabled={!isModified}
-          >
-            Update
-          </button>
-        </div>
-      </form>
-      <NotificationContainer />
+          <div className="flex justify-center items-center">
+            <button
+              className="md:text-xl text-md border rounded-md bg-blue-500 text-white py-2 px-4"
+              type="submit"
+              disabled={!isModified}
+            >
+              Update
+            </button>
+          </div>
+        </form>
+        <NotificationContainer />
+      </div>
     </div>
   );
 };

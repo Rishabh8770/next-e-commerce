@@ -3,7 +3,7 @@ import OrderCard from './OrderCard'
 
 const UserOrders = () => {
   return (
-    <div className='flex justify-center'>
+    <div>
       <OrderCard isProfilePage={false}/>
     </div>
   )

@@ -7,6 +7,7 @@ import { Order } from "@/types/OrderTypes";
 import OrderCard from "@/components/myOrders/OrderCard";
 import { useUserContext } from "@/context/UserContext";
 import LoadingPage from "@/app/loading";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 const OrderDetailsPage = () => {
   const { orderId } = useParams();
@@ -56,7 +57,7 @@ const OrderDetailsPage = () => {
   }
 
   if (!order) {
-    return <p>No order details available</p>;
+    return <p>{ERROR_MESSAGE.noOrderDetails}</p>;
   }
 
   return (

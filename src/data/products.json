@@ -82,6 +82,12 @@
         "username": "Sarthak",
         "ratings": 3,
         "comment": "Good"
+      },
+      {
+        "userImage": "/no-image.png",
+        "username": "Rishabh Malewar",
+        "ratings": 4,
+        "comment": "Good Product"
       }
     ]
   },

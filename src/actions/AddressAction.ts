@@ -4,7 +4,6 @@ import { AddressType } from "@/types/AddressType";
 import { User } from "@/types/ProductTypes";
 import fs from "fs";
 import path from "path";
-import { v4 as uuidv4 } from "uuid";
 
 const addressFilePath = path.join(
   process.cwd(),
