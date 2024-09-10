@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useUserContext } from "@/context/UserContext";
 import { useAddressContext } from "@/context/AddressContext";
 import { AddressType } from "@/types/AddressType";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 const ExistingAddress = ({
   type,
@@ -28,7 +29,7 @@ const ExistingAddress = ({
   const addressList = type === "billing" ? addresses.billingAddresses : addresses.shippingAddresses;
 
   if (!addressList || addressList.length === 0) {
-    return <p>No addresses found for this user.</p>;
+    return <p>{ERROR_MESSAGE.addressNotFound}</p>;
   }
 
   const startIndex = 0;

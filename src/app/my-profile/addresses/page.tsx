@@ -3,7 +3,7 @@ import React from 'react'
 
 const MyAddressPage = () => {
   return (
-    <div className='flex justify-center'>
+    <div>
       <UserAddress />
     </div>
   )

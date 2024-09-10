@@ -7,6 +7,7 @@ import { useUserContext } from "@/context/UserContext";
 import ProfileMenuItems from "./ProfileMenuItems";
 import { ArrowLeft, Menu } from "lucide-react";
 import UserRole from "../user/customer/UserRole";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 const ProfileSideBar = () => {
   const router = useRouter();
@@ -30,13 +31,13 @@ const ProfileSideBar = () => {
   }, []);
 
   if (!userId) {
-    return <h1>No user found</h1>;
+    return <h1>{ERROR_MESSAGE.userNotFound}</h1>;
   }
 
   const fetchUser = users.find((user) => user.id === userId);
 
   if (!fetchUser) {
-    return <h1>No user profile found</h1>;
+    return <h1>{ERROR_MESSAGE.userNotFound}</h1>;
   }
 
   const handleProfilePage = () => {

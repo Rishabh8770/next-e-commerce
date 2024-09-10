@@ -15,6 +15,8 @@ import { Option } from "@/components/common/MultiSelectDropdown";
 import { Skeleton } from "@nextui-org/react";
 import Sidebar from "./HomeSideBar";
 import Pagination from "../common/Pagination";
+import { NotificationContainer } from "../user/admin/UserFeedback";
+import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 type ViewState = {
   isMobileViewMenu: boolean;
@@ -232,7 +234,7 @@ const HomePage = () => {
             ))
           ) : (
             <div className="flex h-screen justify-center items-center text-2xl">
-              No Products found
+              {ERROR_MESSAGE.productNotFound}
             </div>
           )}
         </div>
@@ -242,6 +244,7 @@ const HomePage = () => {
           onPageChange={handlePageChange}
         />
       </div>
+      <NotificationContainer />
     </div>
   );
 };
