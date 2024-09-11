@@ -45,7 +45,7 @@ function ProductDetails({ params }: { params: { id: string } }) {
 
   const handleSubmit = async (rating: number, review: string) => {
     if (!loggedInUser) {
-      notifyLoginWarn();
+      notifyLoginWarn("review");
       const currentUrl = encodeURIComponent(window.location.href);
       setTimeout(() => {
         router.push(`/login?redirect=${currentUrl}`);

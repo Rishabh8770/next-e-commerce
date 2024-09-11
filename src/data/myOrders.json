@@ -560,5 +560,166 @@
         "orderCreated": "2024-09-10T08:27:34.085Z"
       }
     ]
+  },
+  {
+    "userid": 16,
+    "orders": [
+      {
+        "orderId": 1726065602564,
+        "shippingAddress": {
+          "firstName": "Sarthak",
+          "lastName": "Kumar",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "1234535436"
+        },
+        "billingAddress": {
+          "firstName": "Sarthak",
+          "lastName": "Kumar",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "1234535436"
+        },
+        "items": [
+          {
+            "id": 9003,
+            "quantity": 1,
+            "pricePerQuantity": 61633.28,
+            "productTotal": 61633.28,
+            "discount": 10
+          }
+        ],
+        "totalAmount": 61633.28,
+        "totalDiscount": 6163.328,
+        "tax": 3081.664,
+        "totalOrderAmount": 58551.615999999995,
+        "orderCreated": "2024-09-11T14:40:02.564Z"
+      },
+      {
+        "orderId": 1726065638573,
+        "shippingAddress": {
+          "firstName": "Sarthak",
+          "lastName": "Kumar",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "1234535436"
+        },
+        "billingAddress": {
+          "firstName": "Sarthak",
+          "lastName": "Kumar",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "1234535436"
+        },
+        "items": [
+          {
+            "id": 9006,
+            "quantity": 1,
+            "pricePerQuantity": 27885,
+            "productTotal": 27885,
+            "discount": 15
+          }
+        ],
+        "totalAmount": 27885,
+        "totalDiscount": 4182.75,
+        "tax": 1394.25,
+        "totalOrderAmount": 25096.5,
+        "orderCreated": "2024-09-11T14:40:38.573Z"
+      },
+      {
+        "orderId": 1726065710297,
+        "shippingAddress": {
+          "firstName": "Shivam",
+          "lastName": "bhalla",
+          "address": "abcdg",
+          "subAddress": "house no. 2 sector-02",
+          "city": "Raipur",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "492012",
+          "phone": "7728492713"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "bhalla",
+          "address": "abcdg",
+          "subAddress": "house no. 2 sector-02",
+          "city": "Raipur",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "492012",
+          "phone": "7728492713"
+        },
+        "items": [
+          {
+            "id": 9011,
+            "quantity": 1,
+            "pricePerQuantity": 46199.18,
+            "productTotal": 46199.18,
+            "discount": 18
+          }
+        ],
+        "totalAmount": 46199.18,
+        "totalDiscount": 8315.8524,
+        "tax": 2309.9590000000003,
+        "totalOrderAmount": 40193.28660000001,
+        "orderCreated": "2024-09-11T14:41:50.297Z"
+      },
+      {
+        "orderId": 1726066176082,
+        "shippingAddress": {
+          "firstName": "Sarthak",
+          "lastName": "Kumar",
+          "address": "abcdgsca",
+          "subAddress": "hno 51",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "India",
+          "postalCode": "492013",
+          "phone": "1234535436"
+        },
+        "billingAddress": {
+          "firstName": "Shivam",
+          "lastName": "bhalla",
+          "address": "abcdg",
+          "subAddress": "house no. 2 sector-02",
+          "city": "Raipur",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "492012",
+          "phone": "7728492713"
+        },
+        "items": [
+          {
+            "id": 9002,
+            "quantity": 1,
+            "pricePerQuantity": 32999.18,
+            "productTotal": 32999.18,
+            "discount": 15
+          }
+        ],
+        "totalAmount": 32999.18,
+        "totalDiscount": 4949.877,
+        "tax": 1649.959,
+        "totalOrderAmount": 29699.262,
+        "orderCreated": "2024-09-11T14:49:36.082Z"
+      }
+    ]
   }
 ]

@@ -3,7 +3,7 @@ import React from "react";
 
 const Reviews = () => {
   return (
-    <div className="flex justify-center">
+    <div>
       <UserReviews />
     </div>
   );

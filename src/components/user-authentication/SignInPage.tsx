@@ -12,6 +12,11 @@ import {
 import { useUserContext } from "@/context/UserContext";
 import { useCartContext } from "@/context/CartContext";
 
+type FormValues = {
+  email: string;
+  password: string;
+}
+
 const SignInPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -25,11 +30,8 @@ const SignInPage = () => {
     setRedirectUrl(redirect ? decodeURIComponent(redirect) : "/product-listing");
   }, [searchParams]);
 
-  const handleSignIn = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
+  const handleSignIn = async (data: FormValues) => {
+    const { email, password } = data;
     const result = await LoginUser(email, password);
 
     if (result.success) {
@@ -50,7 +52,7 @@ const SignInPage = () => {
         title="Login"
         isNewUser={false}
         buttonTitle="Sign In"
-        handleSubmit={handleSignIn}
+        handleSubmitData={handleSignIn}
       />
       <NotificationContainer />
     </div>

@@ -129,5 +129,56 @@
         "phone": "7728492713"
       }
     ]
+  },
+  {
+    "id": 16,
+    "shippingAddresses": [
+      {
+        "firstName": "Sarthak",
+        "lastName": "Kumar",
+        "address": "abcdgsca",
+        "subAddress": "hno 51",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "postalCode": "492013",
+        "phone": "1234535436"
+      },
+      {
+        "firstName": "Shivam",
+        "lastName": "bhalla",
+        "address": "abcdg",
+        "subAddress": "house no. 2 sector-02",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492012",
+        "phone": "7728492713"
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "Sarthak",
+        "lastName": "Kumar",
+        "address": "abcdgsca",
+        "subAddress": "hno 51",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "country": "India",
+        "postalCode": "492013",
+        "phone": "1234535436"
+      },
+      {
+        "firstName": "Shivam",
+        "lastName": "bhalla",
+        "address": "abcdg",
+        "subAddress": "house no. 2 sector-02",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492012",
+        "phone": "7728492713"
+      }
+    ]
   }
 ]

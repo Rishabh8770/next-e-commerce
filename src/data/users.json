@@ -145,5 +145,17 @@
     "email": "deepak@mail.com",
     "password": "deepak1234",
     "cart": []
+  },
+  {
+    "id": 16,
+    "name": "anonymous",
+    "email": "anony@mail.com",
+    "password": "Rish@bh887177",
+    "cart": [],
+    "wishList": [
+      {
+        "productId": 7099843
+      }
+    ]
   }
 ]

@@ -296,7 +296,7 @@ const OrderCard = ({
         })}
         <div
           className={`flex justify-end items-center text-blue-500 hover:underline ${
-            !isProfilePage ? "hidden" : "block"
+            (!isProfilePage || (!isProfilePage && ordersToDisplay.length === 0)) ? "hidden" : "block"
           }`}
         >
           <Link href="/my-profile/myOrders">View more...</Link>
