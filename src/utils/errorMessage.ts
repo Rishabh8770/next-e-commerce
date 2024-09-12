@@ -6,7 +6,7 @@ export const ERROR_MESSAGE = {
     noOrderDetails:"No order details available",
     userNotFound:"User not found",
     productNotFound: " No Products found",
-    noAddress: "address not available.",
+    noAddress: "Addresses not available.",
     noReviews: "No reviews found for this user.",
     loginError: "Username or Email already exists",
     createOrderError: "Failed to create order",

@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React from "react";
 import Authentication from "./Authentication";
@@ -7,16 +7,20 @@ import { SignupUser } from "@/actions/LoginAndSignUpAction";
 import { notifyRegisterationSuccess } from "@/utils/NotificationUtils";
 import { NotificationContainer } from "../user/admin/UserFeedback";
 import { useUserContext } from "@/context/UserContext";
+import { FormValues } from "./Authentication"; 
 
 const SignUpPage = () => {
   const router = useRouter();
   const { refreshUser } = useUserContext();
-  const handleSignUp = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
+
+  const handleSignUp = async (data: FormValues) => {
+    const { name, email, password } = data;
+
+    if (!name) {
+      alert("Name is required for sign-up");
+      return;
+    }
+
     const result = await SignupUser(name, email, password);
 
     if (result.success) {
@@ -29,13 +33,14 @@ const SignUpPage = () => {
       alert(result.message);
     }
   };
+
   return (
     <div className="w-full flex justify-center">
       <Authentication
         title="New Registration"
-        isNewUser
+        isNewUser={true}
         buttonTitle="Sign Up"
-        handleSubmit={handleSignUp}
+        handleSubmitData={handleSignUp}
       />
       <NotificationContainer />
     </div>

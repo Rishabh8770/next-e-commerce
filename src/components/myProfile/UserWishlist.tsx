@@ -7,6 +7,7 @@ import { WishListItems } from "@/types/ProductTypes";
 import { generateStarRating } from "@/utils/starRatingsUtils";
 import React, { useEffect, useState } from "react";
 import ProfileItemsHeader from "./ProfileItemsHeader";
+import Link from "next/link";
 
 const UserWishlist = () => {
   const { userId, refreshUser } = useUserContext();
@@ -42,54 +43,61 @@ const UserWishlist = () => {
 
   return (
     <>
-      <ProfileItemsHeader title="WishList"/>
+      <ProfileItemsHeader title="WishList" />
       <div className="flex flex-col justify-center items-center">
         {wishlist?.map((list) => {
           const productMatch = products.find(
             (product) => product.id === list.productId
           );
           return (
-            <div
-              key={productMatch?.id}
-              className="my-5 flex md:flex-row flex-col justify-between items-center border rounded-lg p-5 md:space-x-8 md:space-y-0 space-y-4 w-5/6  bg-white"
+            <Link
+              href={`/products/${productMatch?.id}`}
+              className="flex justify-center items-center w-full"
             >
-              <div className="flex justify-center items-center md:flex-row flex-col space-x-4 md:space-y-0 space-y-4">
-                <img
-                  src={productMatch?.image[0]}
-                  alt="Product Image"
-                  className="w-36 bg-cover"
-                />
-                <div>
-                  <h1 className="font-bold">
-                    Name:{" "}
-                    <span className="font-normal">{productMatch?.title}</span>
-                  </h1>
-                  <h1 className="font-bold">
-                    Description:{" "}
-                    <span className="font-normal">
-                      {productMatch?.description}
-                    </span>
-                  </h1>
-                  <h1 className="font-bold">
-                    productMatch:{" "}
-                    <span className="font-normal">{productMatch?.brand}</span>
-                  </h1>
-                  <h1 className="flex items-center font-bold">
-                    Ratings:{" "}
-                    <span>{generateStarRating(productMatch?.rating ?? 0)}</span>
-                  </h1>
+              <div
+                key={productMatch?.id}
+                className="my-5 flex md:flex-row flex-col justify-between items-center border rounded-lg p-5 md:space-x-8 md:space-y-0 space-y-4 w-5/6  bg-white"
+              >
+                <div className="flex justify-center items-center md:flex-row flex-col space-x-4 md:space-y-0 space-y-4">
+                  <img
+                    src={productMatch?.image[0]}
+                    alt="Product Image"
+                    className="w-36 bg-cover"
+                  />
+                  <div>
+                    <h1 className="font-bold">
+                      Name:{" "}
+                      <span className="font-normal">{productMatch?.title}</span>
+                    </h1>
+                    <h1 className="font-bold">
+                      Description:{" "}
+                      <span className="font-normal">
+                        {productMatch?.description}
+                      </span>
+                    </h1>
+                    <h1 className="font-bold">
+                      productMatch:{" "}
+                      <span className="font-normal">{productMatch?.brand}</span>
+                    </h1>
+                    <h1 className="flex items-center font-bold">
+                      Ratings:{" "}
+                      <span>
+                        {generateStarRating(productMatch?.rating ?? 0)}
+                      </span>
+                    </h1>
+                  </div>
+                </div>
+
+                <div className="flex justify-center items-center">
+                  <button
+                    className="p-2 border rounded border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
+                    onClick={() => handleRemove(productMatch?.id!)}
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
-
-              <div className="flex justify-center items-center">
-                <button
-                  className="p-2 border rounded border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
-                  onClick={() => handleRemove(productMatch?.id!)}
-                >
-                  Remove
-                </button>
-              </div>
-            </div>
+            </Link>
           );
         })}
       </div>

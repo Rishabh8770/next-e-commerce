@@ -20,11 +20,18 @@ export const notifyAddProduct = () => {
   toast.success("Product has been added Successfully", options);
 };
 
-export const notifyLoginWarn = () => {
-  toast.warn(
-    "Redirecting to login page !, Please sign in first to add a review",
-    options
-  );
+export const notifyLoginWarn = (loginFor: "review" | "wishlist") => {
+  let message: string;
+  switch (loginFor) {
+    case "review":
+      message =
+        "Redirecting to login page !, Please sign in first to add a review";
+      break;
+    case "wishlist":
+      message = "Please sign in first to add a product to Wishlist";
+      break;
+  }
+  toast.warn(message, options);
 };
 
 export const notifyLoginSuccess = () => {
@@ -71,23 +78,23 @@ export const notifyAddressError = () => {
 };
 
 export const notifyUserUpdatedSuccess = () => {
-  toast.success("User details updated successfully", options)
-}
+  toast.success("User details updated successfully", options);
+};
 export const notifyUserUpdatedError = () => {
-  toast.error("Error updating the user details", options)
-}
+  toast.error("Error updating the user details", options);
+};
 
 export const notifyWishlistSuccess = () => {
-  toast.success("Product added to Wishlist", options)
-}
+  toast.success("Product added to Wishlist", options);
+};
 
 export const notifyWishlistWarn = () => {
-  toast.warn("Product removed from Wishlist", options)
-}
+  toast.warn("Product removed from Wishlist", options);
+};
 
 export const notifyWishlistError = () => {
-  toast.error("There was an error adding product to Wishlist", options)
-}
+  toast.error("There was an error adding product to Wishlist", options);
+};
 
 export const notifyAddressWarn = (
   missingAddress: "Shipping" | "Billing" | "Both"

@@ -36,9 +36,7 @@ const UserAddress = ({
 
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      {!isProfilePage && (
-        <ProfileItemsHeader title="Addresses"/>
-      )}
+      {!isProfilePage && <ProfileItemsHeader title="Addresses" />}
       <div className="md:p-8 p-0 m-10 flex flex-col md:space-x-10 w-5/6 bg-gray-200 border border-gray-300 rounded-lg">
         <div className="md:ml-[2.375rem] mb-9 md:p-0 p-5">
           <h1 className="text-3xl">My Addresses</h1>
@@ -104,7 +102,9 @@ const UserAddress = ({
         </div>
         <div
           className={`flex justify-end items-center mt-5 text-blue-500 hover:underline ${
-            !isProfilePage ? "hidden" : "block"
+            isProfilePage && (shippingAddressToDisplay.length > 0 || billingAddressToDisplay.length > 0)
+              ? "block"
+              : "hidden"
           }`}
         >
           <Link href="/my-profile/addresses">View more...</Link>

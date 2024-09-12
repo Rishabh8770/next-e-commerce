@@ -29,7 +29,7 @@ const HomePage = () => {
   const { products } = useProductContext();
   const { searchQuery } = useSearchContext();
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 18;
+  const itemsPerPage = 20;
   const [loading, setLoading] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState<Option[] | null>(
     null

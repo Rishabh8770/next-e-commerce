@@ -42,7 +42,7 @@ const UserRole = () => {
     if (option === "Admin") {
       router.push("/admin");
     } else if (option === userDisplayName) {
-      router.push(`/my-profile/${userId}`);
+      router.push(`/my-profile/dashboard/${userId}`);
     }
   };
 
@@ -51,7 +51,7 @@ const UserRole = () => {
       <DropdownTrigger>
         <Button
           variant="bordered"
-          className="flex justify-start text-white border rounded-lg text-md px-2"
+          className="flex justify-center items-center text-white border rounded-lg text-md px-2"
         >
           {pathName.startsWith("/admin") ? "Admin" : "Switch user"}
         </Button>

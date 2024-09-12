@@ -25,7 +25,7 @@ export default function AdminLayout({
           <div className="lg:w-1/6 w-full bg-side-sidebar-bg lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden">
             <SideBar />
           </div>
-          <main className="flex-grow overflow-y-auto overflow-x-auto lg:overflow-x-hidden">
+          <main className="lg:w-5/6 flex-grow overflow-y-auto overflow-x-auto lg:overflow-x-hidden">
             <Suspense fallback={<LoadingPage />}>{children}</Suspense>
           </main>
         </div>
