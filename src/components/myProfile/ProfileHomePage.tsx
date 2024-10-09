@@ -3,9 +3,9 @@
 import { useUserContext } from "@/context/UserContext";
 import users from "@/data/users.json";
 import React from "react";
-import OrderCard from "../myOrders/OrderCard";
-import UserAddress from "./UserAddress";
-import RecentlyViewed from "./RecentlyViewed";
+import OrderCard from "@/components/myOrders/OrderCard";
+import UserAddress from "@/components/myProfile/UserAddress";
+import RecentlyViewed from "@/components/myProfile/RecentlyViewed";
 import { ERROR_MESSAGE } from "@/utils/errorMessage";
 
 const ProfileHomePage = () => {
