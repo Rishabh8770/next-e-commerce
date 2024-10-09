@@ -1,29 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Rishabh Malewar",
-    "email": "rishabh@mail.com",
-    "password": "Rishabh",
-    "cart": [],
-    "wishList": [
-      {
-        "productId": 9006
-      },
-      {
-        "productId": 9005
-      },
-      {
-        "productId": 9007
-      },
-      {
-        "productId": 9013
-      },
-      {
-        "productId": 9001
-      }
-    ]
-  },
-  {
     "id": 2,
     "name": "abcdefg",
     "email": "abcd@abcd.com",
@@ -148,14 +124,8 @@
   },
   {
     "id": 16,
-    "name": "anonymous",
-    "email": "anony@mail.com",
-    "password": "Rish@bh887177",
-    "cart": [],
-    "wishList": [
-      {
-        "productId": 7099843
-      }
-    ]
+    "name": "Rishabh Malewar",
+    "email": "rishabh.malewar@gmail.com",
+    "password": "Rish@bh8871"
   }
 ]
