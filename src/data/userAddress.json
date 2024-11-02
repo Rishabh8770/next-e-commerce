@@ -129,5 +129,34 @@
         "phone": "7728492713"
       }
     ]
+  },
+  {
+    "id": 16,
+    "shippingAddresses": [
+      {
+        "firstName": "Rishabh",
+        "lastName": "Malewar",
+        "address": "office no. - 3005, 3rd floor , currency tower, VIP Chowk",
+        "subAddress": "adwa",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "8770609301"
+      }
+    ],
+    "billingAddresses": [
+      {
+        "firstName": "Rishabh",
+        "lastName": "Malewar",
+        "address": "office no. - 3005, 3rd floor , currency tower, VIP Chowk",
+        "subAddress": "adwa",
+        "city": "Raipur",
+        "state": "Chhattisgarh",
+        "country": "India",
+        "postalCode": "492001",
+        "phone": "8770609301"
+      }
+    ]
   }
 ]

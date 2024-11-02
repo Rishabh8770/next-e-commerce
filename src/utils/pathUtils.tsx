@@ -5,7 +5,7 @@ import { useUserContext } from "@/context/UserContext";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
 
-export const routePathNames = () => {
+export const RoutePathNames = () => {
   const { orderId } = useParams();
   const { userId } = useUserContext();
 

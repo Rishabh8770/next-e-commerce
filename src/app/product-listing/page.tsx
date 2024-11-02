@@ -1,12 +1,12 @@
-import HomePage from '@/components/home/HomePage'
-import React from 'react'
+import HomePage from "@/components/Home/HomePage";
+import React from "react";
 
 const ProductListingPage = () => {
   return (
     <div>
-        <HomePage />
+      <HomePage />
     </div>
-  )
-}
+  );
+};
 
-export default ProductListingPage
+export default ProductListingPage;

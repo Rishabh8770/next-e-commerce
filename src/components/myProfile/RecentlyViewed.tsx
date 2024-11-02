@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useProductContext } from "@/context/ProductContext";
-import ProductCard from "@/components/products/ProductCard";
+import ProductCard from "@/components/Products/ProductCard";
 import Link from "next/link";
 import { MoveLeft, MoveRight } from "lucide-react";
 import { ERROR_MESSAGE } from "@/utils/errorMessage";

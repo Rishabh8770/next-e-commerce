@@ -1,5 +1,4 @@
-import CategoryProducts from "@/components/products/CategoryProducts";
-
+import CategoryProducts from "@/components/Products/CategoryProducts";
 import React from "react";
 
 const CategoryPage = () => {

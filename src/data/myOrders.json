@@ -560,5 +560,88 @@
         "orderCreated": "2024-09-10T08:27:34.085Z"
       }
     ]
+  },
+  {
+    "userid": 16,
+    "orders": [
+      {
+        "orderId": 1728635871469,
+        "shippingAddress": {
+          "firstName": "Rishabh",
+          "lastName": "Malewar",
+          "address": "office no. - 3005, 3rd floor , currency tower, VIP Chowk",
+          "subAddress": "adwa",
+          "city": "Raipur",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "492001",
+          "phone": "8770609301"
+        },
+        "billingAddress": {
+          "firstName": "Rishabh",
+          "lastName": "Malewar",
+          "address": "office no. - 3005, 3rd floor , currency tower, VIP Chowk",
+          "subAddress": "adwa",
+          "city": "Raipur",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "492001",
+          "phone": "8770609301"
+        },
+        "items": [
+          {
+            "id": 9003,
+            "quantity": 1,
+            "pricePerQuantity": 61633.28,
+            "productTotal": 61633.28,
+            "discount": 10
+          }
+        ],
+        "totalAmount": 61633.28,
+        "totalDiscount": 6163.328,
+        "tax": 3081.664,
+        "totalOrderAmount": 58551.615999999995,
+        "orderCreated": "2024-10-11T08:37:51.469Z"
+      },
+      {
+        "orderId": 1730550885304,
+        "shippingAddress": {
+          "firstName": "Rishabh",
+          "lastName": "Malewar",
+          "address": "office no. - 3005, 3rd floor , currency tower, VIP Chowk",
+          "subAddress": "adwa",
+          "city": "Raipur",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "492001",
+          "phone": "8770609301"
+        },
+        "billingAddress": {
+          "firstName": "Rishabh",
+          "lastName": "Malewar",
+          "address": "office no. - 3005, 3rd floor , currency tower, VIP Chowk",
+          "subAddress": "adwa",
+          "city": "Raipur",
+          "state": "Chhattisgarh",
+          "country": "India",
+          "postalCode": "492001",
+          "phone": "8770609301"
+        },
+        "items": [
+          {
+            "id": 9002,
+            "quantity": 1,
+            "pricePerQuantity": 32999.18,
+            "productTotal": 32999.18,
+            "discount": 15
+          }
+        ],
+        "totalAmount": 32999.18,
+        "totalDiscount": 4949.877,
+        "tax": 1649.959,
+        "totalOrderAmount": 29699.262,
+        "orderCreated": "2024-11-02T12:34:45.304Z"
+      }
+    ]
   }
 ]

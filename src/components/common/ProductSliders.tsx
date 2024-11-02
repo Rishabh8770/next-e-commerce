@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
-import ProductCard from '@/components/products/ProductCard';
 import { useProductContext } from '@/context/ProductContext';
+import ProductCard from '@/components/Products/ProductCard';
 
 const ProductSlider = () => {
   const { products } = useProductContext();

@@ -2,11 +2,11 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import { routePathNames } from "@/utils/pathUtils";
+import { RoutePathNames } from "@/utils/pathUtils";
 
 const Footer = () => {
   const pathName = usePathname();
-  const pathToHideFooter = routePathNames();
+  const pathToHideFooter = RoutePathNames();
 
   return (
     <div className={`${pathToHideFooter.includes(pathName) && "hidden"}`}>
@@ -18,7 +18,7 @@ const Footer = () => {
               <div className="footer-underline h-px w-16 bg-gray-300 my-2"></div>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
+                industry. Lorem Ipsum has been the industry&#39;s standard dummy
                 text ever since the 1500s
               </p>
             </div>

@@ -290,7 +290,7 @@ const AddOrEditForm = ({ productId, isEditMode }: FormProp) => {
             />
           </div>
           <div className="mb-6">
-            <label className="block text-sm font-medium">Image URL's</label>
+            <label className="block text-sm font-medium">Image URLs</label>
             <input
               type="url"
               id="image1"

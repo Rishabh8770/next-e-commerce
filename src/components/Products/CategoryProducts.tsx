@@ -1,6 +1,6 @@
 "use client";
 
-import ProductCard from "@/components/products/ProductCard";
+import ProductCard from "@/components/Products/ProductCard";
 import { useProductContext } from "@/context/ProductContext";
 import { ArrowLeft } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";

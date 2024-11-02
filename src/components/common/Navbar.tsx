@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useCartContext } from "@/context/CartContext";
 import { Menu, ShoppingCart } from "lucide-react";
 import UserRole from "@/components/user/customer/UserRole";
-import { routePathNames } from "@/utils/pathUtils";
+import { RoutePathNames } from "@/utils/pathUtils";
 import SearchProduct from "./SearchProduct";
 import AuthButton from "../user-authentication/AuthButton";
 import { useEffect, useRef, useState } from "react";
@@ -20,7 +20,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [localCartCount, setLocalCartCount] = useState(0);
   const [userName, setUsername] = useState<string>("");
-  const pathToHideNav = routePathNames();
+  const pathToHideNav = RoutePathNames();
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 

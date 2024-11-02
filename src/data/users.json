@@ -145,5 +145,20 @@
     "email": "deepak@mail.com",
     "password": "deepak1234",
     "cart": []
+  },
+  {
+    "id": 16,
+    "name": "Umesh",
+    "email": "umesh@gmail.com",
+    "password": "Umesh@123",
+    "wishList": [
+      {
+        "productId": 9001
+      },
+      {
+        "productId": 9002
+      }
+    ],
+    "cart": []
   }
 ]

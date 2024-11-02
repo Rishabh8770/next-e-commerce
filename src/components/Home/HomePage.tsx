@@ -1,19 +1,19 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import ProductCard from "../products/ProductCard";
+import ProductCard from "@/components/Products/ProductCard";
 import { useProductContext } from "@/context/ProductContext";
 import { useSearchContext } from "@/context/SearchContext";
 // import LoadingPage from "@/app/loading";
 import { ProductSort, SortOptions } from "@/components/common/productSort";
 import Filter from "@/components/common/FilterProducts";
 import { getCategories, getBrands, getRatings } from "@/utils/actionUtils";
-import { CategoryPills } from "../products/CategoryPills";
+import { CategoryPills } from "@/components/Products/CategoryPills";
 import SearchProduct from "../common/SearchProduct";
 import { ListFilter, Menu, SlidersHorizontal } from "lucide-react";
 import { Option } from "@/components/common/MultiSelectDropdown";
 import { Skeleton } from "@nextui-org/react";
-import Sidebar from "./HomeSideBar";
+import Sidebar from "@/components/Home/HomeSideBar";
 import Pagination from "../common/Pagination";
 import { NotificationContainer } from "../user/admin/UserFeedback";
 import { ERROR_MESSAGE } from "@/utils/errorMessage";
